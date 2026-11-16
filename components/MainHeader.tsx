@@ -33,7 +33,7 @@ export default function MainHeader({ onOpenQuote, onOpenBooking }: MainHeaderPro
             </div>
           </div>
 
-          {/* Right Side: Contact Information & Both CTA Buttons in a Single Horizontal Row */}
+          {/* Right Side: Contact Information & Both CTA Buttons in a Vertical Column */}
           <div className="flex flex-wrap sm:flex-nowrap items-center justify-center lg:justify-end gap-4 sm:gap-6 w-full lg:w-auto">
             {/* Contact Details: Call Us Now, (516) 717-7515, 24 Hours - 7 Days */}
             <div className="flex items-center gap-3 pr-2 sm:pr-4 sm:border-r sm:border-slate-200">
@@ -58,12 +58,12 @@ export default function MainHeader({ onOpenQuote, onOpenBooking }: MainHeaderPro
               </div>
             </div>
 
-            {/* Two Action CTA Buttons - ALWAYS side-by-side in a single horizontal row */}
-            <div className="flex flex-row items-center gap-2.5 sm:gap-3 flex-shrink-0">
+            {/* Two Action CTA Buttons - Displayed vertically in a column */}
+            <div className="flex flex-col items-stretch justify-center gap-2 flex-shrink-0 w-full sm:w-auto">
               {/* 1. Get a Free Quote (Primary CTA: Royal Blue) */}
               <button
                 onClick={onOpenQuote}
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg bg-royal text-white font-bold text-xs sm:text-sm shadow-md hover:bg-royal-hover active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-royal text-white font-bold text-xs sm:text-sm shadow-sm hover:bg-royal-hover active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider whitespace-nowrap w-full sm:w-44"
               >
                 <FileText className="w-4 h-4 flex-shrink-0" />
                 <span>Get a Free Quote</span>
@@ -72,7 +72,7 @@ export default function MainHeader({ onOpenQuote, onOpenBooking }: MainHeaderPro
               {/* 2. Request Service (Secondary CTA: Green) */}
               <button
                 onClick={onOpenBooking}
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg bg-hvacGreen text-white font-bold text-xs sm:text-sm shadow-md hover:bg-hvacGreen-hover active:scale-95 border border-hvacGreen/30 transition-all duration-200 font-heading uppercase tracking-wider whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-hvacGreen text-white font-bold text-xs sm:text-sm shadow-sm hover:bg-hvacGreen-hover active:scale-95 border border-hvacGreen/30 transition-all duration-200 font-heading uppercase tracking-wider whitespace-nowrap w-full sm:w-44"
               >
                 <Wrench className="w-4 h-4 flex-shrink-0" />
                 <span>Request Service</span>

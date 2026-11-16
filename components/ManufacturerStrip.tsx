@@ -18,7 +18,7 @@ export default function ManufacturerStrip() {
           {duplicatedBrands.map((brand, idx) => (
             <div
               key={`${brand.name}-${idx}`}
-              className="flex-shrink-0 flex items-center justify-center px-4 py-1 h-10 sm:h-12 min-w-[140px] sm:min-w-[170px] transition-transform duration-200 hover:scale-105 cursor-pointer"
+              className="flex-shrink-0 flex items-center justify-center px-4 py-1 h-10 sm:h-12 min-w-[170px] sm:min-w-[210px] transition-transform duration-200 hover:scale-105 cursor-pointer"
               title={`${brand.name} Authorized Service & Installation — ${brand.category}`}
             >
               {brand.renderLogo()}
