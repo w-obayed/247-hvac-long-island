@@ -4,12 +4,12 @@ import React from 'react';
 import Image from 'next/image';
 import {
   CheckCircle2,
-  ShieldCheck,
-  Award,
-  MapPin,
-  Clock,
   ArrowRight,
-  Phone
+  Phone,
+  UserCheck,
+  Building2,
+  BadgeCheck,
+  FileCheck
 } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_TEL } from '@/lib/utils';
 
@@ -30,7 +30,7 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
     {
       title: 'Experienced HVAC Professionals',
       description: 'Over 30 years of hands-on heating, cooling, and ventilation expertise across Long Island.',
-      icon: Clock,
+      icon: UserCheck,
       color: 'text-[#0066CC]',
       bg: 'bg-blue-50',
       border: 'border border-blue-100',
@@ -38,7 +38,7 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
     {
       title: 'Locally Owned & Operated',
       description: 'Proudly serving Nassau County, Suffolk County, and NYC boroughs with responsive local teams.',
-      icon: MapPin,
+      icon: Building2,
       color: 'text-[#E50914]',
       bg: 'bg-red-50',
       border: 'border border-red-100',
@@ -46,7 +46,7 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
     {
       title: 'Quality Workmanship',
       description: 'Precision diagnostic testing, OEM parts, and warranty-backed repairs on all major HVAC brands.',
-      icon: Award,
+      icon: BadgeCheck,
       color: 'text-amber-500',
       bg: 'bg-amber-50',
       border: 'border border-amber-100',
@@ -54,7 +54,7 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
     {
       title: 'Licensed & Insured Contractors',
       description: 'Fully credentialed, OSHA-compliant, and EPA-certified technicians for residential and commercial comfort.',
-      icon: ShieldCheck,
+      icon: FileCheck,
       color: 'text-[#25843D]',
       bg: 'bg-emerald-50',
       border: 'border border-emerald-100',
@@ -139,28 +139,33 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
           </div>
         </div>
 
-        {/* SECTION 4: BUSINESS TRUST HIGHLIGHTS (Unified Card Container) */}
+        {/* SECTION 4: BUSINESS TRUST HIGHLIGHTS (Unified Horizontal Row Card Container) */}
         <div className="w-full">
-          <div className="bg-white rounded-2xl border border-slate-200/90 shadow-xl shadow-slate-100/80 p-6 sm:p-8 lg:p-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-0 lg:divide-x divide-slate-200">
+          <div className="bg-white rounded-2xl border border-slate-200/90 shadow-xl shadow-slate-100/80 p-6 sm:p-7 lg:p-7">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-0 lg:divide-x divide-slate-200">
               {trustCards.map((item, index) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={item.title}
-                    className={`flex flex-col items-start text-left lg:px-6 ${
-                      index === 0 ? 'lg:pl-2' : ''
-                    } ${index === trustCards.length - 1 ? 'lg:pr-2' : ''}`}
+                    className={`flex flex-row items-start gap-3.5 sm:gap-4 text-left ${
+                      index !== 0 ? 'lg:pl-6' : 'lg:pl-2'
+                    } ${index !== trustCards.length - 1 ? 'lg:pr-6' : 'lg:pr-2'}`}
                   >
-                    <div className={`w-12 h-12 rounded-xl ${item.bg} ${item.border} flex items-center justify-center mb-4 shadow-sm`}>
-                      <Icon className={`w-6 h-6 ${item.color}`} />
+                    {/* Left: Modern Colorful Icon */}
+                    <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${item.bg} ${item.border} flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5`}>
+                      <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${item.color}`} />
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-navy font-heading mb-1.5 leading-snug">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                      {item.description}
-                    </p>
+
+                    {/* Right: Title & Description */}
+                    <div className="flex flex-col min-w-0 flex-1">
+                      <h3 className="text-sm sm:text-base font-bold text-navy font-heading mb-1 leading-snug">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-body">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
