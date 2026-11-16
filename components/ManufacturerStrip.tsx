@@ -13,8 +13,8 @@ export default function ManufacturerStrip() {
       aria-label="Authorized HVAC Manufacturer Logos"
     >
       <div className="relative w-full overflow-hidden">
-        {/* Continuous Marquee Track with expanded breathing room and larger logo sizing */}
-        <div className="animate-marquee-continuous flex items-center gap-14 sm:gap-20 md:gap-24">
+        {/* Continuous Marquee Track */}
+        <div className="animate-marquee-continuous flex items-center gap-6 sm:gap-8 md:gap-10">
           {duplicatedBrands.map((brand, idx) => (
             <div
               key={`${brand.name}-${idx}`}
