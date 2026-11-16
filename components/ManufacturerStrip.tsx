@@ -9,16 +9,16 @@ export default function ManufacturerStrip() {
 
   return (
     <div
-      className="w-full bg-slate-50 border-b border-slate-200 py-2.5 overflow-hidden select-none relative z-10"
-      aria-label="Authorized HVAC Brands and Manufacturers"
+      className="w-full bg-white border-b border-slate-200 py-3.5 sm:py-4 overflow-hidden select-none relative z-10"
+      aria-label="Authorized HVAC Manufacturer Logos"
     >
       <div className="relative w-full overflow-hidden">
-        {/* Continuous Marquee Track */}
-        <div className="animate-marquee-continuous flex items-center gap-10 md:gap-14">
+        {/* Continuous Marquee Track with expanded breathing room and larger logo sizing */}
+        <div className="animate-marquee-continuous flex items-center gap-14 sm:gap-20 md:gap-24">
           {duplicatedBrands.map((brand, idx) => (
             <div
               key={`${brand.name}-${idx}`}
-              className="flex-shrink-0 flex items-center justify-center px-2 py-0.5 transition-transform duration-200 hover:scale-105 cursor-pointer"
+              className="flex-shrink-0 flex items-center justify-center px-4 py-1 h-10 sm:h-12 min-w-[140px] sm:min-w-[170px] transition-transform duration-200 hover:scale-105 cursor-pointer"
               title={`${brand.name} Authorized Service & Installation — ${brand.category}`}
             >
               {brand.renderLogo()}
