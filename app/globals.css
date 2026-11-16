@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand specific colors requested by client */
+  --brand-navy: #061A40;
+  --brand-blue: #0066CC;
+  --brand-electric: #00BFFF;
+  --brand-red: #E50914;
+  --brand-yellow: #FFE500;
+  --brand-green: #25843D;
+  --brand-white: #FFFFFF;
+  --brand-dark-text: #111827;
+  --brand-light-gray: #F3F4F6;
+
+  /* Semantic aliases */
+  --deep-navy: var(--brand-navy);
+  --royal-blue: var(--brand-blue);
+  --electric-blue: var(--brand-electric);
+  --bright-red: var(--brand-red);
+  --bright-yellow: var(--brand-yellow);
+  --hvac-green: var(--brand-green);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-inter), sans-serif;
+}
+
+body {
+  color: var(--brand-dark-text);
+  background-color: #ffffff;
+  overflow-x: hidden;
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Headings & interactive action typography: Roboto Condensed */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-roboto-condensed), sans-serif;
+}
+
+button {
+  font-family: var(--font-roboto-condensed), sans-serif;
+}
+
+/* Form inputs & descriptions: Inter */
+input, textarea, select, label, p {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Explicit typography utility classes */
+.font-heading {
+  font-family: var(--font-roboto-condensed), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #0066CC;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #061A40;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* CONTINUOUS SEAMLESS MARQUEE ANIMATION */
+@keyframes continuousMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-continuous {
+  display: flex;
+  width: max-content;
+  animation: continuousMarquee 38s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover if user desires to inspect */
+.animate-marquee-continuous:hover {
+  animation-play-state: paused;
+}
+
+/* Respect user reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-continuous {
+    animation-duration: 90s;
+  }
+}
+
+/* Pulse animation for 24/7 indicator */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
