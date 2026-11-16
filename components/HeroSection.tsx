@@ -29,23 +29,24 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section id="home" className="relative bg-[#061A40] text-white overflow-hidden py-10 md:py-16 lg:py-20">
-      {/* Background Subtle Gradient & Grid Accent */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/95 to-[#061A40]/80 z-10" />
-      <div className="absolute inset-0 bg-[radial-gradient(#0066CC_1px,transparent_1px)] [background-size:24px_24px] opacity-15" />
-
-      {/* Background Hero Image */}
-      <div className="absolute right-0 top-0 bottom-0 w-full lg:w-3/5 h-full z-0 opacity-40 lg:opacity-60 overflow-hidden">
+      {/* Background Hero Image - Increased visibility and reduced overlay darkness */}
+      <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-70 lg:opacity-85 overflow-hidden">
         <Image
           src="/images/hero-hvac.jpg"
           alt="Outdoor HVAC Condenser and Heat Pump System Installation in Long Island"
           fill
           priority
           className="object-cover object-center lg:object-right"
-          sizes="(max-width: 1024px) 100vw, 60vw"
+          sizes="(max-width: 1024px) 100vw, 66vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#061A40] via-transparent to-transparent" />
+        {/* Soft edge blend for smooth transition into brand navy background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#061A40]/80 via-transparent to-transparent" />
       </div>
+
+      {/* Background Subtle Gradient & Grid Accent - Lightened overlay to let image shine through */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/80 via-40% to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#0066CC_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none z-10" />
 
       <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 z-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -59,7 +60,7 @@ export default function HeroSection({
 
             {/* Main Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] mb-5 text-white font-heading">
-              Trusted HVAC Repair in{' '}
+              Trusted HVAC Repair in <br />
               <span className="text-[#00BFFF] drop-shadow-sm">Long Island, NY</span>
             </h1>
 
