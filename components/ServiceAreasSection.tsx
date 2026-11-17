@@ -84,18 +84,18 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
 
             <div className="relative z-10">
               {/* Eyebrow Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-electric text-[11px] sm:text-xs font-black uppercase tracking-widest mb-3.5 sm:mb-4 font-heading border border-white/20">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-electric text-xs sm:text-xs font-black uppercase tracking-widest mb-3.5 sm:mb-4 font-heading border border-white/20">
                 <MapPin className="w-3.5 h-3.5 text-electric animate-pulse flex-shrink-0" />
                 <span>Local Service Coverage</span>
               </div>
 
               {/* Heading */}
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-[1.15] mb-3.5 sm:mb-4 font-heading">
+              <h2 className="text-3xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-[1.15] mb-3.5 sm:mb-4 font-heading">
                 Proudly Serving Long Island and <span className="text-electric">Surrounding Areas</span>
               </h2>
 
               {/* Description */}
-              <p className="text-xs sm:text-sm md:text-base text-slate-200 leading-relaxed font-body mb-6">
+              <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-body mb-6">
                 We proudly serve Nassau, Queens, Suffolk County, Brooklyn, Manhattan and surrounding Long Island communities with 24/7 radio-dispatched mobile units.
               </p>
             </div>
@@ -132,7 +132,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                       <CountyEmblem type="nassau" className="w-full h-full" />
                     </div>
                     <div className="min-w-0">
-                      <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-royal text-white text-[10px] font-black uppercase tracking-wider font-heading mb-1 shadow-sm">
+                      <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-royal text-white text-[11px] sm:text-[10px] font-black uppercase tracking-wider font-heading mb-1 shadow-sm">
                         <span>Primary Service Hub</span>
                       </div>
                       <h3 className="text-xl sm:text-2xl font-black text-navy group-hover:text-royal transition-colors font-heading leading-tight truncate sm:overflow-visible">
@@ -148,7 +148,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                 </div>
 
                 {/* Description */}
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5 font-body">
+                <p className="text-sm sm:text-sm text-slate-600 leading-relaxed mb-5 font-body">
                   {nassauArea.description}
                 </p>
 
@@ -161,7 +161,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                     </h4>
                     <div className="flex flex-wrap gap-1.5 font-body">
                       {nassauArea.communities.map((c) => (
-                        <span key={c} className="text-[10px] sm:text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium border border-slate-200/60 leading-tight">
+                        <span key={c} className="text-[11px] sm:text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium border border-slate-200/60 leading-tight">
                           {c}
                         </span>
                       ))}
@@ -175,7 +175,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                     </h4>
                     <div className="space-y-1.5 font-body">
                       {nassauArea.keyServices.map((service) => (
-                        <div key={service} className="flex items-start gap-2 text-xs text-slate-700">
+                        <div key={service} className="flex items-start gap-2 text-xs sm:text-xs text-slate-700">
                           <span className="w-1.5 h-1.5 rounded-full bg-royal flex-shrink-0 mt-1.5" />
                           <span className="leading-tight">{service}</span>
                         </div>
@@ -192,7 +192,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                 </span>
                 <button
                   onClick={() => onSelectArea(nassauArea)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-2.5 px-6 rounded-lg bg-navy hover:bg-royal text-white text-xs sm:text-sm font-bold transition-all shadow-md font-heading uppercase tracking-wider min-h-[44px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-2.5 px-6 rounded-lg bg-navy hover:bg-royal text-white text-sm sm:text-sm font-bold transition-all shadow-md font-heading uppercase tracking-wider min-h-[44px]"
                 >
                   <span>View Locations</span>
                   <ArrowRight className="w-4 h-4 flex-shrink-0" />
@@ -232,7 +232,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                 </h3>
 
                 {/* Description */}
-                <p className="text-xs text-slate-600 leading-relaxed mb-4 font-body">
+                <p className="text-sm sm:text-xs text-slate-600 leading-relaxed mb-4 font-body">
                   {area.description}
                 </p>
 
@@ -243,7 +243,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                   </span>
                   <div className="flex flex-wrap gap-1 font-body">
                     {area.communities.map((c) => (
-                      <span key={c} className="text-[10px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium border border-slate-200/50 leading-tight">
+                      <span key={c} className="text-[11px] sm:text-[10px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium border border-slate-200/50 leading-tight">
                         {c}
                       </span>
                     ))}
@@ -256,7 +256,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                     Key Services
                   </span>
                   {area.keyServices.map((service) => (
-                    <div key={service} className="flex items-start gap-1.5 text-xs text-slate-700">
+                    <div key={service} className="flex items-start gap-1.5 text-xs sm:text-xs text-slate-700">
                       <CheckCircle2 className="w-3.5 h-3.5 text-hvacGreen flex-shrink-0 mt-0.5" />
                       <span className="leading-tight">{service}</span>
                     </div>
@@ -268,7 +268,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
               <div className="pt-3 border-t border-slate-100 mt-auto">
                 <button
                   onClick={() => onSelectArea(area)}
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-navy hover:bg-royal text-white text-xs sm:text-sm font-bold transition-all shadow-sm font-heading uppercase tracking-wider min-h-[44px]"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-navy hover:bg-royal text-white text-sm sm:text-sm font-bold transition-all shadow-sm font-heading uppercase tracking-wider min-h-[44px]"
                 >
                   <span>View Locations</span>
                   <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />

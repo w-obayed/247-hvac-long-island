@@ -23,7 +23,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
             <div className="mb-4">
               <BrandLogo variant="dark" size="md" />
             </div>
-            <p className="text-xs text-slate-300 leading-relaxed mb-6 font-body">
+            <p className="text-sm sm:text-xs text-slate-300 leading-relaxed mb-6 font-body">
               Your trusted HVAC experts in Long Island, NY. Providing reliable heating, cooling, and air conditioning services for homes and businesses with upfront pricing and 24/7 emergency dispatch.
             </p>
             {/* Social Media Icons */}
@@ -83,7 +83,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading">
               Heating Services
             </h4>
-            <ul className="space-y-2 text-xs font-body">
+            <ul className="space-y-2 text-sm sm:text-xs font-body">
               {[
                 { title: 'Furnace Services', target: 'Furnace Installation, Repair & Replacement' },
                 { title: 'Boiler Services', target: 'Boiler Installation, Repair & Replacement' },
@@ -109,7 +109,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading">
               Cooling Services
             </h4>
-            <ul className="space-y-2 text-xs font-body">
+            <ul className="space-y-2 text-sm sm:text-xs font-body">
               {[
                 { title: 'AC Installation', target: 'Air Conditioner Installation & Replacement' },
                 { title: 'AC Repair', target: 'Air Conditioner Repair & Maintenance' },
@@ -135,7 +135,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading">
               Service Areas
             </h4>
-            <ul className="space-y-2 text-xs font-body">
+            <ul className="space-y-2 text-sm sm:text-xs font-body">
               {['Nassau County', 'Queens', 'Suffolk County', 'Brooklyn', 'Manhattan'].map((area) => (
                 <li key={area}>
                   <a
@@ -151,7 +151,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
             <div className="mt-4 pt-3 border-t border-navy-light/60 font-heading">
               <a
                 href="#service-areas"
-                className="text-xs font-bold text-electric hover:underline block uppercase tracking-wider"
+                className="text-xs sm:text-xs font-bold text-electric hover:underline block uppercase tracking-wider"
               >
                 View All Service Areas &rarr;
               </a>
@@ -163,16 +163,16 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading">
               Contact Information
             </h4>
-            <div className="space-y-3 text-xs">
+            <div className="space-y-3 text-sm sm:text-xs">
               <div>
-                <span className="text-slate-400 block text-[10px] uppercase font-bold font-heading">Direct Phone</span>
+                <span className="text-slate-400 block text-[11px] sm:text-[10px] uppercase font-bold font-heading">Direct Phone</span>
                 <a href={PHONE_TEL} className="text-base font-black text-brightYellow hover:underline font-heading">
                   {PHONE_NUMBER}
                 </a>
               </div>
 
               <div>
-                <span className="text-slate-400 block text-[10px] uppercase font-bold font-heading">Availability</span>
+                <span className="text-slate-400 block text-[11px] sm:text-[10px] uppercase font-bold font-heading">Availability</span>
                 <span className="font-semibold text-white flex items-center gap-1.5 mt-0.5 font-body">
                   <Clock className="w-3.5 h-3.5 text-brightRed" />
                   24 Hours — 7 Days
@@ -180,14 +180,14 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
               </div>
 
               <div>
-                <span className="text-slate-400 block text-[10px] uppercase font-bold font-heading">Email Inquiries</span>
+                <span className="text-slate-400 block text-[11px] sm:text-[10px] uppercase font-bold font-heading">Email Inquiries</span>
                 <a href={`mailto:${BUSINESS_EMAIL}`} className="hover:text-electric transition-colors break-all font-body">
                   {BUSINESS_EMAIL}
                 </a>
               </div>
 
               <div>
-                <span className="text-slate-400 block text-[10px] uppercase font-bold font-heading">Headquarters</span>
+                <span className="text-slate-400 block text-[11px] sm:text-[10px] uppercase font-bold font-heading">Headquarters</span>
                 <span className="flex items-center gap-1.5 text-slate-300 font-body">
                   <MapPin className="w-3.5 h-3.5 text-royal flex-shrink-0" />
                   Long Island, New York

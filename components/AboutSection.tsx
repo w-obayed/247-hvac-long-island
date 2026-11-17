@@ -72,11 +72,11 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
               About 247 HVAC of Long Island
             </span>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-navy tracking-tight leading-tight mb-4 sm:mb-5 font-heading">
+            <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-navy tracking-tight leading-tight mb-4 sm:mb-5 font-heading">
               Your Trusted HVAC Contractors in <span className="text-royal">Long Island</span>
             </h2>
 
-            <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed mb-5 sm:mb-6 font-body">
+            <p className="text-base sm:text-base lg:text-lg text-slate-600 leading-relaxed mb-5 sm:mb-6 font-body">
               For over 30 years, our team has been serving homes and businesses in Long Island. We are committed to providing dependable heating and cooling solutions with a strong focus on customer service and quality workmanship.
             </p>
 
@@ -87,7 +87,7 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
                   <div className="w-5 h-5 rounded-full bg-hvacGreen/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <CheckCircle2 className="w-4 h-4 text-hvacGreen" />
                   </div>
-                  <span className="text-xs sm:text-sm font-bold text-navy leading-snug">{item}</span>
+                  <span className="text-sm sm:text-sm font-bold text-navy leading-snug">{item}</span>
                 </div>
               ))}
             </div>
@@ -96,7 +96,7 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 font-heading w-full sm:w-auto">
               <button
                 onClick={onOpenQuote}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-lg bg-royal text-white font-extrabold text-xs sm:text-sm shadow-md hover:bg-royal-hover active:scale-95 transition-all uppercase tracking-wider min-h-[44px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-lg bg-royal text-white font-extrabold text-sm sm:text-sm shadow-md hover:bg-royal-hover active:scale-95 transition-all uppercase tracking-wider min-h-[44px]"
               >
                 <span>Learn More & Get Free Quote</span>
                 <ArrowRight className="w-4 h-4 flex-shrink-0" />
@@ -104,7 +104,7 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
 
               <a
                 href={PHONE_TEL}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-lg border-2 border-navy text-navy font-extrabold text-xs sm:text-sm hover:bg-slate-50 transition-colors uppercase tracking-wider min-h-[44px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-lg border-2 border-navy text-navy font-extrabold text-sm sm:text-sm hover:bg-slate-50 transition-colors uppercase tracking-wider min-h-[44px]"
               >
                 <Phone className="w-4 h-4 text-brightRed flex-shrink-0" />
                 <span>Call {PHONE_NUMBER}</span>
@@ -131,10 +131,10 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
                   30+
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h4 className="font-extrabold text-navy text-xs sm:text-sm font-heading leading-tight truncate sm:overflow-visible">
+                  <h4 className="font-extrabold text-navy text-sm sm:text-sm font-heading leading-tight truncate sm:overflow-visible">
                     Years Serving Long Island
                   </h4>
-                  <p className="text-[11px] sm:text-xs text-slate-500 font-body leading-tight mt-0.5">
+                  <p className="text-xs sm:text-xs text-slate-500 font-body leading-tight mt-0.5">
                     Fast, local radio-dispatched service trucks 24/7
                   </p>
                 </div>
@@ -163,10 +163,10 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
 
                     {/* Right: Title & Description */}
                     <div className="flex flex-col min-w-0 flex-1">
-                      <h3 className="text-sm sm:text-base font-bold text-navy font-heading mb-0.5 sm:mb-1 leading-snug">
+                      <h3 className="text-base sm:text-base font-bold text-navy font-heading mb-0.5 sm:mb-1 leading-snug">
                         {item.title}
                       </h3>
-                      <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-body">
+                      <p className="text-sm sm:text-[13px] lg:text-xs xl:text-[13px] text-slate-600 leading-relaxed font-body">
                         {item.description}
                       </p>
                     </div>

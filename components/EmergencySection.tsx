@@ -36,15 +36,15 @@ export default function EmergencySection({ onOpenBooking }: EmergencySectionProp
 
               {/* Emergency Reassurance Points */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-2 font-heading">
-                <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-200 font-semibold">
+                <div className="flex items-center gap-2 text-sm sm:text-sm text-slate-200 font-semibold">
                   <Clock className="w-4 h-4 text-brightYellow" />
                   <span>30-45 Min Dispatch</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-200 font-semibold">
+                <div className="flex items-center gap-2 text-sm sm:text-sm text-slate-200 font-semibold">
                   <ShieldAlert className="w-4 h-4 text-brightRed" />
                   <span>No Heat / AC Outage</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-200 font-semibold">
+                <div className="flex items-center gap-2 text-sm sm:text-sm text-slate-200 font-semibold">
                   <Wrench className="w-4 h-4 text-electric" />
                   <span>Fully Stocked Trucks</span>
                 </div>

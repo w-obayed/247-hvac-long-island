@@ -517,7 +517,7 @@ export default function Navbar({
           <a
             href="#home"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg font-bold text-white hover:text-electric hover:bg-navy-light transition-colors"
+            className="block px-3 py-2.5 rounded-lg text-base font-bold text-white hover:text-electric hover:bg-navy-light transition-colors"
           >
             Home
           </a>
@@ -526,7 +526,7 @@ export default function Navbar({
           <a
             href="#about"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+            className="block px-3 py-2.5 rounded-lg text-base font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
           >
             About
           </a>
@@ -535,7 +535,7 @@ export default function Navbar({
           <div>
             <button
               onClick={() => toggleMobileSubmenu('heating')}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
             >
               <span>Heating Services</span>
               <ChevronDown
@@ -552,7 +552,7 @@ export default function Navbar({
                     onSelectService?.('Boiler Installation & Repair');
                     setMobileMenuOpen(false);
                   }}
-                  className="block px-3 py-2 text-sm text-slate-300 hover:text-white"
+                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Boiler Installation & Repair
                 </a>
@@ -562,7 +562,7 @@ export default function Navbar({
                     onSelectService?.('Furnace Installation, Repair & Replacement');
                     setMobileMenuOpen(false);
                   }}
-                  className="block px-3 py-2 text-sm text-slate-300 hover:text-white"
+                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Furnace Installation, Repair & Replacement
                 </a>
@@ -572,7 +572,7 @@ export default function Navbar({
                     onSelectService?.('Water Heater Installation, Repair & Replacement');
                     setMobileMenuOpen(false);
                   }}
-                  className="block px-3 py-2 text-sm text-slate-300 hover:text-white"
+                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Water Heater Installation, Repair & Replacement
                 </a>
@@ -584,7 +584,7 @@ export default function Navbar({
           <div>
             <button
               onClick={() => toggleMobileSubmenu('cooling')}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
             >
               <span>Cooling Services</span>
               <ChevronDown
@@ -601,7 +601,7 @@ export default function Navbar({
                     onSelectService?.('Air Conditioner Installation & Replacement');
                     setMobileMenuOpen(false);
                   }}
-                  className="block px-3 py-2 text-sm text-slate-300 hover:text-white"
+                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Air Conditioner Installation & Replacement
                 </a>
@@ -611,7 +611,7 @@ export default function Navbar({
                     onSelectService?.('Air Conditioning Repair & Maintenance');
                     setMobileMenuOpen(false);
                   }}
-                  className="block px-3 py-2 text-sm text-slate-300 hover:text-white"
+                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Air Conditioning Repair & Maintenance
                 </a>
@@ -621,7 +621,7 @@ export default function Navbar({
                     onSelectService?.('Mini-Splits — Ductless Heat Pumps and Air Conditioners');
                     setMobileMenuOpen(false);
                   }}
-                  className="block px-3 py-2 text-sm text-slate-300 hover:text-white"
+                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Mini-Splits — Ductless Heat Pumps
                 </a>
@@ -633,7 +633,7 @@ export default function Navbar({
           <a
             href="#about"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+            className="block px-3 py-2.5 rounded-lg text-base font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
           >
             Residential
           </a>
@@ -642,7 +642,7 @@ export default function Navbar({
           <a
             href="#services"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+            className="block px-3 py-2.5 rounded-lg text-base font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
           >
             Commercial
           </a>
@@ -651,7 +651,7 @@ export default function Navbar({
           <div>
             <button
               onClick={() => toggleMobileSubmenu('areas')}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
             >
               <span>Service Areas</span>
               <ChevronDown
@@ -670,7 +670,7 @@ export default function Navbar({
                       onOpenArea?.(area);
                       setMobileMenuOpen(false);
                     }}
-                    className="block px-3 py-2 text-sm text-slate-300 hover:text-white"
+                    className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                   >
                     {area}
                   </a>
@@ -683,7 +683,7 @@ export default function Navbar({
           <div>
             <button
               onClick={() => toggleMobileSubmenu('photos')}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
             >
               <span>Project Photos</span>
               <ChevronDown
@@ -702,7 +702,7 @@ export default function Navbar({
                       onOpenPhotos?.(cat);
                       setMobileMenuOpen(false);
                     }}
-                    className="block px-3 py-2 text-sm text-slate-300 hover:text-white"
+                    className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                   >
                     {cat}
                   </a>
@@ -715,7 +715,7 @@ export default function Navbar({
           <div>
             <button
               onClick={() => toggleMobileSubmenu('more')}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
             >
               <span>More</span>
               <ChevronDown
@@ -729,7 +729,7 @@ export default function Navbar({
                 <a
                   href="#emergency"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm text-brightRed font-bold hover:text-white"
+                  className="block px-3 py-2 text-sm sm:text-base text-brightRed font-bold hover:text-white"
                 >
                   24/7 Emergency HVAC Services
                 </a>
@@ -739,7 +739,7 @@ export default function Navbar({
                     onSelectService?.('Air Duct and Ventilation Cleaning');
                     setMobileMenuOpen(false);
                   }}
-                  className="block px-3 py-2 text-sm text-slate-300 hover:text-white"
+                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Air Duct & Ventilation Cleaning
                 </a>
@@ -749,7 +749,7 @@ export default function Navbar({
                     onSelectService?.('Chimney Sweep');
                     setMobileMenuOpen(false);
                   }}
-                  className="block px-3 py-2 text-sm text-slate-300 hover:text-white"
+                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Chimney Sweep
                 </a>

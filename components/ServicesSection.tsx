@@ -162,7 +162,7 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
                     {/* Feature bullets */}
                     <ul className="space-y-1.5 mb-6 font-body">
                       {service.bullets.map((bullet, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
+                        <li key={idx} className="flex items-center gap-2 text-xs sm:text-xs text-slate-700 font-medium">
                           <CheckCircle2 className="w-3.5 h-3.5 text-hvacGreen flex-shrink-0" />
                           <span>{bullet}</span>
                         </li>
@@ -182,7 +182,7 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
 
                     <button
                       onClick={onOpenBooking}
-                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-hvacGreen text-white text-xs font-black shadow hover:bg-hvacGreen-hover active:scale-95 transition-all font-heading uppercase tracking-wider"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-hvacGreen text-white text-xs sm:text-xs font-black shadow hover:bg-hvacGreen-hover active:scale-95 transition-all font-heading uppercase tracking-wider"
                     >
                       <Calendar className="w-3.5 h-3.5" />
                       <span>Book Now</span>

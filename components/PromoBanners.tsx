@@ -41,21 +41,21 @@ export default function PromoBanners({ onOpenFinancing, onOpenMaintenance }: Pro
                   Flexible Financing Options for Your HVAC Needs
                 </h3>
 
-                <p className="text-sm sm:text-base text-slate-200 leading-relaxed mb-6 font-body">
+                <p className="text-base sm:text-base text-slate-200 leading-relaxed mb-6 font-body">
                   Explore convenient financing options for eligible heating and cooling installations, replacements, and home comfort upgrades.
                 </p>
 
                 {/* Financing Feature Highlights */}
                 <div className="space-y-2.5 mb-8 font-body">
-                  <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-100 font-medium">
+                  <div className="flex items-center gap-2.5 text-sm sm:text-sm text-slate-100 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-electric flex-shrink-0" />
                     <span>Convenient monthly payment arrangements</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-100 font-medium">
+                  <div className="flex items-center gap-2.5 text-sm sm:text-sm text-slate-100 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-electric flex-shrink-0" />
                     <span>Subject to approved credit via authorized lending partners</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-100 font-medium">
+                  <div className="flex items-center gap-2.5 text-sm sm:text-sm text-slate-100 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-electric flex-shrink-0" />
                     <span>Quick online pre-qualification without obligation</span>
                   </div>
@@ -66,7 +66,7 @@ export default function PromoBanners({ onOpenFinancing, onOpenMaintenance }: Pro
               <div>
                 <button
                   onClick={onOpenFinancing}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-electric hover:bg-electric-hover text-navy font-black text-xs sm:text-sm shadow-xl active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider min-h-[44px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-electric hover:bg-electric-hover text-navy font-black text-sm sm:text-sm shadow-xl active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider min-h-[44px]"
                 >
                   <span>Explore Financing Options</span>
                   <ArrowRight className="w-4 h-4 flex-shrink-0" />
@@ -102,25 +102,25 @@ export default function PromoBanners({ onOpenFinancing, onOpenMaintenance }: Pro
                   Protect Your Comfort With Our HVAC Service Agreements
                 </h3>
 
-                <p className="text-sm sm:text-base text-slate-200 leading-relaxed mb-6 font-body">
+                <p className="text-base sm:text-base text-slate-200 leading-relaxed mb-6 font-body">
                   Keep your heating and cooling systems running efficiently with scheduled maintenance and professional HVAC care.
                 </p>
 
                 {/* Maintenance Plan Feature Highlights */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 font-body">
-                  <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-100">
+                  <div className="flex items-start gap-2 text-sm sm:text-sm text-slate-100">
                     <CheckCircle2 className="w-4 h-4 text-brightYellow flex-shrink-0 mt-0.5" />
                     <span><strong className="font-heading font-bold text-white">Scheduled Maintenance:</strong> Pre-season tune-ups.</span>
                   </div>
-                  <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-100">
+                  <div className="flex items-start gap-2 text-sm sm:text-sm text-slate-100">
                     <CheckCircle2 className="w-4 h-4 text-brightYellow flex-shrink-0 mt-0.5" />
                     <span><strong className="font-heading font-bold text-white">Preventive Inspections:</strong> Early issue detection.</span>
                   </div>
-                  <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-100">
+                  <div className="flex items-start gap-2 text-sm sm:text-sm text-slate-100">
                     <CheckCircle2 className="w-4 h-4 text-brightYellow flex-shrink-0 mt-0.5" />
                     <span><strong className="font-heading font-bold text-white">Performance Checks:</strong> Lower utility bills.</span>
                   </div>
-                  <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-100">
+                  <div className="flex items-start gap-2 text-sm sm:text-sm text-slate-100">
                     <CheckCircle2 className="w-4 h-4 text-brightYellow flex-shrink-0 mt-0.5" />
                     <span><strong className="font-heading font-bold text-white">Convenient Scheduling:</strong> Priority appointment times.</span>
                   </div>
@@ -131,7 +131,7 @@ export default function PromoBanners({ onOpenFinancing, onOpenMaintenance }: Pro
               <div>
                 <button
                   onClick={onOpenMaintenance}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-xs sm:text-sm shadow-xl active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider min-h-[44px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-sm sm:text-sm shadow-xl active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider min-h-[44px]"
                 >
                   <span>View Service Agreements</span>
                   <ArrowRight className="w-4 h-4 flex-shrink-0" />

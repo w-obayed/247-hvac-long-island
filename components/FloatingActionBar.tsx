@@ -22,7 +22,7 @@ export default function FloatingActionBar({
         {/* Call Now Button */}
         <a
           href={PHONE_TEL}
-          className="flex-1 flex items-center justify-center gap-1 sm:gap-1.5 py-2 sm:py-2.5 px-1.5 xs:px-2.5 sm:px-3 rounded-lg bg-brightYellow text-navy font-black text-xs shadow-md active:scale-95 transition-transform font-heading uppercase tracking-wider min-w-0 truncate"
+          className="flex-1 flex items-center justify-center gap-1 sm:gap-1.5 py-2 sm:py-2.5 px-1.5 xs:px-2.5 sm:px-3 rounded-lg bg-brightYellow text-navy font-black text-xs sm:text-sm shadow-md active:scale-95 transition-transform font-heading uppercase tracking-wider min-w-0 truncate"
         >
           <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brightRed fill-current flex-shrink-0" />
           <span className="truncate">Call Now</span>
@@ -31,7 +31,7 @@ export default function FloatingActionBar({
         {/* Book Now Button */}
         <button
           onClick={onOpenBooking}
-          className="flex-1 flex items-center justify-center gap-1 sm:gap-1.5 py-2 sm:py-2.5 px-1.5 xs:px-2.5 sm:px-3 rounded-lg bg-hvacGreen text-white font-extrabold text-xs shadow-md active:scale-95 transition-transform font-heading uppercase tracking-wider min-w-0 truncate"
+          className="flex-1 flex items-center justify-center gap-1 sm:gap-1.5 py-2 sm:py-2.5 px-1.5 xs:px-2.5 sm:px-3 rounded-lg bg-hvacGreen text-white font-extrabold text-xs sm:text-sm shadow-md active:scale-95 transition-transform font-heading uppercase tracking-wider min-w-0 truncate"
         >
           <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
           <span className="truncate">Book Now</span>
@@ -40,7 +40,7 @@ export default function FloatingActionBar({
         {/* $100 OFF coupon quick trigger */}
         <button
           onClick={onOpenCoupon}
-          className="flex items-center justify-center gap-1 py-2 sm:py-2.5 px-2 sm:px-2.5 rounded-lg bg-white/10 text-brightYellow font-bold text-xs border border-brightYellow/40 active:scale-95 font-heading uppercase tracking-wider flex-shrink-0 whitespace-nowrap"
+          className="flex items-center justify-center gap-1 py-2 sm:py-2.5 px-2 sm:px-2.5 rounded-lg bg-white/10 text-brightYellow font-bold text-xs sm:text-sm border border-brightYellow/40 active:scale-95 font-heading uppercase tracking-wider flex-shrink-0 whitespace-nowrap"
           title="Claim $100 Coupon"
         >
           <Tag className="w-3.5 h-3.5 flex-shrink-0" />

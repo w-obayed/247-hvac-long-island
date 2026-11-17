@@ -26,10 +26,10 @@ export default function PromoOfferBar({ onOpenCoupon, onOpenQuote }: PromoOfferB
             {/* $100 Off Coupon */}
             <button
               onClick={onOpenCoupon}
-              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-md bg-gradient-to-r from-brightYellow to-amber-300 text-navy font-black hover:brightness-105 active:scale-95 transition-all shadow-sm font-heading uppercase tracking-wider text-[11px] sm:text-xs min-h-[32px]"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-md bg-gradient-to-r from-brightYellow to-amber-300 text-navy font-black hover:brightness-105 active:scale-95 transition-all shadow-sm font-heading uppercase tracking-wider text-xs sm:text-xs min-h-[32px]"
               title="Claim $100 Off HVAC Repair or Installation Coupon"
             >
-              <Tag className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+              <Tag className="w-3.5 h-3.5 flex-shrink-0" />
               <span>$100 Off Coupon</span>
             </button>
           </div>
@@ -57,7 +57,7 @@ export default function PromoOfferBar({ onOpenCoupon, onOpenQuote }: PromoOfferB
           <div className="flex items-center gap-2 w-full sm:w-auto justify-center md:justify-end">
             <button
               onClick={onOpenQuote}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2 sm:py-1.5 rounded-md bg-royal hover:bg-royal-hover text-white font-bold text-xs uppercase tracking-wider shadow transition-all duration-200 font-heading min-h-[36px]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2 sm:py-1.5 rounded-md bg-royal hover:bg-royal-hover text-white font-bold text-xs sm:text-xs uppercase tracking-wider shadow transition-all duration-200 font-heading min-h-[36px]"
             >
               <span>Get Your Free Estimate</span>
               <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />

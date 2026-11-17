@@ -166,14 +166,14 @@ export default function TestimonialsSection() {
                 <span className="text-xs text-slate-400 font-medium font-body">{REVIEWS[currentIndex].date}</span>
               </div>
 
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed italic mb-6 font-body">
+              <p className="text-base sm:text-base text-slate-700 leading-relaxed italic mb-6 font-body">
                 &ldquo;{REVIEWS[currentIndex].comment}&rdquo;
               </p>
 
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <div>
-                  <h4 className="font-bold text-navy text-sm sm:text-base font-heading">{REVIEWS[currentIndex].name}</h4>
-                  <p className="text-xs text-slate-500 font-body">{REVIEWS[currentIndex].location}</p>
+                  <h4 className="font-bold text-navy text-base sm:text-base font-heading">{REVIEWS[currentIndex].name}</h4>
+                  <p className="text-xs sm:text-sm text-slate-500 font-body">{REVIEWS[currentIndex].location}</p>
                   <span className="text-xs font-semibold text-royal mt-0.5 block font-heading uppercase tracking-wider">
                     {REVIEWS[currentIndex].service}
                   </span>

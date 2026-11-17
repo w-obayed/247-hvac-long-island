@@ -53,19 +53,19 @@ export default function HeroSection({
           {/* Left Column: Heading, Description, Trust Highlights, CTA Buttons */}
           <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
             {/* Small Badge */}
-            <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-[11px] sm:text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
+            <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs sm:text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
               <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
               <span className="truncate sm:overflow-visible">#1 HVAC Emergency Services in Long Island</span>
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] sm:leading-[1.12] mb-3.5 sm:mb-5 text-white font-heading">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] sm:leading-[1.12] mb-3.5 sm:mb-5 text-white font-heading">
               Trusted HVAC Repair in <br />
               <span className="text-[#00BFFF] drop-shadow-sm">Long Island, NY</span>
             </h1>
 
             {/* Supporting Description */}
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-200 max-w-2xl font-normal leading-relaxed mb-5 sm:mb-6 font-body">
+            <p className="text-base sm:text-base md:text-lg lg:text-xl text-slate-200 max-w-2xl font-normal leading-relaxed mb-5 sm:mb-6 font-body">
               Is your heating or cooling system not working when you need it most? Our experienced technicians provide fast and dependable HVAC repair in Long Island for residential and commercial properties.
             </p>
 
@@ -135,7 +135,7 @@ export default function HeroSection({
             </div>
 
             {/* Quick trust reassurance footer */}
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mt-5 sm:mt-6 text-xs text-slate-300 font-body">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mt-5 sm:mt-6 text-xs sm:text-sm text-slate-300 font-body">
               <div className="flex items-center gap-1 text-brightYellow flex-shrink-0">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current text-brightYellow" />

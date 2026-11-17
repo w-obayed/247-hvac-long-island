@@ -125,7 +125,7 @@ export default function BrandLogo({
         </div>
 
         {showTagline && (
-          <div className="flex items-center gap-1.5 text-[11px] md:text-xs font-semibold mt-0.5 tracking-tight font-heading">
+          <div className="flex items-center gap-1.5 text-xs md:text-xs font-semibold mt-0.5 tracking-tight font-heading">
             <span className="text-brightRed">Heating</span>
             <span className="text-slate-400">•</span>
             <span className="text-royal">Cooling</span>

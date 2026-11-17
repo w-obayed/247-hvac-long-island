@@ -52,17 +52,17 @@ export default function WhyChooseUsSection() {
                   <ShieldCheck className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-white font-heading leading-tight">
+                  <h4 className="text-base sm:text-lg font-bold text-white font-heading leading-tight">
                     100% Satisfaction Commitment
                   </h4>
-                  <p className="text-xs text-slate-300 font-body mt-0.5">
+                  <p className="text-xs sm:text-sm text-slate-300 font-body mt-0.5">
                     Licensed, insured, and certified Long Island technicians
                   </p>
                 </div>
               </div>
 
               {/* Status Footer */}
-              <div className="pt-3.5 border-t border-white/10 flex items-center justify-between text-xs font-heading relative z-10">
+              <div className="pt-3.5 border-t border-white/10 flex items-center justify-between text-xs sm:text-sm font-heading relative z-10">
                 <span className="flex items-center gap-1.5 text-brightYellow font-bold">
                   <Star className="w-3.5 h-3.5 fill-current text-brightYellow" />
                   <span>5.0 Star Rated Service</span>
@@ -99,13 +99,13 @@ export default function WhyChooseUsSection() {
                 <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 font-heading">
                   Professional Service
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
+                <p className="text-sm sm:text-sm text-slate-600 leading-relaxed font-body">
                   Polite, uniformed, background-checked technicians who arrive promptly and treat your home with total respect.
                 </p>
               </div>
 
               {/* Guaranteed Standards Indicator */}
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-bold text-royal font-heading">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs sm:text-xs font-bold text-royal font-heading">
                 <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0" />
                 <span>Guaranteed Standards</span>
               </div>
@@ -133,13 +133,13 @@ export default function WhyChooseUsSection() {
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-2 font-heading">
                   Expertise & Reliability
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-body">
+                <p className="text-sm sm:text-sm text-slate-200 leading-relaxed font-body">
                   Over 30 years troubleshooting and servicing complex heating, ventilation, and air conditioning systems.
                 </p>
               </div>
 
               {/* Guaranteed Standards Indicator */}
-              <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-1.5 text-xs font-bold text-electric font-heading relative z-10">
+              <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-1.5 text-xs sm:text-xs font-bold text-electric font-heading relative z-10">
                 <CheckCircle2 className="w-4 h-4 text-electric flex-shrink-0" />
                 <span>Guaranteed Standards</span>
               </div>
@@ -171,13 +171,13 @@ export default function WhyChooseUsSection() {
                 <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 font-heading">
                   24/7 Emergency Availability
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
+                <p className="text-sm sm:text-sm text-slate-600 leading-relaxed font-body">
                   Round-the-clock emergency dispatch across Long Island. No overtime surcharges on critical diagnostic calls.
                 </p>
               </div>
 
               {/* Guaranteed Standards Indicator */}
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-bold text-brightRed font-heading">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs sm:text-xs font-bold text-brightRed font-heading">
                 <CheckCircle2 className="w-4 h-4 text-brightRed flex-shrink-0" />
                 <span>Guaranteed Standards</span>
               </div>
@@ -208,13 +208,13 @@ export default function WhyChooseUsSection() {
                 <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 font-heading">
                   Quality Workmanship
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
+                <p className="text-sm sm:text-sm text-slate-600 leading-relaxed font-body">
                   High-grade OEM replacement parts, factory warranty protection, and precision code-compliant installations.
                 </p>
               </div>
 
               {/* Guaranteed Standards Indicator */}
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-bold text-hvacGreen font-heading">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs sm:text-xs font-bold text-hvacGreen font-heading">
                 <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0" />
                 <span>Guaranteed Standards</span>
               </div>
