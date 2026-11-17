@@ -134,7 +134,7 @@ export default function TestimonialsSection() {
                   </div>
 
                   {/* Customer Review Description - Inter */}
-                  <p className="text-sm text-slate-700 leading-relaxed italic mb-6 font-body">
+                  <p className="text-base text-slate-700 leading-relaxed italic mb-6 font-body">
                     &ldquo;{review.comment}&rdquo;
                   </p>
                 </div>
@@ -166,7 +166,7 @@ export default function TestimonialsSection() {
                 <span className="text-xs text-slate-400 font-medium font-body">{REVIEWS[currentIndex].date}</span>
               </div>
 
-              <p className="text-base sm:text-base text-slate-700 leading-relaxed italic mb-6 font-body">
+              <p className="text-base text-slate-700 leading-relaxed italic mb-6 font-body">
                 &ldquo;{REVIEWS[currentIndex].comment}&rdquo;
               </p>
 

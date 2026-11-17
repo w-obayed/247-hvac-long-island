@@ -76,7 +76,7 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
               Your Trusted HVAC Contractors in <span className="text-royal">Long Island</span>
             </h2>
 
-            <p className="text-base sm:text-base lg:text-lg text-slate-600 leading-relaxed mb-5 sm:mb-6 font-body">
+            <p className="text-base text-slate-600 leading-relaxed mb-5 sm:mb-6 font-body">
               For over 30 years, our team has been serving homes and businesses in Long Island. We are committed to providing dependable heating and cooling solutions with a strong focus on customer service and quality workmanship.
             </p>
 
@@ -134,7 +134,7 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
                   <h4 className="font-extrabold text-navy text-sm sm:text-sm font-heading leading-tight truncate sm:overflow-visible">
                     Years Serving Long Island
                   </h4>
-                  <p className="text-xs sm:text-xs text-slate-500 font-body leading-tight mt-0.5">
+                  <p className="text-base text-slate-500 font-body leading-tight mt-0.5">
                     Fast, local radio-dispatched service trucks 24/7
                   </p>
                 </div>
@@ -163,10 +163,10 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
 
                     {/* Right: Title & Description */}
                     <div className="flex flex-col min-w-0 flex-1">
-                      <h3 className="text-base sm:text-base font-bold text-navy font-heading mb-0.5 sm:mb-1 leading-snug">
+                      <h3 className="text-[24px] font-bold text-navy font-heading mb-0.5 sm:mb-1 leading-snug">
                         {item.title}
                       </h3>
-                      <p className="text-sm sm:text-[13px] lg:text-xs xl:text-[13px] text-slate-600 leading-relaxed font-body">
+                      <p className="text-base text-slate-600 leading-relaxed font-body">
                         {item.description}
                       </p>
                     </div>

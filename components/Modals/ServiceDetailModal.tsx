@@ -49,7 +49,7 @@ export default function ServiceDetailModal({
             <span className="inline-block px-2.5 py-0.5 rounded bg-royal text-white text-[11px] font-extrabold uppercase tracking-wider mb-1.5 font-heading">
               {service.category} Solution
             </span>
-            <h3 className="text-xl sm:text-2xl font-black leading-tight drop-shadow-md font-heading">
+            <h3 className="text-[24px] font-black leading-tight drop-shadow-md font-heading">
               {service.title}
             </h3>
           </div>

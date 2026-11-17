@@ -111,7 +111,7 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight mb-4 font-heading">
             Our Residential & Commercial HVAC Services
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-body">
+          <p className="text-base text-slate-600 leading-relaxed font-body">
             We provide a full range of heating and cooling services to keep homes and businesses comfortable throughout the year.
           </p>
         </div>
@@ -152,10 +152,10 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
                 {/* Service Card Content */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl font-bold text-navy mb-2.5 group-hover:text-royal transition-colors font-heading">
+                    <h3 className="text-[24px] font-bold text-navy mb-2.5 group-hover:text-royal transition-colors font-heading">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed mb-4 font-body">
+                    <p className="text-base text-slate-600 leading-relaxed mb-4 font-body">
                       {service.description}
                     </p>
 

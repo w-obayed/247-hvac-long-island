@@ -95,7 +95,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
               </h2>
 
               {/* Description */}
-              <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-body mb-6">
+              <p className="text-base text-slate-200 leading-relaxed font-body mb-6">
                 We proudly serve Nassau, Queens, Suffolk County, Brooklyn, Manhattan and surrounding Long Island communities with 24/7 radio-dispatched mobile units.
               </p>
             </div>
@@ -135,7 +135,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                       <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-royal text-white text-[11px] sm:text-[10px] font-black uppercase tracking-wider font-heading mb-1 shadow-sm">
                         <span>Primary Service Hub</span>
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-black text-navy group-hover:text-royal transition-colors font-heading leading-tight truncate sm:overflow-visible">
+                      <h3 className="text-[24px] font-black text-navy group-hover:text-royal transition-colors font-heading leading-tight truncate sm:overflow-visible">
                         {nassauArea.name}
                       </h3>
                     </div>
@@ -148,7 +148,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                 </div>
 
                 {/* Description */}
-                <p className="text-sm sm:text-sm text-slate-600 leading-relaxed mb-5 font-body">
+                <p className="text-base text-slate-600 leading-relaxed mb-5 font-body">
                   {nassauArea.description}
                 </p>
 
@@ -227,12 +227,12 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                 </div>
 
                 {/* Region Title */}
-                <h3 className="text-lg font-bold text-navy group-hover:text-royal transition-colors mb-2 font-heading leading-tight">
+                <h3 className="text-[24px] font-bold text-navy group-hover:text-royal transition-colors mb-2 font-heading leading-tight">
                   {area.name}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm sm:text-xs text-slate-600 leading-relaxed mb-4 font-body">
+                <p className="text-base text-slate-600 leading-relaxed mb-4 font-body">
                   {area.description}
                 </p>
 

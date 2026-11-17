@@ -29,7 +29,7 @@ export default function FinalCtaBanner({ onOpenBooking, onOpenQuote }: FinalCtaB
         </h2>
 
         {/* Description - Inter */}
-        <p className="text-base sm:text-lg md:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed mb-8 font-body">
+        <p className="text-base text-slate-200 max-w-2xl mx-auto leading-relaxed mb-8 font-body">
           Contact our HVAC professionals today for dependable heating and cooling services, emergency repairs, installations, and maintenance.
         </p>
 

@@ -50,7 +50,7 @@ export default function BookingModal({
               </svg>
             </div>
             <div>
-              <h3 className="text-lg font-black tracking-tight">Schedule HVAC Service</h3>
+              <h3 className="text-[24px] font-black tracking-tight">Schedule HVAC Service</h3>
               <p className="text-xs text-electric">Fast Dispatch Across Long Island, NY</p>
             </div>
           </div>

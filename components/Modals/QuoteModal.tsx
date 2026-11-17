@@ -45,7 +45,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
               24/7
             </div>
             <div>
-              <h3 className="text-lg font-black tracking-tight">Instant HVAC Quote Calculator</h3>
+              <h3 className="text-[24px] font-black tracking-tight">Instant HVAC Quote Calculator</h3>
               <p className="text-xs text-electric">Fast, honest pricing for Long Island properties</p>
             </div>
           </div>

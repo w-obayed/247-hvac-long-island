@@ -30,7 +30,7 @@ export default function EmergencySection({ onOpenBooking }: EmergencySectionProp
                 24/7 Emergency HVAC Service in <span className="text-brightRed">Long Island</span>
               </h2>
 
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl mb-6 font-body">
+              <p className="text-base text-slate-200 leading-relaxed max-w-2xl mb-6 font-body">
                 Heating or cooling emergency? Our team is available around the clock to help restore comfort to your home or business. Fast response times across Nassau County, Suffolk County, and NYC boroughs.
               </p>
 

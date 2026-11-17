@@ -29,7 +29,7 @@ export default function ServiceAreaModal({
               <CountyEmblem type={area.id as any} className="w-full h-full" />
             </div>
             <div>
-              <h3 className="text-xl font-black tracking-tight font-heading">{area.name}</h3>
+              <h3 className="text-[24px] font-black tracking-tight font-heading">{area.name}</h3>
               <p className="text-xs text-electric font-semibold font-heading">{area.dispatchTime}</p>
             </div>
           </div>

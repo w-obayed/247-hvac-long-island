@@ -65,7 +65,7 @@ export default function HeroSection({
             </h1>
 
             {/* Supporting Description */}
-            <p className="text-base sm:text-base md:text-lg lg:text-xl text-slate-200 max-w-2xl font-normal leading-relaxed mb-5 sm:mb-6 font-body">
+            <p className="text-base text-slate-200 max-w-2xl font-normal leading-relaxed mb-5 sm:mb-6 font-body">
               Is your heating or cooling system not working when you need it most? Our experienced technicians provide fast and dependable HVAC repair in Long Island for residential and commercial properties.
             </p>
 
@@ -153,7 +153,7 @@ export default function HeroSection({
               <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
                 <div>
                   <span className="text-xs uppercase tracking-wider font-extrabold text-electric font-heading">Fast Dispatch</span>
-                  <h3 className="text-lg font-bold text-white font-heading">Emergency Mobile Units</h3>
+                  <h3 className="text-[24px] font-bold text-white font-heading">Emergency Mobile Units</h3>
                 </div>
                 <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-hvacGreen/20 text-hvacGreen border border-hvacGreen/30 text-xs font-bold font-heading">
                   <span className="w-2 h-2 rounded-full bg-hvacGreen animate-pulse" />

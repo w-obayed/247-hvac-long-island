@@ -70,7 +70,7 @@ export default function MaintenanceModal({
               </svg>
             </div>
             <div>
-              <h3 className="text-lg font-black tracking-tight">HVAC Service Agreements</h3>
+              <h3 className="text-[24px] font-black tracking-tight">HVAC Service Agreements</h3>
               <p className="text-xs text-slate-200">Year-Round Peace of Mind & Guaranteed Equipment Longevity</p>
             </div>
           </div>

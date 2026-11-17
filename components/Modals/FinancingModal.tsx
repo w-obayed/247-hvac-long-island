@@ -38,7 +38,7 @@ export default function FinancingModal({
               </svg>
             </div>
             <div>
-              <h3 className="text-lg font-black tracking-tight">HVAC Financing Solutions</h3>
+              <h3 className="text-[24px] font-black tracking-tight">HVAC Financing Solutions</h3>
               <p className="text-xs text-electric">0% APR & Low Monthly Payment Plans</p>
             </div>
           </div>

@@ -23,7 +23,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
             <div className="mb-4">
               <BrandLogo variant="dark" size="md" />
             </div>
-            <p className="text-sm sm:text-xs text-slate-300 leading-relaxed mb-6 font-body">
+            <p className="text-base text-slate-300 leading-relaxed mb-6 font-body">
               Your trusted HVAC experts in Long Island, NY. Providing reliable heating, cooling, and air conditioning services for homes and businesses with upfront pricing and 24/7 emergency dispatch.
             </p>
             {/* Social Media Icons */}

@@ -33,7 +33,7 @@ export default function CouponModal({
             <svg className="w-5 h-5 text-brightYellow" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm4.707 3.707a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L8.414 9H13a1 1 0 100-2H8.414l1.293-1.293z" clipRule="evenodd" />
             </svg>
-            <h3 className="font-black text-base uppercase tracking-wider">
+            <h3 className="font-black text-[24px] uppercase tracking-wider">
               Exclusive Web Savings
             </h3>
           </div>

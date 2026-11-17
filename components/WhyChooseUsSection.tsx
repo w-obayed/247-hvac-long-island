@@ -39,7 +39,7 @@ export default function WhyChooseUsSection() {
             </h2>
 
             {/* Introductory Description */}
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 font-body">
+            <p className="text-base text-slate-600 leading-relaxed mb-8 font-body">
               Delivering prompt, honest, and high-efficiency climate solutions backed by decades of proven customer satisfaction.
             </p>
 
@@ -55,7 +55,7 @@ export default function WhyChooseUsSection() {
                   <h4 className="text-base sm:text-lg font-bold text-white font-heading leading-tight">
                     100% Satisfaction Commitment
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-300 font-body mt-0.5">
+                  <p className="text-base text-slate-300 font-body mt-0.5">
                     Licensed, insured, and certified Long Island technicians
                   </p>
                 </div>
@@ -96,10 +96,10 @@ export default function WhyChooseUsSection() {
                 <div className="h-1 bg-gradient-to-r from-royal to-electric w-12 group-hover:w-full transition-all duration-500 rounded-full mb-4" />
 
                 {/* Title & Description */}
-                <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 font-heading">
+                <h3 className="text-[24px] font-bold text-navy mb-2 font-heading">
                   Professional Service
                 </h3>
-                <p className="text-sm sm:text-sm text-slate-600 leading-relaxed font-body">
+                <p className="text-base text-slate-600 leading-relaxed font-body">
                   Polite, uniformed, background-checked technicians who arrive promptly and treat your home with total respect.
                 </p>
               </div>
@@ -130,10 +130,10 @@ export default function WhyChooseUsSection() {
                 <div className="h-1 bg-gradient-to-r from-electric to-royal w-12 group-hover:w-full transition-all duration-500 rounded-full mb-4" />
 
                 {/* Title & Description */}
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 font-heading">
+                <h3 className="text-[24px] font-bold text-white mb-2 font-heading">
                   Expertise & Reliability
                 </h3>
-                <p className="text-sm sm:text-sm text-slate-200 leading-relaxed font-body">
+                <p className="text-base text-slate-200 leading-relaxed font-body">
                   Over 30 years troubleshooting and servicing complex heating, ventilation, and air conditioning systems.
                 </p>
               </div>
@@ -168,10 +168,10 @@ export default function WhyChooseUsSection() {
                 <div className="h-1 bg-gradient-to-r from-brightRed to-amber-500 w-12 group-hover:w-full transition-all duration-500 rounded-full mb-4" />
 
                 {/* Title & Description */}
-                <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 font-heading">
+                <h3 className="text-[24px] font-bold text-navy mb-2 font-heading">
                   24/7 Emergency Availability
                 </h3>
-                <p className="text-sm sm:text-sm text-slate-600 leading-relaxed font-body">
+                <p className="text-base text-slate-600 leading-relaxed font-body">
                   Round-the-clock emergency dispatch across Long Island. No overtime surcharges on critical diagnostic calls.
                 </p>
               </div>
@@ -205,10 +205,10 @@ export default function WhyChooseUsSection() {
                 <div className="h-1 bg-gradient-to-r from-hvacGreen to-brightYellow w-12 group-hover:w-full transition-all duration-500 rounded-full mb-4" />
 
                 {/* Title & Description */}
-                <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 font-heading">
+                <h3 className="text-[24px] font-bold text-navy mb-2 font-heading">
                   Quality Workmanship
                 </h3>
-                <p className="text-sm sm:text-sm text-slate-600 leading-relaxed font-body">
+                <p className="text-base text-slate-600 leading-relaxed font-body">
                   High-grade OEM replacement parts, factory warranty protection, and precision code-compliant installations.
                 </p>
               </div>

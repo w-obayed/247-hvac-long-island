@@ -37,11 +37,11 @@ export default function PromoBanners({ onOpenFinancing, onOpenMaintenance }: Pro
                   <span>HVAC Equipment Financing</span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-3 font-heading leading-tight">
+                <h3 className="text-[24px] font-black text-white tracking-tight mb-3 font-heading leading-tight">
                   Flexible Financing Options for Your HVAC Needs
                 </h3>
 
-                <p className="text-base sm:text-base text-slate-200 leading-relaxed mb-6 font-body">
+                <p className="text-base text-slate-200 leading-relaxed mb-6 font-body">
                   Explore convenient financing options for eligible heating and cooling installations, replacements, and home comfort upgrades.
                 </p>
 
@@ -98,11 +98,11 @@ export default function PromoBanners({ onOpenFinancing, onOpenMaintenance }: Pro
                   <span>Annual Maintenance Protection</span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-3 font-heading leading-tight">
+                <h3 className="text-[24px] font-black text-white tracking-tight mb-3 font-heading leading-tight">
                   Protect Your Comfort With Our HVAC Service Agreements
                 </h3>
 
-                <p className="text-base sm:text-base text-slate-200 leading-relaxed mb-6 font-body">
+                <p className="text-base text-slate-200 leading-relaxed mb-6 font-body">
                   Keep your heating and cooling systems running efficiently with scheduled maintenance and professional HVAC care.
                 </p>
 
