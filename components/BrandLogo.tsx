@@ -12,20 +12,20 @@ export default function BrandLogo({
   size = 'md',
   className = '',
 }: BrandLogoProps) {
-  // Proportional responsive sizing matching the exact 1024x379 aspect ratio
+  // Proportional responsive sizing matching the exact 1024x682 aspect ratio (1.5:1)
   const sizeClasses = {
-    sm: 'h-10 sm:h-11 w-auto',
-    md: 'h-12 sm:h-14 md:h-16 w-auto',
-    lg: 'h-14 sm:h-16 md:h-20 w-auto',
+    sm: 'h-11 sm:h-12 w-auto',
+    md: 'h-14 sm:h-16 md:h-20 w-auto',
+    lg: 'h-16 sm:h-20 md:h-24 w-auto',
   };
 
   return (
     <div className={`inline-flex items-center select-none ${className}`}>
       <Image
-        src="/images/logo.webp"
+        src="/images/logo.png"
         alt="247 HVAC of Long Island"
         width={1024}
-        height={379}
+        height={682}
         priority
         className={`${sizeClasses[size]} max-w-full object-contain`}
       />

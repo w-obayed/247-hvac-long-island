@@ -17,6 +17,7 @@ const robotoCondensed = Roboto_Condensed({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.247hvaclongisland.com'),
   title: '247 HVAC of Long Island | Heating • Cooling • Air Conditioners Repair',
   description:
     'Trusted HVAC repair, replacement, and installation in Long Island, NY. Serving Nassau County, Queens, Suffolk County, Brooklyn & Manhattan 24/7. Call (516) 717-7515 for emergency service & free quotes.',
@@ -31,12 +32,31 @@ export const metadata: Metadata = {
     'Ductless mini split Long Island',
   ],
   authors: [{ name: '247 HVAC of Long Island' }],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+      { url: '/icon.png', type: 'image/png', sizes: '192x192' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     title: '247 HVAC of Long Island | Trusted HVAC Repair & Installation',
     description:
       'Fast, dependable heating and cooling services for residential and commercial properties across Long Island. Call (516) 717-7515.',
     url: 'https://www.247hvaclongisland.com',
     siteName: '247 HVAC of Long Island',
+    images: [
+      {
+        url: '/images/logo.png',
+        width: 1024,
+        height: 682,
+        alt: '247 HVAC of Long Island Official Logo',
+      },
+    ],
     locale: 'en_US',
     type: 'website',
   },
@@ -52,6 +72,7 @@ export default function RootLayout({
     '@type': 'HVACBusiness',
     name: '247 HVAC of Long Island',
     image: 'https://www.247hvaclongisland.com/images/hero-hvac.jpg',
+    logo: 'https://www.247hvaclongisland.com/images/logo.png',
     telephone: '+1-516-717-7515',
     email: 'info@247hvaclongisland.com',
     address: {
