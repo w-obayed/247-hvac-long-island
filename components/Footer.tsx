@@ -14,7 +14,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-[#061A40] text-slate-300 pt-16 pb-12 border-t border-navy-light select-none">
+    <footer id="contact" className="bg-[#061A40] text-slate-300 pt-16 pb-28 md:pb-12 border-t border-navy-light select-none">
       <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         {/* 5-Column Desktop Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
