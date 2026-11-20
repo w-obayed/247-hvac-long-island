@@ -36,17 +36,17 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-dark/80 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm animate-fadeIn">
       <div className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
         {/* Header */}
-        <div className="bg-[#061A40] text-white p-5 flex items-center justify-between">
+        <div className="bg-[#10243E] text-white p-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-royal text-white flex items-center justify-center font-black">
+            <div className="w-10 h-10 rounded-lg bg-[#0B82C3] text-white flex items-center justify-center font-black">
               24/7
             </div>
             <div>
               <h3 className="text-[24px] font-black tracking-tight">Instant HVAC Quote Calculator</h3>
-              <p className="text-xs text-electric">Fast, honest pricing for Long Island properties</p>
+              <p className="text-xs text-[#0B82C3]">Fast, honest pricing for Long Island properties</p>
             </div>
           </div>
           <button
@@ -61,26 +61,26 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
         <div className="p-6">
           {submitted ? (
             <div className="text-center py-8 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-green-100 text-hvacGreen flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 rounded-full bg-[#0B82C3]/10 text-[#0B82C3] flex items-center justify-center mx-auto">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h4 className="text-2xl font-black text-navy">Quote Request Received!</h4>
+              <h4 className="text-2xl font-black text-[#10243E]">Quote Request Received!</h4>
               <p className="text-sm text-slate-600 max-w-md mx-auto">
-                Thank you, <strong className="text-navy">{formData.name || 'Valued Customer'}</strong>.
+                Thank you, <strong className="text-[#10243E]">{formData.name || 'Valued Customer'}</strong>.
                 Our Long Island technician is reviewing your {service} request and will call you at{' '}
-                <strong className="text-royal">{formData.phone || '(516) 717-7515'}</strong> shortly with your accurate estimate.
+                <strong className="text-[#0B82C3]">{formData.phone || '(516) 717-7515'}</strong> shortly with your accurate estimate.
               </p>
-              <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-left text-xs text-amber-900">
+              <div className="p-4 rounded-xl bg-[#FFF1EB] border border-[#F44816]/30 text-left text-xs text-slate-800">
                 <span className="font-bold">Need emergency service right away?</span> Call our 24/7 dispatch desk directly at{' '}
-                <a href="tel:5167177515" className="font-black text-brightRed underline">
+                <a href="tel:5167177515" className="font-black text-[#F44816] underline">
                   (516) 717-7515
                 </a>.
               </div>
               <button
                 onClick={resetAndClose}
-                className="mt-4 px-6 py-2.5 rounded-lg bg-navy text-white font-bold text-sm hover:bg-navy-light"
+                className="mt-4 px-6 py-2.5 rounded-lg bg-[#10243E] text-white font-bold text-sm hover:bg-[#0B82C3] transition-colors"
               >
                 Close
               </button>
@@ -89,7 +89,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
             <div>
               {/* Step indicator */}
               <div className="flex items-center justify-between mb-6 pb-3 border-b border-slate-100">
-                <span className="text-xs font-black uppercase tracking-wider text-royal">
+                <span className="text-xs font-black uppercase tracking-wider text-[#0B82C3]">
                   Step {step} of 2: {step === 1 ? 'Project Scope' : 'Your Contact Details'}
                 </span>
                 <span className="text-xs font-bold text-slate-400">
@@ -106,7 +106,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                     <select
                       value={service}
                       onChange={(e) => setService(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 bg-white text-sm font-semibold text-slate-800 focus:outline-none focus:border-royal focus:ring-1 focus:ring-royal"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 bg-white text-sm font-semibold text-slate-800 focus:outline-none focus:border-[#0B82C3]"
                     >
                       <option>Air Conditioners – Installation & Replacement</option>
                       <option>AC Repair – Repair & Maintenance</option>
@@ -126,7 +126,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                       <select
                         value={propertyType}
                         onChange={(e) => setPropertyType(e.target.value)}
-                        className="w-full px-3 py-2.5 rounded-lg border border-slate-300 bg-white text-xs sm:text-sm font-medium text-slate-800 focus:outline-none focus:border-royal"
+                        className="w-full px-3 py-2.5 rounded-lg border border-slate-300 bg-white text-xs sm:text-sm font-medium text-slate-800 focus:outline-none focus:border-[#0B82C3]"
                       >
                         <option>Single Family Home</option>
                         <option>Multi-Family / Duplex</option>
@@ -142,7 +142,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                       <select
                         value={systemAge}
                         onChange={(e) => setSystemAge(e.target.value)}
-                        className="w-full px-3 py-2.5 rounded-lg border border-slate-300 bg-white text-xs sm:text-sm font-medium text-slate-800 focus:outline-none focus:border-royal"
+                        className="w-full px-3 py-2.5 rounded-lg border border-slate-300 bg-white text-xs sm:text-sm font-medium text-slate-800 focus:outline-none focus:border-[#0B82C3]"
                       >
                         <option>Under 5 Years</option>
                         <option>5 - 10 Years</option>
@@ -164,7 +164,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                           onClick={() => setUrgency(u)}
                           className={`p-2.5 rounded-lg text-xs font-bold text-center border transition-all ${
                             urgency === u
-                              ? 'bg-royal/10 border-royal text-royal shadow-sm'
+                              ? 'bg-[#0B82C3]/10 border-[#0B82C3] text-[#0B82C3] shadow-sm'
                               : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                           }`}
                         >
@@ -177,7 +177,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="w-full mt-4 py-3 rounded-lg bg-royal hover:bg-royal-hover text-white font-black text-sm shadow-md transition-all flex items-center justify-center gap-2"
+                    className="w-full mt-4 py-3 rounded-lg bg-[#0B82C3] hover:bg-[#086396] text-white font-black text-sm shadow-md transition-all flex items-center justify-center gap-2"
                   >
                     <span>Continue to Contact Info</span>
                     <span>→</span>
@@ -195,7 +195,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                       placeholder="e.g. John Miller"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-royal"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#0B82C3]"
                     />
                   </div>
 
@@ -210,7 +210,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                         placeholder="(516) 000-0000"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-royal"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#0B82C3]"
                       />
                     </div>
 
@@ -223,7 +223,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                         placeholder="e.g. Garden City, Huntington"
                         value={formData.town}
                         onChange={(e) => setFormData({ ...formData, town: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-royal"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#0B82C3]"
                       />
                     </div>
                   </div>
@@ -237,7 +237,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                       placeholder="john@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-royal"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#0B82C3]"
                     />
                   </div>
 
@@ -250,7 +250,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                       placeholder="Describe symptoms: strange noise, no cold air, leaking water, quote for new system..."
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      className="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-royal resize-none"
+                      className="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#0B82C3] resize-none"
                     />
                   </div>
 
@@ -258,13 +258,13 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                     <button
                       type="button"
                       onClick={() => setStep(1)}
-                      className="px-4 py-3 rounded-lg border border-slate-300 text-slate-700 font-bold text-sm hover:bg-slate-50"
+                      className="px-4 py-3 rounded-lg border border-slate-300 text-slate-700 font-bold text-sm hover:bg-slate-50 transition-colors"
                     >
                       ← Back
                     </button>
                     <button
                       type="submit"
-                      className="flex-1 py-3 rounded-lg bg-hvacGreen hover:bg-hvacGreen-hover text-white font-black text-sm shadow-md transition-all"
+                      className="flex-1 py-3 rounded-lg bg-[#F44816] hover:bg-[#d93d10] text-white font-black text-sm shadow-md transition-all"
                     >
                       Calculate & Request Free Estimate
                     </button>

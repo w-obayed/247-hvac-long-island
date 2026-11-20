@@ -22,12 +22,12 @@ export default function FinancingModal({
   const monthly12 = Math.round(amount / 12);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-dark/80 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm animate-fadeIn">
       <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#061A40] to-[#0066CC] text-white p-5 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-[#10243E] to-[#0B82C3] text-white p-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-electric">
+            <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
@@ -38,8 +38,8 @@ export default function FinancingModal({
               </svg>
             </div>
             <div>
-              <h3 className="text-[24px] font-black tracking-tight">HVAC Financing Solutions</h3>
-              <p className="text-xs text-electric">0% APR & Low Monthly Payment Plans</p>
+              <h3 className="text-[24px] font-black tracking-tight">Flexible Financing Options for Your HVAC Needs</h3>
+              <p className="text-xs text-slate-200">Manageable Monthly Payments & Competitive Rates</p>
             </div>
           </div>
           <button
@@ -53,16 +53,14 @@ export default function FinancingModal({
         {/* Content */}
         <div className="p-6 space-y-6">
           <p className="text-sm text-slate-600 leading-relaxed">
-            Don&apos;t let unexpected HVAC breakdowns compromise your comfort. 247 HVAC of Long Island
-            partners with top home improvement lenders to provide fast, same-day credit approvals
-            with $0 down options.
+            Get flexible financing options for your equipment, installation, and services. We make it easier for you to afford what you need without compromising on quality. Enjoy manageable monthly payments and competitive rates to ensure that you can get the best solutions without the financial strain.
           </p>
 
           {/* Interactive Calculator Slider */}
           <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
             <div className="flex justify-between items-center mb-2">
               <span className="text-xs font-bold uppercase text-slate-500">Estimated Project Total</span>
-              <span className="text-2xl font-black text-navy">${amount.toLocaleString()}</span>
+              <span className="text-2xl font-black text-[#10243E]">${amount.toLocaleString()}</span>
             </div>
 
             <input
@@ -72,33 +70,33 @@ export default function FinancingModal({
               step="500"
               value={amount}
               onChange={(e) => setAmount(Number(e.target.value))}
-              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-royal"
+              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0B82C3]"
             />
 
             <div className="grid grid-cols-2 gap-3 mt-4 pt-3 border-t border-slate-200">
               <div className="bg-white p-3 rounded-xl border border-slate-200 text-center">
                 <span className="text-[11px] font-bold text-slate-500 uppercase">60 Months Low APR</span>
-                <p className="text-2xl font-black text-royal mt-0.5">${monthly60}<span className="text-xs font-normal text-slate-500">/mo</span></p>
+                <p className="text-2xl font-black text-[#0B82C3] mt-0.5">${monthly60}<span className="text-xs font-normal text-slate-500">/mo</span></p>
               </div>
               <div className="bg-white p-3 rounded-xl border border-slate-200 text-center">
                 <span className="text-[11px] font-bold text-slate-500 uppercase">12 Mo Same As Cash</span>
-                <p className="text-2xl font-black text-hvacGreen mt-0.5">${monthly12}<span className="text-xs font-normal text-slate-500">/mo</span></p>
+                <p className="text-2xl font-black text-[#F44816] mt-0.5">${monthly12}<span className="text-xs font-normal text-slate-500">/mo</span></p>
               </div>
             </div>
           </div>
 
           {/* Perks list */}
           <div className="grid grid-cols-2 gap-2 text-xs font-bold text-slate-700">
-            <div className="flex items-center gap-1.5 text-hvacGreen">
+            <div className="flex items-center gap-1.5 text-[#0B82C3]">
               <span>✓</span> <span className="text-slate-800">No Prepayment Penalties</span>
             </div>
-            <div className="flex items-center gap-1.5 text-hvacGreen">
+            <div className="flex items-center gap-1.5 text-[#0B82C3]">
               <span>✓</span> <span className="text-slate-800">Instant Online Decision</span>
             </div>
-            <div className="flex items-center gap-1.5 text-hvacGreen">
+            <div className="flex items-center gap-1.5 text-[#0B82C3]">
               <span>✓</span> <span className="text-slate-800">Does Not Affect Credit Score to Check</span>
             </div>
-            <div className="flex items-center gap-1.5 text-hvacGreen">
+            <div className="flex items-center gap-1.5 text-[#0B82C3]">
               <span>✓</span> <span className="text-slate-800">PSEG & NYSERDA Rebate Guidance</span>
             </div>
           </div>
@@ -109,13 +107,13 @@ export default function FinancingModal({
                 onClose();
                 onOpenBooking();
               }}
-              className="flex-1 py-3 rounded-lg bg-royal hover:bg-royal-hover text-white font-bold text-sm shadow-md"
+              className="flex-1 py-3 rounded-lg bg-[#F44816] hover:bg-[#d93d10] text-white font-bold text-sm shadow-md transition-colors"
             >
               Apply With Next Service
             </button>
             <a
               href="tel:5167177515"
-              className="py-3 px-4 rounded-lg bg-navy text-white font-bold text-sm hover:bg-navy-light text-center"
+              className="py-3 px-4 rounded-lg bg-[#10243E] text-white font-bold text-sm hover:bg-[#0B82C3] text-center transition-colors"
             >
               Speak to Finance Desk
             </a>
