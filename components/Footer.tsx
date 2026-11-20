@@ -14,7 +14,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-[#061A40] text-slate-300 pt-16 pb-28 md:pb-12 border-t border-navy-light select-none">
+    <footer id="contact" className="bg-[#252525] text-white pt-16 pb-28 md:pb-12 border-t border-white/10 select-none">
       <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         {/* 5-Column Desktop Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
@@ -32,7 +32,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-navy-light flex items-center justify-center text-slate-300 hover:text-white hover:bg-royal transition-colors"
+                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#F44816] transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -44,7 +44,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-navy-light flex items-center justify-center text-slate-300 hover:text-white hover:bg-royal transition-colors"
+                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#F44816] transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-navy-light flex items-center justify-center text-slate-300 hover:text-white hover:bg-royal transition-colors"
+                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#F44816] transition-colors"
                 aria-label="Twitter"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-navy-light flex items-center justify-center text-slate-300 hover:text-white hover:bg-royal transition-colors"
+                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#F44816] transition-colors"
                 aria-label="YouTube"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -80,7 +80,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
 
           {/* Column 2 — Heating Services */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading">
+            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-white/10 pb-2 font-heading">
               Heating Services
             </h4>
             <ul className="space-y-2 text-sm sm:text-xs font-body">
@@ -95,7 +95,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
                   <a
                     href="#services"
                     onClick={() => onSelectService?.(item.target)}
-                    className="hover:text-electric transition-colors"
+                    className="hover:text-[#0B82C3] transition-colors"
                   >
                     {item.title}
                   </a>
@@ -106,7 +106,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
 
           {/* Column 3 — Cooling Services */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading">
+            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-white/10 pb-2 font-heading">
               Cooling Services
             </h4>
             <ul className="space-y-2 text-sm sm:text-xs font-body">
@@ -121,7 +121,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
                   <a
                     href="#services"
                     onClick={() => onSelectService?.(item.target)}
-                    className="hover:text-electric transition-colors"
+                    className="hover:text-[#0B82C3] transition-colors"
                   >
                     {item.title}
                   </a>
@@ -132,7 +132,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
 
           {/* Column 4 — Service Areas */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading">
+            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-white/10 pb-2 font-heading">
               Service Areas
             </h4>
             <ul className="space-y-2 text-sm sm:text-xs font-body">
@@ -141,17 +141,17 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
                   <a
                     href="#service-areas"
                     onClick={() => onOpenArea?.(area)}
-                    className="hover:text-electric transition-colors"
+                    className="hover:text-[#0B82C3] transition-colors"
                   >
                     {area}
                   </a>
                 </li>
               ))}
             </ul>
-            <div className="mt-4 pt-3 border-t border-navy-light/60 font-heading">
+            <div className="mt-4 pt-3 border-t border-white/10 font-heading">
               <a
                 href="#service-areas"
-                className="text-xs sm:text-xs font-bold text-electric hover:underline block uppercase tracking-wider"
+                className="text-xs sm:text-xs font-bold text-[#0B82C3] hover:underline block uppercase tracking-wider"
               >
                 View All Service Areas &rarr;
               </a>
@@ -160,13 +160,13 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
 
           {/* Column 5 — Contact Information */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading">
+            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-white/10 pb-2 font-heading">
               Contact Information
             </h4>
             <div className="space-y-3 text-sm sm:text-xs">
               <div>
                 <span className="text-slate-400 block text-[11px] sm:text-[10px] uppercase font-bold font-heading">Direct Phone</span>
-                <a href={PHONE_TEL} className="text-base font-black text-brightYellow hover:underline font-heading">
+                <a href={PHONE_TEL} className="text-base font-black text-[#F44816] hover:underline font-heading">
                   {PHONE_NUMBER}
                 </a>
               </div>
@@ -174,14 +174,14 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
               <div>
                 <span className="text-slate-400 block text-[11px] sm:text-[10px] uppercase font-bold font-heading">Availability</span>
                 <span className="font-semibold text-white flex items-center gap-1.5 mt-0.5 font-body">
-                  <Clock className="w-3.5 h-3.5 text-brightRed" />
+                  <Clock className="w-3.5 h-3.5 text-[#F44816]" />
                   24 Hours — 7 Days
                 </span>
               </div>
 
               <div>
                 <span className="text-slate-400 block text-[11px] sm:text-[10px] uppercase font-bold font-heading">Email Inquiries</span>
-                <a href={`mailto:${BUSINESS_EMAIL}`} className="hover:text-electric transition-colors break-all font-body">
+                <a href={`mailto:${BUSINESS_EMAIL}`} className="hover:text-[#0B82C3] transition-colors break-all font-body">
                   {BUSINESS_EMAIL}
                 </a>
               </div>
@@ -189,7 +189,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
               <div>
                 <span className="text-slate-400 block text-[11px] sm:text-[10px] uppercase font-bold font-heading">Headquarters</span>
                 <span className="flex items-center gap-1.5 text-slate-300 font-body">
-                  <MapPin className="w-3.5 h-3.5 text-royal flex-shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 text-[#0B82C3] flex-shrink-0" />
                   Long Island, New York
                 </span>
               </div>
@@ -198,9 +198,9 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
         </div>
 
         {/* Partner Trust Badges */}
-        <div className="pt-8 pb-8 border-t border-navy-light/70 flex flex-wrap items-center justify-between gap-6 font-heading">
+        <div className="pt-8 pb-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-6 font-heading">
           <div className="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
-            <ShieldCheck className="w-4 h-4 text-royal" />
+            <ShieldCheck className="w-4 h-4 text-[#0B82C3]" />
             <span>Trusted & Verified By:</span>
           </div>
           <div className="flex flex-wrap items-center gap-6 sm:gap-10 text-xs font-black tracking-widest text-slate-400">
@@ -212,7 +212,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
         </div>
 
         {/* Footer Bottom: Privacy Policy, Terms of Service, Copyright */}
-        <div className="pt-6 border-t border-navy-light/40 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3 font-body">
+        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3 font-body">
           <p>© {currentYear} {BUSINESS_NAME}. All Rights Reserved.</p>
           <div className="flex items-center gap-4">
             <a href="#about" className="hover:text-slate-200 transition-colors">

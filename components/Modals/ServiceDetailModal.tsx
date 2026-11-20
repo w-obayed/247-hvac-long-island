@@ -23,7 +23,7 @@ export default function ServiceDetailModal({
   const featuresList = service.features || service.bullets || [];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-dark/80 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm animate-fadeIn">
       <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden max-h-[90vh] flex flex-col">
         {/* Header with image */}
         <div className="relative h-48 sm:h-56 w-full flex-shrink-0 bg-slate-900">
@@ -46,7 +46,11 @@ export default function ServiceDetailModal({
 
           {/* Title on image */}
           <div className="absolute bottom-4 left-6 right-6 text-white font-heading">
-            <span className="inline-block px-2.5 py-0.5 rounded bg-royal text-white text-[11px] font-extrabold uppercase tracking-wider mb-1.5 font-heading">
+            <span
+              className={`inline-block px-2.5 py-0.5 rounded text-white text-[11px] font-extrabold uppercase tracking-wider mb-1.5 font-heading ${
+                service.category === 'heating' ? 'bg-[#F44816]' : 'bg-[#0B82C3]'
+              }`}
+            >
               {service.category} Solution
             </span>
             <h3 className="text-[24px] font-black leading-tight drop-shadow-md font-heading">
@@ -58,7 +62,7 @@ export default function ServiceDetailModal({
         {/* Modal Body */}
         <div className="p-6 overflow-y-auto space-y-5">
           <div>
-            <h4 className="text-xs font-black uppercase tracking-wider text-royal mb-1.5 font-heading">
+            <h4 className="text-xs font-black uppercase tracking-wider text-[#0B82C3] mb-1.5 font-heading">
               Service Overview
             </h4>
             <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-body">
@@ -67,13 +71,13 @@ export default function ServiceDetailModal({
           </div>
 
           <div>
-            <h4 className="text-xs font-black uppercase tracking-wider text-royal mb-2.5 font-heading">
+            <h4 className="text-xs font-black uppercase tracking-wider text-[#0B82C3] mb-2.5 font-heading">
               What&apos;s Included In This Service
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 font-body">
               {featuresList.map((feat, idx) => (
                 <div key={idx} className="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200/80">
-                  <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#0B82C3] flex-shrink-0 mt-0.5" />
                   <span className="text-xs font-bold text-slate-800 leading-snug">
                     {feat}
                   </span>
@@ -83,15 +87,15 @@ export default function ServiceDetailModal({
           </div>
 
           {/* Guarantee banner */}
-          <div className="p-3.5 rounded-xl bg-royal/10 border border-royal/20 flex items-center justify-between">
+          <div className="p-3.5 rounded-xl bg-[#FFF1EB] border border-[#F44816]/30 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <ShieldCheck className="w-7 h-7 text-royal flex-shrink-0" />
+              <ShieldCheck className="w-7 h-7 text-[#F44816] flex-shrink-0" />
               <div>
-                <p className="text-xs font-black text-navy uppercase font-heading">100% Workmanship Warranty</p>
+                <p className="text-xs font-black text-[#10243E] uppercase font-heading">100% Workmanship Warranty</p>
                 <p className="text-[11px] text-slate-600 font-body">All installations & repairs backed by licensed master technicians.</p>
               </div>
             </div>
-            <span className="text-xs font-bold text-royal hidden sm:inline font-heading">24/7 Support</span>
+            <span className="text-xs font-bold text-[#F44816] hidden sm:inline font-heading">24/7 Support</span>
           </div>
 
           {/* Action CTAs */}
@@ -101,16 +105,16 @@ export default function ServiceDetailModal({
                 onClose();
                 onOpenBooking();
               }}
-              className="flex-1 py-3.5 rounded-lg bg-hvacGreen hover:bg-hvacGreen-hover text-white font-black text-sm shadow-md transition-all text-center flex items-center justify-center gap-2 font-heading uppercase tracking-wider"
+              className="flex-1 py-3.5 rounded-lg bg-[#F44816] hover:bg-[#d93d10] text-white font-black text-sm shadow-md transition-all text-center flex items-center justify-center gap-2 font-heading uppercase tracking-wider"
             >
               <Calendar className="w-4 h-4" />
               <span>Book Service Now</span>
             </button>
             <a
               href={PHONE_TEL}
-              className="py-3.5 px-6 rounded-lg bg-navy hover:bg-navy-light text-white font-black text-sm text-center flex items-center justify-center gap-2 font-heading uppercase tracking-wider"
+              className="py-3.5 px-6 rounded-lg bg-[#10243E] hover:bg-[#0B82C3] text-white font-black text-sm text-center flex items-center justify-center gap-2 font-heading uppercase tracking-wider transition-colors"
             >
-              <Phone className="w-4 h-4 text-brightYellow" />
+              <Phone className="w-4 h-4 text-white" />
               <span>Call {PHONE_NUMBER}</span>
             </a>
           </div>

@@ -59,10 +59,10 @@ export default function MaintenanceModal({
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-dark/80 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm animate-fadeIn">
       <div className="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#E50914] to-[#061A40] text-white p-5 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-[#10243E] to-[#0B82C3] text-white p-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,8 +70,8 @@ export default function MaintenanceModal({
               </svg>
             </div>
             <div>
-              <h3 className="text-[24px] font-black tracking-tight">HVAC Service Agreements</h3>
-              <p className="text-xs text-slate-200">Year-Round Peace of Mind & Guaranteed Equipment Longevity</p>
+              <h3 className="text-[24px] font-black tracking-tight">Air Conditioners Repair & Maintenance</h3>
+              <p className="text-xs text-slate-200">Keep Your Home or Business Comfortable Throughout the Year</p>
             </div>
           </div>
           <button
@@ -86,8 +86,7 @@ export default function MaintenanceModal({
         <div className="p-6 max-h-[80vh] overflow-y-auto space-y-6">
           <div className="text-center max-w-xl mx-auto">
             <p className="text-sm text-slate-600">
-              Regular maintenance prevents 85% of unexpected breakdowns, keeps manufacturer warranties valid,
-              and cuts monthly energy costs by up to 25%.
+              If your system is showing these signs, you can explore air conditioner repair and maintenance to address potential problems early.
             </p>
           </div>
 
@@ -98,27 +97,27 @@ export default function MaintenanceModal({
                 key={p.name}
                 className={`rounded-xl p-5 flex flex-col justify-between border-2 transition-all ${
                   p.recommended
-                    ? 'border-royal bg-royal/5 shadow-md relative'
+                    ? 'border-[#0B82C3] bg-[#0B82C3]/5 shadow-md relative'
                     : 'border-slate-200 bg-white hover:border-slate-300'
                 }`}
               >
                 {p.recommended && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-royal text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#F44816] text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow">
                     Most Popular
                   </div>
                 )}
 
                 <div>
-                  <h4 className="font-black text-navy text-base">{p.name}</h4>
+                  <h4 className="font-black text-[#10243E] text-base">{p.name}</h4>
                   <div className="mt-2 mb-4">
-                    <span className="text-2xl font-black text-navy">{p.price}</span>
+                    <span className="text-2xl font-black text-[#10243E]">{p.price}</span>
                     <span className="text-xs text-slate-500 font-medium ml-1">{p.period}</span>
                   </div>
 
                   <ul className="space-y-2 text-xs text-slate-700">
                     {p.features.map((f, i) => (
                       <li key={i} className="flex items-start gap-1.5">
-                        <span className="text-hvacGreen font-black">✓</span>
+                        <span className="text-[#0B82C3] font-black">✓</span>
                         <span className="leading-tight">{f}</span>
                       </li>
                     ))}
@@ -132,8 +131,8 @@ export default function MaintenanceModal({
                   }}
                   className={`mt-6 w-full py-2.5 rounded-lg text-xs font-bold transition-all ${
                     p.recommended
-                      ? 'bg-royal hover:bg-royal-hover text-white shadow'
-                      : 'bg-navy hover:bg-navy-light text-white'
+                      ? 'bg-[#F44816] hover:bg-[#d93d10] text-white shadow'
+                      : 'bg-[#10243E] hover:bg-[#0B82C3] text-white'
                   }`}
                 >
                   Enroll in Plan
