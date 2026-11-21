@@ -27,7 +27,7 @@ export default function ManufacturerStrip() {
     >
       <div className="relative w-full overflow-hidden">
         {/* Continuous Marquee Track */}
-        <div className="animate-marquee-continuous flex items-center gap-6 sm:gap-8 md:gap-10 pr-6 sm:pr-8 md:pr-10">
+        <div className="animate-marquee-continuous flex items-center gap-6 sm:gap-8 md:gap-10">
           {duplicatedLogos.map((logo, idx) => (
             <div
               key={`${logo.id}-${idx}`}

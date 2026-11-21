@@ -3,31 +3,24 @@
 @tailwind utilities;
 
 :root {
-  /* Official Brand Color Palette */
-  --color-primary: #F44816;       /* Orange: primary brand accent, main buttons, highlights */
-  --color-secondary: #0B82C3;     /* Blue: secondary accent, supporting buttons, links, icons */
-  --color-main-bg: #FFFFFF;       /* White: main website background */
-  --color-alt-bg: #F5F7FA;        /* Light Gray: alternate section backgrounds */
-  --color-soft-orange: #FFF1EB;   /* Soft Orange: light orange background areas & highlighted cards */
-  --color-heading: #10243E;       /* Dark Navy: headings and important dark text */
-  --color-footer-bg: #252525;     /* Charcoal: footer background */
+  /* Brand specific colors requested by client */
+  --brand-navy: #061A40;
+  --brand-blue: #0066CC;
+  --brand-electric: #00BFFF;
+  --brand-red: #E50914;
+  --brand-yellow: #FFE500;
+  --brand-green: #25843D;
+  --brand-white: #FFFFFF;
+  --brand-dark-text: #111827;
+  --brand-light-gray: #F3F4F6;
 
-  /* Legacy & semantic variables */
-  --main-bg: var(--color-main-bg);
-  --brand-navy: var(--color-heading);
-  --brand-blue: var(--color-secondary);
-  --brand-orange: var(--color-primary);
-  --brand-white: var(--color-main-bg);
-  --brand-dark-text: var(--color-heading);
-  --brand-light-gray: var(--color-alt-bg);
-
-  --main-background: var(--color-main-bg);
-  --deep-navy: var(--color-heading);
-  --royal-blue: var(--color-secondary);
-  --electric-blue: var(--color-secondary);
-  --bright-red: var(--color-primary);
-  --bright-yellow: var(--color-primary);
-  --hvac-green: var(--color-primary);
+  /* Semantic aliases */
+  --deep-navy: var(--brand-navy);
+  --royal-blue: var(--brand-blue);
+  --electric-blue: var(--brand-electric);
+  --bright-red: var(--brand-red);
+  --bright-yellow: var(--brand-yellow);
+  --hvac-green: var(--brand-green);
 }
 
 html {
@@ -37,7 +30,7 @@ html {
 
 body {
   color: var(--brand-dark-text);
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   overflow-x: hidden;
   font-family: var(--font-inter), sans-serif;
 }
@@ -45,7 +38,6 @@ body {
 /* Headings & interactive action typography: Roboto Condensed */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-roboto-condensed), sans-serif;
-  color: var(--color-heading);
 }
 
 h3 {
@@ -81,14 +73,14 @@ p {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F7FA;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0B82C3;
+  background: #0066CC;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #F44816;
+  background: #061A40;
 }
 
 /* Hide scrollbar utility */
@@ -110,37 +102,37 @@ p {
   }
 }
 
-.animate-marquee-continuous,
-.animate-marquee {
-  display: flex !important;
-  width: max-content !important;
-  animation: continuousMarquee 38s linear infinite !important;
+.animate-marquee-continuous {
+  display: flex;
+  width: max-content;
+  animation: continuousMarquee 38s linear infinite;
   will-change: transform;
 }
 
-.animate-marquee-continuous:hover,
-.animate-marquee:hover {
-  animation-play-state: paused !important;
+/* Pause on hover if user desires to inspect */
+.animate-marquee-continuous:hover {
+  animation-play-state: paused;
 }
 
+/* Respect user reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee-continuous,
-  .animate-marquee {
-    animation: continuousMarquee 60s linear infinite !important;
+  .animate-marquee-continuous {
+    animation-duration: 90s;
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-  to {
+/* Pulse animation for 24/7 indicator */
+@keyframes pulseGlow {
+  0%, 100% {
     opacity: 1;
     transform: scale(1);
   }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08);
+  }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.animate-pulse-glow {
+  animation: pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

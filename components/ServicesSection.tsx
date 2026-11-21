@@ -30,67 +30,67 @@ export const HVAC_SERVICES: ServiceItem[] = [
     id: 'furnace',
     title: 'Furnace Installation, Repair & Replacement',
     category: 'heating',
-    description: 'Our technicians handle system installations, repairs, and replacements across Long Island.',
-    fullDesc: 'We provide a full range of cooling and heating services to keep homes and businesses comfortable throughout the year. Our technicians handle system installations, repairs, and replacements across Long Island, while also offering air duct and ventilation cleaning services to help improve airflow and indoor comfort.',
-    image: '/image-website/furnace-installation.jpg',
+    description: 'Expert diagnostics, emergency heat restoration, and high-efficiency gas/oil furnace installations for Long Island homes.',
+    fullDesc: 'When your furnace stops heating in the middle of winter, 247 HVAC provides fast, dependable diagnostics and repairs. We install high-efficiency furnaces (up to 98% AFUE) and repair all major brands with OEM parts.',
+    image: '/images/furnace.jpg',
     icon: Flame,
-    bullets: ['System installations, repairs, and replacements', 'Residential and commercial heating solutions', 'Airflow and indoor comfort optimization'],
-    features: ['Furnace installation and replacement', 'Emergency heating system repairs', 'Air duct and ventilation cleaning services', 'Airflow and indoor comfort testing'],
+    bullets: ['Same-day emergency furnace repairs', 'High-efficiency 96%+ AFUE replacements', 'OEM heat exchanger & blower motor service'],
+    features: ['Heat exchanger leak inspection', 'Blower motor & capacitor testing', 'Safety limit switch diagnostics', 'Thermostat calibration & airflow balancing'],
   },
   {
     id: 'boiler',
     title: 'Boiler Installation, Repair & Replacement',
     category: 'heating',
-    description: 'Our technicians handle boiler installations, repairs, and replacements across Long Island.',
-    fullDesc: 'We provide a full range of cooling and heating services to keep homes and businesses comfortable throughout the year. Our technicians handle system installations, repairs, and replacements across Long Island, while also offering air duct and ventilation cleaning services to help improve airflow and indoor comfort.',
-    image: '/image-website/boiller-installation-repair-e1661179456943.jpg',
+    description: 'Specialized hydronic radiant heating and steam boiler repair, maintenance, and energy-saving replacements.',
+    fullDesc: 'We specialize in hydronic radiant floor heating and steam boilers. Whether diagnosing low water cut-offs, replacing noisy circulators, or installing state-of-the-art condensing gas boilers, our master technicians deliver reliable warmth.',
+    image: '/images/boiler.jpg',
     icon: Droplets,
-    bullets: ['Boiler installation, repair & replacement', 'Dependable heating solutions', 'Improve airflow and indoor comfort'],
-    features: ['Boiler system repairs and replacements', 'Hydronic and steam heating service', 'Air duct and ventilation inspections', 'Comprehensive comfort solutions'],
+    bullets: ['Steam & hot water boiler repairs', 'Circulator pump & zone valve replacements', 'Annual system tune-ups and efficiency checks'],
+    features: ['Zone valve and aquastat testing', 'Pressure relief valve verification', 'Steam trap and radiator purge', 'Combustion efficiency analysis'],
   },
   {
     id: 'water-heater',
     title: 'Water Heater Installation, Repair & Replacement',
     category: 'heating',
-    description: 'Our technicians handle water heater installations, repairs, and replacements across Long Island.',
-    fullDesc: 'We provide a full range of cooling and heating services to keep homes and businesses comfortable throughout the year. Our technicians handle system installations, repairs, and replacements across Long Island, while also offering air duct and ventilation cleaning services to help improve airflow and indoor comfort.',
-    image: '/image-website/water-heater-installation.jpg',
+    description: 'Tankless and conventional hot water heater repairs, replacements, and routine flush maintenance for continuous hot water.',
+    fullDesc: 'Never run out of hot water with 247 HVAC water heating solutions. We install and repair high-efficiency tankless and traditional gas/electric water heaters across Nassau and Suffolk counties.',
+    image: '/images/water-heater.jpg',
     icon: Droplets,
-    bullets: ['Water heater installations & replacements', 'Fast emergency water heater repair', 'Reliable hot water solutions'],
-    features: ['Water heater replacement and installation', 'Precision diagnostics and repairs', 'Ventilation and airflow inspections', 'Energy-efficient hot water solutions'],
+    bullets: ['On-demand tankless water heating systems', 'Fast emergency leak repairs & replacements', 'Expansion tank & pressure valve installations'],
+    features: ['Same-day emergency tank replacements', 'Scale and mineral flush maintenance', 'Gas burner assembly inspection', 'Anode rod and element replacement'],
   },
   {
     id: 'air-conditioner',
-    title: 'Air Conditioners Installation & Replacement',
+    title: 'Air Conditioner Installation & Replacement',
     category: 'cooling',
-    description: 'Our technicians handle air conditioner installations and replacements across Long Island.',
-    fullDesc: 'We provide a full range of cooling and heating services to keep homes and businesses comfortable throughout the year. Our technicians handle system installations, repairs, and replacements across Long Island, while also offering air duct and ventilation cleaning services to help improve airflow and indoor comfort.',
-    image: '/image-website/air-con-installation.jpg',
+    description: 'Keep your property cool with top-tier central AC installations, SEER2 upgrades, and customized ductwork configurations.',
+    fullDesc: 'Upgrade your home with high-performance, energy-efficient central air conditioning. Our installations comply with the latest SEER2 efficiency regulations, lowering electricity consumption while providing balanced cooling.',
+    image: '/images/air-conditioner.jpg',
     icon: Snowflake,
-    bullets: ['Air conditioners installation & replacement', 'High efficiency cooling systems', 'Air duct and ventilation cleaning'],
-    features: ['Complete air conditioning installation', 'Energy-efficient system replacement', 'Airflow balancing and duct inspection', 'Dependable residential & commercial cooling'],
+    bullets: ['Energy Star high SEER2 AC equipment', 'Custom ductwork sizing & precision airflow', 'Manufacturer warranty registration included'],
+    features: ['Manual J heat-load calculations', 'Precision airflow and ductwork balancing', 'Quiet condenser motor technology', 'Smart WiFi thermostat setup included'],
   },
   {
     id: 'ac-repair',
-    title: 'Air Conditioners Repair & Maintenance',
+    title: 'Air Conditioner Repair & Maintenance',
     category: 'cooling',
-    description: 'Our technicians handle air conditioner repairs and routine maintenance across Long Island.',
-    fullDesc: 'We provide a full range of cooling and heating services to keep homes and businesses comfortable throughout the year. Our technicians handle system installations, repairs, and replacements across Long Island, while also offering air duct and ventilation cleaning services to help improve airflow and indoor comfort.',
-    image: '/image-website/ac-installation-bd.jpg',
+    description: 'Fast troubleshooting for frozen coils, refrigerant leaks, faulty capacitors, blown fuses, and noisy condenser fans.',
+    fullDesc: 'Is your AC blowing warm air or making strange noises? Our certified mobile units carry universal capacitors, contactors, fan motors, and EPA-approved refrigerants to restore cooling on the initial visit.',
+    image: '/images/ac-repair.jpg',
     icon: Wrench,
-    bullets: ['Air conditioners repair & maintenance', 'Address potential problems early', 'Improve airflow and indoor comfort'],
-    features: ['Prompt cooling system repairs', 'Comprehensive seasonal maintenance', 'Air duct and ventilation cleaning', 'Prevent bigger issues and reduce energy bills'],
+    bullets: ['24/7 emergency AC cooling repairs', 'Comprehensive 21-point system precision tune-up', 'Eco-friendly refrigerant recharge & leak detection'],
+    features: ['Electronic refrigerant leak detection', 'Evaporator coil deep chemical clean', 'Electrical connection & amperage test', 'Condensate drain line flush & clear'],
   },
   {
     id: 'mini-split',
-    title: 'Mini Splits Installation, Repair & Replacement',
+    title: 'Mini-Split Installation, Repair & Replacement',
     category: 'cooling',
-    description: 'Our technicians handle mini splits installations, repairs, and replacements across Long Island.',
-    fullDesc: 'We provide a full range of cooling and heating services to keep homes and businesses comfortable throughout the year. Our technicians handle system installations, repairs, and replacements across Long Island, while also offering air duct and ventilation cleaning services to help improve airflow and indoor comfort.',
-    image: '/image-website/heat-pump-installation.jpg',
+    description: 'Versatile ductless heat pumps offering independent multi-zone temperature control and ultra-quiet energy savings.',
+    fullDesc: 'Ductless mini-split heat pumps offer the ultimate room-by-room heating and cooling flexibility without ductwork. Perfect for room additions, older homes, and year-round multi-zone efficiency.',
+    image: '/images/mini-split.jpg',
     icon: Layers,
-    bullets: ['Mini splits installation, repair & replacement', 'Multi-zone heating and cooling', 'High efficiency ductless systems'],
-    features: ['Ductless mini split installations', 'System repairs and replacements', 'Zone temperature control balancing', 'Clean airflow and superior comfort'],
+    bullets: ['Multi-zone and single-room installations', 'Heating & cooling in one compact unit', 'Inverter technology reduces energy bills up to 40%'],
+    features: ['Hyper-heating down to -13°F outdoors', 'Individual handheld remote control per zone', 'Whisper-quiet indoor air delivery (as low as 19 dB)', 'Rebate eligible through local utility programs'],
   },
 ];
 
@@ -101,18 +101,18 @@ interface ServicesSectionProps {
 
 export default function ServicesSection({ onSelectService, onOpenBooking }: ServicesSectionProps) {
   return (
-    <section id="services" className="py-16 md:py-24 bg-[#F5F7FA] text-slate-800">
+    <section id="services" className="py-16 md:py-24 bg-slate-50 text-slate-800">
       <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <span className="text-xs uppercase tracking-widest font-black text-[#0B82C3] mb-2 block font-heading">
-            Heating & Cooling Solutions
+          <span className="text-xs uppercase tracking-widest font-black text-royal mb-2 block font-heading">
+            Comprehensive Climate Solutions
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#10243E] tracking-tight mb-4 font-heading">
-            Our Residential & Commercial HVAC Services in Long Island
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight mb-4 font-heading">
+            Our Residential & Commercial HVAC Services
           </h2>
           <p className="text-base text-slate-600 leading-relaxed font-body">
-            We provide a full range of cooling and heating services to keep homes and businesses comfortable throughout the year. Our technicians handle system installations, repairs, and replacements across Long Island, while also offering air duct and ventilation cleaning services to help improve airflow and indoor comfort.
+            We provide a full range of heating and cooling services to keep homes and businesses comfortable throughout the year.
           </p>
         </div>
 
@@ -140,7 +140,7 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
                   <div className="absolute top-3.5 left-3.5">
                     <span
                       className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-white shadow-md font-heading uppercase tracking-wider ${
-                        service.category === 'heating' ? 'bg-[#F44816]' : 'bg-[#0B82C3]'
+                        service.category === 'heating' ? 'bg-brightRed' : 'bg-royal'
                       }`}
                     >
                       <Icon className="w-3.5 h-3.5" />
@@ -152,7 +152,7 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
                 {/* Service Card Content */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-[24px] font-bold text-[#10243E] mb-2.5 group-hover:text-[#0B82C3] transition-colors font-heading">
+                    <h3 className="text-[24px] font-bold text-navy mb-2.5 group-hover:text-royal transition-colors font-heading">
                       {service.title}
                     </h3>
                     <p className="text-base text-slate-600 leading-relaxed mb-4 font-body">
@@ -163,7 +163,7 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
                     <ul className="space-y-1.5 mb-6 font-body">
                       {service.bullets.map((bullet, idx) => (
                         <li key={idx} className="flex items-center gap-2 text-xs sm:text-xs text-slate-700 font-medium">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#0B82C3] flex-shrink-0" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-hvacGreen flex-shrink-0" />
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -174,7 +174,7 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3 font-heading">
                     <button
                       onClick={() => onSelectService(service)}
-                      className="inline-flex items-center gap-1.5 text-sm font-bold text-[#0B82C3] hover:text-[#086396] group/link font-heading tracking-wide uppercase transition-colors"
+                      className="inline-flex items-center gap-1.5 text-sm font-bold text-royal hover:text-royal-hover group/link font-heading tracking-wide uppercase"
                     >
                       <span>Learn More</span>
                       <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -182,7 +182,7 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
 
                     <button
                       onClick={onOpenBooking}
-                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#F44816] text-white text-xs sm:text-xs font-black shadow hover:bg-[#d93d10] active:scale-95 transition-all font-heading uppercase tracking-wider"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-hvacGreen text-white text-xs sm:text-xs font-black shadow hover:bg-hvacGreen-hover active:scale-95 transition-all font-heading uppercase tracking-wider"
                     >
                       <Calendar className="w-3.5 h-3.5" />
                       <span>Book Now</span>

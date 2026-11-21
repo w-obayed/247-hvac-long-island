@@ -93,8 +93,8 @@ export default function Navbar({
   return (
     <nav
       ref={navRef}
-      className={`w-full bg-[#10243E] text-white sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'shadow-xl border-b border-[#0B82C3]/40 py-0.5' : 'border-b border-[#1B3557]'
+      className={`w-full bg-[#061A40] text-white sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'shadow-xl border-b border-royal/40 py-0.5' : 'border-b border-navy-light'
       }`}
     >
       <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
@@ -108,10 +108,10 @@ export default function Navbar({
               {/* Home */}
               <a
                 href="#home"
-                className="px-3 py-2 rounded-md hover:text-[#0B82C3] transition-colors relative group text-white"
+                className="px-3 py-2 rounded-md hover:text-electric transition-colors relative group text-white"
               >
                 <span>Home</span>
-                <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-[#F44816] rounded-full" />
+                <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-electric rounded-full" />
               </a>
 
               {/* About */}
@@ -512,7 +512,7 @@ export default function Navbar({
       {/* 3. RESPONSIVE DROPDOWN PANEL (Below 1280px) */}
       {/* ========================================================= */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#10243E] border-t border-[#1B3557] px-4 sm:px-6 py-4 space-y-2 max-h-[85vh] overflow-y-auto overflow-x-hidden font-heading animate-fadeIn shadow-2xl">
+        <div className="xl:hidden bg-[#061A40] border-t border-navy-light px-4 sm:px-6 py-4 space-y-2 max-h-[85vh] overflow-y-auto overflow-x-hidden font-heading animate-fadeIn shadow-2xl">
           {/* Home */}
           <a
             href="#home"
