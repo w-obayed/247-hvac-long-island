@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import BrandLogo from './BrandLogo';
 import { Phone, Mail, MapPin, Clock, ShieldCheck } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_TEL, BUSINESS_EMAIL, BUSINESS_NAME } from '@/lib/utils';
@@ -20,9 +21,9 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
           {/* Column 1 — Company Information */}
           <div className="lg:col-span-1 flex flex-col items-start">
-            <div className="mb-4">
+            <Link href="/" className="mb-4 inline-block hover:opacity-95 transition-opacity" aria-label="247 HVAC of Long Island Home">
               <BrandLogo variant="dark" size="md" />
-            </div>
+            </Link>
             <p className="text-base text-slate-300 leading-relaxed mb-6 font-body">
               Your trusted HVAC experts in Long Island, NY. Providing reliable heating, cooling, and air conditioning services for homes and businesses with upfront pricing and 24/7 emergency dispatch.
             </p>
@@ -86,19 +87,28 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
             <ul className="space-y-2 text-sm sm:text-xs font-body">
               {[
                 { title: 'Furnace Services', target: 'Furnace Installation, Repair & Replacement' },
-                { title: 'Boiler Services', target: 'Boiler Installation, Repair & Replacement' },
+                { title: 'Boiler Services', target: 'Boiler Installation, Repair & Replacement', href: '/boiler-installation-repair' },
                 { title: 'Water Heater Services', target: 'Water Heater Installation, Repair & Replacement' },
                 { title: 'Heating Repairs', target: 'Furnace Installation, Repair & Replacement' },
-                { title: 'Heating Installation', target: 'Boiler Installation, Repair & Replacement' },
+                { title: 'Heating Installation', target: 'Boiler Installation, Repair & Replacement', href: '/boiler-installation-repair' },
               ].map((item) => (
                 <li key={item.title}>
-                  <a
-                    href="#services"
-                    onClick={() => onSelectService?.(item.target)}
-                    className="hover:text-electric transition-colors"
-                  >
-                    {item.title}
-                  </a>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="hover:text-electric transition-colors"
+                    >
+                      {item.title}
+                    </Link>
+                  ) : (
+                    <a
+                      href="/#services"
+                      onClick={() => onSelectService?.(item.target)}
+                      className="hover:text-electric transition-colors"
+                    >
+                      {item.title}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -136,25 +146,34 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
               Service Areas
             </h4>
             <ul className="space-y-2 text-sm sm:text-xs font-body">
-              {['Nassau County', 'Queens', 'Suffolk County', 'Brooklyn', 'Manhattan'].map((area) => (
-                <li key={area}>
-                  <a
-                    href="#service-areas"
-                    onClick={() => onOpenArea?.(area)}
-                    className="hover:text-electric transition-colors"
-                  >
-                    {area}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link href="/service-areas/baldwin" className="hover:text-electric transition-colors text-brightYellow font-bold flex items-center gap-1">
+                  <span>★ Baldwin, NY</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/service-areas#nassau" className="hover:text-electric transition-colors">
+                  Nassau County (27 Towns)
+                </Link>
+              </li>
+              <li>
+                <Link href="/service-areas#queens" className="hover:text-electric transition-colors">
+                  Queens (8 Towns)
+                </Link>
+              </li>
+              <li>
+                <Link href="/service-areas#suffolk" className="hover:text-electric transition-colors">
+                  Suffolk County, NY
+                </Link>
+              </li>
             </ul>
             <div className="mt-4 pt-3 border-t border-navy-light/60 font-heading">
-              <a
-                href="#service-areas"
+              <Link
+                href="/service-areas"
                 className="text-xs sm:text-xs font-bold text-electric hover:underline block uppercase tracking-wider"
               >
                 View All Service Areas &rarr;
-              </a>
+              </Link>
             </div>
           </div>
 

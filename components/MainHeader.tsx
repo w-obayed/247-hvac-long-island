@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import BrandLogo from './BrandLogo';
 import { Phone, Clock, FileText, Wrench } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_TEL } from '@/lib/utils';
@@ -17,9 +18,9 @@ export default function MainHeader({ onOpenQuote, onOpenBooking }: MainHeaderPro
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
           {/* Left Side: Brand Identity (Logo, Company Name, Tagline) */}
           <div className="flex items-center justify-between w-full lg:w-auto">
-            <a href="#home" className="hover:opacity-95 transition-opacity" aria-label="247 HVAC of Long Island Home">
+            <Link href="/" className="hover:opacity-95 transition-opacity" aria-label="247 HVAC of Long Island Home">
               <BrandLogo size="md" />
-            </a>
+            </Link>
 
             {/* Mobile quick call icon */}
             <div className="flex sm:hidden items-center gap-2">

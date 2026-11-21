@@ -2,8 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ServiceItem } from '../ServicesSection';
-import { X, CheckCircle2, Phone, Calendar, ShieldCheck } from 'lucide-react';
+import { X, CheckCircle2, Phone, Calendar, ShieldCheck, ArrowRight } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_TEL } from '@/lib/utils';
 
 interface ServiceDetailModalProps {
@@ -93,6 +94,28 @@ export default function ServiceDetailModal({
             </div>
             <span className="text-xs font-bold text-royal hidden sm:inline font-heading">24/7 Support</span>
           </div>
+
+          {/* Dedicated Page Link for Boiler or other linked services */}
+          {service.href && (
+            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/90 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div>
+                <p className="text-xs font-bold text-navy font-heading uppercase tracking-wide">
+                  Dedicated Service Guide Available
+                </p>
+                <p className="text-xs text-slate-600 font-body">
+                  View full boiler repair diagnostics, installation specs, and pricing details.
+                </p>
+              </div>
+              <Link
+                href={service.href}
+                onClick={onClose}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-royal hover:bg-royal-hover text-white text-xs font-bold font-heading uppercase tracking-wider transition-colors shadow-sm whitespace-nowrap"
+              >
+                <span>View Boiler Page</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          )}
 
           {/* Action CTAs */}
           <div className="pt-2 flex flex-col sm:flex-row gap-3 font-heading">

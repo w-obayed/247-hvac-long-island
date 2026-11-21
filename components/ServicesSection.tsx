@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   Flame,
   Snowflake,
@@ -23,6 +24,7 @@ export interface ServiceItem {
   icon: any;
   bullets: string[];
   features?: string[];
+  href?: string;
 }
 
 export const HVAC_SERVICES: ServiceItem[] = [
@@ -47,6 +49,7 @@ export const HVAC_SERVICES: ServiceItem[] = [
     icon: Droplets,
     bullets: ['Steam & hot water boiler repairs', 'Circulator pump & zone valve replacements', 'Annual system tune-ups and efficiency checks'],
     features: ['Zone valve and aquastat testing', 'Pressure relief valve verification', 'Steam trap and radiator purge', 'Combustion efficiency analysis'],
+    href: '/boiler-installation-repair',
   },
   {
     id: 'water-heater',
@@ -152,9 +155,17 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
                 {/* Service Card Content */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-[24px] font-bold text-navy mb-2.5 group-hover:text-royal transition-colors font-heading">
-                      {service.title}
-                    </h3>
+                    {service.href ? (
+                      <Link href={service.href}>
+                        <h3 className="text-[24px] font-bold text-navy mb-2.5 group-hover:text-royal transition-colors font-heading cursor-pointer">
+                          {service.title}
+                        </h3>
+                      </Link>
+                    ) : (
+                      <h3 className="text-[24px] font-bold text-navy mb-2.5 group-hover:text-royal transition-colors font-heading">
+                        {service.title}
+                      </h3>
+                    )}
                     <p className="text-base text-slate-600 leading-relaxed mb-4 font-body">
                       {service.description}
                     </p>
@@ -172,13 +183,23 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
 
                   {/* Card Actions: Learn More & Book Now */}
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3 font-heading">
-                    <button
-                      onClick={() => onSelectService(service)}
-                      className="inline-flex items-center gap-1.5 text-sm font-bold text-royal hover:text-royal-hover group/link font-heading tracking-wide uppercase"
-                    >
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                    </button>
+                    {service.href ? (
+                      <Link
+                        href={service.href}
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-royal hover:text-royal-hover group/link font-heading tracking-wide uppercase"
+                      >
+                        <span>Learn More</span>
+                        <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => onSelectService(service)}
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-royal hover:text-royal-hover group/link font-heading tracking-wide uppercase"
+                      >
+                        <span>Learn More</span>
+                        <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                      </button>
+                    )}
 
                     <button
                       onClick={onOpenBooking}

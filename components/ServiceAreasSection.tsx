@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { MapPin, ArrowRight, Radio, CheckCircle2, Navigation, Clock } from 'lucide-react';
 import { CountyEmblem } from './CountyEmblems';
 
@@ -19,7 +20,7 @@ export const SERVICE_AREAS: ServiceAreaItem[] = [
     name: 'Nassau County',
     dispatchTime: '30-45 Min Dispatch',
     description: 'Providing comprehensive residential & commercial HVAC repair, furnace replacement, and mini-split installations across Long Island North & South Shores.',
-    communities: ['Hempstead', 'Garden City', 'Oyster Bay', 'North Hempstead', 'Long Beach', 'Glen Cove', 'Mineola', 'Great Neck'],
+    communities: ['Baldwin', 'Hempstead', 'Garden City', 'Oyster Bay', 'North Hempstead', 'Long Beach', 'Glen Cove', 'Mineola', 'Great Neck'],
     keyServices: ['Emergency Boiler Repair', 'AC Condenser Replacement', 'Ductless Heat Pumps'],
   },
   {
@@ -160,11 +161,25 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                       <span>Key Communities</span>
                     </h4>
                     <div className="flex flex-wrap gap-1.5 font-body">
-                      {nassauArea.communities.map((c) => (
-                        <span key={c} className="text-[11px] sm:text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium border border-slate-200/60 leading-tight">
-                          {c}
-                        </span>
-                      ))}
+                      {nassauArea.communities.map((c) =>
+                        c === 'Baldwin' ? (
+                          <Link
+                            key={c}
+                            href="/service-areas/baldwin"
+                            className="text-[11px] sm:text-[11px] bg-royal hover:bg-royal-hover text-white px-2 py-0.5 rounded-md font-bold leading-tight shadow-sm transition-colors flex items-center gap-1"
+                          >
+                            <span>★ Baldwin</span>
+                          </Link>
+                        ) : (
+                          <Link
+                            key={c}
+                            href="/service-areas#nassau"
+                            className="text-[11px] sm:text-[11px] bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-royal px-2 py-0.5 rounded-md font-medium border border-slate-200/60 leading-tight transition-colors"
+                          >
+                            {c}
+                          </Link>
+                        )
+                      )}
                     </div>
                   </div>
 
@@ -177,7 +192,13 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                       {nassauArea.keyServices.map((service) => (
                         <div key={service} className="flex items-start gap-2 text-xs sm:text-xs text-slate-700">
                           <span className="w-1.5 h-1.5 rounded-full bg-royal flex-shrink-0 mt-1.5" />
-                          <span className="leading-tight">{service}</span>
+                          {service.toLowerCase().includes('boiler') ? (
+                            <Link href="/boiler-installation-repair" className="leading-tight text-royal hover:underline font-semibold">
+                              {service}
+                            </Link>
+                          ) : (
+                            <span className="leading-tight">{service}</span>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -258,7 +279,13 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                   {area.keyServices.map((service) => (
                     <div key={service} className="flex items-start gap-1.5 text-xs sm:text-xs text-slate-700">
                       <CheckCircle2 className="w-3.5 h-3.5 text-hvacGreen flex-shrink-0 mt-0.5" />
-                      <span className="leading-tight">{service}</span>
+                      {service.toLowerCase().includes('boiler') || service.toLowerCase().includes('hydronic') ? (
+                        <Link href="/boiler-installation-repair" className="leading-tight text-royal hover:underline font-semibold">
+                          {service}
+                        </Link>
+                      ) : (
+                        <span className="leading-tight">{service}</span>
+                      )}
                     </div>
                   ))}
                 </div>

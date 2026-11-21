@@ -1,8 +1,10 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_TEL } from '@/lib/utils';
+import { SERVICE_AREAS_CATEGORIES } from '@/data/serviceAreasData';
 
 interface NavbarProps {
   onSelectService?: (serviceName: string) => void;
@@ -26,7 +28,7 @@ export default function Navbar({
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeAreaTab, setActiveAreaTab] = useState<'nassau' | 'suffolk' | 'queens' | 'brooklyn' | 'manhattan'>('nassau');
+  const [activeAreaTab, setActiveAreaTab] = useState<'nassau' | 'queens' | 'suffolk'>('nassau');
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -150,16 +152,13 @@ export default function Navbar({
                         Heating Solutions
                       </p>
                     </div>
-                    <a
-                      href="#services"
-                      onClick={() => {
-                        onSelectService?.('Boiler Installation & Repair');
-                        setActiveDropdown(null);
-                      }}
+                    <Link
+                      href="/boiler-installation-repair"
+                      onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading"
                     >
                       Boiler Installation & Repair
-                    </a>
+                    </Link>
                     <a
                       href="#services"
                       onClick={() => {
@@ -283,71 +282,109 @@ export default function Navbar({
                 {activeDropdown === 'areas' && (
                   <div
                     onMouseLeave={() => setActiveDropdown(null)}
-                    className="absolute -left-20 top-full mt-1 w-[680px] bg-white rounded-xl shadow-2xl border border-slate-100 p-5 text-slate-800 z-50 animate-fadeIn"
+                    className="absolute -left-20 top-full mt-1 w-[720px] bg-white rounded-xl shadow-2xl border border-slate-100 p-5 text-slate-800 z-50 animate-fadeIn"
                   >
                     <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                       <div>
                         <h4 className="font-bold text-navy text-base font-heading">Service Coverage Areas</h4>
-                        <p className="text-xs text-slate-500 font-body">24/7 radio-dispatched mobile repair units across Long Island & NYC</p>
+                        <p className="text-xs text-slate-500 font-body">24/7 radio-dispatched mobile repair units across Long Island</p>
                       </div>
-                      <span className="text-xs font-bold bg-hvacGreen/10 text-hvacGreen px-2.5 py-1 rounded-full font-heading">
-                        24/7 Available
-                      </span>
+                      <Link
+                        href="/service-areas"
+                        onClick={() => setActiveDropdown(null)}
+                        className="text-xs font-bold text-royal hover:underline font-heading flex items-center gap-1 bg-royal/10 px-3 py-1.5 rounded-full"
+                      >
+                        <span>All Service Areas Overview &rarr;</span>
+                      </Link>
                     </div>
 
-                    {/* Mega Menu Tabs */}
-                    <div className="grid grid-cols-5 gap-1.5 bg-slate-100 p-1.5 rounded-lg mb-4 text-xs font-bold font-heading">
-                      {(['nassau', 'suffolk', 'queens', 'brooklyn', 'manhattan'] as const).map((key) => (
+                    {/* 3 Main Submenu Categories Tabs */}
+                    <div className="grid grid-cols-3 gap-2 bg-slate-100 p-1.5 rounded-lg mb-4 text-xs font-bold font-heading">
+                      {SERVICE_AREAS_CATEGORIES.map((county) => (
                         <button
-                          key={key}
-                          onClick={() => setActiveAreaTab(key)}
-                          className={`py-1.5 px-2 rounded capitalize transition-all font-heading ${
-                            activeAreaTab === key ? 'bg-white text-royal shadow-sm font-black' : 'text-slate-600 hover:text-navy'
+                          key={county.id}
+                          onClick={() => setActiveAreaTab(county.id as 'nassau' | 'queens' | 'suffolk')}
+                          className={`py-2 px-3 rounded-md transition-all font-heading text-center ${
+                            activeAreaTab === county.id
+                              ? 'bg-royal text-white shadow-sm font-black'
+                              : 'text-slate-700 hover:text-navy hover:bg-white/60'
                           }`}
                         >
-                          {key === 'nassau' ? 'Nassau' : key === 'suffolk' ? 'Suffolk' : key}
+                          {county.name}
                         </button>
                       ))}
                     </div>
 
                     {/* Active Tab Content */}
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-100">
-                      <div className="flex items-center justify-between mb-2">
-                        <h5 className="font-bold text-navy text-sm font-heading">
-                          {AREA_DETAILS[activeAreaTab].name}
-                        </h5>
-                        <span className="text-xs font-semibold text-brightRed bg-red-50 px-2 py-0.5 rounded border border-red-200 font-heading">
-                          {AREA_DETAILS[activeAreaTab].time}
-                        </span>
-                      </div>
-                      <p className="text-xs text-slate-600 mb-3 font-body">{AREA_DETAILS[activeAreaTab].desc}</p>
+                      {(() => {
+                        const current = SERVICE_AREAS_CATEGORIES.find((c) => c.id === activeAreaTab) || SERVICE_AREAS_CATEGORIES[0];
+                        return (
+                          <>
+                            <div className="flex items-center justify-between mb-2">
+                              <h5 className="font-bold text-navy text-sm font-heading">
+                                {current.name}
+                              </h5>
+                              <span className="text-xs font-semibold text-brightRed bg-red-50 px-2 py-0.5 rounded border border-red-200 font-heading">
+                                {current.dispatchTime}
+                              </span>
+                            </div>
+                            <p className="text-xs text-slate-600 mb-3 font-body">{current.description}</p>
 
-                      <div className="grid grid-cols-3 sm:grid-cols-5 gap-1.5 mb-3 font-body">
-                        {AREA_DETAILS[activeAreaTab].towns.map((town) => (
-                          <span key={town} className="text-[11px] bg-white px-2 py-1 rounded text-slate-700 border border-slate-200 text-center font-medium font-body">
-                            {town}
-                          </span>
-                        ))}
-                      </div>
+                            {current.locations.length > 0 ? (
+                              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1.5 mb-3 max-h-52 overflow-y-auto pr-1 font-body">
+                                {current.locations.map((loc) =>
+                                  loc.slug === 'baldwin' ? (
+                                    <Link
+                                      key={loc.name}
+                                      href="/service-areas/baldwin"
+                                      onClick={() => setActiveDropdown(null)}
+                                      className="text-[11px] bg-royal hover:bg-royal-hover text-white px-2 py-1 rounded font-bold text-center shadow-sm flex items-center justify-center gap-1 transition-colors"
+                                    >
+                                      <span>★ Baldwin</span>
+                                    </Link>
+                                  ) : (
+                                    <Link
+                                      key={loc.name}
+                                      href={`/service-areas#${current.id}`}
+                                      onClick={() => setActiveDropdown(null)}
+                                      className="text-[11px] bg-white hover:bg-slate-100 hover:text-royal px-2 py-1 rounded text-slate-700 border border-slate-200 text-center font-medium transition-colors truncate"
+                                      title={loc.name}
+                                    >
+                                      {loc.name}
+                                    </Link>
+                                  )
+                                )}
+                              </div>
+                            ) : (
+                              <div className="py-4 text-center bg-white rounded-lg border border-slate-200/80 mb-3">
+                                <p className="text-xs font-semibold text-navy font-heading">
+                                  Suffolk County, NY Full Service Area
+                                </p>
+                                <p className="text-xs text-slate-500 mt-1 font-body">
+                                  Serving residential & commercial properties throughout Western and Central Suffolk County, NY.
+                                </p>
+                              </div>
+                            )}
 
-                      <div className="flex items-center justify-between pt-2 border-t border-slate-200/80">
-                        <a
-                          href="#service-areas"
-                          onClick={() => {
-                            onOpenArea?.(AREA_DETAILS[activeAreaTab].name);
-                            setActiveDropdown(null);
-                          }}
-                          className="text-xs font-bold text-royal hover:underline font-heading"
-                        >
-                          View {AREA_DETAILS[activeAreaTab].name} Details &rarr;
-                        </a>
-                        <a
-                          href={PHONE_TEL}
-                          className="text-xs font-bold text-navy bg-brightYellow px-3 py-1 rounded hover:bg-brightYellow-hover font-heading"
-                        >
-                          Direct Dispatch: {PHONE_NUMBER}
-                        </a>
-                      </div>
+                            <div className="flex items-center justify-between pt-2 border-t border-slate-200/80 font-heading">
+                              <Link
+                                href={`/service-areas#${current.id}`}
+                                onClick={() => setActiveDropdown(null)}
+                                className="text-xs font-bold text-royal hover:underline"
+                              >
+                                View {current.name} Directory &rarr;
+                              </Link>
+                              <a
+                                href={PHONE_TEL}
+                                className="text-xs font-bold text-navy bg-brightYellow px-3 py-1 rounded hover:bg-brightYellow-hover"
+                              >
+                                Direct Dispatch: {PHONE_NUMBER}
+                              </a>
+                            </div>
+                          </>
+                        );
+                      })()}
                     </div>
                   </div>
                 )}
@@ -546,16 +583,13 @@ export default function Navbar({
             </button>
             {mobileSubmenu === 'heating' && (
               <div className="pl-6 pr-2 py-1 space-y-1 bg-navy-dark/60 rounded-lg my-1">
-                <a
-                  href="#services"
-                  onClick={() => {
-                    onSelectService?.('Boiler Installation & Repair');
-                    setMobileMenuOpen(false);
-                  }}
+                <Link
+                  href="/boiler-installation-repair"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Boiler Installation & Repair
-                </a>
+                </Link>
                 <a
                   href="#services"
                   onClick={() => {
@@ -661,20 +695,70 @@ export default function Navbar({
               />
             </button>
             {mobileSubmenu === 'areas' && (
-              <div className="pl-6 pr-2 py-1 space-y-1 bg-navy-dark/60 rounded-lg my-1">
-                {['Nassau County', 'Queens', 'Suffolk County', 'Brooklyn', 'Manhattan'].map((area) => (
-                  <a
-                    key={area}
-                    href="#service-areas"
-                    onClick={() => {
-                      onOpenArea?.(area);
-                      setMobileMenuOpen(false);
-                    }}
-                    className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
-                  >
-                    {area}
-                  </a>
-                ))}
+              <div className="pl-4 pr-2 py-2 space-y-2.5 bg-navy-dark/70 rounded-lg my-1">
+                {/* Overview Link */}
+                <Link
+                  href="/service-areas"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3 py-2 text-sm font-black text-electric bg-white/10 rounded-md hover:bg-white/20 uppercase tracking-wider"
+                >
+                  All Service Areas Overview &rarr;
+                </Link>
+
+                {/* 1. Nassau County */}
+                <div className="pt-1 border-t border-white/10">
+                  <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
+                    Nassau County
+                  </div>
+                  <div className="pl-2 space-y-1">
+                    <Link
+                      href="/service-areas/baldwin"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-1.5 text-sm font-bold text-brightYellow hover:underline"
+                    >
+                      ★ Baldwin (Dedicated Page)
+                    </Link>
+                    <Link
+                      href="/service-areas#nassau"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
+                    >
+                      View All 27 Nassau Locations &rarr;
+                    </Link>
+                  </div>
+                </div>
+
+                {/* 2. Queens */}
+                <div className="pt-1 border-t border-white/10">
+                  <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
+                    Queens
+                  </div>
+                  <div className="pl-2 space-y-1">
+                    <Link
+                      href="/service-areas#queens"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
+                    >
+                      View All 8 Queens Locations &rarr;
+                    </Link>
+                  </div>
+                </div>
+
+                {/* 3. Suffolk County, NY */}
+                <div className="pt-1 border-t border-white/10">
+                  <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
+                    Suffolk County, NY
+                  </div>
+                  <div className="pl-2 space-y-1">
+                    <Link
+                      href="/service-areas#suffolk"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
+                    >
+                      Suffolk County 24/7 Coverage &rarr;
+                    </Link>
+                  </div>
+                </div>
               </div>
             )}
           </div>
