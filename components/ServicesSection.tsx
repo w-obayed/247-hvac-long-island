@@ -38,6 +38,7 @@ export const HVAC_SERVICES: ServiceItem[] = [
     icon: Flame,
     bullets: ['Same-day emergency furnace repairs', 'High-efficiency 96%+ AFUE replacements', 'OEM heat exchanger & blower motor service'],
     features: ['Heat exchanger leak inspection', 'Blower motor & capacitor testing', 'Safety limit switch diagnostics', 'Thermostat calibration & airflow balancing'],
+    href: '/furnace-installation-repair-replacement',
   },
   {
     id: 'boiler',
@@ -61,6 +62,7 @@ export const HVAC_SERVICES: ServiceItem[] = [
     icon: Droplets,
     bullets: ['On-demand tankless water heating systems', 'Fast emergency leak repairs & replacements', 'Expansion tank & pressure valve installations'],
     features: ['Same-day emergency tank replacements', 'Scale and mineral flush maintenance', 'Gas burner assembly inspection', 'Anode rod and element replacement'],
+    href: '/water-heater-installation-repair-replacement',
   },
   {
     id: 'air-conditioner',
@@ -72,6 +74,7 @@ export const HVAC_SERVICES: ServiceItem[] = [
     icon: Snowflake,
     bullets: ['Energy Star high SEER2 AC equipment', 'Custom ductwork sizing & precision airflow', 'Manufacturer warranty registration included'],
     features: ['Manual J heat-load calculations', 'Precision airflow and ductwork balancing', 'Quiet condenser motor technology', 'Smart WiFi thermostat setup included'],
+    href: '/air-conditioners-installation-replacement',
   },
   {
     id: 'ac-repair',
@@ -83,6 +86,7 @@ export const HVAC_SERVICES: ServiceItem[] = [
     icon: Wrench,
     bullets: ['24/7 emergency AC cooling repairs', 'Comprehensive 21-point system precision tune-up', 'Eco-friendly refrigerant recharge & leak detection'],
     features: ['Electronic refrigerant leak detection', 'Evaporator coil deep chemical clean', 'Electrical connection & amperage test', 'Condensate drain line flush & clear'],
+    href: '/air-conditioning-repair',
   },
   {
     id: 'mini-split',
@@ -94,6 +98,7 @@ export const HVAC_SERVICES: ServiceItem[] = [
     icon: Layers,
     bullets: ['Multi-zone and single-room installations', 'Heating & cooling in one compact unit', 'Inverter technology reduces energy bills up to 40%'],
     features: ['Hyper-heating down to -13°F outdoors', 'Individual handheld remote control per zone', 'Whisper-quiet indoor air delivery (as low as 19 dB)', 'Rebate eligible through local utility programs'],
+    href: '/mini-splits-ductless-heat-pumps-air-conditioners',
   },
 ];
 

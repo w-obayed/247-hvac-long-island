@@ -81,16 +81,19 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
 
           {/* Column 2 — Heating Services */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading">
-              Heating Services
-            </h4>
+            <Link
+              href="/heating-services"
+              className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading block hover:text-electric transition-colors"
+            >
+              Heating Services »
+            </Link>
             <ul className="space-y-2 text-sm sm:text-xs font-body">
               {[
-                { title: 'Furnace Services', target: 'Furnace Installation, Repair & Replacement' },
+                { title: 'All Heating Services', target: 'Heating Services', href: '/heating-services' },
+                { title: 'Furnace Services', target: 'Furnace Installation, Repair & Replacement', href: '/furnace-installation-repair-replacement' },
                 { title: 'Boiler Services', target: 'Boiler Installation, Repair & Replacement', href: '/boiler-installation-repair' },
-                { title: 'Water Heater Services', target: 'Water Heater Installation, Repair & Replacement' },
-                { title: 'Heating Repairs', target: 'Furnace Installation, Repair & Replacement' },
-                { title: 'Heating Installation', target: 'Boiler Installation, Repair & Replacement', href: '/boiler-installation-repair' },
+                { title: 'Water Heater Services', target: 'Water Heater Installation, Repair & Replacement', href: '/water-heater-installation-repair-replacement' },
+                { title: 'Heating Repairs', target: 'Furnace Installation, Repair & Replacement', href: '/furnace-installation-repair-replacement' },
               ].map((item) => (
                 <li key={item.title}>
                   {item.href ? (
@@ -116,25 +119,38 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
 
           {/* Column 3 — Cooling Services */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading">
-              Cooling Services
-            </h4>
+            <Link
+              href="/cooling-services"
+              className="text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-navy-light pb-2 font-heading block hover:text-electric transition-colors"
+            >
+              Cooling Services »
+            </Link>
             <ul className="space-y-2 text-sm sm:text-xs font-body">
               {[
-                { title: 'AC Installation', target: 'Air Conditioner Installation & Replacement' },
-                { title: 'AC Repair', target: 'Air Conditioner Repair & Maintenance' },
-                { title: 'Mini-Split Systems', target: 'Mini-Split Installation, Repair & Replacement' },
-                { title: 'AC Maintenance', target: 'Air Conditioner Repair & Maintenance' },
-                { title: 'Commercial Cooling', target: 'Air Conditioner Installation & Replacement' },
+                { title: 'All Cooling Services', target: 'Cooling Services', href: '/cooling-services' },
+                { title: 'AC Installation', target: 'Air Conditioner Installation & Replacement', href: '/air-conditioners-installation-replacement' },
+                { title: 'AC Repair', target: 'Air Conditioner Repair & Maintenance', href: '/air-conditioning-repair' },
+                { title: 'Mini-Split Systems', target: 'Mini-Split Installation, Repair & Replacement', href: '/mini-splits-ductless-heat-pumps-air-conditioners' },
+                { title: 'AC Maintenance', target: 'Air Conditioner Repair & Maintenance', href: '/air-conditioning-repair' },
+                { title: 'Commercial Cooling', target: 'Air Conditioner Installation & Replacement', href: '/air-conditioners-installation-replacement' },
               ].map((item) => (
                 <li key={item.title}>
-                  <a
-                    href="#services"
-                    onClick={() => onSelectService?.(item.target)}
-                    className="hover:text-electric transition-colors"
-                  >
-                    {item.title}
-                  </a>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="hover:text-electric transition-colors"
+                    >
+                      {item.title}
+                    </Link>
+                  ) : (
+                    <a
+                      href="#services"
+                      onClick={() => onSelectService?.(item.target)}
+                      className="hover:text-electric transition-colors"
+                    >
+                      {item.title}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

@@ -118,103 +118,162 @@ export default function BoilerInstallationRepairPage() {
       />
 
       {/* ==============================================================
-          SECTION 1: HERO / BANNER
+          SECTION 1: HERO / BANNER (Matches Homepage Hero Design)
          ============================================================== */}
       <section
         id="hero-banner"
-        className="relative bg-[#061A40] text-white overflow-hidden py-10 sm:py-14 md:py-18 lg:py-20"
+        className="relative bg-[#061A40] text-white overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20"
       >
         {/* Background Image with smooth gradient overlay */}
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-3/5 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
+        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
             src="/image-website/boiller-installation-repair-e1661179456943.jpg"
             alt="Boiler Installation & Repair in Long Island, NY"
             fill
             priority
             className="object-cover object-center lg:object-right"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 60vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
           />
           {/* Subtle edge blend into navy background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/75 lg:via-[#061A40]/55 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/60 sm:via-[#061A40]/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#061A40] sm:from-[#061A40]/80 via-transparent to-transparent" />
         </div>
 
         {/* Ambient Grid Accent */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/90 lg:via-[#061A40]/70 via-50% to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/90 sm:via-[#061A40]/80 via-50% to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(#0066CC_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none z-10" />
 
         <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 z-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-8 flex flex-col items-start text-left w-full">
+            {/* Left Column: Heading, Description, Trust Highlights, CTA Buttons */}
+            <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-4 shadow-lg font-heading">
+              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
                 <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span>#1 Boiler Services in Long Island</span>
+                <span className="truncate sm:overflow-visible">#1 Boiler Services in Long Island</span>
               </div>
 
               {/* Exact Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] mb-4 text-white font-heading">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] sm:leading-[1.12] mb-3.5 sm:mb-5 text-white font-heading">
                 Boiler Installation & Repair
               </h1>
 
               {/* Exact Description */}
-              <p className="text-base sm:text-lg text-slate-100 max-w-2xl font-normal leading-relaxed mb-3 font-body">
+              <p className="text-base text-slate-200 max-w-2xl font-normal leading-relaxed mb-3 sm:mb-4 font-body">
                 Our experienced HVAC technicians have been installing, repairing, and servicing boilers in homes across Long Island for over 40 years.
               </p>
 
               {/* Exact Supporting Text */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/15 text-electric text-sm sm:text-base font-bold font-heading mb-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/15 text-electric text-xs sm:text-sm font-bold font-heading mb-6">
                 <span>What are the best Boiler Installation & Repair Near Me? We are are 🙂</span>
               </div>
 
-              {/* Trust Badges */}
-              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 gap-2.5 sm:gap-3 w-full max-w-xl mb-7">
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2.5 rounded-lg border border-white/10">
+              {/* Four Trust Badges */}
+              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 gap-2 sm:gap-3.5 w-full max-w-xl mb-6 sm:mb-8">
+                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-lg border border-white/10">
                   <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-electric flex-shrink-0" />
                   <span className="text-xs sm:text-sm font-bold text-white font-heading">40+ Years of Boiler Expertise</span>
                 </div>
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2.5 rounded-lg border border-white/10">
+                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-lg border border-white/10">
                   <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-brightYellow flex-shrink-0" />
                   <span className="text-xs sm:text-sm font-bold text-white font-heading">24/7 Emergency Repairs</span>
                 </div>
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2.5 rounded-lg border border-white/10">
+                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-lg border border-white/10">
                   <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-brightRed flex-shrink-0" />
                   <span className="text-xs sm:text-sm font-bold text-white font-heading">High-Efficiency Gas & Oil Boilers</span>
                 </div>
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2.5 rounded-lg border border-white/10">
+                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-lg border border-white/10">
                   <Droplets className="w-4 h-4 sm:w-5 sm:h-5 text-electric flex-shrink-0" />
                   <span className="text-xs sm:text-sm font-bold text-white font-heading">Hydronic Radiant & Steam Pros</span>
                 </div>
               </div>
 
-              {/* Call Now CTA & Action Buttons */}
-              <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 w-full sm:w-auto font-heading">
-                {/* 1. Call Now CTA using existing phone & button style */}
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3.5 w-full sm:w-auto font-heading">
+                {/* 1. Call Now */}
                 <a
                   href={PHONE_TEL}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-lg bg-brightRed hover:bg-brightRed-hover text-white font-black text-sm sm:text-base shadow-xl active:scale-95 transition-all duration-200 uppercase tracking-wider min-h-[46px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-lg bg-white text-[#061A40] font-black text-sm sm:text-base shadow-xl hover:bg-slate-100 active:scale-95 transition-all duration-200 uppercase tracking-wider min-h-[44px]"
                 >
-                  <Phone className="w-5 h-5 flex-shrink-0 animate-pulse" />
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brightRed flex-shrink-0" />
                   <span>Call {PHONE_NUMBER}</span>
                 </a>
 
-                {/* 2. Book Now CTA */}
+                {/* 2. Book Now */}
                 <button
                   onClick={() => setIsBookingOpen(true)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-lg bg-[#25843D] hover:bg-[#1D6B31] text-white font-black text-sm sm:text-base shadow-xl active:scale-95 transition-all duration-200 uppercase tracking-wider min-h-[46px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-lg bg-[#25843D] text-white font-black text-sm sm:text-base shadow-xl hover:bg-[#1D6B31] active:scale-95 transition-all duration-200 uppercase tracking-wider min-h-[44px]"
                 >
-                  <Calendar className="w-5 h-5 flex-shrink-0" />
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                   <span>Book Now</span>
                 </button>
 
-                {/* 3. Free Quote CTA */}
+                {/* 3. Get Free Quote */}
                 <button
                   onClick={() => setIsQuoteOpen(true)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-lg bg-royal hover:bg-royal-hover text-white font-black text-sm sm:text-base shadow-xl border border-white/20 active:scale-95 transition-all duration-200 uppercase tracking-wider min-h-[46px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-lg bg-[#0066CC] text-white font-black text-sm sm:text-base shadow-xl hover:bg-[#0052A3] active:scale-95 transition-all duration-200 uppercase tracking-wider min-h-[44px]"
                 >
-                  <FileText className="w-5 h-5 flex-shrink-0" />
+                  <FileText className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                   <span>Get Free Quote</span>
                 </button>
+              </div>
+
+              {/* Trust reassurance rating */}
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mt-5 sm:mt-6 text-xs sm:text-sm text-slate-300 font-body">
+                <div className="flex items-center gap-1 text-brightYellow flex-shrink-0">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current text-brightYellow" />
+                  ))}
+                </div>
+                <span className="font-semibold text-white font-heading">5.0 Star Rated Boiler Service</span>
+                <span className="text-slate-400 hidden sm:inline">•</span>
+                <span className="w-full sm:w-auto text-slate-300">Nassau & Suffolk County 24/7 Coverage</span>
+              </div>
+            </div>
+
+            {/* Right Column: High-Impact Visual Card with Dispatch Status (Matches Homepage Hero) */}
+            <div className="hidden lg:flex lg:col-span-5 xl:col-span-4 flex-col gap-4">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 bg-gradient-to-b from-navy-light/90 to-navy-dark/95 backdrop-blur-md p-6">
+                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+                  <div>
+                    <span className="text-xs uppercase tracking-wider font-extrabold text-electric font-heading">Fast Dispatch</span>
+                    <h3 className="text-[24px] font-bold text-white font-heading">Emergency Mobile Units</h3>
+                  </div>
+                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-hvacGreen/20 text-hvacGreen border border-hvacGreen/30 text-xs font-bold font-heading">
+                    <span className="w-2 h-2 rounded-full bg-hvacGreen animate-pulse" />
+                    <span>On Duty</span>
+                  </div>
+                </div>
+
+                <div className="space-y-3 mb-5 font-body">
+                  <div className="flex items-start gap-3 text-xs text-slate-200">
+                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
+                    <span><strong className="font-heading font-bold text-white">30-45 Minute Response:</strong> Nassau, Queens & Western Suffolk.</span>
+                  </div>
+                  <div className="flex items-start gap-3 text-xs text-slate-200">
+                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
+                    <span><strong className="font-heading font-bold text-white">Licensed & Certified:</strong> EPA universal, OSHA compliant master technicians.</span>
+                  </div>
+                  <div className="flex items-start gap-3 text-xs text-slate-200">
+                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
+                    <span><strong className="font-heading font-bold text-white">Stocked Vehicles:</strong> Over 1,000 OEM replacement parts on every service truck.</span>
+                  </div>
+                </div>
+
+                <div className="bg-white/10 rounded-xl p-4 border border-white/10 flex items-center justify-between">
+                  <div>
+                    <p className="text-[11px] uppercase font-bold text-slate-300 font-heading">Direct Emergency Line</p>
+                    <a href={PHONE_TEL} className="text-xl font-black text-brightYellow hover:underline font-heading">
+                      {PHONE_NUMBER}
+                    </a>
+                  </div>
+                  <a
+                    href={PHONE_TEL}
+                    className="px-3.5 py-2 rounded-lg bg-brightRed text-white font-bold text-xs uppercase tracking-wider hover:bg-brightRed-hover shadow font-heading"
+                  >
+                    Call Now
+                  </a>
+                </div>
               </div>
             </div>
           </div>

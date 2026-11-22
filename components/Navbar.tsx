@@ -124,11 +124,14 @@ export default function Navbar({
                 About
               </a>
 
-              {/* Heating Services (Dropdown with Arrow Icon ONLY) */}
-              <div className="relative group">
-                <button
-                  onClick={() => toggleDropdown('heating')}
-                  onMouseEnter={() => setActiveDropdown('heating')}
+              {/* Heating Services (Dropdown with Direct Link & Hover) */}
+              <div
+                className="relative group flex items-center"
+                onMouseEnter={() => setActiveDropdown('heating')}
+              >
+                <Link
+                  href="/heating-services"
+                  onClick={() => setActiveDropdown(null)}
                   className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors ${
                     activeDropdown === 'heating' ? 'text-electric' : 'text-slate-100'
                   }`}
@@ -140,18 +143,32 @@ export default function Navbar({
                       activeDropdown === 'heating' ? 'rotate-180 text-electric' : ''
                     }`}
                   />
-                </button>
+                </Link>
 
                 {activeDropdown === 'heating' && (
                   <div
                     onMouseLeave={() => setActiveDropdown(null)}
                     className="absolute left-0 top-full mt-1 w-80 bg-white rounded-xl shadow-2xl border border-slate-100 py-2 text-slate-800 z-50 animate-fadeIn"
                   >
-                    <div className="px-4 py-2 border-b border-slate-100 bg-slate-50/70">
+                    <div className="px-4 py-2 border-b border-slate-100 bg-slate-50/70 flex items-center justify-between">
                       <p className="text-xs font-bold uppercase tracking-wider text-royal font-heading">
                         Heating Solutions
                       </p>
+                      <Link
+                        href="/heating-services"
+                        onClick={() => setActiveDropdown(null)}
+                        className="text-[11px] font-bold text-royal hover:underline font-heading"
+                      >
+                        All Services »
+                      </Link>
                     </div>
+                    <Link
+                      href="/furnace-installation-repair-replacement"
+                      onClick={() => setActiveDropdown(null)}
+                      className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading"
+                    >
+                      Furnace Installation, Repair & Replacement
+                    </Link>
                     <Link
                       href="/boiler-installation-repair"
                       onClick={() => setActiveDropdown(null)}
@@ -159,35 +176,25 @@ export default function Navbar({
                     >
                       Boiler Installation & Repair
                     </Link>
-                    <a
-                      href="#services"
-                      onClick={() => {
-                        onSelectService?.('Furnace Installation, Repair & Replacement');
-                        setActiveDropdown(null);
-                      }}
-                      className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading"
-                    >
-                      Furnace Installation, Repair & Replacement
-                    </a>
-                    <a
-                      href="#services"
-                      onClick={() => {
-                        onSelectService?.('Water Heater Installation, Repair & Replacement');
-                        setActiveDropdown(null);
-                      }}
+                    <Link
+                      href="/water-heater-installation-repair-replacement"
+                      onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading"
                     >
                       Water Heater Installation, Repair & Replacement
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
 
-              {/* Cooling Services (Dropdown with Arrow Icon ONLY) */}
-              <div className="relative group">
-                <button
-                  onClick={() => toggleDropdown('cooling')}
-                  onMouseEnter={() => setActiveDropdown('cooling')}
+              {/* Cooling Services (Dropdown with Direct Link & Hover) */}
+              <div
+                className="relative group flex items-center"
+                onMouseEnter={() => setActiveDropdown('cooling')}
+              >
+                <Link
+                  href="/cooling-services"
+                  onClick={() => setActiveDropdown(null)}
                   className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors ${
                     activeDropdown === 'cooling' ? 'text-electric' : 'text-slate-100'
                   }`}
@@ -199,48 +206,46 @@ export default function Navbar({
                       activeDropdown === 'cooling' ? 'rotate-180 text-electric' : ''
                     }`}
                   />
-                </button>
+                </Link>
 
                 {activeDropdown === 'cooling' && (
                   <div
                     onMouseLeave={() => setActiveDropdown(null)}
                     className="absolute left-0 top-full mt-1 w-[390px] bg-white rounded-xl shadow-2xl border border-slate-100 py-2 text-slate-800 z-50 animate-fadeIn"
                   >
-                    <div className="px-4 py-2 border-b border-slate-100 bg-slate-50/70">
+                    <div className="px-4 py-2 border-b border-slate-100 bg-slate-50/70 flex items-center justify-between">
                       <p className="text-xs font-bold uppercase tracking-wider text-royal font-heading">
                         Cooling & Air Conditioning
                       </p>
+                      <Link
+                        href="/cooling-services"
+                        onClick={() => setActiveDropdown(null)}
+                        className="text-[11px] font-bold text-royal hover:underline font-heading"
+                      >
+                        All Services »
+                      </Link>
                     </div>
-                    <a
-                      href="#services"
-                      onClick={() => {
-                        onSelectService?.('Air Conditioner Installation & Replacement');
-                        setActiveDropdown(null);
-                      }}
+                    <Link
+                      href="/air-conditioners-installation-replacement"
+                      onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading whitespace-nowrap"
                     >
-                      Air Conditioner Installation & Replacement
-                    </a>
-                    <a
-                      href="#services"
-                      onClick={() => {
-                        onSelectService?.('Air Conditioning Repair & Maintenance');
-                        setActiveDropdown(null);
-                      }}
+                      Air Conditioners Installation & Replacement
+                    </Link>
+                    <Link
+                      href="/air-conditioning-repair"
+                      onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading whitespace-nowrap"
                     >
                       Air Conditioning Repair & Maintenance
-                    </a>
-                    <a
-                      href="#services"
-                      onClick={() => {
-                        onSelectService?.('Mini-Splits — Ductless Heat Pumps and Air Conditioners');
-                        setActiveDropdown(null);
-                      }}
+                    </Link>
+                    <Link
+                      href="/mini-splits-ductless-heat-pumps-air-conditioners"
+                      onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading whitespace-nowrap"
                     >
                       Mini-Splits — Ductless Heat Pumps & AC
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -570,19 +575,42 @@ export default function Navbar({
 
           {/* Heating Submenu */}
           <div>
-            <button
-              onClick={() => toggleMobileSubmenu('heating')}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
-            >
-              <span>Heating Services</span>
-              <ChevronDown
-                className={`w-4 h-4 text-white transition-transform ${
-                  mobileSubmenu === 'heating' ? 'rotate-180 text-electric' : ''
-                }`}
-              />
-            </button>
+            <div className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors">
+              <Link
+                href="/heating-services"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex-1"
+              >
+                Heating Services
+              </Link>
+              <button
+                onClick={() => toggleMobileSubmenu('heating')}
+                className="p-1.5 focus:outline-hidden"
+                aria-label="Toggle Heating Submenu"
+              >
+                <ChevronDown
+                  className={`w-5 h-5 text-white transition-transform ${
+                    mobileSubmenu === 'heating' ? 'rotate-180 text-electric' : ''
+                  }`}
+                />
+              </button>
+            </div>
             {mobileSubmenu === 'heating' && (
               <div className="pl-6 pr-2 py-1 space-y-1 bg-navy-dark/60 rounded-lg my-1">
+                <Link
+                  href="/heating-services"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3 py-2 text-sm sm:text-base font-bold text-electric hover:text-white"
+                >
+                  All Heating Services »
+                </Link>
+                <Link
+                  href="/furnace-installation-repair-replacement"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
+                >
+                  Furnace Installation, Repair & Replacement
+                </Link>
                 <Link
                   href="/boiler-installation-repair"
                   onClick={() => setMobileMenuOpen(false)}
@@ -590,75 +618,69 @@ export default function Navbar({
                 >
                   Boiler Installation & Repair
                 </Link>
-                <a
-                  href="#services"
-                  onClick={() => {
-                    onSelectService?.('Furnace Installation, Repair & Replacement');
-                    setMobileMenuOpen(false);
-                  }}
-                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
-                >
-                  Furnace Installation, Repair & Replacement
-                </a>
-                <a
-                  href="#services"
-                  onClick={() => {
-                    onSelectService?.('Water Heater Installation, Repair & Replacement');
-                    setMobileMenuOpen(false);
-                  }}
+                <Link
+                  href="/water-heater-installation-repair-replacement"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Water Heater Installation, Repair & Replacement
-                </a>
+                </Link>
               </div>
             )}
           </div>
 
           {/* Cooling Submenu */}
           <div>
-            <button
-              onClick={() => toggleMobileSubmenu('cooling')}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
-            >
-              <span>Cooling Services</span>
-              <ChevronDown
-                className={`w-4 h-4 text-white transition-transform ${
-                  mobileSubmenu === 'cooling' ? 'rotate-180 text-electric' : ''
-                }`}
-              />
-            </button>
+            <div className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors">
+              <Link
+                href="/cooling-services"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex-1"
+              >
+                Cooling Services
+              </Link>
+              <button
+                onClick={() => toggleMobileSubmenu('cooling')}
+                className="p-1.5 focus:outline-hidden"
+                aria-label="Toggle Cooling Submenu"
+              >
+                <ChevronDown
+                  className={`w-5 h-5 text-white transition-transform ${
+                    mobileSubmenu === 'cooling' ? 'rotate-180 text-electric' : ''
+                  }`}
+                />
+              </button>
+            </div>
             {mobileSubmenu === 'cooling' && (
               <div className="pl-6 pr-2 py-1 space-y-1 bg-navy-dark/60 rounded-lg my-1">
-                <a
-                  href="#services"
-                  onClick={() => {
-                    onSelectService?.('Air Conditioner Installation & Replacement');
-                    setMobileMenuOpen(false);
-                  }}
+                <Link
+                  href="/cooling-services"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3 py-2 text-sm sm:text-base font-bold text-electric hover:text-white"
+                >
+                  All Cooling Services »
+                </Link>
+                <Link
+                  href="/air-conditioners-installation-replacement"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
-                  Air Conditioner Installation & Replacement
-                </a>
-                <a
-                  href="#services"
-                  onClick={() => {
-                    onSelectService?.('Air Conditioning Repair & Maintenance');
-                    setMobileMenuOpen(false);
-                  }}
+                  Air Conditioners Installation & Replacement
+                </Link>
+                <Link
+                  href="/air-conditioning-repair"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Air Conditioning Repair & Maintenance
-                </a>
-                <a
-                  href="#services"
-                  onClick={() => {
-                    onSelectService?.('Mini-Splits — Ductless Heat Pumps and Air Conditioners');
-                    setMobileMenuOpen(false);
-                  }}
+                </Link>
+                <Link
+                  href="/mini-splits-ductless-heat-pumps-air-conditioners"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
-                  Mini-Splits — Ductless Heat Pumps
-                </a>
+                  Mini-Splits — Ductless Heat Pumps & AC
+                </Link>
               </div>
             )}
           </div>
