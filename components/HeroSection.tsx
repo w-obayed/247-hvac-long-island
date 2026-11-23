@@ -89,8 +89,8 @@ export default function HeroSection({
               </div>
             </div>
 
-            {/* 4 Main CTA Buttons - Stacked on Mobile (<sm) & Horizontal on Tablet/Desktop */}
-            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3.5 w-full sm:w-auto font-heading">
+            {/* CTA Buttons — Four Clean Primary Actions */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 w-full sm:w-auto font-heading">
               {/* 1. Book Now — Green (#25843D) */}
               <button
                 onClick={onOpenBooking}
@@ -109,7 +109,7 @@ export default function HeroSection({
                 <span>Call {PHONE_NUMBER}</span>
               </a>
 
-              {/* 3. Instant Quote — Royal Blue (#0066CC) */}
+              {/* 3. Get A Free Quote / Instant Quote — Royal Blue (#0066CC) */}
               <button
                 onClick={onOpenQuote}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-lg bg-[#0066CC] text-white font-black text-sm sm:text-base shadow-xl hover:bg-[#0052A3] active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider min-h-[44px]"

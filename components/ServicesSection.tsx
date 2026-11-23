@@ -117,10 +117,10 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
             Comprehensive Climate Solutions
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight mb-4 font-heading">
-            Our Residential & Commercial HVAC Services
+            Our Residential & Commercial HVAC Services in Long Island
           </h2>
           <p className="text-base text-slate-600 leading-relaxed font-body">
-            We provide a full range of heating and cooling services to keep homes and businesses comfortable throughout the year.
+            We provide a full range of cooling and heating services to keep homes and businesses comfortable throughout the year. Our technicians handle system installations, repairs, and replacements across Long Island, while also offering air duct and ventilation cleaning services to help improve airflow and indoor comfort.
           </p>
         </div>
 

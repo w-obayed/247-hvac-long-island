@@ -25,7 +25,7 @@ export default function FinalCtaBanner({ onOpenBooking, onOpenQuote }: FinalCtaB
 
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4 font-heading">
-          Ready to Get Started?
+          Need a Reliable &amp; Professional HVAC Service - 24/7 Emergency
         </h2>
 
         {/* Description - Inter */}

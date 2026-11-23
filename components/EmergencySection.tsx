@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Phone, AlertCircle, Clock, Wrench, ShieldAlert } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_TEL } from '@/lib/utils';
 
@@ -24,14 +25,25 @@ export default function EmergencySection({ onOpenBooking }: EmergencySectionProp
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left Content */}
+            {/* Left Content — Signs Your HVAC System May Need Attention */}
             <div className="lg:col-span-8">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4 font-heading">
-                24/7 Emergency HVAC Service in <span className="text-brightRed">Long Island</span>
+                Signs Your HVAC System May Need Attention
               </h2>
 
-              <p className="text-base text-slate-200 leading-relaxed max-w-2xl mb-6 font-body">
-                Heating or cooling emergency? Our team is available around the clock to help restore comfort to your home or business. Fast response times across Nassau County, Suffolk County, and NYC boroughs.
+              <p className="text-base text-slate-200 leading-relaxed max-w-2xl mb-4 font-body">
+                Heating and cooling systems often show warning signs before a larger problem develops. If you notice unusual noises, uneven temperatures, weak airflow, or rising energy bills, your system may be struggling to operate efficiently. Paying attention to these early indicators can help prevent bigger issues and keep your home or business comfortable throughout the year.
+              </p>
+
+              <p className="text-sm text-slate-300 leading-relaxed max-w-2xl mb-6 font-body">
+                If your system is showing these signs, you can explore{' '}
+                <Link
+                  href="/air-conditioning-repair"
+                  className="text-electric font-bold hover:underline"
+                >
+                  air conditioner repair and maintenance
+                </Link>{' '}
+                to address potential problems early.
               </p>
 
               {/* Emergency Reassurance Points */}

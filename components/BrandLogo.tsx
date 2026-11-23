@@ -27,7 +27,7 @@ export default function BrandLogo({
         width={1024}
         height={682}
         priority
-        className={`${sizeClasses[size]} max-w-full object-contain`}
+        className={`${sizeClasses[size]} w-auto max-w-full object-contain`}
       />
     </div>
   );

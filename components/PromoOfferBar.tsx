@@ -23,14 +23,18 @@ export default function PromoOfferBar({ onOpenCoupon, onOpenQuote }: PromoOfferB
               <span className="text-slate-300 font-normal hidden sm:inline font-body">No Obligation Upfront Pricing</span>
             </div>
 
-            {/* $100 Off Coupon */}
+            {/* Special Offer: $100 Off Coupon / Get Now! */}
             <button
               onClick={onOpenCoupon}
-              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-md bg-gradient-to-r from-brightYellow to-amber-300 text-navy font-black hover:brightness-105 active:scale-95 transition-all shadow-sm font-heading uppercase tracking-wider text-xs sm:text-xs min-h-[32px]"
-              title="Claim $100 Off HVAC Repair or Installation Coupon"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-md bg-gradient-to-r from-brightYellow to-amber-300 text-navy font-black hover:brightness-105 active:scale-95 transition-all shadow-sm font-heading uppercase tracking-wider text-xs sm:text-xs min-h-[32px] group"
+              title="Special Offer: $100 Off Coupon - Get Now!"
+              aria-label="Special Offer: $100 Off Coupon - Get Now!"
             >
-              <Tag className="w-3.5 h-3.5 flex-shrink-0" />
+              <Tag className="w-3.5 h-3.5 flex-shrink-0 text-navy" />
               <span>$100 Off Coupon</span>
+              <span className="bg-navy text-brightYellow text-[10px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider group-hover:bg-royal group-hover:text-white transition-colors">
+                Get Now!
+              </span>
             </button>
           </div>
 

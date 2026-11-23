@@ -113,11 +113,31 @@ export function ManhattanSeal({ className = 'w-16 h-16' }: EmblemProps) {
   );
 }
 
+export function BronxSeal({ className = 'w-16 h-16' }: EmblemProps) {
+  return (
+    <div className={`relative ${className} rounded-full shadow-md bg-emerald-50 p-1 border-2 border-emerald-300 flex items-center justify-center`}>
+      <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
+        <circle cx="50" cy="50" r="48" fill="#F0FDF4" stroke="#059669" strokeWidth="2.5" />
+        <circle cx="50" cy="50" r="41" stroke="#061A40" strokeWidth="1" strokeDasharray="2 1.5" />
+        <text x="50" y="16" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#061A40" letterSpacing="1">
+          THE BRONX
+        </text>
+        <text x="50" y="90" fontSize="6" fontWeight="bold" textAnchor="middle" fill="#059669">
+          NE CEDE MALIS
+        </text>
+        <circle cx="50" cy="50" r="16" fill="#FFE500" stroke="#059669" strokeWidth="1.5" />
+        <path d="M42 50L50 38L58 50L50 62L42 50Z" fill="#0066CC" />
+        <circle cx="50" cy="50" r="4" fill="#E50914" />
+      </svg>
+    </div>
+  );
+}
+
 export function CountyEmblem({
   type,
   className = 'w-16 h-16',
 }: {
-  type: 'nassau' | 'queens' | 'suffolk' | 'brooklyn' | 'manhattan';
+  type: 'nassau' | 'queens' | 'suffolk' | 'brooklyn' | 'manhattan' | 'bronx';
   className?: string;
 }) {
   switch (type) {
@@ -131,6 +151,8 @@ export function CountyEmblem({
       return <BrooklynSeal className={className} />;
     case 'manhattan':
       return <ManhattanSeal className={className} />;
+    case 'bronx':
+      return <BronxSeal className={className} />;
     default:
       return <NassauSeal className={className} />;
   }

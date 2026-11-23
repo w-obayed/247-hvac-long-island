@@ -1,10 +1,50 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import BrandLogo from './BrandLogo';
 import { Phone, Mail, MapPin, Clock, ShieldCheck } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_TEL, BUSINESS_EMAIL, BUSINESS_NAME } from '@/lib/utils';
+
+const TRUSTED_VERIFIED_COMPANIES = [
+  {
+    name: 'Birdeye',
+    logo: '/image-website/birdeye-logo-white.png',
+    url: 'https://reviews.birdeye.com/24-7-hvac-local-of-long-island-166791886507722',
+    alt: 'Birdeye - 247 HVAC of Long Island Verified Customer Reviews',
+  },
+  {
+    name: 'Manta',
+    logo: '/image-website/manta-logo.png',
+    url: 'https://www.manta.com/c/m1r0hpq/247-hvac-of-long-island#reviews',
+    alt: 'Manta - 247 HVAC of Long Island Verified Business Profile',
+  },
+  {
+    name: 'Chamber of Commerce',
+    logo: '/image-website/chamber-of-commerce-logo.svg',
+    url: 'https://www.bestprosintown.com/ny/lawrence/24-7-hvac-local-of-long-island-/',
+    alt: 'Chamber of Commerce - Verified Business Directory',
+  },
+  {
+    name: 'BestProsInTown',
+    logo: '/image-website/bestprosintown-logo.png',
+    url: 'https://www.bestprosintown.com/ny/lawrence/24-7-hvac-local-of-long-island-/',
+    alt: 'BestProsInTown - Verified Local HVAC Contractor Rating',
+  },
+  {
+    name: 'Cylex',
+    logo: '/image-website/cylex-logo.webp',
+    url: 'https://www.cylex.us.com/company/24-7-hvac-37229291.html',
+    alt: 'Cylex - Verified Business Directory Profile',
+  },
+  {
+    name: 'ProvenExpert',
+    logo: '/image-website/provenexpert-logo.png',
+    url: 'https://www.provenexpert.com/en-us/247-hvac-local-of-long-island/',
+    alt: 'ProvenExpert - Independent Customer Satisfaction Ratings',
+  },
+];
 
 interface FooterProps {
   onSelectService?: (serviceName: string) => void;
@@ -232,17 +272,48 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
           </div>
         </div>
 
-        {/* Partner Trust Badges */}
-        <div className="pt-8 pb-8 border-t border-navy-light/70 flex flex-wrap items-center justify-between gap-6 font-heading">
-          <div className="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
-            <ShieldCheck className="w-4 h-4 text-royal" />
-            <span>Trusted & Verified By:</span>
+        {/* Middle Footer: Trusted and Verified By Section */}
+        <div className="pt-8 pb-8 border-t border-navy-light/70">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+            <div className="flex items-center gap-2.5">
+              <ShieldCheck className="w-5 h-5 text-electric flex-shrink-0" />
+              <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-200 font-heading">
+                Trusted and Verified By
+              </h3>
+            </div>
+            <span className="text-xs text-slate-400 font-body hidden sm:inline">
+              Verified independent customer ratings, credentials & business reviews
+            </span>
           </div>
-          <div className="flex flex-wrap items-center gap-6 sm:gap-10 text-xs font-black tracking-widest text-slate-400">
-            <span className="hover:text-white transition-colors">BIRDEYE</span>
-            <span className="hover:text-white transition-colors">MANTA</span>
-            <span className="hover:text-white transition-colors">CYLEX</span>
-            <span className="hover:text-white transition-colors">PROVEN EXPERT</span>
+
+          {/* 6 Equal-Sized Responsive Logo Containers */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+            {TRUSTED_VERIFIED_COMPANIES.map((company) => (
+              <a
+                key={company.name}
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex items-center justify-center h-16 sm:h-18 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/25 active:scale-98 transition-all duration-200 focus:outline-hidden focus:ring-2 focus:ring-electric focus:ring-offset-2 focus:ring-offset-[#061A40]"
+                style={{ position: 'relative', overflow: 'hidden' }}
+                aria-label={`View 247 HVAC of Long Island profile on ${company.name} (opens in a new tab)`}
+                title={`Verified on ${company.name}`}
+              >
+                <div
+                  className="relative w-full h-full flex items-center justify-center p-1"
+                  style={{ position: 'relative', width: '100%', height: '100%' }}
+                >
+                  <Image
+                    src={company.logo}
+                    alt={company.alt}
+                    fill
+                    className="object-contain transition-transform duration-200 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                    unoptimized={company.logo.endsWith('.svg')}
+                  />
+                </div>
+              </a>
+            ))}
           </div>
         </div>
 

@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_TEL } from '@/lib/utils';
-import { SERVICE_AREAS_CATEGORIES } from '@/data/serviceAreasData';
+import { SERVICE_AREAS_CATEGORIES, NASSAU_COUNTY_LOCATIONS } from '@/data/serviceAreasData';
 
 interface NavbarProps {
   onSelectService?: (serviceName: string) => void;
@@ -24,11 +25,33 @@ export default function Navbar({
   onOpenBooking,
   onOpenPhotos,
 }: NavbarProps) {
+  const rawPathname = usePathname();
+  const pathname = rawPathname || '/';
+
+  // Dynamic active-route detection for all navigation items
+  const isHomeActive = pathname === '/';
+
+  const isHeatingActive =
+    pathname === '/heating-services' ||
+    pathname.startsWith('/furnace-installation-repair') ||
+    pathname.startsWith('/boiler-installation-repair') ||
+    pathname.startsWith('/water-heater-installation-repair');
+
+  const isCoolingActive =
+    pathname === '/cooling-services' ||
+    pathname.startsWith('/air-conditioner') ||
+    pathname.startsWith('/air-conditioning') ||
+    pathname.startsWith('/mini-splits');
+
+  const isAreasActive =
+    pathname === '/service-areas' ||
+    pathname.startsWith('/service-areas/');
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeAreaTab, setActiveAreaTab] = useState<'nassau' | 'queens' | 'suffolk'>('nassau');
+  const [activeAreaTab, setActiveAreaTab] = useState<string>('nassau');
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -108,17 +131,21 @@ export default function Navbar({
             {/* Left Nav items */}
             <div className="flex items-center space-x-2 2xl:space-x-3">
               {/* Home */}
-              <a
-                href="#home"
-                className="px-3 py-2 rounded-md hover:text-electric transition-colors relative group text-white"
+              <Link
+                href="/"
+                className={`px-3 py-2 rounded-md hover:text-electric transition-colors relative group ${
+                  isHomeActive ? 'text-white font-bold' : 'text-slate-100'
+                }`}
               >
                 <span>Home</span>
-                <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-electric rounded-full" />
-              </a>
+                {isHomeActive && (
+                  <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-electric rounded-full" />
+                )}
+              </Link>
 
               {/* About */}
               <a
-                href="#about"
+                href="/#about"
                 className="px-3 py-2 rounded-md hover:text-electric text-slate-100 transition-colors"
               >
                 About
@@ -132,8 +159,12 @@ export default function Navbar({
                 <Link
                   href="/heating-services"
                   onClick={() => setActiveDropdown(null)}
-                  className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors ${
-                    activeDropdown === 'heating' ? 'text-electric' : 'text-slate-100'
+                  className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors relative ${
+                    isHeatingActive
+                      ? 'text-white font-bold'
+                      : activeDropdown === 'heating'
+                      ? 'text-electric'
+                      : 'text-slate-100'
                   }`}
                   aria-expanded={activeDropdown === 'heating'}
                 >
@@ -143,6 +174,9 @@ export default function Navbar({
                       activeDropdown === 'heating' ? 'rotate-180 text-electric' : ''
                     }`}
                   />
+                  {isHeatingActive && (
+                    <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-electric rounded-full" />
+                  )}
                 </Link>
 
                 {activeDropdown === 'heating' && (
@@ -157,7 +191,9 @@ export default function Navbar({
                       <Link
                         href="/heating-services"
                         onClick={() => setActiveDropdown(null)}
-                        className="text-[11px] font-bold text-royal hover:underline font-heading"
+                        className={`text-[11px] font-bold font-heading hover:underline ${
+                          pathname === '/heating-services' ? 'text-electric underline' : 'text-royal'
+                        }`}
                       >
                         All Services »
                       </Link>
@@ -165,21 +201,33 @@ export default function Navbar({
                     <Link
                       href="/furnace-installation-repair-replacement"
                       onClick={() => setActiveDropdown(null)}
-                      className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading"
+                      className={`block px-4 py-2.5 transition-colors text-sm font-medium font-heading ${
+                        pathname.startsWith('/furnace')
+                          ? 'bg-slate-100 text-royal font-bold'
+                          : 'hover:bg-slate-50 hover:text-royal'
+                      }`}
                     >
                       Furnace Installation, Repair & Replacement
                     </Link>
                     <Link
                       href="/boiler-installation-repair"
                       onClick={() => setActiveDropdown(null)}
-                      className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading"
+                      className={`block px-4 py-2.5 transition-colors text-sm font-medium font-heading ${
+                        pathname.startsWith('/boiler')
+                          ? 'bg-slate-100 text-royal font-bold'
+                          : 'hover:bg-slate-50 hover:text-royal'
+                      }`}
                     >
                       Boiler Installation & Repair
                     </Link>
                     <Link
                       href="/water-heater-installation-repair-replacement"
                       onClick={() => setActiveDropdown(null)}
-                      className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading"
+                      className={`block px-4 py-2.5 transition-colors text-sm font-medium font-heading ${
+                        pathname.startsWith('/water-heater')
+                          ? 'bg-slate-100 text-royal font-bold'
+                          : 'hover:bg-slate-50 hover:text-royal'
+                      }`}
                     >
                       Water Heater Installation, Repair & Replacement
                     </Link>
@@ -195,8 +243,12 @@ export default function Navbar({
                 <Link
                   href="/cooling-services"
                   onClick={() => setActiveDropdown(null)}
-                  className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors ${
-                    activeDropdown === 'cooling' ? 'text-electric' : 'text-slate-100'
+                  className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors relative ${
+                    isCoolingActive
+                      ? 'text-white font-bold'
+                      : activeDropdown === 'cooling'
+                      ? 'text-electric'
+                      : 'text-slate-100'
                   }`}
                   aria-expanded={activeDropdown === 'cooling'}
                 >
@@ -206,6 +258,9 @@ export default function Navbar({
                       activeDropdown === 'cooling' ? 'rotate-180 text-electric' : ''
                     }`}
                   />
+                  {isCoolingActive && (
+                    <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-electric rounded-full" />
+                  )}
                 </Link>
 
                 {activeDropdown === 'cooling' && (
@@ -220,7 +275,9 @@ export default function Navbar({
                       <Link
                         href="/cooling-services"
                         onClick={() => setActiveDropdown(null)}
-                        className="text-[11px] font-bold text-royal hover:underline font-heading"
+                        className={`text-[11px] font-bold font-heading hover:underline ${
+                          pathname === '/cooling-services' ? 'text-electric underline' : 'text-royal'
+                        }`}
                       >
                         All Services »
                       </Link>
@@ -228,21 +285,33 @@ export default function Navbar({
                     <Link
                       href="/air-conditioners-installation-replacement"
                       onClick={() => setActiveDropdown(null)}
-                      className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading whitespace-nowrap"
+                      className={`block px-4 py-2.5 transition-colors text-sm font-medium font-heading whitespace-nowrap ${
+                        pathname.startsWith('/air-conditioner') || pathname.startsWith('/air-conditioners-installation')
+                          ? 'bg-slate-100 text-royal font-bold'
+                          : 'hover:bg-slate-50 hover:text-royal'
+                      }`}
                     >
                       Air Conditioners Installation & Replacement
                     </Link>
                     <Link
                       href="/air-conditioning-repair"
                       onClick={() => setActiveDropdown(null)}
-                      className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading whitespace-nowrap"
+                      className={`block px-4 py-2.5 transition-colors text-sm font-medium font-heading whitespace-nowrap ${
+                        pathname.startsWith('/air-conditioning') || pathname.startsWith('/air-conditioners-repair')
+                          ? 'bg-slate-100 text-royal font-bold'
+                          : 'hover:bg-slate-50 hover:text-royal'
+                      }`}
                     >
                       Air Conditioning Repair & Maintenance
                     </Link>
                     <Link
                       href="/mini-splits-ductless-heat-pumps-air-conditioners"
                       onClick={() => setActiveDropdown(null)}
-                      className="block px-4 py-2.5 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading whitespace-nowrap"
+                      className={`block px-4 py-2.5 transition-colors text-sm font-medium font-heading whitespace-nowrap ${
+                        pathname.startsWith('/mini-splits')
+                          ? 'bg-slate-100 text-royal font-bold'
+                          : 'hover:bg-slate-50 hover:text-royal'
+                      }`}
                     >
                       Mini-Splits — Ductless Heat Pumps & AC
                     </Link>
@@ -252,7 +321,7 @@ export default function Navbar({
 
               {/* Residential */}
               <a
-                href="#about"
+                href="/#about"
                 className="px-3 py-2 rounded-md hover:text-electric text-slate-100 transition-colors"
               >
                 Residential
@@ -260,19 +329,26 @@ export default function Navbar({
 
               {/* Commercial */}
               <a
-                href="#services"
+                href="/#services"
                 className="px-3 py-2 rounded-md hover:text-electric text-slate-100 transition-colors"
               >
                 Commercial
               </a>
 
-              {/* Service Areas (Dropdown with Arrow Icon ONLY) */}
-              <div className="relative group">
-                <button
-                  onClick={() => toggleDropdown('areas')}
-                  onMouseEnter={() => setActiveDropdown('areas')}
-                  className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors ${
-                    activeDropdown === 'areas' ? 'text-electric' : 'text-slate-100'
+              {/* Service Areas (Dropdown with Direct Link & Hover) */}
+              <div
+                className="relative group flex items-center"
+                onMouseEnter={() => setActiveDropdown('areas')}
+              >
+                <Link
+                  href="/service-areas"
+                  onClick={() => setActiveDropdown(null)}
+                  className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors relative ${
+                    isAreasActive
+                      ? 'text-white font-bold'
+                      : activeDropdown === 'areas'
+                      ? 'text-electric'
+                      : 'text-slate-100'
                   }`}
                   aria-expanded={activeDropdown === 'areas'}
                 >
@@ -282,40 +358,48 @@ export default function Navbar({
                       activeDropdown === 'areas' ? 'rotate-180 text-electric' : ''
                     }`}
                   />
-                </button>
+                  {isAreasActive && (
+                    <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-electric rounded-full" />
+                  )}
+                </Link>
 
                 {activeDropdown === 'areas' && (
                   <div
                     onMouseLeave={() => setActiveDropdown(null)}
-                    className="absolute -left-20 top-full mt-1 w-[720px] bg-white rounded-xl shadow-2xl border border-slate-100 p-5 text-slate-800 z-50 animate-fadeIn"
+                    className="absolute -left-20 top-full mt-1 w-[760px] bg-white rounded-xl shadow-2xl border border-slate-100 p-5 text-slate-800 z-50 animate-fadeIn"
                   >
                     <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                       <div>
                         <h4 className="font-bold text-navy text-base font-heading">Service Coverage Areas</h4>
-                        <p className="text-xs text-slate-500 font-body">24/7 radio-dispatched mobile repair units across Long Island</p>
+                        <p className="text-xs text-slate-500 font-body">24/7 radio-dispatched mobile repair units across Long Island & NYC</p>
                       </div>
                       <Link
                         href="/service-areas"
                         onClick={() => setActiveDropdown(null)}
-                        className="text-xs font-bold text-royal hover:underline font-heading flex items-center gap-1 bg-royal/10 px-3 py-1.5 rounded-full"
+                        className={`text-xs font-bold font-heading flex items-center gap-1 px-3 py-1.5 rounded-full ${
+                          pathname === '/service-areas'
+                            ? 'bg-royal text-white'
+                            : 'text-royal bg-royal/10 hover:underline'
+                        }`}
                       >
                         <span>All Service Areas Overview &rarr;</span>
                       </Link>
                     </div>
 
-                    {/* 3 Main Submenu Categories Tabs */}
-                    <div className="grid grid-cols-3 gap-2 bg-slate-100 p-1.5 rounded-lg mb-4 text-xs font-bold font-heading">
+                    {/* County / Borough Tabs */}
+                    <div className="grid grid-cols-6 gap-1.5 bg-slate-100 p-1.5 rounded-lg mb-4 text-xs font-bold font-heading">
                       {SERVICE_AREAS_CATEGORIES.map((county) => (
                         <button
                           key={county.id}
-                          onClick={() => setActiveAreaTab(county.id as 'nassau' | 'queens' | 'suffolk')}
-                          className={`py-2 px-3 rounded-md transition-all font-heading text-center ${
+                          onClick={() => setActiveAreaTab(county.id)}
+                          className={`py-2 px-2 rounded-md transition-all font-heading text-center text-[12px] truncate ${
                             activeAreaTab === county.id
                               ? 'bg-royal text-white shadow-sm font-black'
                               : 'text-slate-700 hover:text-navy hover:bg-white/60'
                           }`}
+                          title={county.name}
                         >
-                          {county.name}
+                          {county.shortName}
                         </button>
                       ))}
                     </div>
@@ -339,14 +423,18 @@ export default function Navbar({
                             {current.locations.length > 0 ? (
                               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1.5 mb-3 max-h-52 overflow-y-auto pr-1 font-body">
                                 {current.locations.map((loc) =>
-                                  loc.slug === 'baldwin' ? (
+                                  loc.isAvailable && loc.href ? (
                                     <Link
                                       key={loc.name}
-                                      href="/service-areas/baldwin"
+                                      href={loc.href}
                                       onClick={() => setActiveDropdown(null)}
-                                      className="text-[11px] bg-royal hover:bg-royal-hover text-white px-2 py-1 rounded font-bold text-center shadow-sm flex items-center justify-center gap-1 transition-colors"
+                                      className={`text-[11px] px-2 py-1 rounded font-bold text-center shadow-sm flex items-center justify-center gap-1 transition-colors ${
+                                        pathname === loc.href
+                                          ? 'bg-brightYellow text-navy'
+                                          : 'bg-royal hover:bg-royal-hover text-white'
+                                      }`}
                                     >
-                                      <span>★ Baldwin</span>
+                                      <span>★ {loc.name}</span>
                                     </Link>
                                   ) : (
                                     <Link
@@ -364,10 +452,10 @@ export default function Navbar({
                             ) : (
                               <div className="py-4 text-center bg-white rounded-lg border border-slate-200/80 mb-3">
                                 <p className="text-xs font-semibold text-navy font-heading">
-                                  Suffolk County, NY Full Service Area
+                                  {current.name} Full Service Area
                                 </p>
                                 <p className="text-xs text-slate-500 mt-1 font-body">
-                                  Serving residential & commercial properties throughout Western and Central Suffolk County, NY.
+                                  Serving residential & commercial properties throughout {current.name} with 24/7 emergency response.
                                 </p>
                               </div>
                             )}
@@ -378,7 +466,7 @@ export default function Navbar({
                                 onClick={() => setActiveDropdown(null)}
                                 className="text-xs font-bold text-royal hover:underline"
                               >
-                                View {current.name} Directory &rarr;
+                                View {current.name} Details &rarr;
                               </Link>
                               <a
                                 href={PHONE_TEL}
@@ -463,33 +551,27 @@ export default function Navbar({
                     onMouseLeave={() => setActiveDropdown(null)}
                     className="absolute right-0 top-full mt-1 w-72 bg-white rounded-xl shadow-2xl border border-slate-100 py-2 text-slate-800 z-50 animate-fadeIn"
                   >
-                    <a
-                      href="#emergency"
+                    <Link
+                      href="/24-7-emergency-hvac-services"
                       onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-2.5 hover:bg-slate-50 text-sm font-bold text-brightRed transition-colors font-heading"
                     >
                       24/7 Emergency HVAC Services
-                    </a>
-                    <a
-                      href="#services"
-                      onClick={() => {
-                        onSelectService?.('Air Duct and Ventilation Cleaning');
-                        setActiveDropdown(null);
-                      }}
+                    </Link>
+                    <Link
+                      href="/air-duct-and-ventilation-cleaning-service"
+                      onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-2 hover:bg-slate-50 hover:text-royal text-sm font-medium text-slate-700 font-heading"
                     >
                       Air Duct & Ventilation Cleaning
-                    </a>
-                    <a
-                      href="#services"
-                      onClick={() => {
-                        onSelectService?.('Chimney Sweep');
-                        setActiveDropdown(null);
-                      }}
+                    </Link>
+                    <Link
+                      href="/chimney-sweep"
+                      onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-2 hover:bg-slate-50 hover:text-royal text-sm font-medium text-slate-700 font-heading"
                     >
                       Chimney Sweep
-                    </a>
+                    </Link>
                     <div className="my-1 border-t border-slate-100" />
                     <button
                       onClick={() => {
@@ -556,17 +638,21 @@ export default function Navbar({
       {mobileMenuOpen && (
         <div className="xl:hidden bg-[#061A40] border-t border-navy-light px-4 sm:px-6 py-4 space-y-2 max-h-[85vh] overflow-y-auto overflow-x-hidden font-heading animate-fadeIn shadow-2xl">
           {/* Home */}
-          <a
-            href="#home"
+          <Link
+            href="/"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-[18px] font-bold text-white hover:text-electric hover:bg-navy-light transition-colors"
+            className={`block px-3 py-2.5 rounded-lg text-[18px] font-bold transition-colors ${
+              isHomeActive
+                ? 'text-electric bg-navy-light/60 font-black'
+                : 'text-white hover:text-electric hover:bg-navy-light'
+            }`}
           >
             Home
-          </a>
+          </Link>
 
           {/* About */}
           <a
-            href="#about"
+            href="/#about"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
           >
@@ -575,7 +661,13 @@ export default function Navbar({
 
           {/* Heating Submenu */}
           <div>
-            <div className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors">
+            <div
+              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[18px] font-bold transition-colors ${
+                isHeatingActive
+                  ? 'text-electric bg-navy-light/60 font-black'
+                  : 'text-slate-200 hover:text-electric hover:bg-navy-light'
+              }`}
+            >
               <Link
                 href="/heating-services"
                 onClick={() => setMobileMenuOpen(false)}
@@ -600,28 +692,36 @@ export default function Navbar({
                 <Link
                   href="/heating-services"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm sm:text-base font-bold text-electric hover:text-white"
+                  className={`block px-3 py-2 text-sm sm:text-base font-bold ${
+                    pathname === '/heating-services' ? 'text-electric font-black' : 'text-electric hover:text-white'
+                  }`}
                 >
                   All Heating Services »
                 </Link>
                 <Link
                   href="/furnace-installation-repair-replacement"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
+                  className={`block px-3 py-2 text-sm sm:text-base ${
+                    pathname.startsWith('/furnace') ? 'text-white font-bold bg-navy-light/40 rounded' : 'text-slate-300 hover:text-white'
+                  }`}
                 >
                   Furnace Installation, Repair & Replacement
                 </Link>
                 <Link
                   href="/boiler-installation-repair"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
+                  className={`block px-3 py-2 text-sm sm:text-base ${
+                    pathname.startsWith('/boiler') ? 'text-white font-bold bg-navy-light/40 rounded' : 'text-slate-300 hover:text-white'
+                  }`}
                 >
                   Boiler Installation & Repair
                 </Link>
                 <Link
                   href="/water-heater-installation-repair-replacement"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
+                  className={`block px-3 py-2 text-sm sm:text-base ${
+                    pathname.startsWith('/water-heater') ? 'text-white font-bold bg-navy-light/40 rounded' : 'text-slate-300 hover:text-white'
+                  }`}
                 >
                   Water Heater Installation, Repair & Replacement
                 </Link>
@@ -631,7 +731,13 @@ export default function Navbar({
 
           {/* Cooling Submenu */}
           <div>
-            <div className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors">
+            <div
+              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[18px] font-bold transition-colors ${
+                isCoolingActive
+                  ? 'text-electric bg-navy-light/60 font-black'
+                  : 'text-slate-200 hover:text-electric hover:bg-navy-light'
+              }`}
+            >
               <Link
                 href="/cooling-services"
                 onClick={() => setMobileMenuOpen(false)}
@@ -656,28 +762,42 @@ export default function Navbar({
                 <Link
                   href="/cooling-services"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm sm:text-base font-bold text-electric hover:text-white"
+                  className={`block px-3 py-2 text-sm sm:text-base font-bold ${
+                    pathname === '/cooling-services' ? 'text-electric font-black' : 'text-electric hover:text-white'
+                  }`}
                 >
                   All Cooling Services »
                 </Link>
                 <Link
                   href="/air-conditioners-installation-replacement"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
+                  className={`block px-3 py-2 text-sm sm:text-base ${
+                    pathname.startsWith('/air-conditioner') || pathname.startsWith('/air-conditioners-installation')
+                      ? 'text-white font-bold bg-navy-light/40 rounded'
+                      : 'text-slate-300 hover:text-white'
+                  }`}
                 >
                   Air Conditioners Installation & Replacement
                 </Link>
                 <Link
                   href="/air-conditioning-repair"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
+                  className={`block px-3 py-2 text-sm sm:text-base ${
+                    pathname.startsWith('/air-conditioning') || pathname.startsWith('/air-conditioners-repair')
+                      ? 'text-white font-bold bg-navy-light/40 rounded'
+                      : 'text-slate-300 hover:text-white'
+                  }`}
                 >
                   Air Conditioning Repair & Maintenance
                 </Link>
                 <Link
                   href="/mini-splits-ductless-heat-pumps-air-conditioners"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
+                  className={`block px-3 py-2 text-sm sm:text-base ${
+                    pathname.startsWith('/mini-splits')
+                      ? 'text-white font-bold bg-navy-light/40 rounded'
+                      : 'text-slate-300 hover:text-white'
+                  }`}
                 >
                   Mini-Splits — Ductless Heat Pumps & AC
                 </Link>
@@ -687,7 +807,7 @@ export default function Navbar({
 
           {/* Residential */}
           <a
-            href="#about"
+            href="/#about"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
           >
@@ -696,7 +816,7 @@ export default function Navbar({
 
           {/* Commercial */}
           <a
-            href="#services"
+            href="/#services"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
           >
@@ -705,24 +825,43 @@ export default function Navbar({
 
           {/* Service Areas Submenu */}
           <div>
-            <button
-              onClick={() => toggleMobileSubmenu('areas')}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+            <div
+              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[18px] font-bold transition-colors ${
+                isAreasActive
+                  ? 'text-electric bg-navy-light/60 font-black'
+                  : 'text-slate-200 hover:text-electric hover:bg-navy-light'
+              }`}
             >
-              <span>Service Areas</span>
-              <ChevronDown
-                className={`w-4 h-4 text-white transition-transform ${
-                  mobileSubmenu === 'areas' ? 'rotate-180 text-electric' : ''
-                }`}
-              />
-            </button>
+              <Link
+                href="/service-areas"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex-1"
+              >
+                Service Areas
+              </Link>
+              <button
+                onClick={() => toggleMobileSubmenu('areas')}
+                className="p-1.5 focus:outline-hidden"
+                aria-label="Toggle Service Areas Submenu"
+              >
+                <ChevronDown
+                  className={`w-5 h-5 text-white transition-transform ${
+                    mobileSubmenu === 'areas' ? 'rotate-180 text-electric' : ''
+                  }`}
+                />
+              </button>
+            </div>
             {mobileSubmenu === 'areas' && (
               <div className="pl-4 pr-2 py-2 space-y-2.5 bg-navy-dark/70 rounded-lg my-1">
                 {/* Overview Link */}
                 <Link
                   href="/service-areas"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm font-black text-electric bg-white/10 rounded-md hover:bg-white/20 uppercase tracking-wider"
+                  className={`block px-3 py-2 text-sm font-black rounded-md uppercase tracking-wider ${
+                    pathname === '/service-areas'
+                      ? 'text-white bg-royal shadow-sm'
+                      : 'text-electric bg-white/10 hover:bg-white/20'
+                  }`}
                 >
                   All Service Areas Overview &rarr;
                 </Link>
@@ -733,19 +872,26 @@ export default function Navbar({
                     Nassau County
                   </div>
                   <div className="pl-2 space-y-1">
-                    <Link
-                      href="/service-areas/baldwin"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-1.5 text-sm font-bold text-brightYellow hover:underline"
-                    >
-                      ★ Baldwin (Dedicated Page)
-                    </Link>
+                    {NASSAU_COUNTY_LOCATIONS.filter((loc) => loc.isAvailable && loc.href).map((loc) => (
+                      <Link
+                        key={loc.name}
+                        href={loc.href!}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`block px-3 py-1.5 text-sm font-bold rounded ${
+                          pathname === loc.href
+                            ? 'bg-royal text-white'
+                            : 'text-brightYellow hover:underline'
+                        }`}
+                      >
+                        ★ {loc.name}
+                      </Link>
+                    ))}
                     <Link
                       href="/service-areas#nassau"
                       onClick={() => setMobileMenuOpen(false)}
                       className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
                     >
-                      View All 27 Nassau Locations &rarr;
+                      View All 22 Nassau Locations &rarr;
                     </Link>
                   </div>
                 </div>
@@ -766,10 +912,10 @@ export default function Navbar({
                   </div>
                 </div>
 
-                {/* 3. Suffolk County, NY */}
+                {/* 3. Suffolk County */}
                 <div className="pt-1 border-t border-white/10">
                   <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
-                    Suffolk County, NY
+                    Suffolk County
                   </div>
                   <div className="pl-2 space-y-1">
                     <Link
@@ -778,6 +924,54 @@ export default function Navbar({
                       className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
                     >
                       Suffolk County 24/7 Coverage &rarr;
+                    </Link>
+                  </div>
+                </div>
+
+                {/* 4. Brooklyn */}
+                <div className="pt-1 border-t border-white/10">
+                  <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
+                    Brooklyn
+                  </div>
+                  <div className="pl-2 space-y-1">
+                    <Link
+                      href="/service-areas#brooklyn"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
+                    >
+                      Brooklyn 24/7 HVAC Service &rarr;
+                    </Link>
+                  </div>
+                </div>
+
+                {/* 5. Manhattan */}
+                <div className="pt-1 border-t border-white/10">
+                  <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
+                    Manhattan
+                  </div>
+                  <div className="pl-2 space-y-1">
+                    <Link
+                      href="/service-areas#manhattan"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
+                    >
+                      Manhattan 24/7 HVAC Service &rarr;
+                    </Link>
+                  </div>
+                </div>
+
+                {/* 6. Bronx */}
+                <div className="pt-1 border-t border-white/10">
+                  <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
+                    Bronx
+                  </div>
+                  <div className="pl-2 space-y-1">
+                    <Link
+                      href="/service-areas/bronx"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-1 text-xs text-brightYellow hover:underline font-bold"
+                    >
+                      ★ Bronx HVAC Services &rarr;
                     </Link>
                   </div>
                 </div>
@@ -832,33 +1026,27 @@ export default function Navbar({
             </button>
             {mobileSubmenu === 'more' && (
               <div className="pl-6 pr-2 py-1 space-y-1 bg-navy-dark/60 rounded-lg my-1">
-                <a
-                  href="#emergency"
+                <Link
+                  href="/24-7-emergency-hvac-services"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-3 py-2 text-sm sm:text-base text-brightRed font-bold hover:text-white"
                 >
                   24/7 Emergency HVAC Services
-                </a>
-                <a
-                  href="#services"
-                  onClick={() => {
-                    onSelectService?.('Air Duct and Ventilation Cleaning');
-                    setMobileMenuOpen(false);
-                  }}
+                </Link>
+                <Link
+                  href="/air-duct-and-ventilation-cleaning-service"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Air Duct & Ventilation Cleaning
-                </a>
-                <a
-                  href="#services"
-                  onClick={() => {
-                    onSelectService?.('Chimney Sweep');
-                    setMobileMenuOpen(false);
-                  }}
+                </Link>
+                <Link
+                  href="/chimney-sweep"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
                 >
                   Chimney Sweep
-                </a>
+                </Link>
                 <button
                   onClick={() => {
                     onOpenFinancing?.();

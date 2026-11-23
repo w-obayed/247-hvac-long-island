@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import PromoOfferBar from '@/components/PromoOfferBar';
 import AboutSection from '@/components/AboutSection';
+import FlexibleFinancingSection from '@/components/FlexibleFinancingSection';
 import ServicesSection, { HVAC_SERVICES, ServiceItem } from '@/components/ServicesSection';
 import PromoBanners from '@/components/PromoBanners';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -109,6 +110,9 @@ export default function Home() {
         onOpenBooking={() => setIsBookingOpen(true)}
         onOpenQuote={() => setIsQuoteOpen(true)}
       />
+
+      {/* 6.5. NEW FINANCE SECTION — FLEXIBLE FINANCING OPTIONS FOR YOUR HVAC NEEDS */}
+      <FlexibleFinancingSection />
 
       {/* 7. SECTION 5 — HVAC SERVICES (6 Service Cards) */}
       <ServicesSection

@@ -40,7 +40,7 @@ export default function WhyChooseUsSection() {
 
             {/* Introductory Description */}
             <p className="text-base text-slate-600 leading-relaxed mb-8 font-body">
-              Delivering prompt, honest, and high-efficiency climate solutions backed by decades of proven customer satisfaction.
+              Homeowners and businesses across Long Island choose our HVAC team because of our commitment to reliable service, skilled technicians, and honest communication. We focus on delivering dependable heating and cooling solutions while making the entire service process simple and stress-free for every customer.
             </p>
 
             {/* Decorative Trust Guarantee Card */}
@@ -79,7 +79,7 @@ export default function WhyChooseUsSection() {
              ============================================================== */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
             
-            {/* FEATURE 01 — Professional Service */}
+            {/* FEATURE 01 — You are in safe hands */}
             <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group motion-reduce:transform-none">
               <div>
                 {/* Header Row: Icon + Number Badge */}
@@ -97,10 +97,10 @@ export default function WhyChooseUsSection() {
 
                 {/* Title & Description */}
                 <h3 className="text-[24px] font-bold text-navy mb-2 font-heading">
-                  Professional Service
+                  You are in safe hands
                 </h3>
                 <p className="text-base text-slate-600 leading-relaxed font-body">
-                  Polite, uniformed, background-checked technicians who arrive promptly and treat your home with total respect.
+                  As one of Long Island&apos;s oldest heating and cooling companies, we’ve had over 40 years to perfect the quality of our customer service. While technology keeps improving, we have never forgotten that it’s the people that matter, from our technicians to your family.
                 </p>
               </div>
 
@@ -131,10 +131,10 @@ export default function WhyChooseUsSection() {
 
                 {/* Title & Description */}
                 <h3 className="text-[24px] font-bold text-white mb-2 font-heading">
-                  Expertise & Reliability
+                  Expertise and Reliability
                 </h3>
                 <p className="text-base text-slate-200 leading-relaxed font-body">
-                  Over 30 years troubleshooting and servicing complex heating, ventilation, and air conditioning systems.
+                  Our technicians love what they do. It shows in everything from their delight in ongoing education to just arriving at your door on time. Whether it’s ongoing training or handling projects like boiler installation and repair, our technicians focus on delivering dependable solutions.
                 </p>
               </div>
 
@@ -145,7 +145,7 @@ export default function WhyChooseUsSection() {
               </div>
             </div>
 
-            {/* FEATURE 03 — 24/7 Emergency Availability */}
+            {/* FEATURE 03 — Always Available */}
             <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group motion-reduce:transform-none">
               <div>
                 {/* Header Row: Icon + Number Badge + Dispatch Pill */}
@@ -156,7 +156,7 @@ export default function WhyChooseUsSection() {
                   <div className="flex items-center gap-2">
                     <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-bold text-brightRed uppercase tracking-wider bg-red-50 px-2 py-0.5 rounded-md border border-red-100 font-heading">
                       <span className="w-1.5 h-1.5 rounded-full bg-brightRed animate-ping" />
-                      Rapid Dispatch
+                      24/7 Available
                     </span>
                     <span className="text-xs font-black font-heading tracking-widest text-brightRed bg-red-50 px-2.5 py-1 rounded-full border border-red-200">
                       03
@@ -169,10 +169,10 @@ export default function WhyChooseUsSection() {
 
                 {/* Title & Description */}
                 <h3 className="text-[24px] font-bold text-navy mb-2 font-heading">
-                  24/7 Emergency Availability
+                  Always Available
                 </h3>
                 <p className="text-base text-slate-600 leading-relaxed font-body">
-                  Round-the-clock emergency dispatch across Long Island. No overtime surcharges on critical diagnostic calls.
+                  We’re there for you 24 hours 7 days a week, when you need us. Contact us for a consultation, estimate, or any questions you might have about your project or our work.
                 </p>
               </div>
 

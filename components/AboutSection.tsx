@@ -77,7 +77,7 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
             </h2>
 
             <p className="text-base text-slate-600 leading-relaxed mb-5 sm:mb-6 font-body">
-              For over 30 years, our team has been serving homes and businesses in Long Island. We are committed to providing dependable heating and cooling solutions with a strong focus on customer service and quality workmanship.
+              For over 30 years, our team has been serving homes and businesses as trusted HVAC contractors in Long Island. We are committed to providing dependable heating and cooling solutions with a strong focus on customer service and quality workmanship. Our fully licensed technicians handle residential and commercial HVAC needs, including repairs, installations, and system replacements, along with professional air conditioning services across Long Island. Over the years, we’ve proudly helped thousands of Long Island homeowners and businesses with fast response times, honest pricing, and reliable service in every season.
             </p>
 
             {/* Checklist */}

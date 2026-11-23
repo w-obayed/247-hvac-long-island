@@ -87,18 +87,37 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
               {/* Eyebrow Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-electric text-xs sm:text-xs font-black uppercase tracking-widest mb-3.5 sm:mb-4 font-heading border border-white/20">
                 <MapPin className="w-3.5 h-3.5 text-electric animate-pulse flex-shrink-0" />
-                <span>Local Service Coverage</span>
+                <span>Service Areas</span>
               </div>
 
               {/* Heading */}
               <h2 className="text-3xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-[1.15] mb-3.5 sm:mb-4 font-heading">
-                Proudly Serving Long Island and <span className="text-electric">Surrounding Areas</span>
+                Service Areas
               </h2>
 
               {/* Description */}
-              <p className="text-base text-slate-200 leading-relaxed font-body mb-6">
-                We proudly serve Nassau, Queens, Suffolk County, Brooklyn, Manhattan and surrounding Long Island communities with 24/7 radio-dispatched mobile units.
+              <p className="text-base text-slate-200 leading-relaxed font-body mb-5">
+                Our technicians proudly provide heating and cooling services to homeowners and businesses across multiple communities. Whether you need system repairs, installations, or routine maintenance, our team is ready to help throughout Nassau County, including East Rockaway, Long Beach, Hewlett, Woodmere, Oceanside, Malverne, Lynbrook, and Lawrence, as well as neighboring areas across Suffolk County, Queens, Brooklyn, and Manhattan.
               </p>
+
+              {/* All Five Area Links as requested */}
+              <div className="flex flex-wrap gap-2 mb-6 font-heading">
+                <Link href="/service-areas#nassau" className="inline-flex items-center gap-1 text-xs font-bold text-brightYellow hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
+                  Nassau Areas &raquo;
+                </Link>
+                <Link href="/service-areas#queens" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
+                  Queens Areas &raquo;
+                </Link>
+                <Link href="/service-areas#suffolk" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
+                  Suffolk Areas &raquo;
+                </Link>
+                <Link href="/service-areas#brooklyn" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
+                  Brooklyn Areas &raquo;
+                </Link>
+                <Link href="/service-areas#manhattan" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
+                  Manhattan Areas &raquo;
+                </Link>
+              </div>
             </div>
 
             {/* Live Fleet Dispatch Telemetry Status */}
