@@ -102,13 +102,13 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
 
               {/* All Five Area Links as requested */}
               <div className="flex flex-wrap gap-2 mb-6 font-heading">
-                <Link href="/service-areas#nassau" className="inline-flex items-center gap-1 text-xs font-bold text-brightYellow hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
+                <Link href="/service-areas/nassau-county" className="inline-flex items-center gap-1 text-xs font-bold text-brightYellow hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
                   Nassau Areas &raquo;
                 </Link>
-                <Link href="/service-areas#queens" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
+                <Link href="/queens" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
                   Queens Areas &raquo;
                 </Link>
-                <Link href="/service-areas#suffolk" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
+                <Link href="/suffolk-county" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
                   Suffolk Areas &raquo;
                 </Link>
                 <Link href="/service-areas#brooklyn" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
@@ -192,7 +192,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                         ) : (
                           <Link
                             key={c}
-                            href="/service-areas#nassau"
+                            href="/service-areas/nassau-county"
                             className="text-[11px] sm:text-[11px] bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-royal px-2 py-0.5 rounded-md font-medium border border-slate-200/60 leading-tight transition-colors"
                           >
                             {c}

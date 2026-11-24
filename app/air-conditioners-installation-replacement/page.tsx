@@ -733,7 +733,7 @@ export default function AirConditionersInstallationReplacementPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto mb-8 font-heading">
             <Link
-              href="/service-areas#nassau"
+              href="/service-areas/nassau-county"
               className="flex items-center justify-between p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-royal hover:bg-royal/5 transition-all group"
             >
               <div className="flex items-center gap-3">

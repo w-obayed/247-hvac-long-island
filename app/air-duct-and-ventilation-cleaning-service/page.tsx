@@ -559,7 +559,7 @@ export default function AirDuctCleaningPage() {
           {/* Exact Links: Nassau, Queens, Suffolk */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10 font-heading">
             <Link
-              href="/service-areas#nassau"
+              href="/service-areas/nassau-county"
               className="flex items-center justify-between p-6 rounded-2xl bg-white border border-slate-200 hover:border-royal hover:bg-royal/5 transition-all group shadow-sm"
             >
               <div className="flex items-center gap-3">

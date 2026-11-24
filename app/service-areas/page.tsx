@@ -402,6 +402,15 @@ export default function ServiceAreasPage() {
                     <p className="text-sm text-slate-600 mt-1 font-body">
                       Complete residential and commercial HVAC diagnostics, boiler repairs, heat pump installations, and 24/7 emergency service.
                     </p>
+                    <div className="flex flex-wrap items-center gap-3 mt-2.5">
+                      <Link
+                        href="/service-areas/nassau-county"
+                        className="inline-flex items-center gap-1.5 text-xs font-extrabold text-royal hover:underline uppercase tracking-wider font-heading"
+                      >
+                        <span>★ Explore Nassau County Page</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
@@ -506,6 +515,15 @@ export default function ServiceAreasPage() {
                     <p className="text-sm text-slate-600 mt-1 font-body">
                       Rapid heating and cooling emergency repair, furnace heat exchanger testing, boiler tuning, and ductless mini-split systems across Queens.
                     </p>
+                    <div className="flex flex-wrap items-center gap-3 mt-2.5">
+                      <Link
+                        href="/queens"
+                        className="inline-flex items-center gap-1.5 text-xs font-extrabold text-royal hover:underline uppercase tracking-wider font-heading"
+                      >
+                        <span>★ Explore Queens Page</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
@@ -527,26 +545,37 @@ export default function ServiceAreasPage() {
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                  {QUEENS_LOCATIONS.map((loc) => (
-                    <div
-                      key={loc.name}
-                      className="p-3.5 rounded-xl bg-white hover:bg-slate-100/80 border border-slate-200 shadow-2xs transition-colors flex items-center justify-between"
-                    >
-                      <div className="flex items-center gap-2 min-w-0">
-                        <MapPin className="w-3.5 h-3.5 text-royal flex-shrink-0" />
+                  {QUEENS_LOCATIONS.map((loc) =>
+                    loc.isAvailable && loc.href ? (
+                      <Link
+                        key={loc.name}
+                        href={loc.href}
+                        className="p-3 rounded-xl bg-royal text-white font-bold text-sm font-heading shadow-md hover:bg-royal-hover transition-all flex items-center justify-between group"
+                      >
+                        <span className="truncate">★ {loc.name}</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                      </Link>
+                    ) : (
+                      <div
+                        key={loc.name}
+                        className="p-3.5 rounded-xl bg-white hover:bg-slate-100/80 border border-slate-200 shadow-2xs transition-colors flex items-center justify-between"
+                      >
+                        <div className="flex items-center gap-2 min-w-0">
+                          <MapPin className="w-3.5 h-3.5 text-royal flex-shrink-0" />
+                          <span
+                            className="text-xs sm:text-sm font-semibold text-slate-800 truncate font-body"
+                            title={loc.name}
+                          >
+                            {loc.name}
+                          </span>
+                        </div>
                         <span
-                          className="text-xs sm:text-sm font-semibold text-slate-800 truncate font-body"
-                          title={loc.name}
-                        >
-                          {loc.name}
-                        </span>
+                          className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0"
+                          title="Active 24/7 Dispatch Zone"
+                        />
                       </div>
-                      <span
-                        className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0"
-                        title="Active 24/7 Dispatch Zone"
-                      />
-                    </div>
-                  ))}
+                    )
+                  )}
                 </div>
               </div>
             </div>
@@ -573,9 +602,18 @@ export default function ServiceAreasPage() {
                 <span className="text-xs uppercase tracking-widest font-black text-royal font-heading block">
                   Eastern Long Island
                 </span>
-                <h3 className="text-2xl font-black text-navy font-heading mb-3">
-                  Suffolk County
+                <h3 className="text-2xl font-black text-navy font-heading mb-2">
+                  Suffolk County, NY
                 </h3>
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <Link
+                    href="/suffolk-county"
+                    className="inline-flex items-center gap-1.5 text-xs font-extrabold text-royal hover:underline uppercase tracking-wider font-heading"
+                  >
+                    <span>★ Explore Suffolk County Page</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
 
                 <p className="text-sm text-slate-600 font-body leading-relaxed mb-6">
                   247 HVAC of Long Island provides full HVAC services across Suffolk County. Our radio-dispatched mobile repair units handle emergency furnace and boiler repairs, central air conditioning replacement, ductless heat pump installations, and seasonal maintenance for homes and businesses throughout Suffolk County.
@@ -601,17 +639,17 @@ export default function ServiceAreasPage() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-2.5 font-heading">
+              <div className="pt-4 border-t border-slate-200 flex flex-col gap-2.5 font-heading w-full">
                 <a
                   href={PHONE_TEL}
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-xs uppercase tracking-wider transition-all shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-xs uppercase tracking-wider transition-all shadow-xs"
                 >
                   <Phone className="w-3.5 h-3.5 text-brightRed" />
                   <span>Call {PHONE_NUMBER}</span>
                 </a>
                 <button
                   onClick={() => setIsBookingOpen(true)}
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25843D] hover:bg-[#1D6B31] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25843D] hover:bg-[#1D6B31] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs"
                 >
                   <Calendar className="w-3.5 h-3.5" />
                   <span>Book Suffolk Service</span>
@@ -664,17 +702,17 @@ export default function ServiceAreasPage() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-2.5 font-heading">
+              <div className="pt-4 border-t border-slate-200 flex flex-col gap-2.5 font-heading w-full">
                 <a
                   href={PHONE_TEL}
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-xs uppercase tracking-wider transition-all shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-xs uppercase tracking-wider transition-all shadow-xs"
                 >
                   <Phone className="w-3.5 h-3.5 text-brightRed" />
                   <span>Call {PHONE_NUMBER}</span>
                 </a>
                 <button
                   onClick={() => setIsBookingOpen(true)}
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25843D] hover:bg-[#1D6B31] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25843D] hover:bg-[#1D6B31] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs"
                 >
                   <Calendar className="w-3.5 h-3.5" />
                   <span>Book Brooklyn Service</span>
@@ -727,17 +765,17 @@ export default function ServiceAreasPage() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-2.5 font-heading">
+              <div className="pt-4 border-t border-slate-200 flex flex-col gap-2.5 font-heading w-full">
                 <a
                   href={PHONE_TEL}
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-xs uppercase tracking-wider transition-all shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-xs uppercase tracking-wider transition-all shadow-xs"
                 >
                   <Phone className="w-3.5 h-3.5 text-brightRed" />
                   <span>Call {PHONE_NUMBER}</span>
                 </a>
                 <button
                   onClick={() => setIsBookingOpen(true)}
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25843D] hover:bg-[#1D6B31] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25843D] hover:bg-[#1D6B31] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs"
                 >
                   <Calendar className="w-3.5 h-3.5" />
                   <span>Book Manhattan Service</span>
@@ -798,16 +836,16 @@ export default function ServiceAreasPage() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-2.5 font-heading">
+              <div className="pt-4 border-t border-slate-200 flex flex-col gap-2.5 font-heading w-full">
                 <Link
                   href="/service-areas/bronx"
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-royal hover:bg-royal-hover text-white font-black text-xs uppercase tracking-wider transition-all shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-royal hover:bg-royal-hover text-white font-black text-xs uppercase tracking-wider transition-all shadow-xs"
                 >
                   <span>Explore Bronx Page &rarr;</span>
                 </Link>
                 <button
                   onClick={() => setIsBookingOpen(true)}
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25843D] hover:bg-[#1D6B31] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25843D] hover:bg-[#1D6B31] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs"
                 >
                   <Calendar className="w-3.5 h-3.5" />
                   <span>Book Bronx Service</span>

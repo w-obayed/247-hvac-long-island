@@ -299,7 +299,7 @@ export default function LynbrookLocationPage() {
             Service Areas
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-          <Link href="/service-areas#nassau" className="hover:text-royal transition-colors">
+          <Link href="/service-areas/nassau-county" className="hover:text-royal transition-colors">
             Nassau County
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-400" />

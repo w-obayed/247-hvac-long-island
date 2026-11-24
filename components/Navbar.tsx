@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_TEL } from '@/lib/utils';
-import { SERVICE_AREAS_CATEGORIES, NASSAU_COUNTY_LOCATIONS } from '@/data/serviceAreasData';
+import { SERVICE_AREAS_CATEGORIES, NASSAU_COUNTY_LOCATIONS, QUEENS_LOCATIONS } from '@/data/serviceAreasData';
 
 interface NavbarProps {
   onSelectService?: (serviceName: string) => void;
@@ -31,6 +31,14 @@ export default function Navbar({
   // Dynamic active-route detection for all navigation items
   const isHomeActive = pathname === '/';
 
+  const isAboutActive = pathname === '/about-us' || pathname === '/about';
+
+  const isResidentialActive = pathname === '/residential' || pathname === '/residential-hvac';
+
+  const isCommercialActive = pathname === '/commercial' || pathname === '/commercial-hvac';
+
+  const isContactActive = pathname === '/contact' || pathname === '/contact-us';
+
   const isHeatingActive =
     pathname === '/heating-services' ||
     pathname.startsWith('/furnace-installation-repair') ||
@@ -45,7 +53,12 @@ export default function Navbar({
 
   const isAreasActive =
     pathname === '/service-areas' ||
-    pathname.startsWith('/service-areas/');
+    pathname.startsWith('/service-areas/') ||
+    pathname === '/queens' ||
+    pathname === '/nassau-county' ||
+    pathname === '/nassau' ||
+    pathname === '/suffolk-county' ||
+    pathname === '/suffolk';
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -144,12 +157,17 @@ export default function Navbar({
               </Link>
 
               {/* About */}
-              <a
-                href="/#about"
-                className="px-3 py-2 rounded-md hover:text-electric text-slate-100 transition-colors"
+              <Link
+                href="/about-us"
+                className={`px-3 py-2 rounded-md hover:text-electric transition-colors relative group ${
+                  isAboutActive ? 'text-white font-bold' : 'text-slate-100'
+                }`}
               >
-                About
-              </a>
+                <span>About</span>
+                {isAboutActive && (
+                  <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-electric rounded-full" />
+                )}
+              </Link>
 
               {/* Heating Services (Dropdown with Direct Link & Hover) */}
               <div
@@ -320,20 +338,30 @@ export default function Navbar({
               </div>
 
               {/* Residential */}
-              <a
-                href="/#about"
-                className="px-3 py-2 rounded-md hover:text-electric text-slate-100 transition-colors"
+              <Link
+                href="/residential"
+                className={`px-3 py-2 rounded-md hover:text-electric transition-colors relative group ${
+                  isResidentialActive ? 'text-white font-bold' : 'text-slate-100'
+                }`}
               >
-                Residential
-              </a>
+                <span>Residential</span>
+                {isResidentialActive && (
+                  <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-electric rounded-full" />
+                )}
+              </Link>
 
               {/* Commercial */}
-              <a
-                href="/#services"
-                className="px-3 py-2 rounded-md hover:text-electric text-slate-100 transition-colors"
+              <Link
+                href="/commercial"
+                className={`px-3 py-2 rounded-md hover:text-electric transition-colors relative group ${
+                  isCommercialActive ? 'text-white font-bold' : 'text-slate-100'
+                }`}
               >
-                Commercial
-              </a>
+                <span>Commercial</span>
+                {isCommercialActive && (
+                  <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-electric rounded-full" />
+                )}
+              </Link>
 
               {/* Service Areas (Dropdown with Direct Link & Hover) */}
               <div
@@ -462,11 +490,26 @@ export default function Navbar({
 
                             <div className="flex items-center justify-between pt-2 border-t border-slate-200/80 font-heading">
                               <Link
-                                href={`/service-areas#${current.id}`}
+                                href={
+                                  current.id === 'nassau'
+                                    ? '/service-areas/nassau-county'
+                                    : current.id === 'queens'
+                                    ? '/queens'
+                                    : current.id === 'suffolk'
+                                    ? '/suffolk-county'
+                                    : `/service-areas#${current.id}`
+                                }
                                 onClick={() => setActiveDropdown(null)}
                                 className="text-xs font-bold text-royal hover:underline"
                               >
-                                View {current.name} Details &rarr;
+                                {current.id === 'nassau'
+                                  ? 'Nassau County'
+                                  : current.id === 'queens'
+                                  ? 'Queens'
+                                  : current.id === 'suffolk'
+                                  ? 'Suffolk County, NY'
+                                  : `View ${current.name} Details`}{' '}
+                                &rarr;
                               </Link>
                               <a
                                 href={PHONE_TEL}
@@ -479,51 +522,6 @@ export default function Navbar({
                         );
                       })()}
                     </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Project Photos (Dropdown with Arrow Icon ONLY) */}
-              <div className="relative group">
-                <button
-                  onClick={() => toggleDropdown('photos')}
-                  onMouseEnter={() => setActiveDropdown('photos')}
-                  className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors ${
-                    activeDropdown === 'photos' ? 'text-electric' : 'text-slate-100'
-                  }`}
-                  aria-expanded={activeDropdown === 'photos'}
-                >
-                  <span>Project Photos</span>
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 text-white transition-transform duration-200 ${
-                      activeDropdown === 'photos' ? 'rotate-180 text-electric' : ''
-                    }`}
-                  />
-                </button>
-
-                {activeDropdown === 'photos' && (
-                  <div
-                    onMouseLeave={() => setActiveDropdown(null)}
-                    className="absolute left-0 top-full mt-1 w-64 bg-white rounded-xl shadow-2xl border border-slate-100 py-2 text-slate-800 z-50 animate-fadeIn"
-                  >
-                    <div className="px-4 py-2 border-b border-slate-100 bg-slate-50/70">
-                      <p className="text-xs font-bold uppercase tracking-wider text-royal font-heading">
-                        Work Gallery
-                      </p>
-                    </div>
-                    {['Our Team', 'AC Installations', 'Heating Systems', 'Mini-Split Projects', 'Commercial Projects'].map((cat) => (
-                      <a
-                        key={cat}
-                        href="#about"
-                        onClick={() => {
-                          onOpenPhotos?.(cat);
-                          setActiveDropdown(null);
-                        }}
-                        className="block px-4 py-2 hover:bg-slate-50 hover:text-royal transition-colors text-sm font-medium font-heading"
-                      >
-                        {cat}
-                      </a>
-                    ))}
                   </div>
                 )}
               </div>
@@ -596,12 +594,17 @@ export default function Navbar({
               </div>
 
               {/* Contact */}
-              <a
-                href="#contact"
-                className="px-3 py-2 rounded-md hover:text-electric text-slate-100 transition-colors"
+              <Link
+                href="/contact"
+                className={`px-3 py-2 rounded-md hover:text-electric transition-colors relative group ${
+                  isContactActive ? 'text-white font-bold' : 'text-slate-100'
+                }`}
               >
-                Contact
-              </a>
+                <span>Contact</span>
+                {isContactActive && (
+                  <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-electric rounded-full" />
+                )}
+              </Link>
             </div>
 
             {/* Right side emergency prompt */}
@@ -651,13 +654,17 @@ export default function Navbar({
           </Link>
 
           {/* About */}
-          <a
-            href="/#about"
+          <Link
+            href="/about-us"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+            className={`block px-3 py-2.5 rounded-lg text-[18px] font-bold transition-colors ${
+              isAboutActive
+                ? 'text-electric bg-navy-light/60 font-black'
+                : 'text-slate-200 hover:text-electric hover:bg-navy-light'
+            }`}
           >
             About
-          </a>
+          </Link>
 
           {/* Heating Submenu */}
           <div>
@@ -806,22 +813,30 @@ export default function Navbar({
           </div>
 
           {/* Residential */}
-          <a
-            href="/#about"
+          <Link
+            href="/residential"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+            className={`block px-3 py-2.5 rounded-lg text-[18px] font-bold transition-colors ${
+              isResidentialActive
+                ? 'text-electric bg-navy-light/60 font-black'
+                : 'text-slate-200 hover:text-electric hover:bg-navy-light'
+            }`}
           >
             Residential
-          </a>
+          </Link>
 
           {/* Commercial */}
-          <a
-            href="/#services"
+          <Link
+            href="/commercial"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+            className={`block px-3 py-2.5 rounded-lg text-[18px] font-bold transition-colors ${
+              isCommercialActive
+                ? 'text-electric bg-navy-light/60 font-black'
+                : 'text-slate-200 hover:text-electric hover:bg-navy-light'
+            }`}
           >
             Commercial
-          </a>
+          </Link>
 
           {/* Service Areas Submenu */}
           <div>
@@ -868,8 +883,21 @@ export default function Navbar({
 
                 {/* 1. Nassau County */}
                 <div className="pt-1 border-t border-white/10">
-                  <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
-                    Nassau County
+                  <div className="flex items-center justify-between px-3 py-1">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                      Nassau County
+                    </span>
+                    <Link
+                      href="/service-areas/nassau-county"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`text-xs font-bold ${
+                        pathname === '/service-areas/nassau-county'
+                          ? 'text-white underline'
+                          : 'text-brightYellow hover:underline'
+                      }`}
+                    >
+                      Nassau County &rarr;
+                    </Link>
                   </div>
                   <div className="pl-2 space-y-1">
                     {NASSAU_COUNTY_LOCATIONS.filter((loc) => loc.isAvailable && loc.href).map((loc) => (
@@ -886,40 +914,66 @@ export default function Navbar({
                         ★ {loc.name}
                       </Link>
                     ))}
-                    <Link
-                      href="/service-areas#nassau"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
-                    >
-                      View All 22 Nassau Locations &rarr;
-                    </Link>
                   </div>
                 </div>
 
                 {/* 2. Queens */}
                 <div className="pt-1 border-t border-white/10">
-                  <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
-                    Queens
+                  <div className="flex items-center justify-between px-3 py-1">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                      Queens
+                    </span>
+                    <Link
+                      href="/queens"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`text-xs font-bold ${
+                        pathname === '/queens' || pathname === '/service-areas/queens'
+                          ? 'text-white underline'
+                          : 'text-brightYellow hover:underline'
+                      }`}
+                    >
+                      Queens &rarr;
+                    </Link>
                   </div>
                   <div className="pl-2 space-y-1">
-                    <Link
-                      href="/service-areas#queens"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
-                    >
-                      View All 8 Queens Locations &rarr;
-                    </Link>
+                    {QUEENS_LOCATIONS.filter((loc) => loc.isAvailable && loc.href).map((loc) => (
+                      <Link
+                        key={loc.name}
+                        href={loc.href!}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`block px-3 py-1.5 text-sm font-bold rounded ${
+                          pathname === loc.href || pathname === `/${loc.slug}`
+                            ? 'bg-royal text-white'
+                            : 'text-brightYellow hover:underline'
+                        }`}
+                      >
+                        ★ {loc.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
 
                 {/* 3. Suffolk County */}
                 <div className="pt-1 border-t border-white/10">
-                  <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
-                    Suffolk County
+                  <div className="flex items-center justify-between px-3 py-1">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                      Suffolk County, NY
+                    </span>
+                    <Link
+                      href="/suffolk-county"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`text-xs font-bold ${
+                        pathname === '/suffolk-county' || pathname === '/service-areas/suffolk-county'
+                          ? 'text-white underline'
+                          : 'text-brightYellow hover:underline'
+                      }`}
+                    >
+                      Suffolk County &rarr;
+                    </Link>
                   </div>
                   <div className="pl-2 space-y-1">
                     <Link
-                      href="/service-areas#suffolk"
+                      href="/suffolk-county"
                       onClick={() => setMobileMenuOpen(false)}
                       className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
                     >
@@ -975,38 +1029,6 @@ export default function Navbar({
                     </Link>
                   </div>
                 </div>
-              </div>
-            )}
-          </div>
-
-          {/* Project Photos Submenu */}
-          <div>
-            <button
-              onClick={() => toggleMobileSubmenu('photos')}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
-            >
-              <span>Project Photos</span>
-              <ChevronDown
-                className={`w-4 h-4 text-white transition-transform ${
-                  mobileSubmenu === 'photos' ? 'rotate-180 text-electric' : ''
-                }`}
-              />
-            </button>
-            {mobileSubmenu === 'photos' && (
-              <div className="pl-6 pr-2 py-1 space-y-1 bg-navy-dark/60 rounded-lg my-1">
-                {['Our Team', 'AC Installations', 'Heating Systems', 'Mini-Split Projects', 'Commercial Projects'].map((cat) => (
-                  <a
-                    key={cat}
-                    href="#about"
-                    onClick={() => {
-                      onOpenPhotos?.(cat);
-                      setMobileMenuOpen(false);
-                    }}
-                    className="block px-3 py-2 text-sm sm:text-base text-slate-300 hover:text-white"
-                  >
-                    {cat}
-                  </a>
-                ))}
               </div>
             )}
           </div>
@@ -1070,13 +1092,17 @@ export default function Navbar({
           </div>
 
           {/* Contact */}
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-[18px] font-bold text-slate-200 hover:text-electric hover:bg-navy-light transition-colors"
+            className={`block px-3 py-2.5 rounded-lg text-[18px] font-bold transition-colors ${
+              isContactActive
+                ? 'text-electric bg-navy-light/60 font-black'
+                : 'text-slate-200 hover:text-electric hover:bg-navy-light'
+            }`}
           >
             Contact
-          </a>
+          </Link>
 
           {/* Direct Emergency Dispatch in Drawer */}
           <div className="pt-3 border-t border-navy-light/60">

@@ -70,7 +70,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
             {/* Social Media Icons */}
             <div className="flex items-center gap-2.5">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/247.Hvac.of.long.island"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-navy-light flex items-center justify-center text-slate-300 hover:text-white hover:bg-royal transition-colors"
@@ -129,29 +129,19 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
             </Link>
             <ul className="space-y-2 text-sm sm:text-xs font-body">
               {[
-                { title: 'All Heating Services', target: 'Heating Services', href: '/heating-services' },
-                { title: 'Furnace Services', target: 'Furnace Installation, Repair & Replacement', href: '/furnace-installation-repair-replacement' },
-                { title: 'Boiler Services', target: 'Boiler Installation, Repair & Replacement', href: '/boiler-installation-repair' },
-                { title: 'Water Heater Services', target: 'Water Heater Installation, Repair & Replacement', href: '/water-heater-installation-repair-replacement' },
-                { title: 'Heating Repairs', target: 'Furnace Installation, Repair & Replacement', href: '/furnace-installation-repair-replacement' },
+                { title: 'All Heating Services', href: '/heating-services' },
+                { title: 'Furnace Services', href: '/furnace-installation-repair-replacement' },
+                { title: 'Boiler Services', href: '/boiler-installation-repair' },
+                { title: 'Water Heater Services', href: '/water-heater-installation-repair-replacement' },
+                { title: 'Heating Repairs', href: '/furnace-installation-repair-replacement' },
               ].map((item) => (
                 <li key={item.title}>
-                  {item.href ? (
-                    <Link
-                      href={item.href}
-                      className="hover:text-electric transition-colors"
-                    >
-                      {item.title}
-                    </Link>
-                  ) : (
-                    <a
-                      href="/#services"
-                      onClick={() => onSelectService?.(item.target)}
-                      className="hover:text-electric transition-colors"
-                    >
-                      {item.title}
-                    </a>
-                  )}
+                  <Link
+                    href={item.href}
+                    className="hover:text-electric transition-colors"
+                  >
+                    {item.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -167,30 +157,20 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
             </Link>
             <ul className="space-y-2 text-sm sm:text-xs font-body">
               {[
-                { title: 'All Cooling Services', target: 'Cooling Services', href: '/cooling-services' },
-                { title: 'AC Installation', target: 'Air Conditioner Installation & Replacement', href: '/air-conditioners-installation-replacement' },
-                { title: 'AC Repair', target: 'Air Conditioner Repair & Maintenance', href: '/air-conditioning-repair' },
-                { title: 'Mini-Split Systems', target: 'Mini-Split Installation, Repair & Replacement', href: '/mini-splits-ductless-heat-pumps-air-conditioners' },
-                { title: 'AC Maintenance', target: 'Air Conditioner Repair & Maintenance', href: '/air-conditioning-repair' },
-                { title: 'Commercial Cooling', target: 'Air Conditioner Installation & Replacement', href: '/air-conditioners-installation-replacement' },
+                { title: 'All Cooling Services', href: '/cooling-services' },
+                { title: 'AC Installation', href: '/air-conditioners-installation-replacement' },
+                { title: 'AC Repair', href: '/air-conditioning-repair' },
+                { title: 'Mini-Split Systems', href: '/mini-splits-ductless-heat-pumps-air-conditioners' },
+                { title: 'AC Maintenance', href: '/air-conditioning-repair' },
+                { title: 'Commercial Cooling', href: '/commercial' },
               ].map((item) => (
                 <li key={item.title}>
-                  {item.href ? (
-                    <Link
-                      href={item.href}
-                      className="hover:text-electric transition-colors"
-                    >
-                      {item.title}
-                    </Link>
-                  ) : (
-                    <a
-                      href="#services"
-                      onClick={() => onSelectService?.(item.target)}
-                      className="hover:text-electric transition-colors"
-                    >
-                      {item.title}
-                    </a>
-                  )}
+                  <Link
+                    href={item.href}
+                    className="hover:text-electric transition-colors"
+                  >
+                    {item.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -208,17 +188,17 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/service-areas#nassau" className="hover:text-electric transition-colors">
+                <Link href="/service-areas/nassau-county" className="hover:text-electric transition-colors">
                   Nassau County (27 Towns)
                 </Link>
               </li>
               <li>
-                <Link href="/service-areas#queens" className="hover:text-electric transition-colors">
+                <Link href="/queens" className="hover:text-electric transition-colors">
                   Queens (8 Towns)
                 </Link>
               </li>
               <li>
-                <Link href="/service-areas#suffolk" className="hover:text-electric transition-colors">
+                <Link href="/suffolk-county" className="hover:text-electric transition-colors">
                   Suffolk County, NY
                 </Link>
               </li>
@@ -317,21 +297,26 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
           </div>
         </div>
 
-        {/* Footer Bottom: Privacy Policy, Terms of Service, Copyright */}
-        <div className="pt-6 border-t border-navy-light/40 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3 font-body">
-          <p>© {currentYear} {BUSINESS_NAME}. All Rights Reserved.</p>
-          <div className="flex items-center gap-4">
-            <a href="#about" className="hover:text-slate-200 transition-colors">
+        {/* Footer Bottom: Privacy Policy, Terms of Service Buttons & Copyright */}
+        <div className="pt-6 border-t border-navy-light/40 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4 font-body">
+          <p className="text-center sm:text-left">
+            © {currentYear} {BUSINESS_NAME}. All Rights Reserved.
+          </p>
+
+          {/* Bottom-Right Side Buttons */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2.5 sm:gap-3">
+            <Link
+              href="/privacy-policy"
+              className="inline-flex items-center justify-center px-3.5 py-1.5 rounded-lg bg-navy-light hover:bg-royal text-white border border-white/10 hover:border-royal text-xs font-semibold font-heading uppercase tracking-wider transition-all duration-200 shadow-xs hover:shadow focus:outline-hidden focus:ring-2 focus:ring-electric"
+            >
               Privacy Policy
-            </a>
-            <span>•</span>
-            <a href="#about" className="hover:text-slate-200 transition-colors">
+            </Link>
+            <Link
+              href="/terms-of-service"
+              className="inline-flex items-center justify-center px-3.5 py-1.5 rounded-lg bg-navy-light hover:bg-royal text-white border border-white/10 hover:border-royal text-xs font-semibold font-heading uppercase tracking-wider transition-all duration-200 shadow-xs hover:shadow focus:outline-hidden focus:ring-2 focus:ring-electric"
+            >
               Terms of Service
-            </a>
-            <span>•</span>
-            <a href="#home" className="hover:text-slate-200 transition-colors">
-              Sitemap
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -44,14 +44,27 @@ export const NASSAU_COUNTY_LOCATIONS: LocationItem[] = [
 ];
 
 export const QUEENS_LOCATIONS: LocationItem[] = [
-  { name: 'Arverne' },
-  { name: 'Cambria Heights' },
-  { name: 'Far Rockaway' },
-  { name: 'Howard Beach' },
-  { name: 'Laurelton' },
-  { name: 'Ozone Park' },
-  { name: 'Rosedale' },
-  { name: 'Springfield Gardens' },
+  { name: 'Arverne', slug: 'arverne', href: '/service-areas/arverne', isAvailable: true },
+  { name: 'Cambria Heights', slug: 'cambria-heights', href: '/service-areas/cambria-heights', isAvailable: true },
+  { name: 'Far Rockaway', slug: 'far-rockaway', href: '/service-areas/far-rockaway', isAvailable: true },
+  { name: 'Howard Beach', slug: 'howard-beach', href: '/service-areas/howard-beach', isAvailable: true },
+  { name: 'Laurelton', slug: 'laurelton', href: '/service-areas/laurelton', isAvailable: true },
+  { name: 'Ozone Park', slug: 'ozone-park', href: '/service-areas/ozone-park', isAvailable: true },
+  { name: 'Rosedale', slug: 'rosedale', href: '/service-areas/rosedale', isAvailable: true },
+  { name: 'Springfield Gardens', slug: 'springfield-gardens', href: '/service-areas/springfield-gardens', isAvailable: true },
+];
+
+export const SUFFOLK_LOCATIONS: LocationItem[] = [
+  { name: 'Babylon' },
+  { name: 'Brookhaven' },
+  { name: 'East Hampton' },
+  { name: 'Huntington' },
+  { name: 'Islip' },
+  { name: 'Riverhead' },
+  { name: 'Shelter Island' },
+  { name: 'Smithtown' },
+  { name: 'Southampton' },
+  { name: 'Southold' },
 ];
 
 export const BRONX_LOCATIONS: LocationItem[] = [
@@ -79,12 +92,12 @@ export const SERVICE_AREAS_CATEGORIES: CountyServiceArea[] = [
   },
   {
     id: 'suffolk',
-    name: 'Suffolk County',
+    name: 'Suffolk County, NY',
     shortName: 'Suffolk',
     dispatchTime: '35-50 Min Dispatch',
     description:
       'Comprehensive 24/7 HVAC services, hydronic boiler and furnace repairs, oil-to-gas conversions, and seasonal system tune-ups throughout Suffolk County.',
-    locations: [],
+    locations: SUFFOLK_LOCATIONS,
   },
   {
     id: 'brooklyn',

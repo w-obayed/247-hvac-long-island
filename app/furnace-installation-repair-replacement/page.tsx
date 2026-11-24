@@ -814,7 +814,7 @@ export default function FurnaceInstallationRepairReplacementPage() {
 
               {/* Exact Location Link */}
               <Link
-                href="/service-areas#nassau"
+                href="/service-areas/nassau-county"
                 className="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-white border border-royal text-royal hover:bg-royal hover:text-white font-bold text-sm sm:text-base font-heading transition-all shadow-sm group"
               >
                 <span>Nassau Areas »</span>
