@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import React, { useState, useEffect, useRef } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   X,
   CheckCircle2,
@@ -14,7 +14,7 @@ import {
   Flame,
   Wrench,
   Sparkles,
-} from 'lucide-react';
+} from "lucide-react";
 
 import {
   serviceRequestSchema,
@@ -31,8 +31,8 @@ import {
   MAINTENANCE_TYPE_OPTIONS,
   isInstallationService,
   isRepairService,
-} from '@/lib/validations/service-request';
-import { PHONE_NUMBER, PHONE_TEL } from '@/lib/utils';
+} from "@/lib/validations/service-request";
+import { PHONE_NUMBER, PHONE_TEL } from "@/lib/utils";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -50,7 +50,7 @@ export default function BookingModal({
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Today's date string for min date in date picker (YYYY-MM-DD in local time)
-  const todayStr = new Date().toISOString().split('T')[0];
+  const todayStr = new Date().toISOString().split("T")[0];
 
   const {
     register,
@@ -61,81 +61,86 @@ export default function BookingModal({
     formState: { errors, isSubmitting },
   } = useForm<ServiceRequestFormData>({
     resolver: zodResolver(serviceRequestSchema),
-    mode: 'onTouched',
+    mode: "onTouched",
     defaultValues: {
-      formType: 'service-request',
-      fullName: '',
-      phone: '',
-      email: '',
-      zipCode: '',
-      serviceAddress: '',
-      service: (defaultService as any) || ('' as any),
+      formType: "service-request",
+      fullName: "",
+      phone: "",
+      email: "",
+      zipCode: "",
+      serviceAddress: "",
+      service: (defaultService as any) || ("" as any),
       installationType: undefined,
-      propertyType: '' as any,
+      propertyType: "" as any,
       systemAge: undefined,
       workingStatus: undefined,
-      urgency: 'Standard – Next 1–2 Days',
-      preferredDate: '',
-      preferredTime: '' as any,
-      brand: '',
-      description: '',
+      urgency: "Standard – Next 1–2 Days",
+      preferredDate: "",
+      preferredTime: "" as any,
+      brand: "",
+      description: "",
       preferredContactMethod: undefined,
-      maintenanceType: '',
-      otherServiceDescription: '',
-      honeypot: '',
+      maintenanceType: "",
+      otherServiceDescription: "",
+      honeypot: "",
     },
   });
 
-  const selectedService = watch('service');
-  const selectedInstallationType = watch('installationType');
-  const selectedSystemAge = watch('systemAge');
-  const selectedUrgency = watch('urgency');
+  const selectedService = watch("service");
+  const selectedInstallationType = watch("installationType");
+  const selectedSystemAge = watch("systemAge");
+  const selectedUrgency = watch("urgency");
 
   // Conditional flags
   const isInstall = isInstallationService(selectedService);
-  const isMaintenance = selectedService === 'HVAC Maintenance / Tune-Up';
-  const isOther = selectedService === 'Other';
-  const isEmergency = selectedService === 'Emergency 24/7 No Heat / No AC Service';
+  const isMaintenance = selectedService === "HVAC Maintenance / Tune-Up";
+  const isOther = selectedService === "Other";
+  const isEmergency =
+    selectedService === "Emergency 24/7 No Heat / No AC Service";
   const isBrandNewInstall =
-    selectedInstallationType === 'New Installation' ||
-    selectedSystemAge === 'Brand New Installation';
+    selectedInstallationType === "New Installation" ||
+    selectedSystemAge === "Brand New Installation";
 
   // Synchronize default service if passed
   useEffect(() => {
     if (defaultService && !selectedService) {
-      setValue('service', defaultService as any);
+      setValue("service", defaultService as any);
     }
   }, [defaultService, selectedService, setValue]);
 
   // Auto-urgency when Emergency service is selected
   useEffect(() => {
     if (isEmergency) {
-      setValue('urgency', 'Emergency – Within 2 Hours', { shouldValidate: true });
+      setValue("urgency", "Emergency – Within 2 Hours", {
+        shouldValidate: true,
+      });
     }
   }, [isEmergency, setValue]);
 
   // When Brand New Installation is chosen, set workingStatus automatically to "Not applicable – New Installation"
   useEffect(() => {
     if (isBrandNewInstall) {
-      setValue('workingStatus', 'Not applicable – New Installation', { shouldValidate: true });
-      setValue('brand', '');
+      setValue("workingStatus", "Not applicable – New Installation", {
+        shouldValidate: true,
+      });
+      setValue("brand", "");
     }
   }, [isBrandNewInstall, setValue]);
 
   // Close on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (e.key === "Escape" && isOpen) {
         handleModalClose();
       }
     };
     if (isOpen) {
-      window.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
+      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
     }
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
     };
   }, [isOpen]);
 
@@ -158,14 +163,14 @@ export default function BookingModal({
     // Prepare clean payload: strip stale hidden values
     const payload: ServiceRequestFormData = {
       ...data,
-      formType: 'service-request',
+      formType: "service-request",
     };
 
     if (isBrandNewInstall) {
       payload.brand = undefined;
-      payload.workingStatus = 'Not applicable – New Installation';
-      if (selectedInstallationType === 'New Installation') {
-        payload.systemAge = 'Brand New Installation';
+      payload.workingStatus = "Not applicable – New Installation";
+      if (selectedInstallationType === "New Installation") {
+        payload.systemAge = "Brand New Installation";
       }
     }
 
@@ -182,16 +187,18 @@ export default function BookingModal({
     }
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
       const result = await response.json();
 
       if (!response.ok || !result.success) {
-        throw new Error(result.message || 'Unable to submit your service request.');
+        throw new Error(
+          result.message || "Unable to submit your service request.",
+        );
       }
 
       setIsSuccess(true);
@@ -199,7 +206,7 @@ export default function BookingModal({
     } catch (err: any) {
       setSubmitError(
         err.message ||
-          'Unable to submit your service request right now. Please call us directly at (516) 717-7515.'
+          "Unable to submit your service request right now. Please call us directly at (516) 717-7515.",
       );
     }
   };
@@ -236,7 +243,8 @@ export default function BookingModal({
               Request Service
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 font-body mt-1">
-              Schedule HVAC service with our professional team. Tell us what you need and when you'd prefer service.
+              Schedule HVAC service with our professional team. Tell us what you
+              need and when you'd prefer service.
             </p>
           </div>
 
@@ -265,7 +273,9 @@ export default function BookingModal({
                   Thank You! Your Service Request Has Been Received.
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto mt-2 leading-relaxed">
-                  Our dispatch coordinator will contact you shortly to review your service details and confirm technician arrival window and availability.
+                  Our dispatch coordinator will contact you shortly to review
+                  your service details and confirm technician arrival window and
+                  availability.
                 </p>
               </div>
 
@@ -275,7 +285,8 @@ export default function BookingModal({
                   <span>24/7 Immediate Emergency Dispatch</span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-700">
-                  If this is a heating or air conditioning emergency requiring immediate dispatch, call our dispatch office directly at:
+                  If this is a heating or air conditioning emergency requiring
+                  immediate dispatch, call our dispatch office directly at:
                 </p>
                 <a
                   href={PHONE_TEL}
@@ -296,7 +307,11 @@ export default function BookingModal({
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-7">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              noValidate
+              className="space-y-7"
+            >
               {/* Submission Error Banner */}
               {submitError && (
                 <div
@@ -309,14 +324,18 @@ export default function BookingModal({
               )}
 
               {/* Hidden Honeypot Field */}
-              <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
+              <div
+                className="hidden"
+                aria-hidden="true"
+                style={{ display: "none" }}
+              >
                 <label htmlFor="service-honeypot">Leave blank</label>
                 <input
                   type="text"
                   id="service-honeypot"
                   tabIndex={-1}
                   autoComplete="off"
-                  {...register('honeypot')}
+                  {...register("honeypot")}
                 />
               </div>
 
@@ -348,9 +367,11 @@ export default function BookingModal({
                       placeholder="Enter your full name"
                       aria-required="true"
                       aria-invalid={!!errors.fullName}
-                      {...register('fullName')}
+                      {...register("fullName")}
                       className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-slate-800 bg-slate-50/50 transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen ${
-                        errors.fullName ? 'border-brightRed bg-red-50/20' : 'border-slate-300'
+                        errors.fullName
+                          ? "border-brightRed bg-red-50/20"
+                          : "border-slate-300"
                       }`}
                     />
                     {errors.fullName && (
@@ -374,9 +395,11 @@ export default function BookingModal({
                       placeholder="Enter your phone number"
                       aria-required="true"
                       aria-invalid={!!errors.phone}
-                      {...register('phone')}
+                      {...register("phone")}
                       className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-slate-800 bg-slate-50/50 transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen ${
-                        errors.phone ? 'border-brightRed bg-red-50/20' : 'border-slate-300'
+                        errors.phone
+                          ? "border-brightRed bg-red-50/20"
+                          : "border-slate-300"
                       }`}
                     />
                     {errors.phone && (
@@ -392,16 +415,21 @@ export default function BookingModal({
                       htmlFor="service-email"
                       className="block text-xs font-bold uppercase tracking-wider text-navy font-heading mb-1.5"
                     >
-                      Email Address <span className="text-slate-400 font-normal lowercase">(optional)</span>
+                      Email Address{" "}
+                      <span className="text-slate-400 font-normal lowercase">
+                        (optional)
+                      </span>
                     </label>
                     <input
                       type="email"
                       id="service-email"
                       placeholder="Enter your email address"
                       aria-invalid={!!errors.email}
-                      {...register('email')}
+                      {...register("email")}
                       className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-slate-800 bg-slate-50/50 transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen ${
-                        errors.email ? 'border-brightRed bg-red-50/20' : 'border-slate-300'
+                        errors.email
+                          ? "border-brightRed bg-red-50/20"
+                          : "border-slate-300"
                       }`}
                     />
                     {errors.email && (
@@ -425,9 +453,11 @@ export default function BookingModal({
                       placeholder="Enter your ZIP code"
                       aria-required="true"
                       aria-invalid={!!errors.zipCode}
-                      {...register('zipCode')}
+                      {...register("zipCode")}
                       className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-slate-800 bg-slate-50/50 transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen ${
-                        errors.zipCode ? 'border-brightRed bg-red-50/20' : 'border-slate-300'
+                        errors.zipCode
+                          ? "border-brightRed bg-red-50/20"
+                          : "border-slate-300"
                       }`}
                     />
                     {errors.zipCode && (
@@ -443,7 +473,8 @@ export default function BookingModal({
                       htmlFor="service-address"
                       className="block text-xs font-bold uppercase tracking-wider text-navy font-heading mb-1.5"
                     >
-                      Full Service Address <span className="text-brightRed">*</span>
+                      Full Service Address{" "}
+                      <span className="text-brightRed">*</span>
                     </label>
                     <input
                       type="text"
@@ -451,9 +482,11 @@ export default function BookingModal({
                       placeholder="Enter your street address, city, and state"
                       aria-required="true"
                       aria-invalid={!!errors.serviceAddress}
-                      {...register('serviceAddress')}
+                      {...register("serviceAddress")}
                       className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-slate-800 bg-slate-50/50 transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen ${
-                        errors.serviceAddress ? 'border-brightRed bg-red-50/20' : 'border-slate-300'
+                        errors.serviceAddress
+                          ? "border-brightRed bg-red-50/20"
+                          : "border-slate-300"
                       }`}
                     />
                     {errors.serviceAddress && (
@@ -485,15 +518,18 @@ export default function BookingModal({
                       htmlFor="service-select"
                       className="block text-xs font-bold uppercase tracking-wider text-navy font-heading mb-1.5"
                     >
-                      6. What HVAC service do you need? <span className="text-brightRed">*</span>
+                      6. What HVAC service do you need?{" "}
+                      <span className="text-brightRed">*</span>
                     </label>
                     <select
                       id="service-select"
                       aria-required="true"
                       aria-invalid={!!errors.service}
-                      {...register('service')}
+                      {...register("service")}
                       className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-slate-800 bg-slate-50/50 transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen font-medium ${
-                        errors.service ? 'border-brightRed bg-red-50/20' : 'border-slate-300'
+                        errors.service
+                          ? "border-brightRed bg-red-50/20"
+                          : "border-slate-300"
                       }`}
                     >
                       <option value="">Select service</option>
@@ -514,7 +550,8 @@ export default function BookingModal({
                   {isInstall && (
                     <div className="sm:col-span-2 p-4 rounded-xl bg-hvacGreen/5 border border-hvacGreen/20 space-y-2 animate-fadeIn">
                       <label className="block text-xs font-bold uppercase tracking-wider text-navy font-heading">
-                        Is this a new installation or a replacement? <span className="text-brightRed">*</span>
+                        Is this a new installation or a replacement?{" "}
+                        <span className="text-brightRed">*</span>
                       </label>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                         {INSTALLATION_TYPE_OPTIONS.map((opt) => (
@@ -522,14 +559,14 @@ export default function BookingModal({
                             key={opt}
                             className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
                               selectedInstallationType === opt
-                                ? 'bg-white border-hvacGreen shadow-sm text-hvacGreen font-bold'
-                                : 'bg-white/70 border-slate-200 text-slate-700 hover:bg-white'
+                                ? "bg-white border-hvacGreen shadow-sm text-hvacGreen font-bold"
+                                : "bg-white/70 border-slate-200 text-slate-700 hover:bg-white"
                             }`}
                           >
                             <input
                               type="radio"
                               value={opt}
-                              {...register('installationType')}
+                              {...register("installationType")}
                               className="w-4 h-4 text-hvacGreen focus:ring-hvacGreen"
                             />
                             <span className="text-sm font-heading">{opt}</span>
@@ -555,10 +592,12 @@ export default function BookingModal({
                       </label>
                       <select
                         id="service-maintenanceType"
-                        {...register('maintenanceType')}
+                        {...register("maintenanceType")}
                         className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-800 bg-white transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen font-medium"
                       >
-                        <option value="">Select maintenance type (optional)</option>
+                        <option value="">
+                          Select maintenance type (optional)
+                        </option>
                         {MAINTENANCE_TYPE_OPTIONS.map((m) => (
                           <option key={m} value={m}>
                             {m}
@@ -575,7 +614,8 @@ export default function BookingModal({
                         htmlFor="service-otherDesc"
                         className="block text-xs font-bold uppercase tracking-wider text-navy font-heading"
                       >
-                        Please describe the service you need <span className="text-brightRed">*</span>
+                        Please describe the service you need{" "}
+                        <span className="text-brightRed">*</span>
                       </label>
                       <textarea
                         id="service-otherDesc"
@@ -583,9 +623,11 @@ export default function BookingModal({
                         placeholder="Explain what HVAC service or assistance you require..."
                         aria-required="true"
                         aria-invalid={!!errors.otherServiceDescription}
-                        {...register('otherServiceDescription')}
+                        {...register("otherServiceDescription")}
                         className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-slate-800 bg-white transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen resize-y ${
-                          errors.otherServiceDescription ? 'border-brightRed' : 'border-slate-300'
+                          errors.otherServiceDescription
+                            ? "border-brightRed"
+                            : "border-slate-300"
                         }`}
                       />
                       {errors.otherServiceDescription && (
@@ -599,25 +641,28 @@ export default function BookingModal({
                   {/* 7. What type of property is this? (Required radio group) */}
                   <div className="sm:col-span-2 space-y-2">
                     <label className="block text-xs font-bold uppercase tracking-wider text-navy font-heading">
-                      7. What type of property is this? <span className="text-brightRed">*</span>
+                      7. What type of property is this?{" "}
+                      <span className="text-brightRed">*</span>
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
                       {PROPERTY_TYPE_OPTIONS.map((prop) => (
                         <label
                           key={prop}
                           className={`flex items-center gap-2 p-2.5 sm:p-3 rounded-xl border cursor-pointer transition-all ${
-                            watch('propertyType') === prop
-                              ? 'bg-hvacGreen/10 border-hvacGreen text-hvacGreen font-bold shadow-xs'
-                              : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+                            watch("propertyType") === prop
+                              ? "bg-hvacGreen/10 border-hvacGreen text-hvacGreen font-bold shadow-xs"
+                              : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                           }`}
                         >
                           <input
                             type="radio"
                             value={prop}
-                            {...register('propertyType')}
+                            {...register("propertyType")}
                             className="w-3.5 h-3.5 text-hvacGreen focus:ring-hvacGreen"
                           />
-                          <span className="text-xs sm:text-sm font-medium">{prop}</span>
+                          <span className="text-xs sm:text-sm font-medium">
+                            {prop}
+                          </span>
                         </label>
                       ))}
                     </div>
@@ -632,7 +677,8 @@ export default function BookingModal({
                   {!isBrandNewInstall && (
                     <div className="sm:col-span-2 space-y-2">
                       <label className="block text-xs font-bold uppercase tracking-wider text-navy font-heading">
-                        8. How old is your current HVAC system? <span className="text-brightRed">*</span>
+                        8. How old is your current HVAC system?{" "}
+                        <span className="text-brightRed">*</span>
                       </label>
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5">
                         {SYSTEM_AGE_OPTIONS.map((age) => (
@@ -640,17 +686,19 @@ export default function BookingModal({
                             key={age}
                             className={`flex items-center gap-2 p-2.5 sm:p-3 rounded-xl border cursor-pointer transition-all ${
                               selectedSystemAge === age
-                                ? 'bg-hvacGreen/10 border-hvacGreen text-hvacGreen font-bold shadow-xs'
-                                : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+                                ? "bg-hvacGreen/10 border-hvacGreen text-hvacGreen font-bold shadow-xs"
+                                : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                             }`}
                           >
                             <input
                               type="radio"
                               value={age}
-                              {...register('systemAge')}
+                              {...register("systemAge")}
                               className="w-3.5 h-3.5 text-hvacGreen focus:ring-hvacGreen"
                             />
-                            <span className="text-xs sm:text-sm font-medium">{age}</span>
+                            <span className="text-xs sm:text-sm font-medium">
+                              {age}
+                            </span>
                           </label>
                         ))}
                       </div>
@@ -666,29 +714,32 @@ export default function BookingModal({
                   {!isBrandNewInstall && (
                     <div className="sm:col-span-2 space-y-2">
                       <label className="block text-xs font-bold uppercase tracking-wider text-navy font-heading">
-                        9. Is your HVAC system currently working? <span className="text-brightRed">*</span>
+                        9. Is your HVAC system currently working?{" "}
+                        <span className="text-brightRed">*</span>
                       </label>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
-                        {WORKING_STATUS_OPTIONS.filter((opt) => opt !== 'Not applicable – New Installation').map(
-                          (status) => (
-                            <label
-                              key={status}
-                              className={`flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer transition-all ${
-                                watch('workingStatus') === status
-                                  ? 'bg-hvacGreen/10 border-hvacGreen text-hvacGreen font-bold shadow-xs'
-                                  : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
-                              }`}
-                            >
-                              <input
-                                type="radio"
-                                value={status}
-                                {...register('workingStatus')}
-                                className="w-4 h-4 text-hvacGreen focus:ring-hvacGreen"
-                              />
-                              <span className="text-xs sm:text-sm font-medium">{status}</span>
-                            </label>
-                          )
-                        )}
+                        {WORKING_STATUS_OPTIONS.filter(
+                          (opt) => opt !== "Not applicable – New Installation",
+                        ).map((status) => (
+                          <label
+                            key={status}
+                            className={`flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer transition-all ${
+                              watch("workingStatus") === status
+                                ? "bg-hvacGreen/10 border-hvacGreen text-hvacGreen font-bold shadow-xs"
+                                : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                            }`}
+                          >
+                            <input
+                              type="radio"
+                              value={status}
+                              {...register("workingStatus")}
+                              className="w-4 h-4 text-hvacGreen focus:ring-hvacGreen"
+                            />
+                            <span className="text-xs sm:text-sm font-medium">
+                              {status}
+                            </span>
+                          </label>
+                        ))}
                       </div>
                       {errors.workingStatus && (
                         <p className="text-xs text-brightRed font-medium mt-1">
@@ -718,7 +769,8 @@ export default function BookingModal({
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <label className="block text-xs font-bold uppercase tracking-wider text-navy font-heading">
-                        10. How soon do you need service? <span className="text-brightRed">*</span>
+                        10. How soon do you need service?{" "}
+                        <span className="text-brightRed">*</span>
                       </label>
                       {isEmergency && (
                         <span className="text-xs font-bold text-brightRed flex items-center gap-1 font-heading">
@@ -730,27 +782,31 @@ export default function BookingModal({
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                       {URGENCY_OPTIONS.map((urg) => {
-                        const isEmergOption = urg.startsWith('Emergency');
+                        const isEmergOption = urg.startsWith("Emergency");
                         return (
                           <label
                             key={urg}
                             className={`flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer transition-all ${
                               selectedUrgency === urg
                                 ? isEmergOption
-                                  ? 'bg-red-50 border-brightRed text-brightRed font-bold shadow-xs'
-                                  : 'bg-hvacGreen/10 border-hvacGreen text-hvacGreen font-bold shadow-xs'
-                                : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+                                  ? "bg-red-50 border-brightRed text-brightRed font-bold shadow-xs"
+                                  : "bg-hvacGreen/10 border-hvacGreen text-hvacGreen font-bold shadow-xs"
+                                : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                             }`}
                           >
                             <input
                               type="radio"
                               value={urg}
-                              {...register('urgency')}
+                              {...register("urgency")}
                               className={`w-4 h-4 ${
-                                isEmergOption ? 'text-brightRed focus:ring-brightRed' : 'text-hvacGreen focus:ring-hvacGreen'
+                                isEmergOption
+                                  ? "text-brightRed focus:ring-brightRed"
+                                  : "text-hvacGreen focus:ring-hvacGreen"
                               }`}
                             />
-                            <span className="text-xs sm:text-sm font-medium">{urg}</span>
+                            <span className="text-xs sm:text-sm font-medium">
+                              {urg}
+                            </span>
                           </label>
                         );
                       })}
@@ -770,7 +826,8 @@ export default function BookingModal({
                         htmlFor="service-date"
                         className="block text-xs font-bold uppercase tracking-wider text-navy font-heading mb-1.5"
                       >
-                        11. Preferred Service Date <span className="text-brightRed">*</span>
+                        11. Preferred Service Date{" "}
+                        <span className="text-brightRed">*</span>
                       </label>
                       <input
                         type="date"
@@ -778,9 +835,11 @@ export default function BookingModal({
                         min={todayStr}
                         aria-required="true"
                         aria-invalid={!!errors.preferredDate}
-                        {...register('preferredDate')}
+                        {...register("preferredDate")}
                         className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-slate-800 bg-slate-50/50 transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen ${
-                          errors.preferredDate ? 'border-brightRed bg-red-50/20' : 'border-slate-300'
+                          errors.preferredDate
+                            ? "border-brightRed bg-red-50/20"
+                            : "border-slate-300"
                         }`}
                       />
                       {errors.preferredDate && (
@@ -796,15 +855,18 @@ export default function BookingModal({
                         htmlFor="service-time"
                         className="block text-xs font-bold uppercase tracking-wider text-navy font-heading mb-1.5"
                       >
-                        12. Preferred Time Window <span className="text-brightRed">*</span>
+                        12. Preferred Time Window{" "}
+                        <span className="text-brightRed">*</span>
                       </label>
                       <select
                         id="service-time"
                         aria-required="true"
                         aria-invalid={!!errors.preferredTime}
-                        {...register('preferredTime')}
+                        {...register("preferredTime")}
                         className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-slate-800 bg-slate-50/50 transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen font-medium ${
-                          errors.preferredTime ? 'border-brightRed bg-red-50/20' : 'border-slate-300'
+                          errors.preferredTime
+                            ? "border-brightRed bg-red-50/20"
+                            : "border-slate-300"
                         }`}
                       >
                         <option value="">Select preferred time</option>
@@ -845,12 +907,14 @@ export default function BookingModal({
                         htmlFor="service-brand"
                         className="block text-xs font-bold uppercase tracking-wider text-navy font-heading mb-1.5"
                       >
-                        13. What is the brand of your current HVAC system?{' '}
-                        <span className="text-slate-400 font-normal lowercase">(optional)</span>
+                        13. What is the brand of your current HVAC system?{" "}
+                        <span className="text-slate-400 font-normal lowercase">
+                          (optional)
+                        </span>
                       </label>
                       <select
                         id="service-brand"
-                        {...register('brand')}
+                        {...register("brand")}
                         className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-800 bg-slate-50/50 transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen font-medium"
                       >
                         <option value="">Select brand</option>
@@ -869,14 +933,16 @@ export default function BookingModal({
                       htmlFor="service-description"
                       className="block text-xs font-bold uppercase tracking-wider text-navy font-heading mb-1.5"
                     >
-                      14. Please describe your HVAC issue or service needs.{' '}
-                      <span className="text-slate-400 font-normal lowercase">(optional)</span>
+                      14. Please describe your HVAC issue or service needs.{" "}
+                      <span className="text-slate-400 font-normal lowercase">
+                        (optional)
+                      </span>
                     </label>
                     <textarea
                       id="service-description"
                       rows={3}
                       placeholder="Describe your HVAC problem or the service you need..."
-                      {...register('description')}
+                      {...register("description")}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-800 bg-slate-50/50 transition-colors focus:outline-hidden focus:ring-2 focus:ring-hvacGreen resize-y"
                     />
                     {errors.description && (
@@ -889,23 +955,25 @@ export default function BookingModal({
                   {/* 15. What is your preferred contact method? (Optional radio group) */}
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-navy font-heading mb-1.5">
-                      15. What is your preferred contact method?{' '}
-                      <span className="text-slate-400 font-normal lowercase">(optional)</span>
+                      15. What is your preferred contact method?{" "}
+                      <span className="text-slate-400 font-normal lowercase">
+                        (optional)
+                      </span>
                     </label>
                     <div className="flex flex-wrap gap-2 pt-1">
                       {CONTACT_METHOD_OPTIONS.map((method) => (
                         <label
                           key={method}
                           className={`flex items-center gap-2 px-3 py-2 rounded-xl border cursor-pointer text-xs font-medium transition-all ${
-                            watch('preferredContactMethod') === method
-                              ? 'bg-hvacGreen/10 border-hvacGreen text-hvacGreen font-bold'
-                              : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+                            watch("preferredContactMethod") === method
+                              ? "bg-hvacGreen/10 border-hvacGreen text-hvacGreen font-bold"
+                              : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                           }`}
                         >
                           <input
                             type="radio"
                             value={method}
-                            {...register('preferredContactMethod')}
+                            {...register("preferredContactMethod")}
                             className="w-3.5 h-3.5 text-hvacGreen focus:ring-hvacGreen"
                           />
                           <span>{method}</span>
@@ -936,7 +1004,8 @@ export default function BookingModal({
                 </button>
 
                 <p className="text-xs text-slate-500 font-body">
-                  Submitting a request does not confirm an appointment. Our team will contact you to confirm availability.
+                  Submitting a request does not confirm an appointment. Our team
+                  will contact you to confirm availability.
                 </p>
               </div>
             </form>
