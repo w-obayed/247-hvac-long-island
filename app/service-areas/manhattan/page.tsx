@@ -1,0 +1,793 @@
+'use client';
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import {
+  Phone,
+  FileText,
+  Clock,
+  ShieldCheck,
+  CheckCircle2,
+  Snowflake,
+  Flame,
+  Wrench,
+  Droplets,
+  Layers,
+  MapPin,
+  ArrowRight,
+  Calendar,
+  ChevronRight,
+  Star,
+} from 'lucide-react';
+
+import ManufacturerStrip from '@/components/ManufacturerStrip';
+import MainHeader from '@/components/MainHeader';
+import Navbar from '@/components/Navbar';
+import PageBanner from '@/components/PageBanner';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import Footer from '@/components/Footer';
+import FloatingActionBar from '@/components/FloatingActionBar';
+
+import QuoteModal from '@/components/Modals/QuoteModal';
+import BookingModal from '@/components/Modals/BookingModal';
+import CouponModal from '@/components/Modals/CouponModal';
+import FinancingModal from '@/components/Modals/FinancingModal';
+import MaintenanceModal from '@/components/Modals/MaintenanceModal';
+import ServiceDetailModal from '@/components/Modals/ServiceDetailModal';
+import ServiceAreaModal from '@/components/Modals/ServiceAreaModal';
+
+import { HVAC_SERVICES, ServiceItem } from '@/components/ServicesSection';
+import { SERVICE_AREAS, ServiceAreaItem } from '@/components/ServiceAreasSection';
+import { PHONE_NUMBER } from '@/lib/utils';
+
+const MANHATTAN_PHONE_TEL = 'tel:+15167177515';
+
+interface LocationServiceCard {
+  id: string;
+  title: string;
+  category: 'cooling' | 'heating';
+  image: string;
+  icon: React.ComponentType<{ className?: string }>;
+  href: string;
+}
+
+const MANHATTAN_NEIGHBORHOOD_GROUPS = [
+  {
+    region: 'Uptown (Upper Manhattan)',
+    neighborhoods: [
+      'Marble Hill',
+      'Inwood',
+      'Fort George (part of Washington Heights)',
+      'Washington Heights',
+      'Hudson Heights (part of Washington Heights)',
+      'West Harlem',
+      'Hamilton Heights (part of Harlem)',
+      'Manhattanville',
+      'Morningside Heights',
+      'Central Harlem',
+      'Harlem',
+      'St. Nicholas Historic District, aka Strivers’ Row (Central Harlem)',
+      'Astor Row (Central Harlem)',
+      'Sugar Hill (Central Harlem)',
+      'Marcus Garvey Park, Mount Morris Historical District',
+      'Le Petit Senegal (Little Senegal)',
+      'East Harlem (Spanish Harlem)',
+      'Upper East Side',
+      'Lenox Hill',
+      'Carnegie Hill',
+      'Yorkville',
+      'Upper West Side',
+      'Manhattan Valley, Bloomingdale District',
+      'Lincoln Square (once San Juan Hill)',
+    ],
+  },
+  {
+    region: 'Midtown (Midtown Manhattan)',
+    neighborhoods: [
+      'Columbus Circle',
+      'Sutton Place',
+      'Rockefeller Center',
+      'Diamond District',
+      'Theater District',
+      'Turtle Bay',
+      'Midtown East',
+      'Midtown',
+      'Tudor City',
+      'Little Brazil',
+      'Times Square',
+      'Hudson Yards',
+      'Midtown West',
+      'Hell’s Kitchen',
+      'Garment District',
+      'Herald Square',
+      'Koreatown',
+      'Murray Hill aka Curry Hill aka Little India (former Little Armenia)',
+      'Tenderloin',
+      'Madison Square',
+    ],
+  },
+  {
+    region: 'Between Midtown and Lower Manhattan',
+    neighborhoods: [
+      'Flower District',
+      'Brookdale',
+      'Hudson Yards',
+      'Kips Bay',
+      'Rose Hill',
+      'NoMad',
+      'Peter Cooper Village (former Gas House district)',
+      'Chelsea',
+      'Flatiron District, Toy District, Photo District',
+      'Gramercy Park',
+      'Stuyvesant Square',
+      'Union Square',
+      'Stuyvesant',
+      'Town (former Gas House district)',
+      'Meatpacking District',
+      'Waterside Plaza',
+    ],
+  },
+  {
+    region: 'Downtown (Lower Manhattan)',
+    neighborhoods: [
+      'Little Germany (historic)',
+      'Alphabet City and Loisaida',
+      'East Village',
+      'Greenwich Village',
+      'NoHo',
+      'Bowery',
+      'West Village',
+      'Lower East Side',
+      'SoHo',
+      'Nolita (NoLIta)',
+      'Little Australia',
+      'Little Italy',
+      'Chinatown',
+      'Financial District',
+      'Five Points (historic)',
+      'Cooperative Village',
+      'Two Bridges',
+      'Tribeca (TriBeCa)',
+      'Civic Center',
+      'Radio Row (historic)',
+      'South Street',
+      'Seaport Historical District',
+      'Battery Park City',
+      'Little Syria (historic)',
+    ],
+  },
+];
+
+const MANHATTAN_COOLING_SERVICES: LocationServiceCard[] = [
+  {
+    id: 'ac-install',
+    title: 'Air Conditioners Installation & Replacement',
+    category: 'cooling',
+    image: '/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg',
+    icon: Snowflake,
+    href: '/air-conditioners-installation-replacement',
+  },
+  {
+    id: 'ac-repair',
+    title: 'Air Conditioners Repairs & Maintenance',
+    category: 'cooling',
+    image: '/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg',
+    icon: Wrench,
+    href: '/air-conditioning-repair',
+  },
+  {
+    id: 'air-duct',
+    title: 'Air Duct and Ventilation Cleaning Service',
+    category: 'cooling',
+    image: '/247 havc/ac-installation/985ad274-26be-4bb1-82d3-8973d451568c.jpg',
+    icon: Layers,
+    href: '/air-duct-and-ventilation-cleaning-service',
+  },
+  {
+    id: 'mini-split',
+    title: 'Mini Splits – Ductless Heat Pumps and Air Conditioners',
+    category: 'cooling',
+    image: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
+    icon: Snowflake,
+    href: '/mini-splits-ductless-heat-pumps-air-conditioners',
+  },
+];
+
+const MANHATTAN_HEATING_SERVICES: LocationServiceCard[] = [
+  {
+    id: 'furnace',
+    title: 'Furnace Installation, Repair & Replacement',
+    category: 'heating',
+    image: '/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg',
+    icon: Flame,
+    href: '/furnace-installation-repair-replacement',
+  },
+  {
+    id: 'boiler',
+    title: 'Boiler Installation & Repair',
+    category: 'heating',
+    image: '/247 havc/boiler-water-heater/e4530e79-2715-4272-bc27-de76ee87e960.jpg',
+    icon: Droplets,
+    href: '/boiler-installation-repair',
+  },
+  {
+    id: 'water-heater',
+    title: 'Water Heater Installation, Repair & Replacement',
+    category: 'heating',
+    image: '/247 havc/boiler-water-heater/278da669-a5fc-4950-8e6f-8bd0a60a9768.jpg',
+    icon: Droplets,
+    href: '/water-heater-installation-repair-replacement',
+  },
+  {
+    id: 'chimney',
+    title: 'Chimney Sweep',
+    category: 'heating',
+    image: '/247 havc/heating-and-controls/d1b426fa-9ec5-45af-9feb-ba543d98c780.jpg',
+    icon: Flame,
+    href: '/chimney-sweep',
+  },
+];
+
+const MANHATTAN_TESTIMONIALS = [
+  {
+    id: '1',
+    name: 'Vincent Watkins',
+    comment:
+      'Top of the line work! They installed a mini split in my sons room and we are very happy with the work and service provided by this company!',
+  },
+  {
+    id: '2',
+    name: 'Cassandra Baker',
+    comment:
+      'Jonathan and the guys installed a garage furnace for us. They were very friendly, professional, and super clean. Great quality work for a great price. We would recommend their work... read more',
+  },
+  {
+    id: '3',
+    name: 'Daniela2 Kleinre',
+    comment:
+      'David did a fantastic job! He cleaned and serviced our air conditioner and installed something that made it run more efficiently (I can’t remember what he called it but it...',
+  },
+];
+
+export default function ManhattanLocationPage() {
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isCouponOpen, setIsCouponOpen] = useState(false);
+  const [isFinancingOpen, setIsFinancingOpen] = useState(false);
+  const [isMaintenanceOpen, setIsMaintenanceOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
+  const [selectedArea, setSelectedArea] = useState<ServiceAreaItem | null>(null);
+
+  const handleSelectServiceByName = (name: string) => {
+    const found = HVAC_SERVICES.find(
+      (s) => s.title.toLowerCase().includes(name.toLowerCase()) || name.toLowerCase().includes(s.id)
+    );
+    setSelectedService(found || HVAC_SERVICES[0]);
+  };
+
+  const handleSelectAreaByName = (areaName: string) => {
+    const found = SERVICE_AREAS.find(
+      (a) => a.name.toLowerCase().includes(areaName.toLowerCase()) || areaName.toLowerCase().includes(a.id)
+    );
+    setSelectedArea(found || SERVICE_AREAS[0]);
+  };
+
+  return (
+    <main className="min-h-screen flex flex-col bg-white">
+      {/* GLOBAL HEADER & NAVIGATION */}
+      <ManufacturerStrip />
+      <MainHeader
+        onOpenQuote={() => setIsQuoteOpen(true)}
+        onOpenBooking={() => setIsBookingOpen(true)}
+      />
+      <Navbar
+        onSelectService={handleSelectServiceByName}
+        onOpenCoupon={() => setIsCouponOpen(true)}
+        onOpenFinancing={() => setIsFinancingOpen(true)}
+        onOpenMaintenance={() => setIsMaintenanceOpen(true)}
+        onOpenArea={handleSelectAreaByName}
+        onOpenBooking={() => setIsBookingOpen(true)}
+        onOpenPhotos={() => setIsQuoteOpen(true)}
+      />
+
+      {/* BREADCRUMB */}
+      <div className="bg-slate-100 border-b border-slate-200/80 py-2.5 text-xs text-slate-600 font-body">
+        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 flex items-center gap-1.5 font-medium">
+          <Link href="/" className="hover:text-royal transition-colors">
+            Home
+          </Link>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+          <Link href="/service-areas" className="hover:text-royal transition-colors">
+            Service Areas
+          </Link>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+          <span className="text-navy font-bold">Manhattan</span>
+        </div>
+      </div>
+
+      {/* ========================================================================= */}
+      {/* 1. BANNER SECTION */}
+      {/* ========================================================================= */}
+      <PageBanner
+        id="banner"
+        badgeText="#1 HVAC Services in Manhattan"
+        title="Manhattan"
+        bullets={[
+          {
+            text: 'Our Professional & Reliable Technicians Service This Area',
+            icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-brightYellow flex-shrink-0" />,
+          },
+          {
+            text: '24 Hours Emergency Service Available',
+            icon: <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-electric flex-shrink-0" />,
+          },
+          {
+            text: '#1 HVAC Services in Manhattan',
+            icon: <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-brightYellow flex-shrink-0" />,
+          },
+        ]}
+        extraActions={
+          <a
+            href={MANHATTAN_PHONE_TEL}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-lg bg-white text-[#061A40] font-black text-sm sm:text-base shadow-xl hover:bg-slate-100 active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider min-h-[44px]"
+          >
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brightRed flex-shrink-0" />
+            <span>Call Us Now</span>
+          </a>
+        }
+        onOpenQuote={() => setIsQuoteOpen(true)}
+        quoteButtonLabel="Get A Free Quote"
+      />
+
+      {/* ========================================================================= */}
+      {/* 2. ABOUT SECTION & MANHATTAN NEIGHBORHOODS */}
+      {/* ========================================================================= */}
+      <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white text-slate-800">
+        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-12 sm:mb-16">
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royal/10 text-royal text-xs font-black uppercase tracking-wider font-heading">
+                <MapPin className="w-4 h-4 flex-shrink-0" />
+                <span>Manhattan Heating &amp; Cooling Experts</span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight leading-tight font-heading">
+                We Are Proud To Service Our Clients in Manhattan
+              </h2>
+
+              <div className="space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed font-body">
+                <p>
+                  Our licensed HVAC technicians provide dependable heating, cooling, air conditioning, and ventilation solutions across Uptown, Midtown, and Downtown Manhattan.
+                </p>
+                <p>
+                  From residential brownstones, co-ops, and high-rise apartments to commercial suites and retail spaces, our mobile dispatch units are available 24/7 for prompt repairs, replacements, and seasonal maintenance.
+                </p>
+              </div>
+
+              {/* Highlights */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100 font-heading">
+                <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-3">
+                  <Clock className="w-8 h-8 text-brightYellow flex-shrink-0" />
+                  <div>
+                    <span className="text-xl font-black text-navy block leading-none">24/7/365</span>
+                    <span className="text-xs text-slate-500 font-bold uppercase tracking-wider">Fast Dispatch</span>
+                  </div>
+                </div>
+
+                <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-3">
+                  <ShieldCheck className="w-8 h-8 text-royal flex-shrink-0" />
+                  <div>
+                    <span className="text-xl font-black text-navy block leading-none">Licensed</span>
+                    <span className="text-xs text-slate-500 font-bold uppercase tracking-wider">&amp; Insured</span>
+                  </div>
+                </div>
+
+                <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-3">
+                  <Star className="w-8 h-8 text-brightYellow fill-brightYellow flex-shrink-0" />
+                  <div>
+                    <span className="text-xl font-black text-navy block leading-none">Top Rated</span>
+                    <span className="text-xs text-slate-500 font-bold uppercase tracking-wider">5.0 Star Reviews</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2 flex flex-wrap gap-4 font-heading">
+                <button
+                  onClick={() => setIsBookingOpen(true)}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-hvacGreen hover:bg-hvacGreen-hover text-white font-bold text-sm uppercase tracking-wider shadow-md transition-all"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Book Service in Manhattan</span>
+                </button>
+                <a
+                  href={MANHATTAN_PHONE_TEL}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-navy font-bold text-sm uppercase tracking-wider transition-all"
+                >
+                  <Phone className="w-4 h-4 text-royal" />
+                  <span>{PHONE_NUMBER}</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Image Container */}
+            <div className="lg:col-span-5">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-100 bg-slate-100 aspect-[4/3] sm:aspect-[16/11]">
+                <Image
+                  src="/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg"
+                  alt="Outdoor heat-pump and HVAC equipment service with diagnostic gauges in Manhattan"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/20">
+                  <p className="text-xs font-black text-royal uppercase tracking-wider font-heading">
+                    24/7 Manhattan Dispatch
+                  </p>
+                  <p className="text-sm font-bold text-navy font-body mt-0.5">
+                    EPA-certified technicians equipped for residential &amp; commercial HVAC systems.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Organized Manhattan Neighborhood Groups */}
+          <div className="bg-slate-50 rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200/80">
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <span className="text-xs font-black uppercase tracking-widest text-royal font-heading">
+                Borough-Wide Coverage
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-black text-navy mt-1 font-heading">
+                Manhattan Neighborhoods We Serve
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {MANHATTAN_NEIGHBORHOOD_GROUPS.map((group) => (
+                <div
+                  key={group.region}
+                  className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs"
+                >
+                  <div className="flex items-center gap-2 pb-3 mb-4 border-b border-slate-100">
+                    <MapPin className="w-4 h-4 text-brightRed flex-shrink-0" />
+                    <h4 className="text-lg font-black text-navy font-heading">{group.region}</h4>
+                  </div>
+                  <div className="flex flex-wrap gap-2 font-body">
+                    {group.neighborhoods.map((neighborhood, idx) => (
+                      <span
+                        key={`${group.region}-${idx}`}
+                        className="text-xs bg-slate-50 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200/80 font-medium leading-snug"
+                      >
+                        {neighborhood}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 3. HVAC SERVICES SECTION */}
+      {/* ========================================================================= */}
+      <section id="services" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-slate-50 text-slate-800 border-t border-slate-200/80">
+        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royal/10 text-royal text-xs font-black uppercase tracking-wider mb-3 font-heading">
+              <span>Full-Spectrum Solutions</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight font-heading">
+              HVAC Services We Provide In Manhattan
+            </h2>
+            <p className="text-base text-slate-600 mt-3 font-body">
+              Complete cooling and heating installations, diagnostics, and 24-hour emergency repairs across Manhattan.
+            </p>
+          </div>
+
+          {/* 3A. HVAC COOLING SERVICES */}
+          <div className="mb-14">
+            <div className="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
+              <div className="w-10 h-10 rounded-xl bg-electric/15 text-royal flex items-center justify-center">
+                <Snowflake className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black text-navy font-heading">
+                HVAC Cooling Services
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {MANHATTAN_COOLING_SERVICES.map((service) => {
+                const IconComp = service.icon;
+                return (
+                  <div
+                    key={service.id}
+                    className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                  >
+                    <div className="relative h-44 w-full overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                      <div className="absolute top-3 left-3 bg-navy/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 backdrop-blur-sm font-heading">
+                        <IconComp className="w-3.5 h-3.5 text-electric" />
+                        <span>Cooling</span>
+                      </div>
+                    </div>
+
+                    <div className="p-5 flex-1 flex flex-col justify-between">
+                      <h4 className="text-lg font-bold text-navy group-hover:text-royal transition-colors font-heading leading-snug mb-4">
+                        {service.title}
+                      </h4>
+
+                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between font-heading">
+                        <Link
+                          href={service.href}
+                          className="inline-flex items-center gap-1 text-xs font-bold text-royal hover:underline uppercase tracking-wider"
+                        >
+                          <span>Learn More</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                        <button
+                          onClick={() => setIsBookingOpen(true)}
+                          className="px-3 py-1.5 rounded-lg bg-hvacGreen text-white text-xs font-bold shadow hover:bg-hvacGreen-hover"
+                        >
+                          Book Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 3B. HVAC HEATING SERVICES */}
+          <div>
+            <div className="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
+              <div className="w-10 h-10 rounded-xl bg-brightRed/10 text-brightRed flex items-center justify-center">
+                <Flame className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black text-navy font-heading">
+                HVAC Heating Services
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {MANHATTAN_HEATING_SERVICES.map((service) => {
+                const IconComp = service.icon;
+                return (
+                  <div
+                    key={service.id}
+                    className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                  >
+                    <div className="relative h-44 w-full overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                      <div className="absolute top-3 left-3 bg-navy/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 backdrop-blur-sm font-heading">
+                        <IconComp className="w-3.5 h-3.5 text-brightYellow" />
+                        <span>Heating</span>
+                      </div>
+                    </div>
+
+                    <div className="p-5 flex-1 flex flex-col justify-between">
+                      <h4 className="text-lg font-bold text-navy group-hover:text-royal transition-colors font-heading leading-snug mb-4">
+                        {service.title}
+                      </h4>
+
+                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between font-heading">
+                        <Link
+                          href={service.href}
+                          className="inline-flex items-center gap-1 text-xs font-bold text-royal hover:underline uppercase tracking-wider"
+                        >
+                          <span>Learn More</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                        <button
+                          onClick={() => setIsBookingOpen(true)}
+                          className="px-3 py-1.5 rounded-lg bg-hvacGreen text-white text-xs font-bold shadow hover:bg-hvacGreen-hover"
+                        >
+                          Book Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 4. TESTIMONIAL SECTION */}
+      {/* ========================================================================= */}
+      <TestimonialsSection
+        id="testimonials"
+        badgeText="Verified Customer Reviews"
+        heading="Reviews From Manhattan Clients"
+        reviews={MANHATTAN_TESTIMONIALS}
+      />
+
+      {/* ========================================================================= */}
+      {/* 5. LOCATION MAP SECTION */}
+      {/* ========================================================================= */}
+      <section id="location-map" className="py-12 sm:py-16 md:py-20 bg-slate-50 text-slate-800 border-t border-slate-200/80">
+        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royal/10 text-royal text-xs font-black uppercase tracking-wider mb-3 font-heading">
+              <MapPin className="w-3.5 h-3.5 text-royal" />
+              <span>Manhattan Service Area Map</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight font-heading">
+              Location Map
+            </h2>
+            <p className="text-base text-slate-600 mt-2 font-body">
+              Serving Uptown, Midtown, and Downtown Manhattan with 24/7 emergency HVAC repair and installation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-8 rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white p-2">
+              <iframe
+                src="https://maps.google.com/maps?q=Manhattan,+NY&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Manhattan, NY HVAC Service Area Map"
+                className="w-full h-[360px] sm:h-[450px] rounded-xl"
+              />
+            </div>
+
+            <div className="lg:col-span-4 bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm flex flex-col justify-between h-full">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-royal/10 text-royal flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-navy font-heading">
+                      Manhattan Service Area
+                    </h3>
+                    <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                      Active 24/7 Dispatch
+                    </span>
+                  </div>
+                </div>
+
+                <div className="space-y-3 text-sm text-slate-600 font-body mb-6">
+                  <div className="flex items-start gap-2.5">
+                    <MapPin className="w-4 h-4 text-royal flex-shrink-0 mt-0.5" />
+                    <span>Manhattan, New York, NY</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <Clock className="w-4 h-4 text-brightYellow flex-shrink-0 mt-0.5" />
+                    <span>24 Hours Emergency Service Available</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <Phone className="w-4 h-4 text-brightRed flex-shrink-0 mt-0.5" />
+                    <span>Emergency Hotline: {PHONE_NUMBER}</span>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 mb-6 font-body">
+                  <h4 className="text-xs font-bold text-navy uppercase tracking-wider mb-2 font-heading">
+                    Manhattan Coverage Zones
+                  </h4>
+                  <div className="flex flex-wrap gap-1.5 text-xs">
+                    {['Upper East Side', 'Upper West Side', 'Midtown', 'Chelsea', 'SoHo', 'Financial District', 'Harlem', 'Tribeca'].map((c) => (
+                      <span key={c} className="bg-white px-2 py-0.5 rounded border border-slate-200 text-slate-700">
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-slate-100 flex flex-col gap-2.5 font-heading">
+                <a
+                  href={MANHATTAN_PHONE_TEL}
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-sm uppercase tracking-wider transition-all shadow-sm"
+                >
+                  <Phone className="w-4 h-4 text-brightRed" />
+                  <span>Call Us Now</span>
+                </a>
+                <button
+                  onClick={() => setIsBookingOpen(true)}
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#25843D] hover:bg-[#1D6B31] text-white font-bold text-sm uppercase tracking-wider transition-all shadow-sm"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Book Service Now</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 6. CTA SECTION */}
+      {/* ========================================================================= */}
+      <section className="py-16 md:py-20 bg-gradient-to-r from-[#061A40] via-[#0E2452] to-[#0066CC] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-brightRed/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-electric text-xs font-black uppercase tracking-wider mb-4 border border-white/15 font-heading">
+            <Clock className="w-3.5 h-3.5 text-brightYellow" />
+            <span>24/7 Fast Response Across Manhattan</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4 font-heading">
+            Need a Reliable &amp; Professional HVAC Service - 24/7 Emergency
+          </h2>
+          <p className="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto leading-relaxed mb-8 font-body">
+            Call {PHONE_NUMBER} for prompt heating and air conditioning service or request a free quote in Manhattan.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 max-w-2xl mx-auto font-heading">
+            <a
+              href={MANHATTAN_PHONE_TEL}
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-base shadow-xl active:scale-95 transition-all font-heading uppercase tracking-wide"
+            >
+              <Phone className="w-5 h-5 text-brightRed" />
+              <span>Call Now</span>
+            </a>
+
+            <button
+              onClick={() => setIsQuoteOpen(true)}
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-royal hover:bg-royal-hover text-white font-extrabold text-base shadow-xl border border-white/20 active:scale-95 transition-all font-heading uppercase tracking-wide"
+            >
+              <FileText className="w-5 h-5" />
+              <span>Get A Free Quote</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* GLOBAL FOOTER & FLOATING ACTIONS */}
+      <Footer
+        onSelectService={handleSelectServiceByName}
+        onOpenArea={handleSelectAreaByName}
+      />
+      <FloatingActionBar
+        onOpenBooking={() => setIsBookingOpen(true)}
+        onOpenCoupon={() => setIsCouponOpen(true)}
+      />
+
+      {/* MODALS */}
+      <QuoteModal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
+      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+      <CouponModal isOpen={isCouponOpen} onClose={() => setIsCouponOpen(false)} onBookWithCoupon={() => setIsBookingOpen(true)} />
+      <FinancingModal isOpen={isFinancingOpen} onClose={() => setIsFinancingOpen(false)} onOpenBooking={() => setIsBookingOpen(true)} />
+      <MaintenanceModal isOpen={isMaintenanceOpen} onClose={() => setIsMaintenanceOpen(false)} onOpenBooking={() => setIsBookingOpen(true)} />
+      <ServiceDetailModal
+        service={selectedService}
+        onClose={() => setSelectedService(null)}
+        onOpenBooking={() => setIsBookingOpen(true)}
+      />
+      <ServiceAreaModal
+        area={selectedArea}
+        onClose={() => setSelectedArea(null)}
+        onOpenBooking={() => setIsBookingOpen(true)}
+      />
+    </main>
+  );
+}

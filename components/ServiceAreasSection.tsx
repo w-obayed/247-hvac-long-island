@@ -111,10 +111,10 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                 <Link href="/suffolk-county" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
                   Suffolk Areas &raquo;
                 </Link>
-                <Link href="/service-areas#brooklyn" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
+                <Link href="/service-areas/brooklyn" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
                   Brooklyn Areas &raquo;
                 </Link>
-                <Link href="/service-areas#manhattan" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
+                <Link href="/service-areas/manhattan" className="inline-flex items-center gap-1 text-xs font-bold text-electric hover:underline bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md transition-colors">
                   Manhattan Areas &raquo;
                 </Link>
               </div>
@@ -230,13 +230,13 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
                 <span className="text-xs text-slate-500 font-body text-center sm:text-left">
                   North & South Shore full coverage
                 </span>
-                <button
-                  onClick={() => onSelectArea(nassauArea)}
+                <Link
+                  href="/service-areas/nassau-county"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-2.5 px-6 rounded-lg bg-navy hover:bg-royal text-white text-sm sm:text-sm font-bold transition-all shadow-md font-heading uppercase tracking-wider min-h-[44px]"
                 >
                   <span>View Locations</span>
                   <ArrowRight className="w-4 h-4 flex-shrink-0" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -312,13 +312,21 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
 
               {/* View Locations CTA Button (Pinned to Bottom) */}
               <div className="pt-3 border-t border-slate-100 mt-auto">
-                <button
-                  onClick={() => onSelectArea(area)}
+                <Link
+                  href={
+                    area.id === 'suffolk'
+                      ? '/service-areas/suffolk-county'
+                      : area.id === 'queens'
+                      ? '/service-areas/queens'
+                      : area.id === 'brooklyn'
+                      ? '/service-areas/brooklyn'
+                      : '/service-areas/manhattan'
+                  }
                   className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-navy hover:bg-royal text-white text-sm sm:text-sm font-bold transition-all shadow-sm font-heading uppercase tracking-wider min-h-[44px]"
                 >
                   <span>View Locations</span>
                   <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
-                </button>
+                </Link>
               </div>
             </div>
           ))}
