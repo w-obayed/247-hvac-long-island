@@ -30,6 +30,7 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -127,7 +128,7 @@ export default function BoilerInstallationRepairPage() {
         {/* Background Image with smooth gradient overlay */}
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
-            src="/image-website/boiller-installation-repair-e1661179456943.jpg"
+            src="/247 havc/boiler-water-heater/e4530e79-2715-4272-bc27-de76ee87e960.jpg"
             alt="Boiler Installation & Repair in Long Island, NY"
             fill
             priority
@@ -148,9 +149,9 @@ export default function BoilerInstallationRepairPage() {
             {/* Left Column: Heading, Description, Trust Highlights, CTA Buttons */}
             <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
+              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-2xl sm:rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
                 <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">#1 Boiler Services in Long Island</span>
+                <span className="leading-snug">#1 Boiler Services in Long Island</span>
               </div>
 
               {/* Exact Heading */}
@@ -379,8 +380,8 @@ export default function BoilerInstallationRepairPage() {
             <div className="lg:col-span-5 relative">
               <div className="relative w-full h-[360px] sm:h-[420px] md:h-[460px] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group">
                 <Image
-                  src="/images/boiler.jpg"
-                  alt="High-Efficiency Boiler Installation and Hydronic Heating in Long Island"
+                  src="/247 havc/boiler-water-heater/e4530e79-2715-4272-bc27-de76ee87e960.jpg"
+                  alt="Large mechanical room with commercial and residential boilers and extensive hydronic piping"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -430,13 +431,13 @@ export default function BoilerInstallationRepairPage() {
                 {/* Image Banner */}
                 <div className="relative w-full h-56 sm:h-64 overflow-hidden">
                   <Image
-                    src="/images/technician-repair.jpg"
-                    alt="24/7 Residential Heating and Boiler Repair"
+                    src="/247 havc/boiler-water-heater/8483fee8-b421-4e93-8caa-1ba9a4452e42.jpg"
+                    alt="Boiler and precision copper piping diagnostics and 24/7 heating repair"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brightRed text-white text-xs font-black uppercase tracking-wider font-heading shadow-md">
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-2xl sm:rounded-full bg-brightRed text-white text-xs font-black uppercase tracking-wider font-heading shadow-md">
                     <Clock className="w-3.5 h-3.5" />
                     <span>24/7 Emergency Service</span>
                   </div>
@@ -485,8 +486,8 @@ export default function BoilerInstallationRepairPage() {
                 {/* Image Banner */}
                 <div className="relative w-full h-56 sm:h-64 overflow-hidden">
                   <Image
-                    src="/image-website/ac-installation-bd.jpg"
-                    alt="High-Efficiency Boiler and Heating System Installation"
+                    src="/247 havc/boiler-water-heater/f23c42ec-a040-404f-9e77-2b4778c6b5e6.jpg"
+                    alt="High-efficiency boiler and clean copper piping installation in a Long Island mechanical room"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -806,94 +807,34 @@ export default function BoilerInstallationRepairPage() {
       {/* ==============================================================
           SECTION 7: CLIENT TESTIMONIALS
          ============================================================== */}
-      <section
+      <TestimonialsSection
         id="testimonials"
-        className="py-12 sm:py-16 md:py-20 lg:py-24 bg-slate-50 text-slate-800 border-y border-slate-200/80"
-      >
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royal/10 text-royal text-xs font-black uppercase tracking-wider mb-3 font-heading">
-              <span>Verified Customer Feedback</span>
-            </div>
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight font-heading">
-              Our Client Testimonials
-            </h2>
-          </div>
-
-          {/* Three Testimonial Cards Exact Wording */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {/* Review 1 */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between relative">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-brightYellow">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current text-brightYellow" />
-                    ))}
-                  </div>
-                  <Quote className="w-6 h-6 text-slate-300" />
-                </div>
-                <p className="text-base text-slate-700 leading-relaxed font-body italic mb-6">
-                  &ldquo;Moved into a new house that needed the HVAC system updated. Great team! Clean, efficient, came with everything they needed and left the work area clean!&rdquo;
-                </p>
-              </div>
-              <div className="pt-4 border-t border-slate-100">
-                <span className="text-base font-bold text-navy font-heading block">
-                  — md jahid
-                </span>
-                <span className="text-xs text-slate-500 font-body">Verified Customer</span>
-              </div>
-            </div>
-
-            {/* Review 2 */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between relative">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-brightYellow">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current text-brightYellow" />
-                    ))}
-                  </div>
-                  <Quote className="w-6 h-6 text-slate-300" />
-                </div>
-                <p className="text-base text-slate-700 leading-relaxed font-body italic mb-6">
-                  &ldquo;Highly professional, friendly and affordable service. I had a cooling & heating system installed at my art school a couple of weeks ago and I am so pleased to have... read more&rdquo;
-                </p>
-              </div>
-              <div className="pt-4 border-t border-slate-100">
-                <span className="text-base font-bold text-navy font-heading block">
-                  — Dale Hall
-                </span>
-                <span className="text-xs text-slate-500 font-body">Verified Customer</span>
-              </div>
-            </div>
-
-            {/* Review 3 */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between relative">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-brightYellow">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current text-brightYellow" />
-                    ))}
-                  </div>
-                  <Quote className="w-6 h-6 text-slate-300" />
-                </div>
-                <p className="text-base text-slate-700 leading-relaxed font-body italic mb-6">
-                  &ldquo;Ridiculously great service! Really unparalleled. Our central air conditioner broke in the hottest week of July 2021. I googled &quot;24 hour a/c repair service&quot; and came up with this company---called... read more&rdquo;
-                </p>
-              </div>
-              <div className="pt-4 border-t border-slate-100">
-                <span className="text-base font-bold text-navy font-heading block">
-                  — K Red
-                </span>
-                <span className="text-xs text-slate-500 font-body">Verified Customer</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        badgeText="Verified Customer Feedback"
+        heading="Our Client Testimonials"
+        reviews={[
+          {
+            id: '1',
+            name: '— md jahid',
+            location: 'Verified Customer',
+            comment:
+              'Moved into a new house that needed the HVAC system updated. Great team! Clean, efficient, came with everything they needed and left the work area clean!',
+          },
+          {
+            id: '2',
+            name: '— Dale Hall',
+            location: 'Verified Customer',
+            comment:
+              'Highly professional, friendly and affordable service. I had a cooling & heating system installed at my art school a couple of weeks ago and I am so pleased to have... read more',
+          },
+          {
+            id: '3',
+            name: '— K Red',
+            location: 'Verified Customer',
+            comment:
+              'Ridiculously great service! Really unparalleled. Our central air conditioner broke in the hottest week of July 2021. I googled "24 hour a/c repair service" and came up with this company---called... read more',
+          },
+        ]}
+      />
 
       {/* ==============================================================
           SECTION 8: SERVICE AREAS

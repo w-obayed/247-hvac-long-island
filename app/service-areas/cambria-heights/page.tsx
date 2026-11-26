@@ -24,6 +24,8 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import PageBanner from '@/components/PageBanner';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -54,7 +56,7 @@ const CAMBRIA_HEIGHTS_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'ac-install',
     title: 'Air Conditioners Installation & Replacement',
     category: 'cooling',
-    image: '/image-website/ac-installation.jpg',
+    image: '/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg',
     icon: Snowflake,
     href: '/air-conditioners-installation-replacement',
   },
@@ -62,7 +64,7 @@ const CAMBRIA_HEIGHTS_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'ac-repair',
     title: 'Air Conditioners Repairs & Maintenance',
     category: 'cooling',
-    image: '/image-website/ac-installation-bd.jpg',
+    image: '/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg',
     icon: Wrench,
     href: '/air-conditioning-repair',
   },
@@ -70,7 +72,7 @@ const CAMBRIA_HEIGHTS_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'air-duct',
     title: 'Air Duct and Ventilation Cleaning Service',
     category: 'cooling',
-    image: '/image-website/air-con-installation.jpg',
+    image: '/247 havc/ac-installation/985ad274-26be-4bb1-82d3-8973d451568c.jpg',
     icon: Layers,
     href: '/air-duct-and-ventilation-cleaning-service',
   },
@@ -78,7 +80,7 @@ const CAMBRIA_HEIGHTS_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'mini-split',
     title: 'Mini Splits – Ductless Heat Pumps and Air Conditioners',
     category: 'cooling',
-    image: '/image-website/heat-pump-installation.jpg',
+    image: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
     icon: Snowflake,
     href: '/mini-splits-ductless-heat-pumps-air-conditioners',
   },
@@ -89,7 +91,7 @@ const CAMBRIA_HEIGHTS_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'furnace',
     title: 'Furnace Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/furnace-installation.jpg',
+    image: '/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg',
     icon: Flame,
     href: '/furnace-installation-repair-replacement',
   },
@@ -97,7 +99,7 @@ const CAMBRIA_HEIGHTS_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'boiler',
     title: 'Boiler Installation & Repair',
     category: 'heating',
-    image: '/image-website/boiller-installation-repair-e1661179456943.jpg',
+    image: '/247 havc/boiler-water-heater/e4530e79-2715-4272-bc27-de76ee87e960.jpg',
     icon: Droplets,
     href: '/boiler-installation-repair',
   },
@@ -105,7 +107,7 @@ const CAMBRIA_HEIGHTS_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'water-heater',
     title: 'Water Heater Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/water-heater-installation.jpg',
+    image: '/247 havc/boiler-water-heater/278da669-a5fc-4950-8e6f-8bd0a60a9768.jpg',
     icon: Droplets,
     href: '/water-heater-installation-repair-replacement',
   },
@@ -113,7 +115,7 @@ const CAMBRIA_HEIGHTS_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'chimney',
     title: 'Chimney Sweep',
     category: 'heating',
-    image: '/images/furnace-unit.jpg',
+    image: '/247 havc/heating-and-controls/d1b426fa-9ec5-45af-9feb-ba543d98c780.jpg',
     icon: Flame,
     href: '/chimney-sweep',
   },
@@ -203,143 +205,20 @@ export default function CambriaHeightsLocationPage() {
       {/* ========================================================================= */}
       {/* 1. BANNER SECTION (EXACT HOMEPAGE BANNER DESIGN REPLICATED) */}
       {/* ========================================================================= */}
-      <section
+      <PageBanner
         id="home"
-        className="relative bg-[#061A40] text-white overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20"
-      >
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
-          <Image
-            src="/images/hero-hvac.jpg"
-            alt="Cambria Heights HVAC Services and Heating Cooling Repair"
-            fill
-            priority
-            className="object-cover object-center lg:object-right"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/60 sm:via-[#061A40]/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#061A40] sm:from-[#061A40]/80 via-transparent to-transparent" />
-        </div>
-
-        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/90 sm:via-[#061A40]/80 via-50% to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#0066CC_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none z-10" />
-
-        <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 z-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
-              {/* Highlight badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
-                <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">#1 HVAC Services in Cambria Heights</span>
-              </div>
-
-              {/* Exact Heading */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.12] mb-4 text-white font-heading">
-                Cambria Heights
-              </h1>
-
-              {/* Exact 3 Bullet Points */}
-              <div className="space-y-2.5 sm:space-y-3 w-full max-w-xl mb-6 sm:mb-8 font-heading">
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2.5 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen flex-shrink-0" />
-                  <span className="text-sm sm:text-base font-bold text-white">
-                    Our Professional &amp; Reliable Technicians Service This Area
-                  </span>
-                </div>
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2.5 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen flex-shrink-0" />
-                  <span className="text-sm sm:text-base font-bold text-white">
-                    24 Hours Emergency Service Available
-                  </span>
-                </div>
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2.5 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen flex-shrink-0" />
-                  <span className="text-sm sm:text-base font-bold text-white">
-                    #1 HVAC Services in Cambria Heights
-                  </span>
-                </div>
-              </div>
-
-              {/* Action Buttons: Call Us Now & Get A Free Quote */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 w-full sm:w-auto font-heading mb-6">
-                <a
-                  href={PHONE_TEL}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg bg-white text-[#061A40] font-black text-sm sm:text-base shadow-xl hover:bg-slate-100 active:scale-95 transition-all uppercase tracking-wider min-h-[44px]"
-                >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brightRed flex-shrink-0" />
-                  <span>Call Us Now</span>
-                </a>
-
-                <button
-                  onClick={() => setIsQuoteOpen(true)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg bg-[#0066CC] text-white font-black text-sm sm:text-base shadow-xl hover:bg-[#0052A3] active:scale-95 transition-all uppercase tracking-wider min-h-[44px]"
-                >
-                  <FileText className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                  <span>Get A Free Quote</span>
-                </button>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs sm:text-sm text-slate-300 font-body">
-                <div className="flex items-center gap-1 text-brightYellow flex-shrink-0">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current text-brightYellow" />
-                  ))}
-                </div>
-                <span className="font-semibold text-white font-heading">5.0 Star Rated HVAC Service</span>
-                <span className="text-slate-400 hidden sm:inline">•</span>
-                <span className="w-full sm:w-auto text-slate-300">Cambria Heights 24/7 Coverage</span>
-              </div>
-            </div>
-
-            {/* Right Column: Emergency Mobile Units Card */}
-            <div className="hidden lg:flex lg:col-span-5 xl:col-span-4 flex-col gap-4">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 bg-gradient-to-b from-[#0E2452]/90 to-[#061A40]/95 backdrop-blur-md p-6">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
-                  <div>
-                    <span className="text-xs uppercase tracking-wider font-extrabold text-electric font-heading">
-                      Fast Dispatch
-                    </span>
-                    <h3 className="text-[24px] font-bold text-white font-heading">Emergency Mobile Units</h3>
-                  </div>
-                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-hvacGreen/20 text-hvacGreen border border-hvacGreen/30 text-xs font-bold font-heading">
-                    <span className="w-2 h-2 rounded-full bg-hvacGreen animate-pulse" />
-                    <span>On Duty</span>
-                  </div>
-                </div>
-
-                <div className="space-y-3 mb-5 font-body">
-                  <div className="flex items-start gap-3 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
-                    <span><strong className="font-heading font-bold text-white">30-45 Minute Response:</strong> Direct local dispatch throughout Cambria Heights.</span>
-                  </div>
-                  <div className="flex items-start gap-3 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
-                    <span><strong className="font-heading font-bold text-white">Heating &amp; Cooling:</strong> Complete repair, maintenance, and replacement.</span>
-                  </div>
-                  <div className="flex items-start gap-3 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
-                    <span><strong className="font-heading font-bold text-white">Residential &amp; Commercial:</strong> Dedicated Queens local HVAC team.</span>
-                  </div>
-                </div>
-
-                <div className="bg-white/10 rounded-xl p-4 border border-white/10 flex items-center justify-between">
-                  <div>
-                    <p className="text-[11px] uppercase font-bold text-slate-300 font-heading">Cambria Heights Direct Line</p>
-                    <a href={PHONE_TEL} className="text-xl font-black text-brightYellow hover:underline font-heading">
-                      {PHONE_NUMBER}
-                    </a>
-                  </div>
-                  <a
-                    href={PHONE_TEL}
-                    className="px-3.5 py-2 rounded-lg bg-brightRed text-white font-bold text-xs uppercase tracking-wider hover:bg-brightRed-hover shadow font-heading"
-                  >
-                    Call Now
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        badgeText="#1 HVAC Services in Cambria Heights"
+        title="Cambria Heights"
+        bullets={[
+          { text: "Our Professional & Reliable Technicians Service This Area", icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+          { text: "24 Hours Emergency Service Available", icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+          { text: "#1 HVAC Services in Cambria Heights", icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+        ]}
+        showCallButton
+        callButtonLabel="Call Us Now"
+        onOpenQuote={() => setIsQuoteOpen(true)}
+        quoteButtonLabel="Get A Free Quote"
+      />
 
       {/* ========================================================================= */}
       {/* 2. ABOUT SECTION */}
@@ -397,7 +276,7 @@ export default function CambriaHeightsLocationPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
                 <div className="relative h-72 xs:h-80 sm:h-96 md:h-[420px] lg:h-[460px] w-full">
                   <Image
-                    src="/image-website/furnace-installation.jpg"
+                    src="/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg"
                     alt="HVAC service and climate solutions in Cambria Heights, NY"
                     fill
                     className="object-cover object-center"
@@ -573,59 +452,19 @@ export default function CambriaHeightsLocationPage() {
       {/* ========================================================================= */}
       {/* 4. TESTIMONIALS SECTION */}
       {/* ========================================================================= */}
-      <section id="testimonials" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white text-slate-800">
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brightYellow/20 text-navy text-xs font-black uppercase tracking-wider mb-3 font-heading">
-              <Star className="w-4 h-4 fill-brightYellow text-brightYellow" />
-              <span>Verified Customer Feedback</span>
-            </div>
-
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight font-heading">
-              Reviews From Cambria Heights Clients
-            </h2>
-            <p className="text-base text-slate-600 mt-3 font-body">
-              Read real feedback from Cambria Heights homeowners and businesses who rely on our prompt 24/7 HVAC services.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {CAMBRIA_HEIGHTS_TESTIMONIALS.map((review) => (
-              <div
-                key={review.id}
-                className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between hover:shadow-lg transition-shadow relative"
-              >
-                <Quote className="w-10 h-10 text-royal/15 absolute top-6 right-6 pointer-events-none" />
-
-                <div className="mb-6 relative z-10">
-                  <div className="flex items-center gap-1 text-brightYellow mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-slate-700 italic text-sm sm:text-base leading-relaxed font-body">
-                    &ldquo;{review.quote}&rdquo;
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
-                  <div>
-                    <h4 className="font-extrabold text-navy text-base font-heading">
-                      {review.author}
-                    </h4>
-                    <p className="text-xs text-slate-500 font-heading">{review.location}</p>
-                  </div>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-hvacGreen bg-hvacGreen/10 px-2 py-0.5 rounded-full">
-                    <CheckCircle2 className="w-3 h-3" />
-                    Verified
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection
+        id="testimonials"
+        badgeText="Verified Customer Feedback"
+        heading="Reviews From Cambria Heights Clients"
+        reviews={CAMBRIA_HEIGHTS_TESTIMONIALS.map((r: any) => ({
+          id: r.id,
+          name: r.author || r.name,
+          location: r.location || 'Verified Customer',
+          service: r.service,
+          rating: r.rating ?? 5,
+          comment: r.quote || r.comment,
+        }))}
+      />
 
       {/* ========================================================================= */}
       {/* 5. LOCATION MAP SECTION */}

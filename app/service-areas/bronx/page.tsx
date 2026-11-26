@@ -28,6 +28,7 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import PageBanner from '@/components/PageBanner';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -57,7 +58,7 @@ const BRONX_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'ac-install',
     title: 'Air Conditioners Installation & Replacement',
     category: 'cooling',
-    image: '/image-website/ac-installation.jpg',
+    image: '/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg',
     icon: Snowflake,
     href: '/air-conditioners-installation-replacement',
   },
@@ -65,7 +66,7 @@ const BRONX_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'ac-repair',
     title: 'Air Conditioners Repairs & Maintenance',
     category: 'cooling',
-    image: '/image-website/ac-installation-bd.jpg',
+    image: '/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg',
     icon: Wrench,
     href: '/air-conditioning-repair',
   },
@@ -73,7 +74,7 @@ const BRONX_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'air-duct',
     title: 'Air Duct and Ventilation Cleaning Service',
     category: 'cooling',
-    image: '/image-website/air-con-installation.jpg',
+    image: '/247 havc/ac-installation/985ad274-26be-4bb1-82d3-8973d451568c.jpg',
     icon: Layers,
     href: '/air-duct-and-ventilation-cleaning-service',
   },
@@ -81,7 +82,7 @@ const BRONX_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'mini-split',
     title: 'Mini Splits – Ductless Heat Pumps and Air Conditioners',
     category: 'cooling',
-    image: '/image-website/heat-pump-installation.jpg',
+    image: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
     icon: Snowflake,
     href: '/mini-splits-ductless-heat-pumps-air-conditioners',
   },
@@ -92,7 +93,7 @@ const BRONX_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'furnace',
     title: 'Furnace Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/furnace-installation.jpg',
+    image: '/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg',
     icon: Flame,
     href: '/furnace-installation-repair-replacement',
   },
@@ -100,7 +101,7 @@ const BRONX_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'boiler',
     title: 'Boiler Installation & Repair',
     category: 'heating',
-    image: '/image-website/boiller-installation-repair-e1661179456943.jpg',
+    image: '/247 havc/boiler-water-heater/e4530e79-2715-4272-bc27-de76ee87e960.jpg',
     icon: Droplets,
     href: '/boiler-installation-repair',
   },
@@ -108,7 +109,7 @@ const BRONX_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'water-heater',
     title: 'Water Heater Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/water-heater-installation.jpg',
+    image: '/247 havc/boiler-water-heater/278da669-a5fc-4950-8e6f-8bd0a60a9768.jpg',
     icon: Droplets,
     href: '/water-heater-installation-repair-replacement',
   },
@@ -116,7 +117,7 @@ const BRONX_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'chimney',
     title: 'Chimney Sweep',
     category: 'heating',
-    image: '/images/furnace-unit.jpg',
+    image: '/247 havc/heating-and-controls/d1b426fa-9ec5-45af-9feb-ba543d98c780.jpg',
     icon: Flame,
     href: '/chimney-sweep',
   },
@@ -302,108 +303,25 @@ export default function BronxLocationPage() {
       {/* ========================================================================= */}
       {/* 1. BANNER SECTION */}
       {/* ========================================================================= */}
-      <section className="relative bg-gradient-to-br from-[#061A40] via-[#0E2452] to-[#0066CC] text-white py-16 sm:py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-royal/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-brightRed/20 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white text-xs sm:text-sm font-semibold tracking-wide">
-                <Building2 className="w-5 h-5 text-brightYellow" />
-                <span>Commercial &amp; Residential HVAC Specialists in Bronx, NY</span>
-              </div>
-
-              {/* Exact Banner Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] font-heading">
-                Expert HVAC Contractor in Bronx, NY
-              </h1>
-
-              {/* Exact Banner Paragraphs */}
-              <div className="space-y-4 text-base sm:text-lg text-slate-200 leading-relaxed font-body">
-                <p>
-                  Comfort matters in every type of Bronx property, from apartments and single-family homes to offices, retail spaces, restaurants, and commercial buildings. When heating or cooling systems stop working the way they should, local customers need a team that can respond quickly, explain the issue clearly, and provide the right solution without confusion.
-                </p>
-                <p>
-                  247 HVAC of Long Island is one of the trusted HVAC companies in Bronx, NY, for customers who need repair, installation, maintenance, emergency support, and commercial HVAC service. Whether you are dealing with weak airflow, uneven temperatures, a noisy system, rising energy bills, or a complete breakdown, our team provides dependable HVAC service in Bronx, NY, with a focus on long-term comfort and system performance.
-                </p>
-              </div>
-
-              {/* Exact CTAs */}
-              <div className="pt-4 flex flex-wrap gap-4 items-center">
-                <a
-                  href={`tel:${PHONE_TEL}`}
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-brightRed hover:bg-brightRed-hover text-white text-base sm:text-lg font-bold shadow-lg shadow-brightRed/30 hover:shadow-brightRed/50 transition-all font-heading"
-                >
-                  <Phone className="w-5 h-5" />
-                  <span>Call Us Now</span>
-                </a>
-
-                <button
-                  onClick={() => setIsQuoteOpen(true)}
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy text-base sm:text-lg font-black shadow-lg shadow-brightYellow/20 hover:shadow-brightYellow/40 transition-all font-heading"
-                >
-                  <FileText className="w-5 h-5" />
-                  <span>Get A Free Quote</span>
-                </button>
-              </div>
-
-              <div className="pt-2 flex items-center gap-6 text-xs sm:text-sm text-slate-300">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-electric" />
-                  <span>24/7 Rapid Response</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-hvacGreen" />
-                  <span>Licensed &amp; Insured</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Card / Visual */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md p-6 sm:p-8">
-                <div className="relative h-64 sm:h-72 w-full rounded-xl overflow-hidden mb-6">
-                  <Image
-                    src="/image-website/ac-installation.jpg"
-                    alt="HVAC Contractor in Bronx NY"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 400px"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-xs uppercase tracking-wider text-brightYellow font-bold font-heading">
-                      Service Coverage Area
-                    </p>
-                    <p className="text-xl font-bold text-white font-heading">Bronx, NY</p>
-                  </div>
-                </div>
-
-                <div className="bg-white/10 rounded-xl p-4 border border-white/10 space-y-2 text-sm">
-                  <div className="flex items-center justify-between text-slate-200">
-                    <span>Emergency Service:</span>
-                    <span className="font-bold text-hvacGreen">24/7 Available</span>
-                  </div>
-                  <div className="flex items-center justify-between text-slate-200">
-                    <span>Phone:</span>
-                    <a href={`tel:${PHONE_TEL}`} className="font-bold text-white hover:underline">
-                      {PHONE_NUMBER}
-                    </a>
-                  </div>
-                  <div className="flex items-center justify-between text-slate-200">
-                    <span>Service Scope:</span>
-                    <span className="font-bold text-white">Residential &amp; Commercial</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageBanner
+        id="banner"
+        badgeText="Commercial & Residential HVAC Specialists in Bronx, NY"
+        title="Expert HVAC Contractor in Bronx, NY"
+        description={
+          <>
+            <p>
+              Comfort matters in every type of Bronx property, from apartments and single-family homes to offices, retail spaces, restaurants, and commercial buildings. When heating or cooling systems stop working the way they should, local customers need a team that can respond quickly, explain the issue clearly, and provide the right solution without confusion.
+            </p>
+            <p>
+              247 HVAC of Long Island is one of the trusted HVAC companies in Bronx, NY, for customers who need repair, installation, maintenance, emergency support, and commercial HVAC service. Whether you are dealing with weak airflow, uneven temperatures, a noisy system, rising energy bills, or a complete breakdown, our team provides dependable HVAC service in Bronx, NY, with a focus on long-term comfort and system performance.
+            </p>
+          </>
+        }
+        showCallButton
+        callButtonLabel="Call Us Now"
+        onOpenQuote={() => setIsQuoteOpen(true)}
+        quoteButtonLabel="Get A Free Quote"
+      />
 
       {/* ========================================================================= */}
       {/* 2. TROUBLE SPOTS SECTION */}
@@ -511,7 +429,7 @@ export default function BronxLocationPage() {
                   Schedule Service Online
                 </button>
                 <a
-                  href={`tel:${PHONE_TEL}`}
+                  href={PHONE_TEL}
                   className="px-6 py-3 rounded-xl bg-slate-200 hover:bg-slate-300 text-navy font-bold transition-all font-heading text-sm inline-flex items-center gap-2"
                 >
                   <Phone className="w-4 h-4 text-royal" />
@@ -923,7 +841,7 @@ export default function BronxLocationPage() {
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <a
-              href={`tel:${PHONE_TEL}`}
+              href={PHONE_TEL}
               className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-brightRed hover:bg-brightRed-hover text-white text-lg font-bold shadow-xl shadow-brightRed/30 transition-all font-heading"
             >
               <Phone className="w-5 h-5" />

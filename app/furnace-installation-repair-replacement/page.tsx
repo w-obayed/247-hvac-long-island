@@ -34,6 +34,7 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -193,7 +194,7 @@ export default function FurnaceInstallationRepairReplacementPage() {
         {/* Background Hero Image */}
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
-            src="/image-website/furnace-installation.jpg"
+            src="/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg"
             alt="Furnace Installation, Repair & Replacement in Long Island, NY"
             fill
             priority
@@ -213,9 +214,9 @@ export default function FurnaceInstallationRepairReplacementPage() {
             {/* Left Column: Heading, Description, Supporting Points, Buttons */}
             <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
               {/* Supporting Point 3 as Top Badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
+              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-2xl sm:rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
                 <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">#1 Furnace Installation, Repair & Replacement in Long Island</span>
+                <span className="leading-snug">#1 Furnace Installation, Repair & Replacement in Long Island</span>
               </div>
 
               {/* Exact Heading */}
@@ -419,7 +420,7 @@ export default function FurnaceInstallationRepairReplacementPage() {
             <div className="lg:col-span-5 relative">
               <div className="relative w-full h-[360px] sm:h-[420px] md:h-[460px] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group">
                 <Image
-                  src="/images/furnace.jpg"
+                  src="/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg"
                   alt="High-Efficiency Furnace Installation and Heating System Replacement in Long Island"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -448,7 +449,7 @@ export default function FurnaceInstallationRepairReplacementPage() {
               <div>
                 <div className="relative w-full h-56 sm:h-64 overflow-hidden">
                   <Image
-                    src="/image-website/furnace-installation.jpg"
+                    src="/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg"
                     alt="New Furnace Installation by Certified Technicians"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
@@ -502,13 +503,13 @@ export default function FurnaceInstallationRepairReplacementPage() {
               <div>
                 <div className="relative w-full h-56 sm:h-64 overflow-hidden">
                   <Image
-                    src="/images/technician-repair.jpg"
+                    src="/247 havc/heat-pump-repair/6085ddc1-72b5-4260-8550-5e08e749e7cc.jpg"
                     alt="Fast Furnace Repair 24/7 in Long Island"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brightRed text-white text-xs font-black uppercase tracking-wider font-heading shadow-md">
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-2xl sm:rounded-full bg-brightRed text-white text-xs font-black uppercase tracking-wider font-heading shadow-md">
                     <Clock className="w-3.5 h-3.5" />
                     <span>24/7 Emergency Repairs</span>
                   </div>
@@ -706,59 +707,19 @@ export default function FurnaceInstallationRepairReplacementPage() {
       {/* ==============================================================
           5. TESTIMONIALS SECTION (Exact 3 client testimonials preserved)
          ============================================================== */}
-      <section
+      <TestimonialsSection
         id="testimonials"
-        className="py-12 sm:py-16 md:py-20 lg:py-24 bg-slate-50 text-slate-800 border-y border-slate-200/80"
-      >
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royal/10 text-royal text-xs font-black uppercase tracking-wider mb-3 font-heading">
-              <span>Verified Customer Feedback</span>
-            </div>
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight font-heading">
-              Our Client Testimonials
-            </h2>
-          </div>
-
-          {/* Three Testimonial Cards Exact Wording */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {FURNACE_TESTIMONIALS.map((t) => (
-              <div
-                key={t.id}
-                className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between relative"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1 text-brightYellow">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-current text-brightYellow" />
-                      ))}
-                    </div>
-                    <Quote className="w-6 h-6 text-slate-300" />
-                  </div>
-                  {/* Exact Quote */}
-                  <p className="text-base text-slate-700 leading-relaxed font-body italic mb-6">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                </div>
-                {/* Author Name and Location */}
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <div>
-                    <span className="text-base font-bold text-navy font-heading block">
-                      — {t.author}
-                    </span>
-                    <span className="text-xs text-slate-500 font-body">{t.location}</span>
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-royal font-heading">
-                    G
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        badgeText="Verified Customer Feedback"
+        heading="Our Client Testimonials"
+        reviews={FURNACE_TESTIMONIALS.map((r: any) => ({
+          id: r.id,
+          name: r.author || r.name,
+          location: r.location || 'Verified Customer',
+          service: r.service,
+          rating: r.rating ?? 5,
+          comment: r.quote || r.comment,
+        }))}
+      />
 
       {/* ==============================================================
           6. SERVICE AREAS SECTION (Nassau, Queens, Suffolk Area Links)

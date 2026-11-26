@@ -33,6 +33,7 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -67,7 +68,7 @@ const INSTALLATION_SERVICES = [
     description:
       'Precision Manual J load calculations, custom ductwork integration, and installation of modern high-efficiency central cooling systems engineered for Long Island summers.',
     icon: Snowflake,
-    image: '/image-website/ac-installation.jpg',
+    image: '/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg',
     badge: 'Central Systems',
   },
   {
@@ -76,7 +77,7 @@ const INSTALLATION_SERVICES = [
     description:
       'Replace aging, inefficient air conditioning units with state-of-the-art SEER2 rated systems that reduce monthly utility bills by up to 30-40% while delivering whisper-quiet cooling.',
     icon: Zap,
-    image: '/image-website/air-con-installation.jpg',
+    image: '/247 havc/ac-installation/985ad274-26be-4bb1-82d3-8973d451568c.jpg',
     badge: 'Energy Savings',
   },
   {
@@ -85,7 +86,7 @@ const INSTALLATION_SERVICES = [
     description:
       'Perfect for homes without ductwork, home additions, and sunrooms. Independent room-by-room temperature zones with inverter-driven heat pump technology.',
     icon: Layers,
-    image: '/images/mini-split.jpg',
+    image: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
     badge: 'Zoned Cooling',
   },
   {
@@ -94,7 +95,7 @@ const INSTALLATION_SERVICES = [
     description:
       'Turnkey rooftop unit (RTU) installations, split systems, and commercial ventilation engineered for Long Island businesses, retail spaces, and offices.',
     icon: ShieldCheck,
-    image: '/images/technician-service.jpg',
+    image: '/247 havc/heat-pump-repair/55f4dfda-dd29-4407-828c-4b37c1f22c20.jpg',
     badge: 'Commercial Grade',
   },
 ];
@@ -227,7 +228,7 @@ export default function AirConditionersInstallationReplacementPage() {
       >
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
-            src="/image-website/ac-installation.jpg"
+            src="/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg"
             alt="Air Conditioners Installation & Replacement in Long Island, NY"
             fill
             priority
@@ -245,9 +246,9 @@ export default function AirConditionersInstallationReplacementPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
               {/* Top Badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
+              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-2xl sm:rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
                 <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">
+                <span className="leading-snug">
                   #1 AC Installation & Replacement in Long Island
                 </span>
               </div>
@@ -657,62 +658,19 @@ export default function AirConditionersInstallationReplacementPage() {
       {/* ==============================================================
           6. TESTIMONIALS SECTION
          ============================================================== */}
-      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-            <span className="text-xs uppercase tracking-widest font-black text-royal mb-2 block font-heading">
-              Client Reviews
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-navy tracking-tight mb-4 font-heading">
-              Our Client Testimonials
-            </h2>
-            <p className="text-base sm:text-lg text-slate-600 font-body leading-relaxed mb-4">
-              Homeowners across Long Island trust 247 HVAC for prompt, professional, and neatly completed air conditioning installations.
-            </p>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-xs">
-              <div className="flex items-center gap-1 text-brightYellow">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-brightYellow" />
-                ))}
-              </div>
-              <span className="text-sm font-bold text-navy font-heading">
-                Rating: 5.0 Average (Rated 5 out of 5)
-              </span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {AC_INSTALL_TESTIMONIALS.map((t) => (
-              <div
-                key={t.id}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1 text-brightYellow">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-brightYellow" />
-                      ))}
-                    </div>
-                    <Quote className="w-6 h-6 text-slate-300" />
-                  </div>
-                  <p className="text-sm text-slate-700 leading-relaxed font-body italic mb-5">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="font-bold text-navy text-sm font-heading">
-                    — {t.author}
-                  </span>
-                  <span className="text-[11px] font-semibold text-slate-500 font-body">
-                    {t.location}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection
+        id="testimonials"
+        badgeText="Client Reviews"
+        heading="Our Client Testimonials"
+        reviews={AC_INSTALL_TESTIMONIALS.map((r: any) => ({
+          id: r.id,
+          name: r.author || r.name,
+          location: r.location || 'Verified Customer',
+          service: r.service,
+          rating: r.rating ?? 5,
+          comment: r.quote || r.comment,
+        }))}
+      />
 
       {/* ==============================================================
           7. SERVICE AREAS SECTION

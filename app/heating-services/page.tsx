@@ -36,6 +36,7 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -80,7 +81,7 @@ const HEATING_SERVICES_LIST = [
     icon: Wrench,
     badge: '24/7 Rapid Diagnostics',
     href: '/furnace-installation-repair-replacement',
-    image: '/images/technician-repair.jpg',
+    image: '/247 havc/heat-pump-repair/6085ddc1-72b5-4260-8550-5e08e749e7cc.jpg',
   },
   {
     id: 'heating-installation',
@@ -90,7 +91,7 @@ const HEATING_SERVICES_LIST = [
     icon: Flame,
     badge: 'High-Efficiency Upgrades',
     href: '/boiler-installation-repair',
-    image: '/images/boiler.jpg',
+    image: '/247 havc/boiler-water-heater/ec2663e6-2ab5-443f-a29e-ccf132cad99c.jpg',
   },
   {
     id: 'furnace-services',
@@ -100,7 +101,7 @@ const HEATING_SERVICES_LIST = [
     icon: Flame,
     badge: 'AFUE Up to 98%',
     href: '/furnace-installation-repair-replacement',
-    image: '/images/furnace.jpg',
+    image: '/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg',
   },
   {
     id: 'boiler-water-heater',
@@ -110,7 +111,7 @@ const HEATING_SERVICES_LIST = [
     icon: Droplets,
     badge: 'Hydronic & Domestic Hot Water',
     href: '/water-heater-installation-repair-replacement',
-    image: '/image-website/water-heater-installation.jpg',
+    image: '/247 havc/boiler-water-heater/278da669-a5fc-4950-8e6f-8bd0a60a9768.jpg',
   },
 ];
 
@@ -342,7 +343,7 @@ export default function HeatingServicesPage() {
       >
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
-            src="/images/furnace.jpg"
+            src="/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg"
             alt="Trusted HVAC Heating Services in Long Island, NY"
             fill
             priority
@@ -360,9 +361,9 @@ export default function HeatingServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
               {/* Emergency Badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
+              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-2xl sm:rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
                 <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">#1 Heating Company in Long Island, NY</span>
+                <span className="leading-snug">#1 Heating Company in Long Island, NY</span>
               </div>
 
               {/* Exact Heading */}
@@ -546,8 +547,8 @@ export default function HeatingServicesPage() {
             <div className="lg:col-span-5 flex flex-col">
               <div className="relative w-full h-[380px] sm:h-[460px] lg:h-[540px] rounded-2xl overflow-hidden shadow-xl border border-slate-200">
                 <Image
-                  src="/image-website/furnace-installation.jpg"
-                  alt="Heating Company in Long Island, NY - Diagnostic and Installation"
+                  src="/247 havc/heating-and-controls/d1b426fa-9ec5-45af-9feb-ba543d98c780.jpg"
+                  alt="Heating system piping installation in a Long Island mechanical room"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 42vw"
@@ -567,7 +568,7 @@ export default function HeatingServicesPage() {
                     </div>
                     <a
                       href={PHONE_TEL}
-                      className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-brightRed text-white hover:bg-brightRed-hover transition-colors shadow-md flex-shrink-0"
+                      className="inline-flex items-center justify-center w-10 h-10 rounded-2xl sm:rounded-full bg-brightRed text-white hover:bg-brightRed-hover transition-colors shadow-md flex-shrink-0"
                       aria-label="Call Now"
                     >
                       <Phone className="w-4 h-4" />
@@ -671,8 +672,8 @@ export default function HeatingServicesPage() {
             <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col">
               <div className="relative w-full h-[380px] sm:h-[460px] lg:h-[520px] rounded-2xl overflow-hidden shadow-xl border border-slate-200">
                 <Image
-                  src="/images/boiler.jpg"
-                  alt="Heating Systems We Service in Long Island - Major Brand Servicing"
+                  src="/247 havc/heating-and-controls/b6b2e363-be7c-4237-826d-42fa15ed795d.jpg"
+                  alt="Mechanical room heating equipment serviced by certified multi-brand HVAC technicians"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 42vw"
@@ -810,87 +811,17 @@ export default function HeatingServicesPage() {
       {/* ==============================================================
           6. TESTIMONIALS SECTION (Our Client Testimonials - All 20 Reviews)
          ============================================================== */}
-      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-            <span className="text-xs uppercase tracking-widest font-black text-royal mb-2 block font-heading">
-              Client Feedback
-            </span>
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-navy tracking-tight mb-4 font-heading">
-              Our Client Testimonials
-            </h2>
-            {/* Exact Introduction */}
-            <p className="text-base sm:text-lg text-slate-600 font-body leading-relaxed mb-4">
-              Homeowners and businesses trust us as a reliable HVAC heating company in Long Island, NY, for both repair and installation services. Our consistent service quality and clear communication have earned long-term customer trust.
-            </p>
-            {/* Exact Rating Information */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-xs">
-              <div className="flex items-center gap-1 text-brightYellow">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-brightYellow" />
-                ))}
-              </div>
-              <span className="text-sm font-bold text-navy font-heading">
-                Rating: 5.0 Average (Rated 5 out of 5)
-              </span>
-            </div>
-          </div>
-
-          {/* Testimonial Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {displayedTestimonials.map((t) => (
-              <div
-                key={t.id}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1 text-brightYellow">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-brightYellow" />
-                      ))}
-                    </div>
-                    <Quote className="w-6 h-6 text-slate-300" />
-                  </div>
-                  {/* Exact Quote */}
-                  <p className="text-sm text-slate-700 leading-relaxed font-body italic mb-5">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  {/* Exact Author */}
-                  <span className="font-bold text-navy text-sm font-heading">
-                    - {t.author}
-                  </span>
-                  <span className="text-[11px] font-semibold text-slate-500 font-body">
-                    Verified Customer
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Pagination Controls */}
-          {totalPages > 1 && (
-            <div className="flex items-center justify-center gap-2 font-heading">
-              {Array.from({ length: totalPages }).map((_, pageIdx) => (
-                <button
-                  key={pageIdx}
-                  onClick={() => setActiveTestimonialPage(pageIdx)}
-                  className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-                    activeTestimonialPage === pageIdx
-                      ? 'bg-royal text-white shadow-md'
-                      : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
-                  }`}
-                >
-                  Page {pageIdx + 1}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+      <TestimonialsSection
+        id="testimonials"
+        badgeText="Client Feedback"
+        heading="Our Client Testimonials"
+        reviews={HEATING_TESTIMONIALS.map((t) => ({
+          id: t.id,
+          name: `- ${t.author}`,
+          location: 'Verified Customer',
+          comment: t.quote,
+        }))}
+      />
 
       {/* ==============================================================
           7. SERVICE AREAS SECTION
@@ -978,7 +909,7 @@ export default function HeatingServicesPage() {
             <div className="lg:col-span-5 flex flex-col">
               <div className="relative w-full h-[380px] sm:h-[460px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl border border-slate-200">
                 <Image
-                  src="/images/technician-service.jpg"
+                  src="/247 havc/heat-pump-repair/55f4dfda-dd29-4407-828c-4b37c1f22c20.jpg"
                   alt="Easy Ways to Maintain Your Heating System - Certified Heating Tuneup"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"

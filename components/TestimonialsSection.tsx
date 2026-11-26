@@ -3,14 +3,21 @@
 import React, { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
-interface Review {
+export interface Review {
   id: string;
   name: string;
-  location: string;
-  date: string;
-  rating: number;
-  service: string;
+  location?: string;
+  date?: string;
+  rating?: number;
+  service?: string;
   comment: string;
+}
+
+export interface TestimonialsSectionProps {
+  reviews?: Review[];
+  badgeText?: string;
+  heading?: string;
+  id?: string;
 }
 
 const REVIEWS: Review[] = [
@@ -256,35 +263,47 @@ const REVIEWS: Review[] = [
   },
 ];
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({
+  reviews = REVIEWS,
+  badgeText = 'Verified Customer Reviews',
+  heading = 'What Our Customers Say About Our HVAC Services',
+  id,
+}: TestimonialsSectionProps = {}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const activeReviews = reviews.length > 0 ? reviews : REVIEWS;
+
   const prevReview = () => {
-    setCurrentIndex((prev) => (prev === 0 ? REVIEWS.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? activeReviews.length - 1 : prev - 1));
   };
 
   const nextReview = () => {
-    setCurrentIndex((prev) => (prev === REVIEWS.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === activeReviews.length - 1 ? 0 : prev + 1));
   };
 
-  // On desktop, display 3 reviews in a continuous carousel window
-  const desktopReviews = [
-    REVIEWS[currentIndex % REVIEWS.length],
-    REVIEWS[(currentIndex + 1) % REVIEWS.length],
-    REVIEWS[(currentIndex + 2) % REVIEWS.length],
-  ];
+  // On desktop, display up to 3 reviews in a continuous carousel window without duplicating
+  const desktopReviews =
+    activeReviews.length >= 3
+      ? [
+          activeReviews[currentIndex % activeReviews.length],
+          activeReviews[(currentIndex + 1) % activeReviews.length],
+          activeReviews[(currentIndex + 2) % activeReviews.length],
+        ]
+      : activeReviews;
+
+  const mobileReview = activeReviews[currentIndex % activeReviews.length];
 
   return (
-    <section className="py-16 md:py-24 bg-slate-50 text-slate-800">
+    <section id={id} className="py-16 md:py-24 bg-slate-50 text-slate-800">
       <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royal/10 text-royal text-xs font-black uppercase tracking-wider mb-3 font-heading">
-            <span>Verified Customer Reviews</span>
+            <span>{badgeText}</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight mb-4 font-heading">
-            What Our Customers Say About Our HVAC Services
+            {heading}
           </h2>
 
           {/* 5.0 Average (Rated 5 out of 5) Rating Badge */}
@@ -334,7 +353,7 @@ export default function TestimonialsSection() {
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-1 text-brightYellow">
-                      {[...Array(review.rating)].map((_, i) => (
+                      {[...Array(review.rating ?? 5)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-current text-brightYellow" />
                       ))}
                     </div>
@@ -351,8 +370,14 @@ export default function TestimonialsSection() {
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                   <div>
                     <h4 className="font-bold text-navy text-sm font-heading">{review.name}</h4>
-                    <p className="text-xs text-slate-500 font-body">{review.location}</p>
-                    <span className="text-[11px] font-semibold text-royal block mt-0.5 font-heading uppercase tracking-wider">{review.service}</span>
+                    {review.location && (
+                      <p className="text-xs text-slate-500 font-body">{review.location}</p>
+                    )}
+                    {review.service && (
+                      <span className="text-[11px] font-semibold text-royal block mt-0.5 font-heading uppercase tracking-wider">
+                        {review.service}
+                      </span>
+                    )}
                   </div>
                   <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-royal font-heading">
                     ★
@@ -367,24 +392,30 @@ export default function TestimonialsSection() {
             <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-md">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-1 text-brightYellow">
-                  {[...Array(REVIEWS[currentIndex].rating)].map((_, i) => (
+                  {[...Array(mobileReview.rating ?? 5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-current text-brightYellow" />
                   ))}
                 </div>
-                <span className="text-xs text-slate-400 font-medium font-body">{REVIEWS[currentIndex].date}</span>
+                <span className="text-xs text-slate-400 font-medium font-body">
+                  {mobileReview.date ?? 'Verified Review'}
+                </span>
               </div>
 
               <p className="text-base text-slate-700 leading-relaxed italic mb-6 font-body">
-                &ldquo;{REVIEWS[currentIndex].comment}&rdquo;
+                &ldquo;{mobileReview.comment}&rdquo;
               </p>
 
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <div>
-                  <h4 className="font-bold text-navy text-base sm:text-base font-heading">{REVIEWS[currentIndex].name}</h4>
-                  <p className="text-xs sm:text-sm text-slate-500 font-body">{REVIEWS[currentIndex].location}</p>
-                  <span className="text-xs font-semibold text-royal mt-0.5 block font-heading uppercase tracking-wider">
-                    {REVIEWS[currentIndex].service}
-                  </span>
+                  <h4 className="font-bold text-navy text-base sm:text-base font-heading">{mobileReview.name}</h4>
+                  {mobileReview.location && (
+                    <p className="text-xs sm:text-sm text-slate-500 font-body">{mobileReview.location}</p>
+                  )}
+                  {mobileReview.service && (
+                    <span className="text-xs font-semibold text-royal mt-0.5 block font-heading uppercase tracking-wider">
+                      {mobileReview.service}
+                    </span>
+                  )}
                 </div>
                 <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-royal font-heading">
                   ★
@@ -404,7 +435,7 @@ export default function TestimonialsSection() {
             </button>
             <div className="flex items-center gap-1.5 max-w-xs overflow-hidden">
               <span className="text-xs font-bold text-slate-500 font-heading">
-                Showing {currentIndex + 1} of {REVIEWS.length} Reviews
+                Showing {currentIndex + 1} of {activeReviews.length} Reviews
               </span>
             </div>
             <button

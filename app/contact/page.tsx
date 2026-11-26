@@ -24,6 +24,7 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import PageBanner from '@/components/PageBanner';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -150,156 +151,20 @@ export default function ContactPage() {
       {/* ========================================================================= */}
       {/* 1. BANNER SECTION (EXACT HOMEPAGE BANNER DESIGN REPLICATED) */}
       {/* ========================================================================= */}
-      <section
+      <PageBanner
         id="banner"
-        className="relative bg-[#061A40] text-white overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20"
-      >
-        {/* Background Hero Image */}
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
-          <Image
-            src="/images/hero-hvac.jpg"
-            alt="Contact 247 HVAC of Long Island"
-            fill
-            priority
-            className="object-cover object-center lg:object-right"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/60 sm:via-[#061A40]/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#061A40] sm:from-[#061A40]/80 via-transparent to-transparent" />
-        </div>
-
-        {/* Background Gradient & Grid Accent */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/90 sm:via-[#061A40]/80 via-50% to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#0066CC_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none z-10" />
-
-        <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 z-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column: Heading, Bullets, CTA Buttons */}
-            <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
-                <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">24/7 Fast Emergency Dispatch Desk</span>
-              </div>
-
-              {/* Exact Main Heading */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.12] mb-4 text-white font-heading">
-                Contact Us
-              </h1>
-
-              {/* Exact 3 Bullet Points */}
-              <div className="space-y-2.5 sm:space-y-3 w-full max-w-xl mb-6 sm:mb-8 font-heading">
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2.5 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen flex-shrink-0" />
-                  <span className="text-sm sm:text-base font-bold text-white">
-                    Our Professional &amp; Reliable Technicians Service This Area
-                  </span>
-                </div>
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2.5 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen flex-shrink-0" />
-                  <span className="text-sm sm:text-base font-bold text-white">
-                    24 Hours Emergency Service Available
-                  </span>
-                </div>
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2.5 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen flex-shrink-0" />
-                  <span className="text-sm sm:text-base font-bold text-white">
-                    #1 HVAC Services in Long Island
-                  </span>
-                </div>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 w-full sm:w-auto font-heading mb-6">
-                <a
-                  href={PHONE_TEL}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg bg-white text-[#061A40] font-black text-sm sm:text-base shadow-xl hover:bg-slate-100 active:scale-95 transition-all uppercase tracking-wider min-h-[44px]"
-                >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brightRed flex-shrink-0" />
-                  <span>Call Us Now</span>
-                </a>
-
-                <button
-                  onClick={() => setIsQuoteOpen(true)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg bg-[#0066CC] text-white font-black text-sm sm:text-base shadow-xl hover:bg-[#0052A3] active:scale-95 transition-all uppercase tracking-wider min-h-[44px]"
-                >
-                  <FileText className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                  <span>Get A Free Quote</span>
-                </button>
-              </div>
-
-              {/* Quick Trust Reassurance */}
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs sm:text-sm text-slate-300 font-body">
-                <div className="flex items-center gap-1 text-brightYellow flex-shrink-0">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current text-brightYellow" />
-                  ))}
-                </div>
-                <span className="font-semibold text-white font-heading">5.0 Star Rated HVAC Service</span>
-                <span className="text-slate-400 hidden sm:inline">•</span>
-                <span className="w-full sm:w-auto text-slate-300">Long Island 24/7 Coverage</span>
-              </div>
-            </div>
-
-            {/* Right Column: Dispatch Status Card */}
-            <div className="hidden lg:flex lg:col-span-5 xl:col-span-4 flex-col gap-4">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 bg-gradient-to-b from-[#0E2452]/90 to-[#061A40]/95 backdrop-blur-md p-6">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
-                  <div>
-                    <span className="text-xs uppercase tracking-wider font-extrabold text-electric font-heading">
-                      Fast Dispatch
-                    </span>
-                    <h3 className="text-[24px] font-bold text-white font-heading">Emergency Mobile Units</h3>
-                  </div>
-                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-hvacGreen/20 text-hvacGreen border border-hvacGreen/30 text-xs font-bold font-heading">
-                    <span className="w-2 h-2 rounded-full bg-hvacGreen animate-pulse" />
-                    <span>On Duty</span>
-                  </div>
-                </div>
-
-                <div className="space-y-3 mb-5 font-body">
-                  <div className="flex items-start gap-3 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="font-heading font-bold text-white">30-45 Minute Response:</strong> Long Island
-                      &amp; NYC Communities.
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="font-heading font-bold text-white">Licensed &amp; Certified:</strong> EPA
-                      universal, OSHA compliant master technicians.
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="font-heading font-bold text-white">Stocked Vehicles:</strong> Over 1,000 OEM
-                      replacement parts on every service truck.
-                    </span>
-                  </div>
-                </div>
-
-                <div className="bg-white/10 rounded-xl p-4 border border-white/10 flex items-center justify-between">
-                  <div>
-                    <p className="text-[11px] uppercase font-bold text-slate-300 font-heading">Direct Emergency Line</p>
-                    <a href={PHONE_TEL} className="text-xl font-black text-brightYellow hover:underline font-heading">
-                      {PHONE_NUMBER}
-                    </a>
-                  </div>
-                  <a
-                    href={PHONE_TEL}
-                    className="px-3.5 py-2 rounded-lg bg-brightRed text-white font-bold text-xs uppercase tracking-wider hover:bg-brightRed-hover shadow font-heading"
-                  >
-                    Call Now
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        badgeText="24/7 Fast Emergency Dispatch Desk"
+        title="Contact Us"
+        bullets={[
+          { text: "Our Professional & Reliable Technicians Service This Area", icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+          { text: "24 Hours Emergency Service Available", icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+          { text: "#1 HVAC Services in Long Island", icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+        ]}
+        showCallButton
+        callButtonLabel="Call Us Now"
+        onOpenQuote={() => setIsQuoteOpen(true)}
+        quoteButtonLabel="Get A Free Quote"
+      />
 
       {/* ========================================================================= */}
       {/* 2 & 3. CONTACT FORM & CONTACT INFORMATION SECTION (BALANCED TWO-COLUMN) */}

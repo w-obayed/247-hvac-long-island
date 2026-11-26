@@ -24,6 +24,7 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -71,7 +72,7 @@ const QUEENS_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'ac-install',
     title: 'Air Conditioners Installation & Replacement',
     category: 'cooling',
-    image: '/image-website/ac-installation.jpg',
+    image: '/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg',
     icon: Snowflake,
     href: '/air-conditioners-installation-replacement',
   },
@@ -79,7 +80,7 @@ const QUEENS_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'ac-repair',
     title: 'Air Conditioners Repairs & Maintenance',
     category: 'cooling',
-    image: '/image-website/ac-installation-bd.jpg',
+    image: '/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg',
     icon: Wrench,
     href: '/air-conditioning-repair',
   },
@@ -87,7 +88,7 @@ const QUEENS_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'air-duct',
     title: 'Air Duct and Ventilation Cleaning Service',
     category: 'cooling',
-    image: '/image-website/air-con-installation.jpg',
+    image: '/247 havc/ac-installation/985ad274-26be-4bb1-82d3-8973d451568c.jpg',
     icon: Layers,
     href: '/air-duct-and-ventilation-cleaning-service',
   },
@@ -95,7 +96,7 @@ const QUEENS_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'mini-split',
     title: 'Mini Splits – Ductless Heat Pumps and Air Conditioners',
     category: 'cooling',
-    image: '/image-website/heat-pump-installation.jpg',
+    image: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
     icon: Snowflake,
     href: '/mini-splits-ductless-heat-pumps-air-conditioners',
   },
@@ -106,7 +107,7 @@ const QUEENS_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'furnace',
     title: 'Furnace Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/furnace-installation.jpg',
+    image: '/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg',
     icon: Flame,
     href: '/furnace-installation-repair-replacement',
   },
@@ -114,7 +115,7 @@ const QUEENS_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'boiler',
     title: 'Boiler Installation & Repair',
     category: 'heating',
-    image: '/image-website/boiller-installation-repair-e1661179456943.jpg',
+    image: '/247 havc/boiler-water-heater/e4530e79-2715-4272-bc27-de76ee87e960.jpg',
     icon: Droplets,
     href: '/boiler-installation-repair',
   },
@@ -122,7 +123,7 @@ const QUEENS_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'water-heater',
     title: 'Water Heater Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/water-heater-installation.jpg',
+    image: '/247 havc/boiler-water-heater/278da669-a5fc-4950-8e6f-8bd0a60a9768.jpg',
     icon: Droplets,
     href: '/water-heater-installation-repair-replacement',
   },
@@ -130,7 +131,7 @@ const QUEENS_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'chimney',
     title: 'Chimney Sweep',
     category: 'heating',
-    image: '/images/furnace-unit.jpg',
+    image: '/247 havc/heating-and-controls/d1b426fa-9ec5-45af-9feb-ba543d98c780.jpg',
     icon: Flame,
     href: '/chimney-sweep',
   },
@@ -226,7 +227,7 @@ export default function QueensServiceAreaPage() {
         {/* Background Hero Image - Same layout and opacity blending as homepage banner */}
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
-            src="/images/hero-hvac.jpg"
+            src="/247 havc/heat-pump-repair/23788f14-5d4f-4c4f-852b-2023d1705c81.jpg"
             alt="Queens HVAC Heating and Cooling Service"
             fill
             priority
@@ -247,9 +248,9 @@ export default function QueensServiceAreaPage() {
             {/* Left Column: Heading, Bullets, CTA Buttons */}
             <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
+              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-2xl sm:rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
                 <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">#1 HVAC Emergency Services in Long Island</span>
+                <span className="leading-snug">#1 HVAC Emergency Services in Long Island</span>
               </div>
 
               {/* Exact Location Heading */}
@@ -415,15 +416,15 @@ export default function QueensServiceAreaPage() {
             </div>
 
             {/* Grid of All 8 Locations */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 min-[440px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {QUEENS_TOWNS.map((town) =>
                 town.href ? (
                   <Link
                     key={town.name}
                     href={town.href}
-                    className="p-3.5 rounded-xl bg-white hover:bg-royal text-navy hover:text-white border border-slate-200 font-bold text-xs sm:text-sm font-heading shadow-2xs hover:shadow-md transition-all flex items-center justify-between group"
+                    className="p-3.5 rounded-xl bg-white hover:bg-royal text-navy hover:text-white border border-slate-200 font-bold text-xs sm:text-sm font-heading shadow-2xs hover:shadow-md transition-all flex items-center justify-between gap-2 group"
                   >
-                    <span className="truncate">★ {town.name}</span>
+                    <span className="leading-snug">★ {town.name}</span>
                     <ArrowRight className="w-4 h-4 text-royal group-hover:text-white group-hover:translate-x-1 transition-all flex-shrink-0" />
                   </Link>
                 ) : (
@@ -606,59 +607,19 @@ export default function QueensServiceAreaPage() {
       {/* ========================================================================= */}
       {/* 5. TESTIMONIALS SECTION */}
       {/* ========================================================================= */}
-      <section id="testimonials" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white text-slate-800">
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brightYellow/20 text-navy text-xs font-black uppercase tracking-wider mb-3 font-heading">
-              <Star className="w-4 h-4 fill-brightYellow text-brightYellow" />
-              <span>Verified Customer Feedback</span>
-            </div>
-
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight font-heading">
-              Reviews From Queens Clients
-            </h2>
-            <p className="text-base text-slate-600 mt-3 font-body">
-              Read real feedback from Queens homeowners and businesses who rely on our prompt 24/7 HVAC services.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {QUEENS_TESTIMONIALS.map((review) => (
-              <div
-                key={review.id}
-                className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between hover:shadow-lg transition-shadow relative"
-              >
-                <Quote className="w-10 h-10 text-royal/15 absolute top-6 right-6 pointer-events-none" />
-
-                <div className="mb-6 relative z-10">
-                  <div className="flex items-center gap-1 text-brightYellow mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-slate-700 italic text-sm sm:text-base leading-relaxed font-body">
-                    &ldquo;{review.quote}&rdquo;
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
-                  <div>
-                    <h4 className="font-extrabold text-navy text-base font-heading">
-                      {review.author}
-                    </h4>
-                    <p className="text-xs text-slate-500 font-heading">{review.location}</p>
-                  </div>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-hvacGreen bg-hvacGreen/10 px-2 py-0.5 rounded-full">
-                    <CheckCircle2 className="w-3 h-3" />
-                    Verified
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection
+        id="testimonials"
+        badgeText="Verified Customer Feedback"
+        heading="Reviews From Queens Clients"
+        reviews={QUEENS_TESTIMONIALS.map((r: any) => ({
+          id: r.id,
+          name: r.author || r.name,
+          location: r.location || 'Verified Customer',
+          service: r.service,
+          rating: r.rating ?? 5,
+          comment: r.quote || r.comment,
+        }))}
+      />
 
       {/* ========================================================================= */}
       {/* 6. LOCATION MAP SECTION */}

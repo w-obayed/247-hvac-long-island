@@ -29,6 +29,7 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -168,7 +169,7 @@ export default function WaterHeaterInstallationRepairReplacementPage() {
       >
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
-            src="/image-website/water-heater-installation.jpg"
+            src="/247 havc/boiler-water-heater/278da669-a5fc-4950-8e6f-8bd0a60a9768.jpg"
             alt="Water Heater Installation, Repair & Replacement in Long Island, NY"
             fill
             priority
@@ -186,9 +187,9 @@ export default function WaterHeaterInstallationRepairReplacementPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
               {/* Supporting Point 3 as Top Badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
+              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-2xl sm:rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
                 <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">#1 Water Heater Installation, Repair & Replacement in Long Island</span>
+                <span className="leading-snug">#1 Water Heater Installation, Repair & Replacement in Long Island</span>
               </div>
 
               {/* Exact Heading */}
@@ -375,8 +376,8 @@ export default function WaterHeaterInstallationRepairReplacementPage() {
             <div className="lg:col-span-5 relative">
               <div className="relative w-full h-[360px] sm:h-[420px] md:h-[460px] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group">
                 <Image
-                  src="/images/water-heater.jpg"
-                  alt="Professional Water Heater Installation & Emergency Repair in Long Island"
+                  src="/247 havc/boiler-water-heater/278da669-a5fc-4950-8e6f-8bd0a60a9768.jpg"
+                  alt="Mechanical room with residential water heater and copper piping installed in Long Island"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -404,13 +405,13 @@ export default function WaterHeaterInstallationRepairReplacementPage() {
               <div>
                 <div className="relative w-full h-56 sm:h-64 overflow-hidden">
                   <Image
-                    src="/images/technician-repair.jpg"
-                    alt="Fast Emergency Water Heater Repairs in Long Island"
+                    src="/247 havc/boiler-water-heater/2f303983-60b4-4a2e-ac64-4018be61207e.jpg"
+                    alt="Mechanical room with blue expansion tank and water-heating piping for emergency repair"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brightRed text-white text-xs font-black uppercase tracking-wider font-heading shadow-md">
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-2xl sm:rounded-full bg-brightRed text-white text-xs font-black uppercase tracking-wider font-heading shadow-md">
                     <Clock className="w-3.5 h-3.5" />
                     <span>24/7 Hot Water Repair</span>
                   </div>
@@ -464,8 +465,8 @@ export default function WaterHeaterInstallationRepairReplacementPage() {
               <div>
                 <div className="relative w-full h-56 sm:h-64 overflow-hidden">
                   <Image
-                    src="/image-website/water-heater-installation.jpg"
-                    alt="Energy-Efficient Water Heater Replacement and Installation"
+                    src="/247 havc/boiler-water-heater/f821fd8d-d675-46d6-9ef7-629fc836a5cd.jpg"
+                    alt="Energy-efficient water heater, blue tank, and hydronic piping installation"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -676,56 +677,19 @@ export default function WaterHeaterInstallationRepairReplacementPage() {
       {/* ==============================================================
           5. TESTIMONIALS SECTION (Exact 3 Testimonials)
          ============================================================== */}
-      <section
+      <TestimonialsSection
         id="testimonials"
-        className="py-12 sm:py-16 md:py-20 lg:py-24 bg-slate-50 text-slate-800 border-y border-slate-200/80"
-      >
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royal/10 text-royal text-xs font-black uppercase tracking-wider mb-3 font-heading">
-              <span>Verified Customer Feedback</span>
-            </div>
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight font-heading">
-              Our Client Testimonials
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {WATER_HEATER_TESTIMONIALS.map((t) => (
-              <div
-                key={t.id}
-                className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between relative"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1 text-brightYellow">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-current text-brightYellow" />
-                      ))}
-                    </div>
-                    <Quote className="w-6 h-6 text-slate-300" />
-                  </div>
-                  <p className="text-base text-slate-700 leading-relaxed font-body italic mb-6">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <div>
-                    <span className="text-base font-bold text-navy font-heading block">
-                      — {t.author}
-                    </span>
-                    <span className="text-xs text-slate-500 font-body">{t.location}</span>
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-royal font-heading">
-                    G
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        badgeText="Verified Customer Feedback"
+        heading="Our Client Testimonials"
+        reviews={WATER_HEATER_TESTIMONIALS.map((r: any) => ({
+          id: r.id,
+          name: r.author || r.name,
+          location: r.location || 'Verified Customer',
+          service: r.service,
+          rating: r.rating ?? 5,
+          comment: r.quote || r.comment,
+        }))}
+      />
 
       {/* ==============================================================
           6. SERVICE AREAS SECTION (Nassau, Queens, Suffolk Area Links)

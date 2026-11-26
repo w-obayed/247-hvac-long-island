@@ -25,6 +25,7 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -55,28 +56,28 @@ const BALDWIN_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'ac-install',
     title: 'Air Conditioners Installation & Replacement',
     category: 'cooling',
-    image: '/image-website/ac-installation.jpg',
+    image: '/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg',
     icon: Snowflake,
   },
   {
     id: 'ac-repair',
     title: 'Air Conditioners Repairs & Maintenance',
     category: 'cooling',
-    image: '/image-website/ac-installation-bd.jpg',
+    image: '/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg',
     icon: Wrench,
   },
   {
     id: 'air-duct',
     title: 'Air Duct and Ventilation Cleaning Service',
     category: 'cooling',
-    image: '/image-website/air-con-installation.jpg',
+    image: '/247 havc/ac-installation/985ad274-26be-4bb1-82d3-8973d451568c.jpg',
     icon: Layers,
   },
   {
     id: 'mini-split',
     title: 'Mini Splits – Ductless Heat Pumps and Air Conditioners',
     category: 'cooling',
-    image: '/image-website/heat-pump-installation.jpg',
+    image: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
     icon: Snowflake,
   },
 ];
@@ -86,7 +87,7 @@ const BALDWIN_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'furnace',
     title: 'Furnace Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/furnace-installation.jpg',
+    image: '/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg',
     icon: Flame,
     href: '/furnace-installation-repair-replacement',
   },
@@ -94,7 +95,7 @@ const BALDWIN_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'boiler',
     title: 'Boiler Installation & Repair',
     category: 'heating',
-    image: '/image-website/boiller-installation-repair-e1661179456943.jpg',
+    image: '/247 havc/boiler-water-heater/e4530e79-2715-4272-bc27-de76ee87e960.jpg',
     icon: Droplets,
     href: '/boiler-installation-repair',
   },
@@ -102,14 +103,14 @@ const BALDWIN_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'water-heater',
     title: 'Water Heater Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/water-heater-installation.jpg',
+    image: '/247 havc/boiler-water-heater/278da669-a5fc-4950-8e6f-8bd0a60a9768.jpg',
     icon: Droplets,
   },
   {
     id: 'chimney',
     title: 'Chimney Sweep',
     category: 'heating',
-    image: '/images/furnace-unit.jpg',
+    image: '/247 havc/heating-and-controls/d1b426fa-9ec5-45af-9feb-ba543d98c780.jpg',
     icon: Flame,
   },
 ];
@@ -205,7 +206,7 @@ export default function BaldwinLocationPage() {
         {/* Background Hero Image - matching homepage overlay & positioning */}
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
-            src="/images/hero-hvac.jpg"
+            src="/247 havc/heat-pump-repair/23788f14-5d4f-4c4f-852b-2023d1705c81.jpg"
             alt="Baldwin HVAC Heating and AC Repair - 247 HVAC of Long Island"
             fill
             priority
@@ -225,13 +226,13 @@ export default function BaldwinLocationPage() {
             {/* Left Column: Heading, Supporting Text, Highlights, Buttons */}
             <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
               {/* Supporting text badge: #1 HVAC Services in Baldwin */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
+              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-2xl sm:rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
                 <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">#1 HVAC Services in Baldwin</span>
+                <span className="leading-snug">#1 HVAC Services in Baldwin</span>
               </div>
 
               {/* Main Heading: Baldwin */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.15] sm:leading-[1.12] mb-3.5 sm:mb-5 text-white font-heading">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] sm:leading-[1.12] mb-3.5 sm:mb-5 text-white font-heading">
                 Baldwin
               </h1>
 
@@ -406,7 +407,7 @@ export default function BaldwinLocationPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
                 <div className="relative h-72 xs:h-80 sm:h-96 md:h-[420px] lg:h-[460px] w-full">
                   <Image
-                    src="/image-website/ac-installation-bd.jpg"
+                    src="/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg"
                     alt="HVAC service and air conditioning installation technician serving Baldwin, NY"
                     fill
                     className="object-cover object-center"
@@ -647,92 +648,19 @@ export default function BaldwinLocationPage() {
       {/* ========================================================================= */}
       {/* 4. TESTIMONIALS SECTION (Exact client quotes & author names preserved) */}
       {/* ========================================================================= */}
-      <section id="reviews" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white text-slate-800">
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royal/10 text-royal text-xs font-black uppercase tracking-wider mb-3 font-heading">
-              <span>Verified Customer Experiences</span>
-            </div>
-
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight font-heading">
-              Reviews From Baldwin Clients
-            </h2>
-
-            {/* 5.0 Star Rating Indicator */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-3">
-              <div className="flex items-center gap-1 text-brightYellow">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-current text-brightYellow" />
-                ))}
-              </div>
-              <span className="font-extrabold text-navy text-base sm:text-lg font-heading">5.0 Star Rating</span>
-              <span className="text-slate-400">•</span>
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 bg-slate-50 px-3 py-1 rounded-full border border-slate-200 font-heading">
-                <svg viewBox="0 0 24 24" className="w-4 h-4">
-                  <path
-                    fill="#4285F4"
-                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                  />
-                  <path
-                    fill="#34A853"
-                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                  />
-                  <path
-                    fill="#FBBC05"
-                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
-                  />
-                  <path
-                    fill="#EA4335"
-                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
-                  />
-                </svg>
-                <span>Verified Google Reviews</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Three Testimonials Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {BALDWIN_TESTIMONIALS.map((t) => (
-              <div
-                key={t.id}
-                className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1 text-brightYellow">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-current text-brightYellow" />
-                      ))}
-                    </div>
-                    <Quote className="w-6 h-6 text-slate-300" />
-                  </div>
-
-                  {/* Exact Testimonial Quote */}
-                  <p className="text-base text-slate-700 leading-relaxed font-body italic mb-6">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                </div>
-
-                {/* Author Name and Location */}
-                <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
-                  <div>
-                    <span className="text-base font-bold text-navy font-heading block">
-                      — {t.author}
-                    </span>
-                    <span className="text-xs text-slate-500 font-body">{t.location}</span>
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-xs font-bold text-royal font-heading shadow-sm">
-                    G
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection
+        id="testimonials"
+        badgeText="Verified Customer Experiences"
+        heading="Reviews From Baldwin Clients"
+        reviews={BALDWIN_TESTIMONIALS.map((r: any) => ({
+          id: r.id,
+          name: r.author || r.name,
+          location: r.location || 'Verified Customer',
+          service: r.service,
+          rating: r.rating ?? 5,
+          comment: r.quote || r.comment,
+        }))}
+      />
 
       {/* ========================================================================= */}
       {/* 5. LOCATION MAP SECTION (Centered on Baldwin, NY, fully responsive) */}

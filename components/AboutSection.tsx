@@ -117,8 +117,8 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
               <div className="relative h-64 xs:h-72 sm:h-80 md:h-96 lg:h-[450px] w-full">
                 <Image
-                  src="/images/technician-repair.jpg"
-                  alt="Certified 247 HVAC Technician Servicing Outdoor Air Conditioning Unit"
+                  src="/247 havc/about-team/ab8907ce-a62b-4cba-92fe-791b1218ed51.jpg"
+                  alt="Two-person 247 HVAC of Long Island team portrait"
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"

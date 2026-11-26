@@ -18,8 +18,8 @@ export default function PromoBanners({ onOpenFinancing, onOpenMaintenance }: Pro
           <div className="relative rounded-2xl overflow-hidden border border-slate-700/40 shadow-xl flex flex-col justify-between group transition-all duration-300 hover:shadow-2xl hover:border-slate-500/50 min-h-[460px] sm:min-h-[480px]">
             {/* Full-Card Background Image */}
             <Image
-              src="/images/air-conditioner.jpg"
-              alt="Modern High-Efficiency HVAC Equipment and Air Conditioning System Installation"
+              src="/247 havc/ac-installation/985ad274-26be-4bb1-82d3-8973d451568c.jpg"
+              alt="Outdoor condenser close-up for modern high-efficiency air conditioning installation"
               fill
               className="object-cover object-center group-hover:scale-105 transition-transform duration-700 pointer-events-none"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -79,8 +79,8 @@ export default function PromoBanners({ onOpenFinancing, onOpenMaintenance }: Pro
           <div className="relative rounded-2xl overflow-hidden border border-slate-700/40 shadow-xl flex flex-col justify-between group transition-all duration-300 hover:shadow-2xl hover:border-slate-500/50 min-h-[460px] sm:min-h-[480px]">
             {/* Full-Card Background Image */}
             <Image
-              src="/images/technician-service.jpg"
-              alt="Certified HVAC Technician Performing Annual Maintenance and Precision System Inspection"
+              src="/247 havc/about-team/55670794-f053-4a82-8081-ebf169b4fcb7.jpg"
+              alt="247 HVAC of Long Island technician standing portrait"
               fill
               className="object-cover object-center group-hover:scale-105 transition-transform duration-700 pointer-events-none"
               sizes="(max-width: 1024px) 100vw, 50vw"

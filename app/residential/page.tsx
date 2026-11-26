@@ -35,6 +35,8 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import PageBanner from '@/components/PageBanner';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -87,7 +89,7 @@ const RESIDENTIAL_COOLING_SERVICES = [
       'High-efficiency central AC systems, custom duct integration, and professional load calculations tailored for Long Island homes.',
     icon: Snowflake,
     href: '/air-conditioners-installation-replacement',
-    image: '/image-website/ac-installation.jpg',
+    image: '/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg',
   },
   {
     id: 'ac-repair',
@@ -96,7 +98,7 @@ const RESIDENTIAL_COOLING_SERVICES = [
       'Fast troubleshooting, refrigerant leak detection, compressor repairs, tune-ups, and 24/7 emergency service.',
     icon: Wrench,
     href: '/air-conditioning-repair',
-    image: '/images/ac-repair.jpg',
+    image: '/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg',
   },
   {
     id: 'air-duct-cleaning',
@@ -105,7 +107,7 @@ const RESIDENTIAL_COOLING_SERVICES = [
       'Thorough ductwork sanitization, allergen reduction, and whole-house airflow optimization to keep indoor air clean and healthy.',
     icon: Wind,
     href: '/air-duct-and-ventilation-cleaning-service',
-    image: '/images/technician-repair.jpg',
+    image: '/247 havc/heat-pump-repair/6085ddc1-72b5-4260-8550-5e08e749e7cc.jpg',
   },
   {
     id: 'mini-splits',
@@ -114,7 +116,7 @@ const RESIDENTIAL_COOLING_SERVICES = [
       'Multi-zone and single-room ductless comfort systems offering whisper-quiet cooling and heating without tear-out ductwork.',
     icon: Layers,
     href: '/mini-splits-ductless-heat-pumps-air-conditioners',
-    image: '/images/mini-split.jpg',
+    image: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
   },
 ];
 
@@ -126,7 +128,7 @@ const RESIDENTIAL_HEATING_SERVICES = [
       'High-efficiency gas and oil furnace repairs, seasonal checkups, and brand-new installations that lower winter fuel costs.',
     icon: Flame,
     href: '/furnace-installation-repair-replacement',
-    image: '/images/furnace.jpg',
+    image: '/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg',
   },
   {
     id: 'boiler-installation',
@@ -135,7 +137,7 @@ const RESIDENTIAL_HEATING_SERVICES = [
       'Residential steam and hot water boiler diagnostics, piping replacements, circulator pump service, and emergency repairs.',
     icon: Droplets,
     href: '/boiler-installation-repair',
-    image: '/images/boiler.jpg',
+    image: '/247 havc/boiler-water-heater/ec2663e6-2ab5-443f-a29e-ccf132cad99c.jpg',
   },
   {
     id: 'water-heater',
@@ -144,7 +146,7 @@ const RESIDENTIAL_HEATING_SERVICES = [
       'Tank and tankless water heating systems installed and repaired with rapid response for reliable hot water year-round.',
     icon: Zap,
     href: '/water-heater-installation-repair-replacement',
-    image: '/images/water-heater.jpg',
+    image: '/247 havc/boiler-water-heater/f821fd8d-d675-46d6-9ef7-629fc836a5cd.jpg',
   },
   {
     id: 'chimney-sweep',
@@ -153,7 +155,7 @@ const RESIDENTIAL_HEATING_SERVICES = [
       'Certified chimney inspection, flue cleaning, creosote removal, and draft checks ensuring safe exhaust ventilation for your home.',
     icon: ShieldCheck,
     href: '/chimney-sweep',
-    image: '/images/technician-service.jpg',
+    image: '/247 havc/heat-pump-repair/55f4dfda-dd29-4407-828c-4b37c1f22c20.jpg',
   },
 ];
 
@@ -256,166 +258,22 @@ export default function ResidentialHvacPage() {
       {/* ========================================================================= */}
       {/* 1. BANNER SECTION (EXACT HOMEPAGE BANNER DESIGN REPLICATED) */}
       {/* ========================================================================= */}
-      <section
+      <PageBanner
         id="banner"
-        className="relative bg-[#061A40] text-white overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20"
-      >
-        {/* Background Hero Image */}
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
-          <Image
-            src="/images/hero-hvac.jpg"
-            alt="Residential HVAC Long Island - Heating and Cooling Specialists"
-            fill
-            priority
-            className="object-cover object-center lg:object-right"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/60 sm:via-[#061A40]/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#061A40] sm:from-[#061A40]/80 via-transparent to-transparent" />
-        </div>
-
-        {/* Background Gradient & Grid Accent */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/90 sm:via-[#061A40]/80 via-50% to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#0066CC_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none z-10" />
-
-        <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 z-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column: Heading, Subtitle, Bullets, Additional Text, CTA Buttons */}
-            <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
-                <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">#1 Residential HVAC in Long Island</span>
-              </div>
-
-              {/* Exact Main Heading */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.12] mb-3 text-white font-heading">
-                Residential HVAC
-              </h1>
-
-              {/* Exact Subtitle */}
-              <p className="text-lg sm:text-xl md:text-2xl font-bold text-slate-100 mb-5 font-heading tracking-tight leading-snug">
-                The HVAC Experts in Residential Installation and Repair
-              </p>
-
-              {/* Exact Bullet Points */}
-              <div className="space-y-2.5 sm:space-y-3 w-full max-w-xl mb-4 font-heading">
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen flex-shrink-0" />
-                  <span className="text-sm sm:text-base font-bold text-white">
-                    Professional &amp; Reliable Technicians
-                  </span>
-                </div>
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen flex-shrink-0" />
-                  <span className="text-sm sm:text-base font-bold text-white">
-                    24 Hours Emergency Service Available
-                  </span>
-                </div>
-                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-3.5 py-2 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen flex-shrink-0" />
-                  <span className="text-sm sm:text-base font-bold text-white">
-                    #1 Residential HVAC in Long Island
-                  </span>
-                </div>
-              </div>
-
-              {/* Exact Additional text */}
-              <p className="text-sm sm:text-base font-bold text-brightYellow mb-6 font-body">
-                What are the best Residential HVAC Near Me? We are
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 w-full sm:w-auto font-heading mb-6">
-                <a
-                  href={PHONE_TEL}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg bg-white text-[#061A40] font-black text-sm sm:text-base shadow-xl hover:bg-slate-100 active:scale-95 transition-all uppercase tracking-wider min-h-[44px]"
-                >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brightRed flex-shrink-0" />
-                  <span>Call Us Now</span>
-                </a>
-
-                <button
-                  onClick={() => setIsQuoteOpen(true)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg bg-[#0066CC] text-white font-black text-sm sm:text-base shadow-xl hover:bg-[#0052A3] active:scale-95 transition-all uppercase tracking-wider min-h-[44px]"
-                >
-                  <FileText className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                  <span>Get A Free Quote</span>
-                </button>
-              </div>
-
-              {/* Quick Trust Reassurance */}
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs sm:text-sm text-slate-300 font-body">
-                <div className="flex items-center gap-1 text-brightYellow flex-shrink-0">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current text-brightYellow" />
-                  ))}
-                </div>
-                <span className="font-semibold text-white font-heading">5.0 Star Rated Residential Service</span>
-                <span className="text-slate-400 hidden sm:inline">•</span>
-                <span className="w-full sm:w-auto text-slate-300">Long Island 24/7 Emergency Dispatch</span>
-              </div>
-            </div>
-
-            {/* Right Column: Dispatch Status Card */}
-            <div className="hidden lg:flex lg:col-span-5 xl:col-span-4 flex-col gap-4">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 bg-gradient-to-b from-[#0E2452]/90 to-[#061A40]/95 backdrop-blur-md p-6">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
-                  <div>
-                    <span className="text-xs uppercase tracking-wider font-extrabold text-electric font-heading">
-                      Residential Dispatch
-                    </span>
-                    <h3 className="text-[22px] font-bold text-white font-heading">Emergency Mobile Units</h3>
-                  </div>
-                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-hvacGreen/20 text-hvacGreen border border-hvacGreen/30 text-xs font-bold font-heading">
-                    <span className="w-2 h-2 rounded-full bg-hvacGreen animate-pulse" />
-                    <span>On Duty</span>
-                  </div>
-                </div>
-
-                <div className="space-y-3 mb-5 font-body">
-                  <div className="flex items-start gap-3 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="font-heading font-bold text-white">30-45 Min Response:</strong> All Long
-                      Island &amp; Queens neighborhoods.
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="font-heading font-bold text-white">Home Comfort Pros:</strong> Licensed, insured,
-                      and EPA-certified master technicians.
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-hvacGreen flex-shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="font-heading font-bold text-white">Stocked Trucks:</strong> OEM replacement parts
-                      ready for instant on-site repairs.
-                    </span>
-                  </div>
-                </div>
-
-                <div className="bg-white/10 rounded-xl p-4 border border-white/10 flex items-center justify-between">
-                  <div>
-                    <p className="text-[11px] uppercase font-bold text-slate-300 font-heading">Direct Residential Line</p>
-                    <a href={PHONE_TEL} className="text-xl font-black text-brightYellow hover:underline font-heading">
-                      {PHONE_NUMBER}
-                    </a>
-                  </div>
-                  <a
-                    href={PHONE_TEL}
-                    className="px-3.5 py-2 rounded-lg bg-brightRed text-white font-bold text-xs uppercase tracking-wider hover:bg-brightRed-hover shadow font-heading"
-                  >
-                    Call Now
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        badgeText="#1 Residential HVAC in Long Island"
+        title="Residential HVAC"
+        subtitle="The HVAC Experts in Residential Installation and Repair"
+        bullets={[
+          { text: "Professional & Reliable Technicians", icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+          { text: "24 Hours Emergency Service Available", icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+          { text: "#1 Residential HVAC in Long Island", icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+        ]}
+        additionalText="What are the best Residential HVAC Near Me? We are"
+        showCallButton
+        callButtonLabel="Call Us Now"
+        onOpenQuote={() => setIsQuoteOpen(true)}
+        quoteButtonLabel="Get A Free Quote"
+      />
 
       {/* ========================================================================= */}
       {/* 2. INTRO SECTION */}
@@ -475,8 +333,8 @@ export default function ResidentialHvacPage() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
                 <div className="relative h-72 sm:h-80 md:h-[340px] lg:h-[380px] w-full">
                   <Image
-                    src="/image-website/ac-installation.jpg"
-                    alt="Professional technician servicing a residential air conditioning unit in Long Island"
+                    src="/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg"
+                    alt="Outdoor residential heat-pump service with technician diagnostic gauges in Long Island"
                     fill
                     priority
                     className="object-cover object-center hover:scale-105 transition-transform duration-700"
@@ -510,8 +368,8 @@ export default function ResidentialHvacPage() {
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div className="relative h-32 sm:h-36 rounded-2xl overflow-hidden shadow-md border border-slate-200">
                   <Image
-                    src="/images/mini-split.jpg"
-                    alt="Residential ductless mini-split heat pump installation"
+                    src="/247 havc/heat-pump-repair/23788f14-5d4f-4c4f-852b-2023d1705c81.jpg"
+                    alt="HVAC technicians servicing outdoor heat-pump and air conditioning equipment"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 640px) 50vw, 21vw"
@@ -524,8 +382,8 @@ export default function ResidentialHvacPage() {
 
                 <div className="relative h-32 sm:h-36 rounded-2xl overflow-hidden shadow-md border border-slate-200">
                   <Image
-                    src="/images/furnace.jpg"
-                    alt="Residential high-efficiency furnace and heating installation"
+                    src="/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg"
+                    alt="Residential mechanical room and furnace piping installation in Long Island"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 640px) 50vw, 21vw"
@@ -742,63 +600,19 @@ export default function ResidentialHvacPage() {
       {/* ========================================================================= */}
       {/* 5. TESTIMONIALS SECTION */}
       {/* ========================================================================= */}
-      <section id="testimonials" className="py-14 sm:py-20 bg-slate-50 border-t border-b border-slate-200">
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-            <span className="text-xs uppercase tracking-widest font-black text-royal mb-2 block font-heading">
-              Client Feedback
-            </span>
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-navy tracking-tight mb-4 font-heading">
-              Our Client Testimonials
-            </h2>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-xs">
-              <div className="flex items-center gap-1 text-brightYellow">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-brightYellow" />
-                ))}
-              </div>
-              <span className="text-sm font-bold text-navy font-heading">
-                Rating: 5.0 Average (Rated 5 out of 5)
-              </span>
-            </div>
-          </div>
-
-          {/* Testimonials Grid — Exact Content & Reviewer Names */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            {TESTIMONIALS.map((t) => (
-              <div
-                key={t.id}
-                className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1 text-brightYellow">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-brightYellow" />
-                      ))}
-                    </div>
-                    <Quote className="w-7 h-7 text-slate-300" />
-                  </div>
-                  {/* Exact Quote */}
-                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-body italic mb-6">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  {/* Exact Author */}
-                  <span className="font-bold text-navy text-sm font-heading">
-                    {t.author}
-                  </span>
-                  <span className="text-xs font-semibold text-slate-500 font-body">
-                    Verified Customer
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection
+        id="testimonials"
+        badgeText="Client Feedback"
+        heading="Our Client Testimonials"
+        reviews={TESTIMONIALS.map((r: any) => ({
+          id: r.id,
+          name: r.author || r.name,
+          location: r.location || 'Verified Customer',
+          service: r.service,
+          rating: r.rating ?? 5,
+          comment: r.quote || r.comment,
+        }))}
+      />
 
       {/* ========================================================================= */}
       {/* 6. AREAS SECTION */}

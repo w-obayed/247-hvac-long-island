@@ -95,6 +95,10 @@ export default function Navbar({
     setMobileSubmenu((prev) => (prev === name ? null : name));
   };
 
+  const HEADER_SERVICE_AREAS = SERVICE_AREAS_CATEGORIES
+    .filter((area) => area.id !== 'brooklyn' && area.id !== 'manhattan')
+    .map((area) => (area.id === 'suffolk' ? { ...area, locations: [] } : area));
+
   const AREA_DETAILS = {
     nassau: {
       name: 'Nassau County',
@@ -140,13 +144,13 @@ export default function Navbar({
           {/* ========================================================= */}
           {/* 1. LARGE DESKTOP (Above 1280px / xl:): Single Horizontal Row */}
           {/* ========================================================= */}
-          <div className="hidden xl:flex items-center justify-between w-full text-[18px] font-semibold tracking-wide">
+          <div className="hidden xl:flex items-center justify-between w-full text-[15px] 2xl:text-[18px] font-semibold tracking-wide">
             {/* Left Nav items */}
-            <div className="flex items-center space-x-2 2xl:space-x-3">
+            <div className="flex items-center space-x-0.5 2xl:space-x-3 whitespace-nowrap">
               {/* Home */}
               <Link
                 href="/"
-                className={`px-3 py-2 rounded-md hover:text-electric transition-colors relative group ${
+                className={`px-2 2xl:px-3 py-2 rounded-md hover:text-electric transition-colors relative group whitespace-nowrap ${
                   isHomeActive ? 'text-white font-bold' : 'text-slate-100'
                 }`}
               >
@@ -159,7 +163,7 @@ export default function Navbar({
               {/* About */}
               <Link
                 href="/about-us"
-                className={`px-3 py-2 rounded-md hover:text-electric transition-colors relative group ${
+                className={`px-2 2xl:px-3 py-2 rounded-md hover:text-electric transition-colors relative group whitespace-nowrap ${
                   isAboutActive ? 'text-white font-bold' : 'text-slate-100'
                 }`}
               >
@@ -177,7 +181,7 @@ export default function Navbar({
                 <Link
                   href="/heating-services"
                   onClick={() => setActiveDropdown(null)}
-                  className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors relative ${
+                  className={`px-2 2xl:px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors relative whitespace-nowrap ${
                     isHeatingActive
                       ? 'text-white font-bold'
                       : activeDropdown === 'heating'
@@ -261,7 +265,7 @@ export default function Navbar({
                 <Link
                   href="/cooling-services"
                   onClick={() => setActiveDropdown(null)}
-                  className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors relative ${
+                  className={`px-2 2xl:px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors relative whitespace-nowrap ${
                     isCoolingActive
                       ? 'text-white font-bold'
                       : activeDropdown === 'cooling'
@@ -340,7 +344,7 @@ export default function Navbar({
               {/* Residential */}
               <Link
                 href="/residential"
-                className={`px-3 py-2 rounded-md hover:text-electric transition-colors relative group ${
+                className={`px-2 2xl:px-3 py-2 rounded-md hover:text-electric transition-colors relative group whitespace-nowrap ${
                   isResidentialActive ? 'text-white font-bold' : 'text-slate-100'
                 }`}
               >
@@ -353,7 +357,7 @@ export default function Navbar({
               {/* Commercial */}
               <Link
                 href="/commercial"
-                className={`px-3 py-2 rounded-md hover:text-electric transition-colors relative group ${
+                className={`px-2 2xl:px-3 py-2 rounded-md hover:text-electric transition-colors relative group whitespace-nowrap ${
                   isCommercialActive ? 'text-white font-bold' : 'text-slate-100'
                 }`}
               >
@@ -371,7 +375,7 @@ export default function Navbar({
                 <Link
                   href="/service-areas"
                   onClick={() => setActiveDropdown(null)}
-                  className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors relative ${
+                  className={`px-2 2xl:px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors relative whitespace-nowrap ${
                     isAreasActive
                       ? 'text-white font-bold'
                       : activeDropdown === 'areas'
@@ -396,27 +400,9 @@ export default function Navbar({
                     onMouseLeave={() => setActiveDropdown(null)}
                     className="absolute -left-20 top-full mt-1 w-[760px] bg-white rounded-xl shadow-2xl border border-slate-100 p-5 text-slate-800 z-50 animate-fadeIn"
                   >
-                    <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                      <div>
-                        <h4 className="font-bold text-navy text-base font-heading">Service Coverage Areas</h4>
-                        <p className="text-xs text-slate-500 font-body">24/7 radio-dispatched mobile repair units across Long Island & NYC</p>
-                      </div>
-                      <Link
-                        href="/service-areas"
-                        onClick={() => setActiveDropdown(null)}
-                        className={`text-xs font-bold font-heading flex items-center gap-1 px-3 py-1.5 rounded-full ${
-                          pathname === '/service-areas'
-                            ? 'bg-royal text-white'
-                            : 'text-royal bg-royal/10 hover:underline'
-                        }`}
-                      >
-                        <span>All Service Areas Overview &rarr;</span>
-                      </Link>
-                    </div>
-
                     {/* County / Borough Tabs */}
-                    <div className="grid grid-cols-6 gap-1.5 bg-slate-100 p-1.5 rounded-lg mb-4 text-xs font-bold font-heading">
-                      {SERVICE_AREAS_CATEGORIES.map((county) => (
+                    <div className="grid grid-cols-4 gap-1.5 bg-slate-100 p-1.5 rounded-lg mb-4 text-xs font-bold font-heading">
+                      {HEADER_SERVICE_AREAS.map((county) => (
                         <button
                           key={county.id}
                           onClick={() => setActiveAreaTab(county.id)}
@@ -435,7 +421,7 @@ export default function Navbar({
                     {/* Active Tab Content */}
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-100">
                       {(() => {
-                        const current = SERVICE_AREAS_CATEGORIES.find((c) => c.id === activeAreaTab) || SERVICE_AREAS_CATEGORIES[0];
+                        const current = HEADER_SERVICE_AREAS.find((c) => c.id === activeAreaTab) || HEADER_SERVICE_AREAS[0];
                         return (
                           <>
                             <div className="flex items-center justify-between mb-2">
@@ -531,7 +517,7 @@ export default function Navbar({
                 <button
                   onClick={() => toggleDropdown('more')}
                   onMouseEnter={() => setActiveDropdown('more')}
-                  className={`px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors ${
+                  className={`px-2 2xl:px-3 py-2 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors whitespace-nowrap ${
                     activeDropdown === 'more' ? 'text-electric' : 'text-slate-100'
                   }`}
                   aria-expanded={activeDropdown === 'more'}
@@ -596,7 +582,7 @@ export default function Navbar({
               {/* Contact */}
               <Link
                 href="/contact"
-                className={`px-3 py-2 rounded-md hover:text-electric transition-colors relative group ${
+                className={`px-2 2xl:px-3 py-2 rounded-md hover:text-electric transition-colors relative group whitespace-nowrap ${
                   isContactActive ? 'text-white font-bold' : 'text-slate-100'
                 }`}
               >
@@ -607,9 +593,9 @@ export default function Navbar({
               </Link>
             </div>
 
-            {/* Right side emergency prompt */}
-            <div className="flex items-center gap-2 text-xs font-semibold text-slate-300 font-heading">
-              <span className="w-2 h-2 rounded-full bg-brightRed animate-ping" />
+              {/* Right side emergency prompt */}
+            <div className="flex items-center gap-2 text-xs font-semibold text-slate-300 font-heading whitespace-nowrap flex-shrink-0">
+              <span className="w-2 h-2 rounded-full bg-brightRed animate-ping flex-shrink-0" />
               <span className="text-slate-200">24/7 Long Island Dispatch</span>
             </div>
           </div>
@@ -868,21 +854,8 @@ export default function Navbar({
             </div>
             {mobileSubmenu === 'areas' && (
               <div className="pl-4 pr-2 py-2 space-y-2.5 bg-navy-dark/70 rounded-lg my-1">
-                {/* Overview Link */}
-                <Link
-                  href="/service-areas"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`block px-3 py-2 text-sm font-black rounded-md uppercase tracking-wider ${
-                    pathname === '/service-areas'
-                      ? 'text-white bg-royal shadow-sm'
-                      : 'text-electric bg-white/10 hover:bg-white/20'
-                  }`}
-                >
-                  All Service Areas Overview &rarr;
-                </Link>
-
                 {/* 1. Nassau County */}
-                <div className="pt-1 border-t border-white/10">
+                <div className="pt-1">
                   <div className="flex items-center justify-between px-3 py-1">
                     <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
                       Nassau County
@@ -982,39 +955,7 @@ export default function Navbar({
                   </div>
                 </div>
 
-                {/* 4. Brooklyn */}
-                <div className="pt-1 border-t border-white/10">
-                  <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
-                    Brooklyn
-                  </div>
-                  <div className="pl-2 space-y-1">
-                    <Link
-                      href="/service-areas#brooklyn"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
-                    >
-                      Brooklyn 24/7 HVAC Service &rarr;
-                    </Link>
-                  </div>
-                </div>
-
-                {/* 5. Manhattan */}
-                <div className="pt-1 border-t border-white/10">
-                  <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
-                    Manhattan
-                  </div>
-                  <div className="pl-2 space-y-1">
-                    <Link
-                      href="/service-areas#manhattan"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-1 text-xs text-slate-300 hover:text-white"
-                    >
-                      Manhattan 24/7 HVAC Service &rarr;
-                    </Link>
-                  </div>
-                </div>
-
-                {/* 6. Bronx */}
+                {/* 4. Bronx */}
                 <div className="pt-1 border-t border-white/10">
                   <div className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300">
                     Bronx

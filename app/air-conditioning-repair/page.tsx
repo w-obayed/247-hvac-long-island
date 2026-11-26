@@ -31,6 +31,7 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -64,7 +65,7 @@ const AC_SERVICES = [
     description:
       'Central systems can develop issues over time due to wear and tear. We handle central air conditioning repair in Long Island, including thermostat issues, airflow problems, and system failures.',
     icon: Snowflake,
-    image: '/images/air-conditioner.jpg',
+    image: '/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg',
     badge: 'Central Cooling',
   },
   {
@@ -73,7 +74,7 @@ const AC_SERVICES = [
     description:
       'Mini-split systems require proper handling to maintain efficiency. Our team at 247 HVAC of Long Island provides mini-split air conditioning repair on Long Island for issues like poor cooling, sensor faults, and leaks.',
     icon: Layers,
-    image: '/images/mini-split.jpg',
+    image: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
     badge: 'Ductless Multi-Zone',
   },
   {
@@ -82,7 +83,7 @@ const AC_SERVICES = [
     description:
       'When your AC stops working unexpectedly, we offer emergency air conditioning repair in Long Island with fast response and 24/7 availability to restore comfort quickly.',
     icon: Clock,
-    image: '/images/technician-repair.jpg',
+    image: '/247 havc/heat-pump-repair/6085ddc1-72b5-4260-8550-5e08e749e7cc.jpg',
     badge: '24/7 Dispatch',
   },
   {
@@ -91,7 +92,7 @@ const AC_SERVICES = [
     description:
       'We also handle complete HVAC air conditioning repair in Long Island. We make sure every part of your system is working properly for better performance and reliability.',
     icon: Wrench,
-    image: '/images/technician-service.jpg',
+    image: '/247 havc/heat-pump-repair/55f4dfda-dd29-4407-828c-4b37c1f22c20.jpg',
     badge: 'Comprehensive Care',
   },
 ];
@@ -308,7 +309,7 @@ export default function AirConditioningRepairPage() {
       >
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
-            src="/images/ac-repair.jpg"
+            src="/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg"
             alt="Air Conditioning Repair Long Island, NY"
             fill
             priority
@@ -326,9 +327,9 @@ export default function AirConditioningRepairPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
               {/* Emergency Badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
+              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-2xl sm:rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
                 <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">Emergency air conditioning repair in Long Island</span>
+                <span className="leading-snug">Emergency air conditioning repair in Long Island</span>
               </div>
 
               {/* Exact Heading */}
@@ -751,87 +752,17 @@ export default function AirConditioningRepairPage() {
       {/* ==============================================================
           6. TESTIMONIALS SECTION (Our Client Testimonials - All 20 Reviews)
          ============================================================== */}
-      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-            <span className="text-xs uppercase tracking-widest font-black text-royal mb-2 block font-heading">
-              Verified Feedback
-            </span>
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-navy tracking-tight mb-4 font-heading">
-              Our Client Testimonials
-            </h2>
-            {/* Exact Introduction */}
-            <p className="text-base sm:text-lg text-slate-600 font-body leading-relaxed mb-4">
-              Customers across the region rely on us for professional air conditioning repair in Long Island. Our focus on honest work, clear communication, and quality repairs has helped us build long-term trust with homeowners and businesses.
-            </p>
-            {/* Exact Additional Introduction */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-xs">
-              <div className="flex items-center gap-1 text-brightYellow">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-brightYellow" />
-                ))}
-              </div>
-              <span className="text-sm font-bold text-navy font-heading">
-                Rating: 5.0 Average (Rated 5 out of 5)
-              </span>
-            </div>
-          </div>
-
-          {/* Testimonial Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {displayedTestimonials.map((t) => (
-              <div
-                key={t.id}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1 text-brightYellow">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-brightYellow" />
-                      ))}
-                    </div>
-                    <Quote className="w-6 h-6 text-slate-300" />
-                  </div>
-                  {/* Exact Quote */}
-                  <p className="text-sm text-slate-700 leading-relaxed font-body italic mb-5">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  {/* Exact Author */}
-                  <span className="font-bold text-navy text-sm font-heading">
-                    — {t.author}
-                  </span>
-                  <span className="text-[11px] font-semibold text-slate-500 font-body">
-                    Verified Customer
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Testimonial Pagination Controls */}
-          {totalPages > 1 && (
-            <div className="flex items-center justify-center gap-2 font-heading">
-              {Array.from({ length: totalPages }).map((_, pageIdx) => (
-                <button
-                  key={pageIdx}
-                  onClick={() => setActiveTestimonialPage(pageIdx)}
-                  className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-                    activeTestimonialPage === pageIdx
-                      ? 'bg-royal text-white shadow-md'
-                      : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
-                  }`}
-                >
-                  Page {pageIdx + 1}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+      <TestimonialsSection
+        id="testimonials"
+        badgeText="Verified Feedback"
+        heading="Our Client Testimonials"
+        reviews={AC_TESTIMONIALS.map((t) => ({
+          id: t.id,
+          name: `— ${t.author}`,
+          location: 'Verified Customer',
+          comment: t.quote,
+        }))}
+      />
 
       {/* ==============================================================
           7. SERVICE AREAS SECTION (Proudly Serving Long Island, NY...)

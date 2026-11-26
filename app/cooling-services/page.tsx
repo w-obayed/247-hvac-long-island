@@ -35,6 +35,7 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -71,7 +72,7 @@ const COOLING_SERVICES_LIST = [
     icon: Snowflake,
     badge: 'High-Efficiency SEER2',
     href: '/air-conditioners-installation-replacement',
-    image: '/image-website/ac-installation.jpg',
+    image: '/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg',
   },
   {
     id: 'ac-repair',
@@ -81,7 +82,7 @@ const COOLING_SERVICES_LIST = [
     icon: Wrench,
     badge: '24/7 Rapid Diagnostics',
     href: '/air-conditioning-repair',
-    image: '/images/ac-repair.jpg',
+    image: '/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg',
   },
   {
     id: 'mini-splits',
@@ -91,7 +92,7 @@ const COOLING_SERVICES_LIST = [
     icon: Layers,
     badge: 'Ductless Multi-Zone',
     href: '/mini-splits-ductless-heat-pumps-air-conditioners',
-    image: '/images/mini-split.jpg',
+    image: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
   },
 ];
 
@@ -198,7 +199,7 @@ export default function CoolingServicesPage() {
       >
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
-            src="/images/air-conditioner.jpg"
+            src="/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg"
             alt="HVAC Cooling Services in Long Island, NY"
             fill
             priority
@@ -216,9 +217,9 @@ export default function CoolingServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 xl:col-span-8 flex flex-col items-start text-left w-full">
               {/* Supporting Point 3 as Top Badge */}
-              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
+              <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-2xl sm:rounded-full bg-brightRed text-white font-black text-xs uppercase tracking-wider mb-3 sm:mb-4 shadow-lg font-heading max-w-full">
                 <span className="w-2 h-2 rounded-full bg-white animate-ping flex-shrink-0" />
-                <span className="truncate sm:overflow-visible">#1 HVAC Cooling Services in Long Island</span>
+                <span className="leading-snug">#1 HVAC Cooling Services in Long Island</span>
               </div>
 
               {/* Exact Heading */}
@@ -431,7 +432,7 @@ export default function CoolingServicesPage() {
             <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col">
               <div className="relative w-full h-[380px] sm:h-[460px] lg:h-[520px] rounded-2xl overflow-hidden shadow-xl border border-slate-200">
                 <Image
-                  src="/image-website/ac-installation.jpg"
+                  src="/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg"
                   alt="Popular Brands We Do HVAC Cooling Services - High Efficiency AC Installation"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
@@ -570,63 +571,19 @@ export default function CoolingServicesPage() {
       {/* ==============================================================
           5. TESTIMONIALS SECTION (Our Client Testimonials)
          ============================================================== */}
-      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-            <span className="text-xs uppercase tracking-widest font-black text-royal mb-2 block font-heading">
-              Client Feedback
-            </span>
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-navy tracking-tight mb-4 font-heading">
-              Our Client Testimonials
-            </h2>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-xs">
-              <div className="flex items-center gap-1 text-brightYellow">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-brightYellow" />
-                ))}
-              </div>
-              <span className="text-sm font-bold text-navy font-heading">
-                Rating: 5.0 Average (Rated 5 out of 5)
-              </span>
-            </div>
-          </div>
-
-          {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            {COOLING_TESTIMONIALS.map((t) => (
-              <div
-                key={t.id}
-                className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1 text-brightYellow">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-brightYellow" />
-                      ))}
-                    </div>
-                    <Quote className="w-7 h-7 text-slate-300" />
-                  </div>
-                  {/* Exact Quote */}
-                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-body italic mb-6">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  {/* Exact Author */}
-                  <span className="font-bold text-navy text-sm font-heading">
-                    {t.author}
-                  </span>
-                  <span className="text-xs font-semibold text-slate-500 font-body">
-                    {t.location}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection
+        id="testimonials"
+        badgeText="Client Feedback"
+        heading="Our Client Testimonials"
+        reviews={COOLING_TESTIMONIALS.map((r: any) => ({
+          id: r.id,
+          name: r.author || r.name,
+          location: r.location || 'Verified Customer',
+          service: r.service,
+          rating: r.rating ?? 5,
+          comment: r.quote || r.comment,
+        }))}
+      />
 
       {/* ==============================================================
           6. SERVICE AREAS SECTION

@@ -30,6 +30,8 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import PageBanner from '@/components/PageBanner';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -60,7 +62,7 @@ const LYNBROOK_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'ac-install',
     title: 'Air Conditioner Installation & Replacement',
     category: 'cooling',
-    image: '/image-website/ac-installation.jpg',
+    image: '/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg',
     icon: Snowflake,
     href: '/air-conditioners-installation-replacement',
   },
@@ -68,7 +70,7 @@ const LYNBROOK_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'ac-repair',
     title: 'AC Repair & Preventive Maintenance',
     category: 'cooling',
-    image: '/image-website/ac-installation-bd.jpg',
+    image: '/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg',
     icon: Wrench,
     href: '/air-conditioning-repair',
   },
@@ -76,7 +78,7 @@ const LYNBROOK_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'air-duct',
     title: 'Ductwork and Ventilation Cleaning',
     category: 'cooling',
-    image: '/image-website/air-con-installation.jpg',
+    image: '/247 havc/ac-installation/985ad274-26be-4bb1-82d3-8973d451568c.jpg',
     icon: Layers,
     href: '/air-duct-and-ventilation-cleaning-service',
   },
@@ -84,7 +86,7 @@ const LYNBROOK_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'mini-split',
     title: 'Mini Split and Ductless System Services',
     category: 'cooling',
-    image: '/image-website/heat-pump-installation.jpg',
+    image: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
     icon: Snowflake,
     href: '/mini-splits-ductless-heat-pumps-air-conditioners',
   },
@@ -95,7 +97,7 @@ const LYNBROOK_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'furnace',
     title: 'Furnace Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/furnace-installation.jpg',
+    image: '/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg',
     icon: Flame,
     href: '/furnace-installation-repair-replacement',
   },
@@ -103,7 +105,7 @@ const LYNBROOK_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'boiler',
     title: 'Boiler Installation & Repair',
     category: 'heating',
-    image: '/image-website/boiller-installation-repair-e1661179456943.jpg',
+    image: '/247 havc/boiler-water-heater/e4530e79-2715-4272-bc27-de76ee87e960.jpg',
     icon: Droplets,
     href: '/boiler-installation-repair',
   },
@@ -111,7 +113,7 @@ const LYNBROOK_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'water-heater',
     title: 'Water Heater Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/water-heater-installation.jpg',
+    image: '/247 havc/boiler-water-heater/278da669-a5fc-4950-8e6f-8bd0a60a9768.jpg',
     icon: Droplets,
     href: '/water-heater-installation-repair-replacement',
   },
@@ -119,7 +121,7 @@ const LYNBROOK_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'chimney',
     title: 'Chimney Sweep Service',
     category: 'heating',
-    image: '/images/furnace-unit.jpg',
+    image: '/247 havc/heating-and-controls/d1b426fa-9ec5-45af-9feb-ba543d98c780.jpg',
     icon: Flame,
     href: '/chimney-sweep',
   },
@@ -310,75 +312,20 @@ export default function LynbrookLocationPage() {
       {/* ========================================================================= */}
       {/* 1. BANNER SECTION */}
       {/* ========================================================================= */}
-      <section className="relative min-h-[500px] lg:min-h-[560px] flex items-center bg-gradient-to-br from-[#061A40] via-[#0E2452] to-[#004B99] text-white overflow-hidden py-16 sm:py-20">
-        <div
-          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-25"
-          style={{ backgroundImage: `url('/image-website/ac-installation.jpg')` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40]/95 via-[#061A40]/80 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
-
-        <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 z-10">
-          <div className="max-w-3xl">
-            {/* Location Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-electric text-xs sm:text-sm font-bold uppercase tracking-wider mb-5 border border-white/15 font-heading">
-              <MapPin className="w-4 h-4 text-brightRed flex-shrink-0" />
-              <span>Lynbrook, NY • 24/7 Mobile Service Hub</span>
-            </div>
-
-            {/* Exact Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6 font-heading">
-              Professional HVAC Company in Lynbrook, NY
-            </h1>
-
-            {/* Exact Paragraph */}
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed mb-6 font-body">
-              247 HVAC of Long Island provides dependable HVAC services in Lynbrook, NY, for repairs, maintenance, installations, and replacement guidance. As a trusted HVAC company in Lynbrook, NY, we focus on clear communication, reliable system care, and solutions that help keep your home or business comfortable year-round.
-            </p>
-
-            {/* Exact Bullets */}
-            <div className="space-y-3 mb-8">
-              <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-brightYellow flex-shrink-0" />
-                <span className="text-base sm:text-lg font-bold text-white font-heading">
-                  Emergency heating and cooling support when comfort cannot wait
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-electric flex-shrink-0" />
-                <span className="text-base sm:text-lg font-bold text-slate-100 font-heading">
-                  Reliable repair, maintenance, installation, and replacement service
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="w-5 h-5 text-hvacGreen flex-shrink-0" />
-                <span className="text-base sm:text-lg font-bold text-slate-100 font-heading">
-                  Local help for residential and commercial HVAC needs in Lynbrook
-                </span>
-              </div>
-            </div>
-
-            {/* Exact CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2 font-heading">
-              <a
-                href={PHONE_TEL}
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-sm sm:text-base shadow-xl active:scale-95 transition-all font-heading uppercase tracking-wide"
-              >
-                <Phone className="w-5 h-5 text-brightRed" />
-                <span>Call Us Now</span>
-              </a>
-
-              <button
-                onClick={() => setIsQuoteOpen(true)}
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-royal hover:bg-royal-hover text-white font-extrabold text-sm sm:text-base shadow-xl border border-white/20 active:scale-95 transition-all font-heading uppercase tracking-wide"
-              >
-                <FileText className="w-5 h-5" />
-                <span>Get A Free Quote</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageBanner
+        id="banner"
+        badgeText="Lynbrook, NY • 24/7 Mobile Service Hub"
+        title="Professional HVAC Company in Lynbrook, NY"
+        bullets={[
+          { text: "Emergency heating and cooling support when comfort cannot wait", icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-brightYellow flex-shrink-0" /> },
+          { text: "Reliable repair, maintenance, installation, and replacement service", icon: <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-electric flex-shrink-0" /> },
+          { text: "Local help for residential and commercial HVAC needs in Lynbrook", icon: <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-brightYellow flex-shrink-0" /> },
+        ]}
+        showCallButton
+        callButtonLabel="Call Us Now"
+        onOpenQuote={() => setIsQuoteOpen(true)}
+        quoteButtonLabel="Get A Free Quote"
+      />
 
       {/* ========================================================================= */}
       {/* 2. INTRO SECTION */}
@@ -426,7 +373,7 @@ export default function LynbrookLocationPage() {
             <div className="lg:col-span-5">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 aspect-[4/3] lg:aspect-[5/4]">
                 <Image
-                  src="/image-website/ac-installation.jpg"
+                  src="/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg"
                   alt="HVAC Company in Lynbrook, NY"
                   fill
                   className="object-cover"
@@ -688,69 +635,19 @@ export default function LynbrookLocationPage() {
       {/* ========================================================================= */}
       {/* 5. TESTIMONIALS SECTION (ALL 20 TESTIMONIALS) */}
       {/* ========================================================================= */}
-      <section id="testimonials" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-slate-50 text-slate-800 border-t border-slate-200/80">
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brightYellow/20 text-navy text-xs font-black uppercase tracking-wider mb-3 font-heading">
-              <Star className="w-4 h-4 fill-brightYellow text-brightYellow" />
-              <span>Rating: 5.0 Average (Rated 5 out of 5)</span>
-            </div>
-
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight font-heading mb-4">
-              Real Feedback From Local Heating and Cooling Customers
-            </h2>
-
-            {/* Exact Paragraph 1 */}
-            <p className="text-base sm:text-lg text-slate-600 font-body mb-3">
-              Customers want an HVAC team that arrives prepared, communicates clearly, and treats the property with respect. 247 HVAC of Long Island works hard to make each service visit simple, professional, and helpful from the first call to the final system check.
-            </p>
-
-            {/* Exact Paragraph 2 */}
-            <p className="text-base sm:text-lg text-slate-600 font-body">
-              Homeowners and businesses choose our HVAC company in Lynbrook, NY, because we listen to their concerns, explain the work clearly, and provide heating and cooling solutions that support better comfort and dependable performance. Whether you need HVAC services in North New Hyde Park, NY or HVAC services in North Woodmere, NY, our team is ready to help with reliable service and clear guidance.
-            </p>
-          </div>
-
-          {/* Grid of 20 Testimonials */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {LYNBROOK_TESTIMONIALS.map((review) => (
-              <div
-                key={review.id}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm flex flex-col justify-between hover:shadow-lg transition-shadow relative"
-              >
-                <Quote className="w-8 h-8 text-royal/15 absolute top-5 right-5 pointer-events-none" />
-
-                <div className="mb-4 relative z-10">
-                  <div className="flex items-center gap-1 text-brightYellow mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-brightYellow" />
-                    ))}
-                  </div>
-
-                  {/* Exact Review Text */}
-                  <p className="text-slate-700 italic font-body text-sm leading-relaxed">
-                    &ldquo;{review.quote}&rdquo;
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                  <div>
-                    {/* Exact Reviewer Name */}
-                    <h4 className="font-extrabold text-navy font-heading text-sm">
-                      {review.author}
-                    </h4>
-                    <span className="text-xs text-slate-400 font-body">Verified Review</span>
-                  </div>
-                  <div className="w-7 h-7 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-xs font-bold text-royal font-heading shadow-sm">
-                    ★
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection
+        id="testimonials"
+        badgeText="Rating: 5.0 Average (Rated 5 out of 5)"
+        heading="Real Feedback From Local Heating and Cooling Customers"
+        reviews={LYNBROOK_TESTIMONIALS.map((r: any) => ({
+          id: r.id,
+          name: r.author || r.name,
+          location: r.location || 'Verified Customer',
+          service: r.service,
+          rating: r.rating ?? 5,
+          comment: r.quote || r.comment,
+        }))}
+      />
 
       {/* ========================================================================= */}
       {/* 6. COMMON ISSUES SECTION */}

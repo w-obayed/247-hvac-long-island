@@ -80,57 +80,57 @@ export default function ServiceAreasPage() {
   // Curated work gallery
   const GALLERY_IMAGES = [
     {
-      src: '/images/hero-hvac.jpg',
+      src: '/247 havc/heat-pump-repair/23788f14-5d4f-4c4f-852b-2023d1705c81.jpg',
       alt: 'Outdoor HVAC Condenser and Heat Pump System in Long Island',
       title: 'High-Efficiency Dual AC & Heat Pump',
       category: 'Cooling Installation',
       location: 'Nassau County, NY',
     },
     {
-      src: '/images/technician-service.jpg',
+      src: '/247 havc/heat-pump-repair/55f4dfda-dd29-4407-828c-4b37c1f22c20.jpg',
       alt: 'Licensed HVAC technician inspecting electrical and control circuits',
       title: 'Precision Diagnostics & Electrical Testing',
       category: 'Diagnostic Service',
       location: 'Queens, NY',
     },
     {
-      src: '/images/boiler.jpg',
-      alt: 'Modern residential high-efficiency hydronic boiler installation',
+      src: '/247 havc/boiler-water-heater/ec2663e6-2ab5-443f-a29e-ccf132cad99c.jpg',
+      alt: 'Boiler and mechanical piping installation in a Suffolk County mechanical room',
       title: 'High-Efficiency Hydronic Boiler System',
       category: 'Heating Installation',
       location: 'Suffolk County, NY',
     },
     {
-      src: '/images/technician-repair.jpg',
-      alt: '24/7 HVAC technician troubleshooting rooftop and outdoor condenser',
+      src: '/247 havc/heat-pump-repair/6085ddc1-72b5-4260-8550-5e08e749e7cc.jpg',
+      alt: '247 HVAC technicians servicing outdoor heat-pump and condenser equipment',
       title: 'Emergency Condenser Motor Repair',
       category: 'Emergency Repair',
       location: 'Brooklyn, NY',
     },
     {
-      src: '/images/mini-split.jpg',
+      src: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
       alt: 'Multi-zone ductless mini split heat pump indoor unit mounted neatly on wall',
       title: 'Multi-Zone Ductless Mini-Split System',
       category: 'Ductless Heat Pumps',
       location: 'Baldwin, NY',
     },
     {
-      src: '/images/furnace.jpg',
-      alt: 'Energy-efficient gas furnace installation with custom sheet metal ductwork',
+      src: '/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg',
+      alt: 'High-efficiency gas furnace and mechanical room piping installation in Manhattan',
       title: 'Modulating Gas Furnace Replacement',
       category: 'Furnace Services',
       location: 'Manhattan, NY',
     },
     {
-      src: '/image-website/ac-installation-bd.jpg',
-      alt: 'Dual residential outdoor condenser installation with safety disconnects',
+      src: '/247 havc/ac-installation/985ad274-26be-4bb1-82d3-8973d451568c.jpg',
+      alt: 'Outdoor central air conditioner condenser unit installed in Garden City, NY',
       title: 'Central Air Conditioner Dual Condenser Unit',
       category: 'Central Air Conditioning',
       location: 'Garden City, NY',
     },
     {
-      src: '/images/water-heater.jpg',
-      alt: 'Professional water heater replacement with expansion tank and pressure valve',
+      src: '/247 havc/boiler-water-heater/caeec357-8b06-4b52-bc29-4e69484c3882.jpg',
+      alt: 'Boiler and water-heating equipment with copper piping in a Rockville Centre mechanical room',
       title: 'Rapid-Recovery Commercial & Home Water Heater',
       category: 'Water Heating',
       location: 'Rockville Centre, NY',
@@ -160,12 +160,12 @@ export default function ServiceAreasPage() {
          ============================================================== */}
       <section
         id="home"
-        className="relative bg-[#061A40] text-white overflow-hidden py-10 sm:py-14 md:py-18 lg:py-20"
+        className="relative bg-[#061A40] text-white overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20"
       >
         {/* Background Hero Image */}
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
-            src="/images/hero-hvac.jpg"
+            src="/247 havc/heat-pump-repair/23788f14-5d4f-4c4f-852b-2023d1705c81.jpg"
             alt="247 HVAC of Long Island Service Areas and Mobile Dispatch Network"
             fill
             priority
@@ -192,7 +192,7 @@ export default function ServiceAreasPage() {
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] mb-3 sm:mb-4 text-white font-heading">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] sm:leading-[1.12] mb-3.5 sm:mb-5 text-white font-heading">
                 Service <span className="text-[#00BFFF] drop-shadow-sm">Areas</span>
               </h1>
 
@@ -459,15 +459,15 @@ export default function ServiceAreasPage() {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                <div className="grid grid-cols-1 min-[440px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                   {NASSAU_COUNTY_LOCATIONS.map((loc) =>
                     loc.isAvailable && loc.href ? (
                       <Link
                         key={loc.name}
                         href={loc.href}
-                        className="p-3 rounded-xl bg-royal text-white font-bold text-sm font-heading shadow-md hover:bg-royal-hover transition-all flex items-center justify-between group"
+                        className="p-3 rounded-xl bg-royal text-white font-bold text-sm font-heading shadow-md hover:bg-royal-hover transition-all flex items-center justify-between gap-2 group"
                       >
-                        <span className="truncate">★ {loc.name}</span>
+                        <span className="leading-snug">★ {loc.name}</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                       </Link>
                     ) : (
@@ -544,15 +544,15 @@ export default function ServiceAreasPage() {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-1 min-[440px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                   {QUEENS_LOCATIONS.map((loc) =>
                     loc.isAvailable && loc.href ? (
                       <Link
                         key={loc.name}
                         href={loc.href}
-                        className="p-3 rounded-xl bg-royal text-white font-bold text-sm font-heading shadow-md hover:bg-royal-hover transition-all flex items-center justify-between group"
+                        className="p-3 rounded-xl bg-royal text-white font-bold text-sm font-heading shadow-md hover:bg-royal-hover transition-all flex items-center justify-between gap-2 group"
                       >
-                        <span className="truncate">★ {loc.name}</span>
+                        <span className="leading-snug">★ {loc.name}</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                       </Link>
                     ) : (
@@ -883,8 +883,8 @@ export default function ServiceAreasPage() {
                 {/* Panel Image & Banner */}
                 <div className="relative h-60 sm:h-72 w-full overflow-hidden">
                   <Image
-                    src="/images/air-conditioner.jpg"
-                    alt="HVAC Cooling Services - Air Conditioners & Mini Splits"
+                    src="/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg"
+                    alt="Outdoor air conditioning condenser unit installed for residential Long Island cooling"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -995,8 +995,8 @@ export default function ServiceAreasPage() {
                 {/* Panel Image & Banner */}
                 <div className="relative h-60 sm:h-72 w-full overflow-hidden">
                   <Image
-                    src="/image-website/furnace-installation.jpg"
-                    alt="HVAC Heating Services - Furnaces & Boilers"
+                    src="/247 havc/heating-and-controls/d1b426fa-9ec5-45af-9feb-ba543d98c780.jpg"
+                    alt="Heating system piping installation and hydronic mechanical room in Long Island"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 1024px) 100vw, 50vw"

@@ -25,6 +25,8 @@ import {
 import ManufacturerStrip from '@/components/ManufacturerStrip';
 import MainHeader from '@/components/MainHeader';
 import Navbar from '@/components/Navbar';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import PageBanner from '@/components/PageBanner';
 import Footer from '@/components/Footer';
 import FloatingActionBar from '@/components/FloatingActionBar';
 
@@ -55,7 +57,7 @@ const WEST_HEMPSTEAD_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'ac-install',
     title: 'Air Conditioners Installation & Replacement',
     category: 'cooling',
-    image: '/image-website/ac-installation.jpg',
+    image: '/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg',
     icon: Snowflake,
     href: '/air-conditioners-installation-replacement',
   },
@@ -63,7 +65,7 @@ const WEST_HEMPSTEAD_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'ac-repair',
     title: 'Air Conditioners Repairs & Maintenance',
     category: 'cooling',
-    image: '/image-website/ac-installation-bd.jpg',
+    image: '/247 havc/heat-pump-repair/0534fe6f-9e80-4a28-b54a-52e0613d1633.jpg',
     icon: Wrench,
     href: '/air-conditioning-repair',
   },
@@ -71,7 +73,7 @@ const WEST_HEMPSTEAD_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'air-duct',
     title: 'Air Duct and Ventilation Cleaning Service',
     category: 'cooling',
-    image: '/image-website/air-con-installation.jpg',
+    image: '/247 havc/ac-installation/985ad274-26be-4bb1-82d3-8973d451568c.jpg',
     icon: Layers,
     href: '/air-duct-and-ventilation-cleaning-service',
   },
@@ -79,7 +81,7 @@ const WEST_HEMPSTEAD_COOLING_SERVICES: LocationServiceCard[] = [
     id: 'mini-split',
     title: 'Mini Splits – Ductless Heat Pumps and Air Conditioners',
     category: 'cooling',
-    image: '/image-website/heat-pump-installation.jpg',
+    image: '/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg',
     icon: Snowflake,
     href: '/mini-splits-ductless-heat-pumps-air-conditioners',
   },
@@ -90,7 +92,7 @@ const WEST_HEMPSTEAD_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'furnace',
     title: 'Furnace Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/furnace-installation.jpg',
+    image: '/247 havc/heating-and-controls/9c5c6fb1-1cf9-428f-b13b-40cdb76bc5fe.jpg',
     icon: Flame,
     href: '/furnace-installation-repair-replacement',
   },
@@ -98,7 +100,7 @@ const WEST_HEMPSTEAD_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'boiler',
     title: 'Boiler Installation & Repair',
     category: 'heating',
-    image: '/image-website/boiller-installation-repair-e1661179456943.jpg',
+    image: '/247 havc/boiler-water-heater/e4530e79-2715-4272-bc27-de76ee87e960.jpg',
     icon: Droplets,
     href: '/boiler-installation-repair',
   },
@@ -106,7 +108,7 @@ const WEST_HEMPSTEAD_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'water-heater',
     title: 'Water Heater Installation, Repair & Replacement',
     category: 'heating',
-    image: '/image-website/water-heater-installation.jpg',
+    image: '/247 havc/boiler-water-heater/278da669-a5fc-4950-8e6f-8bd0a60a9768.jpg',
     icon: Droplets,
     href: '/water-heater-installation-repair-replacement',
   },
@@ -114,7 +116,7 @@ const WEST_HEMPSTEAD_HEATING_SERVICES: LocationServiceCard[] = [
     id: 'chimney',
     title: 'Chimney Sweep',
     category: 'heating',
-    image: '/images/furnace-unit.jpg',
+    image: '/247 havc/heating-and-controls/d1b426fa-9ec5-45af-9feb-ba543d98c780.jpg',
     icon: Flame,
     href: '/chimney-sweep',
   },
@@ -205,121 +207,20 @@ export default function WestHempsteadLocationPage() {
       {/* ========================================================================= */}
       {/* 1. HERO BANNER SECTION */}
       {/* ========================================================================= */}
-      <section className="relative bg-gradient-to-br from-[#061A40] via-[#0E2452] to-[#0066CC] text-white py-16 sm:py-20 lg:py-28 overflow-hidden">
-        {/* Background Decorative elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-royal/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-brightRed/20 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white text-xs sm:text-sm font-semibold tracking-wide">
-                <NassauSeal className="w-5 h-5 text-brightYellow" />
-                <span>Nassau County Licensed & Insured HVAC Team</span>
-              </div>
-
-              {/* Exact Location Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] font-heading">
-                West Hempstead
-              </h1>
-
-              {/* Exact Bullets from Source Text */}
-              <div className="space-y-3 pt-2">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen shrink-0 mt-0.5" />
-                  <span className="text-base sm:text-lg text-slate-100 font-medium">
-                    Our Professional &amp; Reliable Technicians Service This Area
-                  </span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen shrink-0 mt-0.5" />
-                  <span className="text-base sm:text-lg text-slate-100 font-medium">
-                    24 Hours Emergency Service Available
-                  </span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-hvacGreen shrink-0 mt-0.5" />
-                  <span className="text-base sm:text-lg text-slate-100 font-medium">
-                    #1 HVAC Services in West Hempstead
-                  </span>
-                </div>
-              </div>
-
-              {/* CTAs */}
-              <div className="pt-4 flex flex-wrap gap-4 items-center">
-                <a
-                  href={`tel:${PHONE_TEL}`}
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-brightRed hover:bg-brightRed-hover text-white text-base sm:text-lg font-bold shadow-lg shadow-brightRed/30 hover:shadow-brightRed/50 transition-all font-heading"
-                >
-                  <Phone className="w-5 h-5" />
-                  <span>Call Us Now</span>
-                </a>
-
-                <button
-                  onClick={() => setIsQuoteOpen(true)}
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy text-base sm:text-lg font-black shadow-lg shadow-brightYellow/20 hover:shadow-brightYellow/40 transition-all font-heading"
-                >
-                  <FileText className="w-5 h-5" />
-                  <span>Get A Free Quote</span>
-                </button>
-              </div>
-
-              <div className="pt-2 flex items-center gap-6 text-xs sm:text-sm text-slate-300">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-electric" />
-                  <span>24/7 Rapid Response</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-hvacGreen" />
-                  <span>100% Satisfaction Guaranteed</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Card / Visual */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md p-6 sm:p-8">
-                <div className="relative h-64 sm:h-72 w-full rounded-xl overflow-hidden mb-6">
-                  <Image
-                    src="/image-website/heating-system-installation.jpg"
-                    alt="HVAC Services in West Hempstead NY"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 400px"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-xs uppercase tracking-wider text-brightYellow font-bold font-heading">
-                      Long Island Service Area
-                    </p>
-                    <p className="text-xl font-bold text-white font-heading">West Hempstead, NY</p>
-                  </div>
-                </div>
-
-                <div className="bg-white/10 rounded-xl p-4 border border-white/10 space-y-2 text-sm">
-                  <div className="flex items-center justify-between text-slate-200">
-                    <span>Emergency Service:</span>
-                    <span className="font-bold text-hvacGreen">24/7 Available</span>
-                  </div>
-                  <div className="flex items-center justify-between text-slate-200">
-                    <span>Phone:</span>
-                    <a href={`tel:${PHONE_TEL}`} className="font-bold text-white hover:underline">
-                      {PHONE_NUMBER}
-                    </a>
-                  </div>
-                  <div className="flex items-center justify-between text-slate-200">
-                    <span>Coverage:</span>
-                    <span className="font-bold text-white">Nassau County</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageBanner
+        id="banner"
+        badgeText="Nassau County Licensed & Insured HVAC Team"
+        title="West Hempstead"
+        bullets={[
+          { text: 'Our Professional & Reliable Technicians Service This Area', icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+          { text: '24 Hours Emergency Service Available', icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+          { text: '#1 HVAC Services in West Hempstead', icon: <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-hvacGreen flex-shrink-0" /> },
+        ]}
+        showCallButton
+        callButtonLabel="Call Us Now"
+        onOpenQuote={() => setIsQuoteOpen(true)}
+        quoteButtonLabel="Get A Free Quote"
+      />
 
       {/* ========================================================================= */}
       {/* 2. ABOUT SECTION */}
@@ -332,7 +233,7 @@ export default function WestHempsteadLocationPage() {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
                   <Image
-                    src="/image-website/furnace-repair.jpg"
+                    src="/247 havc/heating-and-controls/b6b2e363-be7c-4237-826d-42fa15ed795d.jpg"
                     alt="HVAC Technicians Serving West Hempstead"
                     fill
                     className="object-cover"
@@ -536,59 +437,19 @@ export default function WestHempsteadLocationPage() {
       {/* ========================================================================= */}
       {/* 4. TESTIMONIALS SECTION */}
       {/* ========================================================================= */}
-      <section id="testimonials" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white text-slate-800">
-        <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brightYellow/20 text-navy text-xs font-black uppercase tracking-wider mb-3 font-heading">
-              <Star className="w-4 h-4 fill-brightYellow text-brightYellow" />
-              <span>Verified Customer Reviews</span>
-            </div>
-
-            {/* Exact Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy tracking-tight font-heading">
-              Reviews From West Hempstead Clients
-            </h2>
-            <p className="text-base text-slate-600 mt-3 font-body">
-              Read real feedback from West Hempstead homeowners and business owners who rely on our prompt 24/7 HVAC services.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {WEST_HEMPSTEAD_TESTIMONIALS.map((review) => (
-              <div
-                key={review.id}
-                className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between hover:shadow-lg transition-shadow relative"
-              >
-                <Quote className="w-10 h-10 text-royal/15 absolute top-6 right-6 pointer-events-none" />
-
-                <div className="mb-6 relative z-10">
-                  <div className="flex items-center gap-1 text-brightYellow mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-slate-700 italic text-sm sm:text-base leading-relaxed font-body">
-                    &ldquo;{review.quote}&rdquo;
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
-                  <div>
-                    <h4 className="font-extrabold text-navy text-base font-heading">
-                      {review.author}
-                    </h4>
-                    <p className="text-xs text-slate-500 font-heading">{review.location}</p>
-                  </div>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-hvacGreen bg-hvacGreen/10 px-2 py-0.5 rounded-full">
-                    <CheckCircle2 className="w-3 h-3" />
-                    Verified
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection
+        id="testimonials"
+        badgeText="Verified Customer Reviews"
+        heading="Reviews From West Hempstead Clients"
+        reviews={WEST_HEMPSTEAD_TESTIMONIALS.map((r: any) => ({
+          id: r.id,
+          name: r.author || r.name,
+          location: r.location || 'Verified Customer',
+          service: r.service,
+          rating: r.rating ?? 5,
+          comment: r.quote || r.comment,
+        }))}
+      />
 
       {/* ========================================================================= */}
       {/* 5. LOCATION MAP SECTION */}
