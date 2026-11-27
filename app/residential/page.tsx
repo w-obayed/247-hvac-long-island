@@ -344,7 +344,7 @@ export default function ResidentialHvacPage() {
                 </div>
 
                 {/* Badge Overlay */}
-                <div className="absolute top-4 left-4 bg-[#061A40]/90 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl border border-white/20 shadow-lg flex items-center gap-2 font-heading">
+                <div className="absolute top-4 left-4 bg-[#003399]/90 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl border border-white/20 shadow-lg flex items-center gap-2 font-heading">
                   <Award className="w-4 h-4 text-brightYellow flex-shrink-0" />
                   <span className="font-bold text-xs uppercase tracking-wider">Certified Technicians</span>
                 </div>
@@ -707,7 +707,7 @@ export default function ResidentialHvacPage() {
                       src={brand.image}
                       alt={`${brand.name} Residential HVAC Long Island`}
                       fill
-                      className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="object-contain object-center transition-all duration-300"
                     />
                   </div>
                 ) : (
@@ -722,7 +722,7 @@ export default function ResidentialHvacPage() {
             ))}
           </div>
 
-          <div className="max-w-3xl mx-auto text-center bg-blue-50/80 border border-blue-100 rounded-xl p-4 sm:p-5">
+          <div className="max-w-3xl mx-auto text-center bg-[#EAF4FF]/80 border border-blue-100 rounded-xl p-4 sm:p-5">
             <p className="text-sm sm:text-base text-slate-700 font-medium font-body">
               No matter what brand of residential heating or cooling system is in your home, our technicians provide guaranteed diagnostics and workmanship.
             </p>
@@ -733,7 +733,7 @@ export default function ResidentialHvacPage() {
       {/* ========================================================================= */}
       {/* 8. CTA SECTION */}
       {/* ========================================================================= */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-[#061A40] via-[#0E2452] to-[#0066CC] text-white relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-[#003399] via-[#0055E7] to-[#006BFF] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-brightRed/20 rounded-full blur-3xl pointer-events-none" />
 

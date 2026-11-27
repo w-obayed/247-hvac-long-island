@@ -336,7 +336,7 @@ export default function CommercialHvacPage() {
                 <div className="relative h-72 sm:h-80 md:h-[340px] lg:h-[380px] w-full">
                   <Image
                     src="/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg"
-                    alt="Commercial rooftop HVAC system installation and repair in Long Island"
+                    alt="Two 247 HVAC technicians servicing an outdoor side-discharge heat pump unit"
                     fill
                     priority
                     className="object-cover object-center hover:scale-105 transition-transform duration-700"
@@ -346,7 +346,7 @@ export default function CommercialHvacPage() {
                 </div>
 
                 {/* Badge Overlay */}
-                <div className="absolute top-4 left-4 bg-[#061A40]/90 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl border border-white/20 shadow-lg flex items-center gap-2 font-heading">
+                <div className="absolute top-4 left-4 bg-[#003399]/90 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl border border-white/20 shadow-lg flex items-center gap-2 font-heading">
                   <Award className="w-4 h-4 text-brightYellow flex-shrink-0" />
                   <span className="font-bold text-xs uppercase tracking-wider">Industrial Certified</span>
                 </div>
@@ -385,7 +385,7 @@ export default function CommercialHvacPage() {
                 <div className="relative h-32 sm:h-36 rounded-2xl overflow-hidden shadow-md border border-slate-200">
                   <Image
                     src="/247 havc/ac-installation/d15da339-7a3d-483e-97b4-ddcf34115191.jpg"
-                    alt="Commercial air cooled condensers and rooftop packaged units"
+                    alt="Bosch outdoor air conditioning condenser unit installed on a raised composite pad"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 640px) 50vw, 21vw"
@@ -502,7 +502,7 @@ export default function CommercialHvacPage() {
                       src={brand.image}
                       alt={`${brand.name} Commercial HVAC Long Island`}
                       fill
-                      className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="object-contain object-center transition-all duration-300"
                     />
                   </div>
                 ) : (
@@ -517,7 +517,7 @@ export default function CommercialHvacPage() {
             ))}
           </div>
 
-          <div className="max-w-3xl mx-auto text-center bg-blue-50/80 border border-blue-100 rounded-xl p-4 sm:p-5">
+          <div className="max-w-3xl mx-auto text-center bg-[#EAF4FF]/80 border border-blue-100 rounded-xl p-4 sm:p-5">
             <p className="text-sm sm:text-base text-slate-700 font-medium font-body">
               Regardless of the system manufacturer or tonnage, our technicians provide complete diagnostics, parts replacement, and ongoing commercial maintenance.
             </p>
@@ -665,7 +665,7 @@ export default function CommercialHvacPage() {
       {/* ========================================================================= */}
       {/* 8. CTA SECTION */}
       {/* ========================================================================= */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-[#061A40] via-[#0E2452] to-[#0066CC] text-white relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-[#003399] via-[#0055E7] to-[#006BFF] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-brightRed/20 rounded-full blur-3xl pointer-events-none" />
 

@@ -142,23 +142,23 @@ export default function ChimneySweepPage() {
          ============================================================== */}
       <section
         id="hero-banner"
-        className="relative bg-[#061A40] text-white overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20"
+        className="relative bg-[#0055E7] text-white overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20"
       >
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
             src="/247 havc/heating-and-controls/d1b426fa-9ec5-45af-9feb-ba543d98c780.jpg"
-            alt="Chimney Sweep in Long Island"
+            alt=""
             fill
             priority
             className="object-cover object-center lg:object-right"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/60 sm:via-[#061A40]/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#061A40] sm:from-[#061A40]/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0055E7] via-[#0055E7]/60 sm:via-[#0055E7]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0055E7] sm:from-[#0055E7]/80 via-transparent to-transparent" />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/90 sm:via-[#061A40]/80 via-50% to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#0066CC_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0055E7] via-[#0055E7]/90 sm:via-[#0055E7]/80 via-50% to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#006BFF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none z-10" />
 
         <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 z-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -200,7 +200,7 @@ export default function ChimneySweepPage() {
               <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3.5 w-full sm:w-auto mb-6 sm:mb-8 font-heading">
                 <a
                   href={PHONE_TEL}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg bg-white text-[#061A40] font-black text-sm sm:text-base shadow-xl hover:bg-slate-100 active:scale-95 transition-all duration-200 uppercase tracking-wider min-h-[44px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg bg-white text-[#003399] font-black text-sm sm:text-base shadow-xl hover:bg-slate-100 active:scale-95 transition-all duration-200 uppercase tracking-wider min-h-[44px]"
                 >
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brightRed flex-shrink-0" />
                   <span>Call Us Now</span>
@@ -208,7 +208,7 @@ export default function ChimneySweepPage() {
 
                 <button
                   onClick={() => setIsQuoteOpen(true)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg bg-[#0066CC] text-white font-black text-sm sm:text-base shadow-xl hover:bg-[#0052A3] active:scale-95 transition-all duration-200 uppercase tracking-wider min-h-[44px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg bg-[#006BFF] text-white font-black text-sm sm:text-base shadow-xl hover:bg-[#0055E7] active:scale-95 transition-all duration-200 uppercase tracking-wider min-h-[44px]"
                 >
                   <FileText className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                   <span>Get A Free Quote</span>
@@ -264,7 +264,7 @@ export default function ChimneySweepPage() {
                 <div className="bg-white/10 rounded-xl p-4 border border-white/10 flex items-center justify-between">
                   <div>
                     <p className="text-[11px] uppercase font-bold text-slate-300 font-heading">Direct Scheduling Line</p>
-                    <a href={PHONE_TEL} className="text-xl font-black text-brightYellow hover:underline font-heading">
+                    <a href={PHONE_TEL} className="text-2xl xl:text-3xl font-black text-brightYellow hover:underline font-heading leading-tight whitespace-nowrap">
                       {PHONE_NUMBER}
                     </a>
                   </div>
@@ -519,7 +519,7 @@ export default function ChimneySweepPage() {
       {/* ==============================================================
           6. CTA SECTION
          ============================================================== */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-[#061A40] via-[#0E2452] to-[#0066CC] text-white relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-[#003399] via-[#0055E7] to-[#006BFF] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-brightRed/20 rounded-full blur-3xl pointer-events-none" />
 

@@ -135,7 +135,7 @@ export default function Navbar({
   return (
     <nav
       ref={navRef}
-      className={`w-full bg-[#061A40] text-white sticky top-0 z-50 transition-all duration-300 ${
+      className={`w-full bg-[#003399] text-white sticky top-0 z-50 transition-all duration-300 ${
         isScrolled ? 'shadow-xl border-b border-royal/40 py-0.5' : 'border-b border-navy-light'
       }`}
     >
@@ -625,7 +625,7 @@ export default function Navbar({
       {/* 3. RESPONSIVE DROPDOWN PANEL (Below 1280px) */}
       {/* ========================================================= */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#061A40] border-t border-navy-light px-4 sm:px-6 py-4 space-y-2 max-h-[85vh] overflow-y-auto overflow-x-hidden font-heading animate-fadeIn shadow-2xl">
+        <div className="xl:hidden bg-[#003399] border-t border-navy-light px-4 sm:px-6 py-4 space-y-2 max-h-[85vh] overflow-y-auto overflow-x-hidden font-heading animate-fadeIn shadow-2xl">
           {/* Home */}
           <Link
             href="/"

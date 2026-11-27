@@ -160,26 +160,26 @@ export default function ServiceAreasPage() {
          ============================================================== */}
       <section
         id="home"
-        className="relative bg-[#061A40] text-white overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20"
+        className="relative bg-[#0055E7] text-white overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20"
       >
         {/* Background Hero Image */}
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-2/3 h-full z-0 opacity-60 sm:opacity-75 lg:opacity-85 overflow-hidden pointer-events-none">
           <Image
             src="/247 havc/heat-pump-repair/23788f14-5d4f-4c4f-852b-2023d1705c81.jpg"
-            alt="247 HVAC of Long Island Service Areas and Mobile Dispatch Network"
+            alt=""
             fill
             priority
             className="object-cover object-center lg:object-right"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
           />
           {/* Soft edge blend into brand navy background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/60 sm:via-[#061A40]/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#061A40] sm:from-[#061A40]/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0055E7] via-[#0055E7]/60 sm:via-[#0055E7]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0055E7] sm:from-[#0055E7]/80 via-transparent to-transparent" />
         </div>
 
         {/* Background Gradient & Radial Dot Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40] via-[#061A40]/90 sm:via-[#061A40]/80 via-50% to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#0066CC_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0055E7] via-[#0055E7]/90 sm:via-[#0055E7]/80 via-50% to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#006BFF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none z-10" />
 
         <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 z-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -231,7 +231,7 @@ export default function ServiceAreasPage() {
                 {/* 1. Call Us Now */}
                 <a
                   href={PHONE_TEL}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white text-[#061A40] font-black text-sm sm:text-base shadow-xl hover:bg-slate-100 active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider min-h-[44px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white text-[#003399] font-black text-sm sm:text-base shadow-xl hover:bg-slate-100 active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider min-h-[44px]"
                 >
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brightRed flex-shrink-0" />
                   <span>Call Us Now: {PHONE_NUMBER}</span>
@@ -240,7 +240,7 @@ export default function ServiceAreasPage() {
                 {/* 2. Get A Free Quote */}
                 <button
                   onClick={() => setIsQuoteOpen(true)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#0066CC] text-white font-black text-sm sm:text-base shadow-xl hover:bg-[#0052A3] active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider min-h-[44px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#006BFF] text-white font-black text-sm sm:text-base shadow-xl hover:bg-[#0055E7] active:scale-95 transition-all duration-200 font-heading uppercase tracking-wider min-h-[44px]"
                 >
                   <FileText className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                   <span>Get A Free Quote</span>
@@ -300,7 +300,7 @@ export default function ServiceAreasPage() {
 
             {/* Right Column: High-Impact Glassmorphic Dispatch Card */}
             <div className="hidden lg:flex lg:col-span-5 xl:col-span-4 flex-col gap-4">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 bg-gradient-to-b from-[#0E2452]/90 to-[#061A40]/95 backdrop-blur-md p-6">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 bg-gradient-to-b from-[#0055E7]/90 to-[#003399]/95 backdrop-blur-md p-6">
                 <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
                   <div>
                     <span className="text-xs uppercase tracking-wider font-extrabold text-electric font-heading">
@@ -347,7 +347,7 @@ export default function ServiceAreasPage() {
                     </p>
                     <a
                       href={PHONE_TEL}
-                      className="text-xl font-black text-brightYellow hover:underline font-heading"
+                      className="text-2xl xl:text-3xl font-black text-brightYellow hover:underline font-heading leading-tight whitespace-nowrap"
                     >
                       {PHONE_NUMBER}
                     </a>
@@ -1141,7 +1141,7 @@ export default function ServiceAreasPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 
                   {/* Top Badge: Category */}
-                  <div className="absolute top-3 left-3 bg-[#061A40]/80 backdrop-blur-md text-electric text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border border-white/10 font-heading">
+                  <div className="absolute top-3 left-3 bg-[#003399]/80 backdrop-blur-md text-electric text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border border-white/10 font-heading">
                     {item.category}
                   </div>
 
@@ -1212,7 +1212,7 @@ export default function ServiceAreasPage() {
       {/* ==============================================================
           6. FINAL CALL TO ACTION SECTION (Approved Homepage Colors & Layout)
          ============================================================== */}
-      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-r from-[#061A40] via-[#0E2452] to-[#0066CC] text-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-r from-[#003399] via-[#0055E7] to-[#006BFF] text-white relative overflow-hidden">
         {/* Subtle dot overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
 

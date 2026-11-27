@@ -1,24 +1,59 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import BrandLogo from './BrandLogo';
-import { Phone, Clock, FileText, Wrench } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_TEL } from '@/lib/utils';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import BrandLogo from "./BrandLogo";
+import { Phone, Clock, FileText, Wrench } from "lucide-react";
+import { PHONE_NUMBER, PHONE_TEL } from "@/lib/utils";
+
+const HEADER_PARTNER_LOGOS = [
+  {
+    src: "/247 havc/logo/logo-1.jpg",
+    alt: "Bosch Home Comfort PRO Certified Partner",
+  },
+  {
+    src: "/247 havc/logo/logo-2.jpg",
+    alt: "Daikin Comfort PRO Certified Partner",
+  },
+  {
+    src: "/247 havc/logo/logo-3.jpg",
+    alt: "Bosch 2025 Gold Home Comfort PRO Certified Partner",
+  },
+  {
+    src: "/247 havc/logo/logo-4.jpg",
+    alt: "Fujitsu Airstage Contractor Elite Plus Certified Partner",
+  },
+  {
+    src: "/247 havc/logo/logo-5.jpg",
+    alt: "Daikin Design PRO Ductless Certified Partner",
+  },
+  {
+    src: "/247 havc/logo/logo-6.jpg",
+    alt: "Daikin Design PRO VRV Certified Partner",
+  },
+];
 
 interface MainHeaderProps {
   onOpenQuote: () => void;
   onOpenBooking: () => void;
 }
 
-export default function MainHeader({ onOpenQuote, onOpenBooking }: MainHeaderProps) {
+export default function MainHeader({
+  onOpenQuote,
+  onOpenBooking,
+}: MainHeaderProps) {
   return (
     <header className="w-full bg-white border-b border-slate-100 py-3.5 md:py-4 shadow-sm relative z-20">
       <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
           {/* Left Side: Brand Identity (Logo, Company Name, Tagline) */}
-          <div className="flex items-center justify-between w-full lg:w-auto">
-            <Link href="/" className="hover:opacity-95 transition-opacity" aria-label="247 HVAC of Long Island Home">
+          <div className="flex items-center justify-between w-full lg:w-auto flex-shrink-0">
+            <Link
+              href="/"
+              className="hover:opacity-95 transition-opacity"
+              aria-label="247 HVAC of Long Island Home"
+            >
               <BrandLogo size="md" />
             </Link>
 
@@ -31,6 +66,30 @@ export default function MainHeader({ onOpenQuote, onOpenBooking }: MainHeaderPro
               >
                 <Phone className="w-5 h-5 fill-current" />
               </a>
+            </div>
+          </div>
+
+          {/* Middle Section: Six Certified Partner Brand Logos */}
+          <div className="w-full lg:w-auto lg:flex-1 lg:min-w-0 flex items-center justify-center bg-white">
+            <div
+              className="flex items-center justify-start sm:justify-center gap-3.5 sm:gap-4 lg:gap-2.5 xl:gap-4 2xl:gap-5 overflow-x-auto no-scrollbar scroll-smooth max-w-full bg-white py-1"
+              aria-label="Certified HVAC Partner Logos"
+            >
+              {HEADER_PARTNER_LOGOS.map((logo) => (
+                <div
+                  key={logo.src}
+                  className="relative flex-shrink-0 w-[72px] h-11 sm:w-20 sm:h-12 lg:w-14 lg:h-10 xl:w-[74px] xl:h-12 2xl:w-20 2xl:h-12 flex items-center justify-center bg-white"
+                  title={logo.alt}
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    sizes="(max-width: 640px) 72px, (max-width: 1024px) 80px, (max-width: 1280px) 56px, 80px"
+                    className="object-contain object-center select-none pointer-events-none"
+                  />
+                </div>
+              ))}
             </div>
           </div>
 

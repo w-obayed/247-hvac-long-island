@@ -277,7 +277,7 @@ export default function FarRockawayLocationPage() {
                 <div className="relative h-72 xs:h-80 sm:h-96 md:h-[420px] lg:h-[460px] w-full">
                   <Image
                     src="/247 havc/heat-pump-repair/76ecb7ff-c205-4870-89c2-1a635b45a88c.jpg"
-                    alt="HVAC service and climate solutions in Far Rockaway, NY"
+                    alt="Two 247 HVAC technicians servicing an outdoor side-discharge heat pump unit"
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
@@ -285,7 +285,7 @@ export default function FarRockawayLocationPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
 
-                <div className="absolute top-4 left-4 bg-[#061A40]/90 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-white/20 shadow-lg flex items-center gap-2 z-10 font-heading">
+                <div className="absolute top-4 left-4 bg-[#003399]/90 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-white/20 shadow-lg flex items-center gap-2 z-10 font-heading">
                   <MapPin className="w-4 h-4 text-brightRed flex-shrink-0" />
                   <span className="font-black text-sm uppercase tracking-wider">Far Rockaway</span>
                 </div>
@@ -568,7 +568,7 @@ export default function FarRockawayLocationPage() {
       {/* ========================================================================= */}
       {/* 6. FINAL CTA SECTION */}
       {/* ========================================================================= */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-[#061A40] via-[#0E2452] to-[#0066CC] text-white relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-[#003399] via-[#0055E7] to-[#006BFF] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-brightRed/20 rounded-full blur-3xl pointer-events-none" />
 

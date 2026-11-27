@@ -10,7 +10,7 @@ interface PromoOfferBarProps {
 
 export default function PromoOfferBar({ onOpenCoupon, onOpenQuote }: PromoOfferBarProps) {
   return (
-    <section className="w-full bg-[#061A40] border-y border-royal/30 text-white py-3 shadow-md relative z-10">
+    <section className="w-full bg-[#0055E7] border-y border-royal/30 text-white py-3 shadow-md relative z-10">
       <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-2.5 sm:gap-3 text-xs sm:text-sm">
           {/* Left: Free Estimates & $100 Off Coupon Badge */}

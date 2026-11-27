@@ -11,15 +11,15 @@ interface EmergencySectionProps {
 
 export default function EmergencySection({ onOpenBooking }: EmergencySectionProps) {
   return (
-    <section id="emergency" className="py-14 md:py-20 bg-[#061A40] text-white relative overflow-hidden">
-      {/* Red Ambient Glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-brightRed/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-80 h-80 bg-royal/20 rounded-full blur-3xl pointer-events-none" />
+    <section id="emergency" className="py-14 md:py-20 bg-[#EAF4FF] text-[#003399] relative overflow-hidden">
+      {/* Subtle Ambient Glow */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-brightRed/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#006BFF]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-[#061A40] via-[#0E2452] to-[#061A40] border-2 border-brightRed/40 rounded-3xl p-8 sm:p-12 lg:p-14 shadow-2xl relative overflow-hidden">
+        <div className="bg-[#EAF4FF] border-2 border-[#006BFF]/25 rounded-3xl p-8 sm:p-12 lg:p-14 shadow-2xl relative overflow-hidden">
           {/* Top Emergency Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brightRed text-white text-xs font-black uppercase tracking-wider mb-5 shadow-lg font-heading">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E60012] text-white text-xs font-black uppercase tracking-wider mb-5 shadow-lg font-heading">
             <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
             <span>Emergency Dispatch Active</span>
           </div>
@@ -27,19 +27,19 @@ export default function EmergencySection({ onOpenBooking }: EmergencySectionProp
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Content — Signs Your HVAC System May Need Attention */}
             <div className="lg:col-span-8">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4 font-heading">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#003399] tracking-tight leading-tight mb-4 font-heading">
                 Signs Your HVAC System May Need Attention
               </h2>
 
-              <p className="text-base text-slate-200 leading-relaxed max-w-2xl mb-4 font-body">
+              <p className="text-base text-[#003399] leading-relaxed max-w-2xl mb-4 font-body">
                 Heating and cooling systems often show warning signs before a larger problem develops. If you notice unusual noises, uneven temperatures, weak airflow, or rising energy bills, your system may be struggling to operate efficiently. Paying attention to these early indicators can help prevent bigger issues and keep your home or business comfortable throughout the year.
               </p>
 
-              <p className="text-sm text-slate-300 leading-relaxed max-w-2xl mb-6 font-body">
+              <p className="text-sm text-[#003399] leading-relaxed max-w-2xl mb-6 font-body">
                 If your system is showing these signs, you can explore{' '}
                 <Link
                   href="/air-conditioning-repair"
-                  className="text-electric font-bold hover:underline"
+                  className="text-[#0055E7] font-bold hover:underline"
                 >
                   air conditioner repair and maintenance
                 </Link>{' '}
@@ -48,16 +48,16 @@ export default function EmergencySection({ onOpenBooking }: EmergencySectionProp
 
               {/* Emergency Reassurance Points */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-2 font-heading">
-                <div className="flex items-center gap-2 text-sm sm:text-sm text-slate-200 font-semibold">
-                  <Clock className="w-4 h-4 text-brightYellow" />
+                <div className="flex items-center gap-2 text-sm sm:text-sm text-[#003399] font-semibold">
+                  <Clock className="w-4 h-4 text-[#006BFF]" />
                   <span>30-45 Min Dispatch</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm sm:text-sm text-slate-200 font-semibold">
-                  <ShieldAlert className="w-4 h-4 text-brightRed" />
+                <div className="flex items-center gap-2 text-sm sm:text-sm text-[#003399] font-semibold">
+                  <ShieldAlert className="w-4 h-4 text-[#E60012]" />
                   <span>No Heat / AC Outage</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm sm:text-sm text-slate-200 font-semibold">
-                  <Wrench className="w-4 h-4 text-electric" />
+                <div className="flex items-center gap-2 text-sm sm:text-sm text-[#003399] font-semibold">
+                  <Wrench className="w-4 h-4 text-[#0055E7]" />
                   <span>Fully Stocked Trucks</span>
                 </div>
               </div>
@@ -68,16 +68,16 @@ export default function EmergencySection({ onOpenBooking }: EmergencySectionProp
               {/* Call Button */}
               <a
                 href={PHONE_TEL}
-                className="inline-flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-brightYellow hover:bg-brightYellow-hover text-navy font-black text-lg shadow-xl active:scale-95 transition-all duration-200 font-heading uppercase tracking-wide"
+                className="inline-flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-[#E60012] hover:bg-[#BD000F] text-white font-black text-lg shadow-xl active:scale-95 transition-all duration-200 font-heading uppercase tracking-wide"
               >
-                <Phone className="w-5 h-5 text-brightRed animate-bounce" />
+                <Phone className="w-5 h-5 text-white animate-bounce" />
                 <span>Call {PHONE_NUMBER}</span>
               </a>
 
               {/* Request Emergency Service Button */}
               <button
                 onClick={onOpenBooking}
-                className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-xl bg-brightRed hover:bg-brightRed-hover text-white font-extrabold text-sm sm:text-base shadow-lg border border-red-400 active:scale-95 transition-all duration-200 font-heading uppercase tracking-wide"
+                className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-xl bg-[#006BFF] hover:bg-[#0055E7] text-white font-extrabold text-sm sm:text-base shadow-lg border border-[#0055E7] active:scale-95 transition-all duration-200 font-heading uppercase tracking-wide"
               >
                 <AlertCircle className="w-5 h-5" />
                 <span>Request Emergency Service</span>

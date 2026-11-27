@@ -79,7 +79,7 @@ export default function ServiceAreasSection({ onSelectArea }: ServiceAreasSectio
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch mb-6 sm:mb-8">
           
           {/* SECTION INTRODUCTION CARD (lg:col-span-5) */}
-          <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-[#061A40] via-[#0A2E6E] to-[#061A40] text-white p-5 sm:p-7 lg:p-8 shadow-xl border border-royal/30 relative overflow-hidden group">
+          <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-[#003399] via-[#0055E7] to-[#003399] text-white p-5 sm:p-7 lg:p-8 shadow-xl border border-royal/30 relative overflow-hidden group">
             {/* Ambient Glow */}
             <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-royal/20 rounded-full blur-3xl pointer-events-none" />
 

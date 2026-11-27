@@ -26,8 +26,8 @@ export default function PromoBanners({ onOpenFinancing, onOpenMaintenance }: Pro
             />
 
             {/* Subtle Gradient & Brand Navy Overlay for Superior Contrast & Readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#061A40] via-[#061A40]/85 to-[#061A40]/65 group-hover:via-[#061A40]/80 transition-colors duration-300 pointer-events-none" />
-            <div className="absolute inset-0 bg-[#0066CC]/15 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#003399] via-[#003399]/85 to-[#0055E7]/65 group-hover:via-[#003399]/80 transition-colors duration-300 pointer-events-none" />
+            <div className="absolute inset-0 bg-[#006BFF]/15 pointer-events-none" />
 
             {/* Content Container */}
             <div className="relative z-10 p-6 sm:p-8 lg:p-9 flex flex-col justify-between h-full">
@@ -87,8 +87,8 @@ export default function PromoBanners({ onOpenFinancing, onOpenMaintenance }: Pro
             />
 
             {/* Subtle Gradient & Brand Navy Overlay for Superior Contrast & Readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#061A40] via-[#061A40]/85 to-[#061A40]/65 group-hover:via-[#061A40]/80 transition-colors duration-300 pointer-events-none" />
-            <div className="absolute inset-0 bg-[#E50914]/10 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#003399] via-[#003399]/85 to-[#0055E7]/65 group-hover:via-[#003399]/80 transition-colors duration-300 pointer-events-none" />
+            <div className="absolute inset-0 bg-[#E60012]/10 pointer-events-none" />
 
             {/* Content Container */}
             <div className="relative z-10 p-6 sm:p-8 lg:p-9 flex flex-col justify-between h-full">

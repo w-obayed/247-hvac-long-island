@@ -68,7 +68,7 @@ export default function CouponModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#061A40]/80 backdrop-blur-sm animate-fadeIn overflow-y-auto no-print"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#003399]/80 backdrop-blur-sm animate-fadeIn overflow-y-auto no-print"
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
@@ -89,10 +89,10 @@ export default function CouponModal({
               max-width: 600px !important;
               margin: 40px auto !important;
               padding: 32px !important;
-              border: 2px dashed #0066CC !important;
+              border: 2px dashed #006BFF !important;
               border-radius: 16px !important;
               background: #ffffff !important;
-              color: #061A40 !important;
+              color: #003399 !important;
               box-shadow: none !important;
               page-break-inside: avoid !important;
               -webkit-print-color-adjust: exact !important;

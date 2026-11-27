@@ -437,7 +437,7 @@ export default function ContactPage() {
 
             {/* RIGHT COLUMN: CONTACT INFORMATION SECTION (lg:col-span-5 xl:col-span-4) */}
             <div className="lg:col-span-5 xl:col-span-4 space-y-6">
-              <div className="bg-[#061A40] text-white rounded-3xl p-6 sm:p-8 border border-white/10 shadow-xl space-y-6">
+              <div className="bg-[#003399] text-white rounded-3xl p-6 sm:p-8 border border-white/10 shadow-xl space-y-6">
                 <div className="border-b border-white/10 pb-4">
                   <span className="text-xs uppercase tracking-wider font-extrabold text-electric font-heading block mb-1">
                     Direct Contact
@@ -564,7 +564,7 @@ export default function ContactPage() {
       {/* ========================================================================= */}
       {/* 4. CTA SECTION */}
       {/* ========================================================================= */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-[#061A40] via-[#0E2452] to-[#0066CC] text-white relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-[#003399] via-[#0055E7] to-[#006BFF] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-brightRed/20 rounded-full blur-3xl pointer-events-none" />
 

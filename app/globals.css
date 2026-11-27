@@ -4,11 +4,11 @@
 
 :root {
   /* Brand specific colors requested by client */
-  --brand-navy: #061A40;
-  --brand-blue: #0066CC;
+  --brand-navy: #003399;
+  --brand-blue: #006BFF;
   --brand-electric: #00BFFF;
-  --brand-red: #E50914;
-  --brand-yellow: #FFE500;
+  --brand-red: #E60012;
+  --brand-yellow: #FFE000;
   --brand-green: #25843D;
   --brand-white: #FFFFFF;
   --brand-dark-text: #111827;
@@ -76,11 +76,11 @@ p {
   background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0066CC;
+  background: #006BFF;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #061A40;
+  background: #003399;
 }
 
 /* Hide scrollbar utility */
@@ -162,10 +162,10 @@ p {
     max-width: 620px !important;
     margin: 40px auto !important;
     padding: 36px 32px !important;
-    border: 2px dashed #0066CC !important;
+    border: 2px dashed #006BFF !important;
     border-radius: 16px !important;
     background: #ffffff !important;
-    color: #061A40 !important;
+    color: #003399 !important;
     box-shadow: none !important;
     page-break-inside: avoid !important;
     -webkit-print-color-adjust: exact !important;

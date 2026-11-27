@@ -375,7 +375,7 @@ export default function LongBeachLocationPage() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 aspect-[4/3] lg:aspect-[5/4]">
                 <Image
                   src="/247 havc/ac-installation/985ad274-26be-4bb1-82d3-8973d451568c.jpg"
-                  alt="HVAC Contractors in Long Beach, NY"
+                  alt="Outdoor air conditioning condenser unit with louvered protective grille"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -749,7 +749,7 @@ export default function LongBeachLocationPage() {
       {/* ========================================================================= */}
       {/* 9. CTA SECTION */}
       {/* ========================================================================= */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-[#061A40] via-[#0E2452] to-[#0066CC] text-white relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-[#003399] via-[#0055E7] to-[#006BFF] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-brightRed/20 rounded-full blur-3xl pointer-events-none" />
 

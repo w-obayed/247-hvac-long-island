@@ -180,7 +180,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
   return (
     <div
       onClick={handleBackdropClick}
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-[#061A40]/80 backdrop-blur-sm animate-fadeIn overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-[#003399]/80 backdrop-blur-sm animate-fadeIn overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="quote-modal-heading"
@@ -193,7 +193,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
         {/* ========================================================================= */}
         {/* MODAL HEADER */}
         {/* ========================================================================= */}
-        <div className="bg-[#061A40] text-white p-5 sm:p-6 flex items-start justify-between border-b border-white/10 flex-shrink-0">
+        <div className="bg-[#003399] text-white p-5 sm:p-6 flex items-start justify-between border-b border-white/10 flex-shrink-0">
           <div>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-royal/40 text-electric border border-electric/30 text-xs font-black uppercase tracking-wider mb-2 font-heading">
               <Sparkles className="w-3.5 h-3.5" />

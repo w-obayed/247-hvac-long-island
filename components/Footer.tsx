@@ -1,11 +1,22 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import BrandLogo from './BrandLogo';
-import { Phone, Mail, MapPin, Clock, ShieldCheck } from 'lucide-react';
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  ShieldCheck,
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  ArrowRight,
+} from 'lucide-react';
 import { PHONE_NUMBER, PHONE_TEL, BUSINESS_EMAIL, BUSINESS_NAME } from '@/lib/utils';
+import { CURATED_FOOTER_DIRECTORY_LISTINGS } from '@/data/business-listings';
 
 const TRUSTED_VERIFIED_COMPANIES = [
   {
@@ -53,9 +64,35 @@ interface FooterProps {
 
 export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
   const currentYear = new Date().getFullYear();
+  const [carouselSlide, setCarouselSlide] = useState(0);
+
+  const carouselSlides = [
+    TRUSTED_VERIFIED_COMPANIES.map((company) => ({
+      name: company.name,
+      url: company.url,
+      logo: company.logo,
+      alt: company.alt,
+    })),
+    CURATED_FOOTER_DIRECTORY_LISTINGS.map((item) => ({
+      name: item.platformName,
+      url: item.profileUrl,
+      logo: item.logo,
+      alt: `${item.platformName} business profile`,
+    })),
+  ];
+
+  const activeItems = carouselSlides[carouselSlide] || carouselSlides[0];
+
+  const handlePrevSlide = () => {
+    setCarouselSlide((prev) => (prev - 1 + carouselSlides.length) % carouselSlides.length);
+  };
+
+  const handleNextSlide = () => {
+    setCarouselSlide((prev) => (prev + 1) % carouselSlides.length);
+  };
 
   return (
-    <footer id="contact" className="bg-[#061A40] text-slate-300 pt-16 pb-28 md:pb-12 border-t border-navy-light select-none">
+    <footer id="contact" className="bg-[#003399] text-slate-300 pt-16 pb-28 md:pb-12 border-t border-navy-light select-none">
       <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         {/* 5-Column Desktop Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
@@ -252,7 +289,7 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
           </div>
         </div>
 
-        {/* Middle Footer: Trusted and Verified By Section */}
+        {/* Middle Footer: Trusted and Verified By Carousel */}
         <div className="pt-8 pb-8 border-t border-navy-light/70">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
             <div className="flex items-center gap-2.5">
@@ -261,37 +298,72 @@ export default function Footer({ onSelectService, onOpenArea }: FooterProps) {
                 Trusted and Verified By
               </h3>
             </div>
-            <span className="text-xs text-slate-400 font-body hidden sm:inline">
-              Verified independent customer ratings, credentials & business reviews
-            </span>
+
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={handlePrevSlide}
+                  aria-label="Previous business directory listings"
+                  className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/15 flex items-center justify-center transition-colors focus:outline-hidden focus:ring-2 focus:ring-electric"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={handleNextSlide}
+                  aria-label="Next business directory listings"
+                  className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/15 flex items-center justify-center transition-colors focus:outline-hidden focus:ring-2 focus:ring-electric"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              <Link
+                href="/business-listings"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#006BFF] hover:bg-[#0055E7] text-white text-xs font-bold uppercase tracking-wider font-heading transition-colors focus:outline-hidden focus:ring-2 focus:ring-electric"
+              >
+                <span>View All Business Listings</span>
+                <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+              </Link>
+            </div>
           </div>
 
-          {/* 6 Equal-Sized Responsive Logo Containers */}
+          {/* 6 Equal-Sized Responsive Logo / Directory Containers */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-            {TRUSTED_VERIFIED_COMPANIES.map((company) => (
+            {activeItems.map((company) => (
               <a
                 key={company.name}
                 href={company.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-center h-16 sm:h-18 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/25 active:scale-98 transition-all duration-200 focus:outline-hidden focus:ring-2 focus:ring-electric focus:ring-offset-2 focus:ring-offset-[#061A40]"
+                className="group relative flex items-center justify-center h-16 sm:h-18 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/25 active:scale-98 transition-all duration-200 focus:outline-hidden focus:ring-2 focus:ring-electric focus:ring-offset-2 focus:ring-offset-[#003399]"
                 style={{ position: 'relative', overflow: 'hidden' }}
                 aria-label={`View 247 HVAC of Long Island profile on ${company.name} (opens in a new tab)`}
-                title={`Verified on ${company.name}`}
+                title={`View profile on ${company.name}`}
               >
-                <div
-                  className="relative w-full h-full flex items-center justify-center p-1"
-                  style={{ position: 'relative', width: '100%', height: '100%' }}
-                >
-                  <Image
-                    src={company.logo}
-                    alt={company.alt}
-                    fill
-                    className="object-contain transition-transform duration-200 group-hover:scale-105"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                    unoptimized={company.logo.endsWith('.svg')}
-                  />
-                </div>
+                {company.logo ? (
+                  <div
+                    className="relative w-full h-full flex items-center justify-center p-1"
+                    style={{ position: 'relative', width: '100%', height: '100%' }}
+                  >
+                    <Image
+                      src={company.logo}
+                      alt={company.alt}
+                      fill
+                      className="object-contain transition-transform duration-200 group-hover:scale-105"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                      unoptimized={company.logo.endsWith('.svg')}
+                    />
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center gap-1.5 text-center w-full">
+                    <span className="text-xs sm:text-sm font-bold text-white truncate font-heading">
+                      {company.name}
+                    </span>
+                    <ExternalLink className="w-3.5 h-3.5 text-electric flex-shrink-0" aria-hidden="true" />
+                  </div>
+                )}
               </a>
             ))}
           </div>

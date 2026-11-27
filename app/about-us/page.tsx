@@ -188,7 +188,7 @@ export default function AboutUsPage() {
                 </div>
 
                 {/* Overlaid Badges */}
-                <div className="absolute top-4 left-4 bg-[#061A40]/90 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-white/20 shadow-lg flex items-center gap-2 z-10 font-heading">
+                <div className="absolute top-4 left-4 bg-[#003399]/90 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-white/20 shadow-lg flex items-center gap-2 z-10 font-heading">
                   <Award className="w-4 h-4 text-brightYellow flex-shrink-0" />
                   <span className="font-black text-sm uppercase tracking-wider">30+ Years Experience</span>
                 </div>
@@ -304,7 +304,7 @@ export default function AboutUsPage() {
       {/* ========================================================================= */}
       {/* 4. CTA SECTION */}
       {/* ========================================================================= */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-[#061A40] via-[#0E2452] to-[#0066CC] text-white relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-[#003399] via-[#0055E7] to-[#006BFF] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#00BFFF_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-brightRed/20 rounded-full blur-3xl pointer-events-none" />
 

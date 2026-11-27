@@ -23,7 +23,7 @@ export default function ServiceAreaModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-dark/80 backdrop-blur-sm animate-fadeIn">
       <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
         {/* Header */}
-        <div className="bg-[#061A40] text-white p-5 flex items-center justify-between">
+        <div className="bg-[#003399] text-white p-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 flex-shrink-0 bg-white/10 rounded-xl p-1 flex items-center justify-center border border-white/20">
               <CountyEmblem type={area.id as any} className="w-full h-full" />

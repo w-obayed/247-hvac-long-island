@@ -25,7 +25,7 @@ export default function FinancingModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-dark/80 backdrop-blur-sm animate-fadeIn">
       <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#061A40] to-[#0066CC] text-white p-5 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-[#003399] to-[#006BFF] text-white p-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-electric">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

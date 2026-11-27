@@ -44,7 +44,7 @@ export default function WhyChooseUsSection() {
             </p>
 
             {/* Decorative Trust Guarantee Card */}
-            <div className="w-full rounded-2xl bg-gradient-to-br from-[#061A40] via-[#0A2558] to-[#061A40] text-white p-6 sm:p-7 shadow-xl border border-royal/20 relative overflow-hidden group">
+            <div className="w-full rounded-2xl bg-gradient-to-br from-[#003399] via-[#0055E7] to-[#003399] text-white p-6 sm:p-7 shadow-xl border border-royal/20 relative overflow-hidden group">
               <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-royal/25 rounded-full blur-2xl pointer-events-none" />
 
               <div className="flex items-center gap-4 mb-4 relative z-10">
@@ -112,7 +112,7 @@ export default function WhyChooseUsSection() {
             </div>
 
             {/* FEATURE 02 — Expertise & Reliability (Dark Contrast Accent Card) */}
-            <div className="bg-gradient-to-br from-[#061A40] via-[#0A2E6E] to-[#061A40] text-white rounded-2xl p-6 sm:p-7 border border-royal/40 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group motion-reduce:transform-none">
+            <div className="bg-gradient-to-br from-[#003399] via-[#0055E7] to-[#003399] text-white rounded-2xl p-6 sm:p-7 border border-royal/40 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group motion-reduce:transform-none">
               <div className="absolute -right-10 -bottom-10 w-36 h-36 bg-electric/15 rounded-full blur-2xl pointer-events-none" />
 
               <div className="relative z-10">

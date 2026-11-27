@@ -16,7 +16,7 @@ export default function FloatingActionBar({
   return (
     <aside
       aria-label="Mobile quick actions"
-      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#061A40]/95 backdrop-blur-md border-t border-royal/40 px-2 sm:px-3 py-2 sm:py-2.5 shadow-2xl font-heading"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#003399]/95 backdrop-blur-md border-t border-royal/40 px-2 sm:px-3 py-2 sm:py-2.5 shadow-2xl font-heading"
     >
       <div className="flex items-center justify-between gap-1.5 sm:gap-2 max-w-md mx-auto">
         {/* Call Now Button */}

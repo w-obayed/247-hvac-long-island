@@ -31,15 +31,15 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
       title: 'Experienced HVAC Professionals',
       description: 'Over 30 years of hands-on heating, cooling, and ventilation expertise across Long Island.',
       icon: UserCheck,
-      color: 'text-[#0066CC]',
-      bg: 'bg-blue-50',
+      color: 'text-[#006BFF]',
+      bg: 'bg-[#EAF4FF]',
       border: 'border border-blue-100',
     },
     {
       title: 'Locally Owned & Operated',
       description: 'Proudly serving Nassau County, Suffolk County, and NYC boroughs with responsive local teams.',
       icon: Building2,
-      color: 'text-[#E50914]',
+      color: 'text-[#E60012]',
       bg: 'bg-red-50',
       border: 'border border-red-100',
     },
@@ -117,8 +117,8 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
               <div className="relative h-64 xs:h-72 sm:h-80 md:h-96 lg:h-[450px] w-full">
                 <Image
-                  src="/247 havc/about-team/ab8907ce-a62b-4cba-92fe-791b1218ed51.jpg"
-                  alt="Two-person 247 HVAC of Long Island team portrait"
+                  src="/247 havc/heat-pump-repair/c98c57cd-add0-413a-8189-83b193f35eff.jpg"
+                  alt="24/7 HVAC technicians servicing an outdoor heat pump unit on Long Island"
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
@@ -128,7 +128,7 @@ export default function AboutSection({ onOpenBooking, onOpenQuote }: AboutSectio
               {/* Floating Experience Badge */}
               <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-white/95 backdrop-blur-md p-3 sm:p-4 rounded-xl shadow-lg border border-slate-100 flex items-center gap-3 sm:gap-4">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-royal text-white flex items-center justify-center font-black text-base sm:text-lg flex-shrink-0 font-heading">
-                  30+
+                  55+
                 </div>
                 <div className="min-w-0 flex-1">
                   <h4 className="font-extrabold text-navy text-sm sm:text-sm font-heading leading-tight truncate sm:overflow-visible">
